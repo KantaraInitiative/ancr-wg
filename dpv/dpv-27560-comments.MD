@@ -13,9 +13,8 @@ Key validation: DPV-PD improves notice content precision (what data), but does n
 ## ISO/IEC 27560 remediation pathway (linked concept)
 This comment set has an explicit remediation pathway: **ISO/IEC 27560 ‘Digital’ Consent Record Information Structure Profile** (ANCR Digital Consent pattern).
 
-## DPV 2.3 (comments approved for submission) — specific closure blockers + drift-sensitive items that impact
-
-How to use this section: Copy/paste the “Comment-ready text” into issue drafts or liaison notes. Keep the “Source hook” lines so each item is closeable.
+## DPV 2.3 (comments approved for submission)
+Comment 1 = C1
 
 ### C1 — Identifier governance (Data Subject / principal identifier)
 **DPV artefact(s):** DPV-27560 guide (Consent-27560), DPV-27560 schema profiles  
@@ -64,7 +63,7 @@ DPV-27560 currently reinforces “receipt = copy of record,” which can normali
 - Therefore, the “meeting our requirements” work is primarily a DPV:27560 guidance issue, with DPV 2.3 deltas mainly creating maintenance risk (term drift) rather than solving the evidence gaps.
 
 ## (Additional working material)
-The remainder of the original ANCR-DPV comments page includes:
+The remainder of the original [ANCR-DPV comments page]( includes:
 - a longer working comment table,
 - authority/evidence tables,
 - and an impact register for failure modes and acceptance criteria.
