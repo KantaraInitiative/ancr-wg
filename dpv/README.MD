@@ -1,4 +1,4 @@
-# ANCR WG → DPV (Convention 108+ legal extension + evidence-first guidance)
+# ANCR WG → DPV (Convention 108+ legal model + evidence-first guidance)
 
 This folder contains an ANCR Working Group contribution to the W3C Data Privacy Vocabulary (DPV) ecosystem, focused on:
 
