@@ -1,39 +1,41 @@
-Place this file at: ISO-27560 Extension /v 1.02/[README.md](http://README.md)
+# ISO/IEC 27560 ANCR Profile Extension — v1.02
 
-Source of truth (GitHub): https://github.com/0PN-lab/specs/tree/main/ISO-27560%20Extension%20/v%201.02
+This folder contains **v1.02** of the **ISO/IEC 27560 ANCR Profile Extension** package maintained by the Kantara **ANCR Working Group (ANCR WG)**.
 
-# ISO-27560 Extension — v1.02
+v1.02 is the “delegation baseline uplift” release: it consolidates/organizes the artefacts needed to support delegation-related use cases while keeping the package aligned to the ISO/IEC 27560 consent record information structure profile work.
 
-This folder contains the v1.02 baseline uplift for the ISO-27560 Extension package (delegation as a first-class object).
+## What’s in this version
+
+- The v1.02 profile extension artefacts and supporting documentation
+- Any related drafts and working materials required to review, implement, and test v1.02
 
 ## Start here
 
-- Read the v1.02 folder index: ./[index.md](http://index.md)
+- v1.02 package index: `./index.md`
+- Repository-level package index (all versions): `../index.md`
 
-## Specification files (GitHub-ready)
+## How to use
 
-Core
+1. Read `index.md` to understand the v1.02 scope, included artefacts, and navigation.
+2. When referencing this version in issues or reviews, cite:
+   - `v 1.02` and the specific file path
+   - the intent of the change (interoperability, implementability, conformance)
+3. Keep terminology consistent across the v1.02 artefacts, especially where delegation introduces additional roles/relationships.
 
-- ./spec/v1.02/[README.md](http://README.md)
-- ./spec/v1.02/[part-1-co-regulated-architecture.md](http://part-1-co-regulated-architecture.md)
-- ./spec/v1.02/[part-2-authc-exchange-protocol.md](http://part-2-authc-exchange-protocol.md)
-- ./spec/v1.02/[part-3-delegation-baseline.md](http://part-3-delegation-baseline.md)
+## Feedback / contribution
 
-Appendices
+- Submit issues and change proposals with:
+  - version: `v 1.02`
+  - file: exact path
+  - rationale + expected impact
+  - any security/privacy considerations (particularly linkability and identification risks)
 
-- ./spec/v1.02/[appendices.md](http://appendices.md)
-- ./spec/v1.02/appendices/[appendix-a-field-mapping.md](http://appendix-a-field-mapping.md)
-- ./spec/v1.02/appendices/[appendix-b-legal-bases-context-implementation.md](http://appendix-b-legal-bases-context-implementation.md)
-- ./spec/v1.02/appendices/[appendix-c-rights-access-by-context.md](http://appendix-c-rights-access-by-context.md)
-- ./spec/v1.02/appendices/[appendix-d-emergency-protocols.md](http://appendix-d-emergency-protocols.md)
-- ./spec/v1.02/appendices/[appendix-e-open-questions-for-reviewers.md](http://appendix-e-open-questions-for-reviewers.md)
-- ./spec/v1.02/appendices/[appendix-f-reserved.md](http://appendix-f-reserved.md)
-- ./spec/v1.02/appendices/[appendix-g-backward-compatibility-iso-iec-ts-27560-2023.md](http://appendix-g-backward-compatibility-iso-iec-ts-27560-2023.md)
-- ./spec/v1.02/appendices/[appendix-h-profile-types.md](http://appendix-h-profile-types.md)
-- ./spec/v1.02/appendices/[appendix-i-notice-token-implementation-guidance.md](http://appendix-i-notice-token-implementation-guidance.md) (informative)
-- ./spec/v1.02/appendices/[appendix-j-ai-system-context-implementation.md](http://appendix-j-ai-system-context-implementation.md) (informative)
+## Working group links
 
-## Notes
+- ANCR WG Wiki (minutes, decisions, participation):  
+  https://kantara.atlassian.net/wiki/spaces/WA/overview?homepageId=2916356
+- Join the ANCR Working Group:  
+  https://kantara.atlassian.net/wiki/spaces/WA/overview?homepageId=2916356
 
-- Appendices I and J are informative/optional.
-- Links are written as relative paths to work in both GitHub and GitHub Pages.
+---
+Maintained by the Kantara ANCR Working Group.
