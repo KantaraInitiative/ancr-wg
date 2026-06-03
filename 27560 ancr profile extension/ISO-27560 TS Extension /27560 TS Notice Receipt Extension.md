@@ -1,79 +1,49 @@
-# Notice Receipt Extension for  ISO/IEC TS 27560:2023
-
-Kantara Initiative / ANCR Working Group submission draft (May 24 2026)
+# Extension for  ISO/IEC TS 27560:2023
 
 ## Foreword
 
 This document specifies a notice receipt information structure that profiles and extends ISO/IEC TS 27560:2023 (consent record information structure). It is published by the Kantara Initiative and the Anchored Notice and Consent Receipt (ANCR) Working Group as a companion specification, and is intended to be cited as prior art and an implementation reference for SC 27/WG 5 work that depends on machine-readable notice and consent records (notably ISO/IEC FDIS 27091 Annex B.4, ISO/IEC WD TS 27568 Table 2, ISO/IEC WD 27573, and ISO/IEC WD 27566-2 Annex F, ISO/IEC 27091 Annex B ).
 
-## Scope Clarification
+## Introduction
 
-This profile extends ISO/IEC TS 27560:2023 (consent record information structure) to specify a machine readable online notice record and a corresponding notice receipt that provides durable evidence of notice disclosure.
-It supports layered and sequenced notices, notifications, and disclosures. First Notice Receipt requirements are legal basis agnostic. When the lawful basis is consent, a corresponding authorization can be represented as a TS 27560:2023 consent receipt specialisation.
-This profile further requires that transparency disclosures be **reciprocal and proportionate** to the technologies in use and the rights controls that are available to the individual (including associated or derivative rights controls).
+Governing digital identity for privacy requires identifiers to be bound to an artefact that can be referenced after the fact. Historically, such identifiers have been encapsulated in a record and provided in receipt of an event by context at a time and place. The notice receipt acts as a container not only for identifiers, but for the integrity of the claim that the identifiers represent and link to as real world objects.
+A notice receipt is generated through interaction (or a lack of interaction) with a physical sign, access point, a device or an online notification or statement. A notice receipt can be generated independently by an individual, from the notice by creating or accessing a controller identification record to produce a proof of notice disclosure that can be exchanged between devices and across borders.
+
+```
+Relationship to related instruments (informative):
+ISO/IEC 29100 Privacy framework
+↓
+ISO/IEC 29184 Online privacy notices and consent
+↓
+ISO/IEC TS 27560:2023 Consent record information structure
+↓
+This profile (ISO/IEC TS 27560:2023 extension for Notice Record + Notice Receipt + Notice Event Log)
+↓
+Applicable code of conduct / code of practice / privac policy / law (jurisdiction-specific)
+```
+
+## 1 Scope
+
+This profile extends ISO/IEC TS 27560:2023 (consent record information structure) to specify a machine-readable online Notice Record and corresponding Notice Receipt that provide durable evidence of notice disclosure.
+It supports layered and sequenced notices, notifications, and disclosures. Anchored Notice Receipt requirements are legal basis agnostic. When the lawful basis is consent, a corresponding authorization can be represented as a TS 27560:2023 consent receipt specialisation.
+The base notice record extension defines a minimum interoperable set of notice artefacts for operational transparency:
+
+- Controller Identification Record (CIR)
+- Notice Record / Anchored Notice Receipt
+- Notice Event Log
+- Reference notice integrity and version binding (including notice_id, notice_version_reference)
+
 Interaction with an online notice record results in a notice receipt, which may be either:
 
 - a full receipt (contains required record fields), or
 - a reference receipt (minimal fields plus stable references and rights payload).
 
-## Lawful basis interoperability
-
-(normative editorial rule)
-
-This profile is lawful-basis interoperable: the First Notice Receipt structure SHALL support all lawful bases under applicable law. Each lawful basis has distinct rights, obligations, and dispute triggers.
-Implementations SHALL communicate the asserted lawful basis in the receipt header, and SHALL publish the applicable rights/obligations variant using the Annex C table structure.
-Consent-by-default for two-factor notice: Where an interaction is presented as a two-factor online notice that returns a bilateral receipt (2FN), the default interpretation SHALL be consent unless another lawful basis is explicitly asserted in the receipt header.
-If a lawful basis other than consent is asserted, the receipt header SHALL state that lawful basis explicitly (e.g., contract, legal obligation, legitimate interest, vital interest, public interest) and SHALL reference the corresponding Annex C row (rights/obligations variant).
-Receipts are designed to be detectable and reusable to reduce repetitive notice prompts and repetitive consent prompts, in order to mitigate ‘consent fatigue’ dark patterns associated with prompt fatigue. The profile is designed to complement existing physical signs and privacy policy pages by providing a standardized notice record that can be extended by context and external codes of conduct to support transparency by default codes of practice. (AI Governance Capable)
-
-By standardizing notice version references and receipt exchange, the profile supports cross border transparency and dispute resolution, including material change signalling through the notice event log.
-
-### Reciprocal and proportionate transparency for technology and rights controls (normative editorial rule)
-
-Where a notice version is used to justify or enable a technology-mediated processing capability, the Notice Record (and/or a referenced transparency statement) SHALL disclose, in a proportionate and reciprocal manner:
-
-- the technology class(es) in use (for example: tracking, profiling, automated decision, biometric inference, cross-device linkage, data brokerage, disclosure/transfer mechanisms);
-- what rights controls are practically available (for example: access, rectification, erasure, portability, objection/withdrawal, restriction, appeal/complaint, human review);
-- any associated or derivative rights controls that arise due to technology choices (for example: “opt-out of targeted advertising” controls, signal-based controls, browser/device signals, global privacy controls, do-not-sell/share controls);
-- any material limitations or derogations that constrain those controls, including where a control is unavailable in a given context (and why).
-
-Disclosures SHALL be proportional to the risk surface and SHALL be written so that relying parties can determine whether a control exists, how it can be exercised, and what scope it applies to.
-
-## Historical Context:
-
-This completes the minimum viable notice and consent receipt work, with thanks to the long term support of the Kantara Initiative and community. In particular, the CIS and ANCR working groups that contributed this work in support of the ISO/IEC 29100 security and privacy framework and ISO/IEC 29184 online privacy notice and consent standard, and now ISO/IEC 27560:2023 TS, open and free to access at [ISO.org](https://www.iso.org/standard/80392.html)
-
-## Introduction
-
-Governing digital identity for privacy requires identifiers to be bound to an artefact that can be referenced after the fact. Historically, such identifiers have been encapsulated in a record and provided in receipt of a notice-based event by context at a time and place, similar to a transaction receipt. The receipt acts as a container not only for identifiers, but for the integrity of what those identifiers represent and link to as real world objects.
-A notice receipt is generated through interaction (or a lack of interaction) with a physical sign, access point, a device or an online notice. A notice receipt can be generated independently by an individual, from the notice by creating or accessing a controller identification record to produce a proof of notice disclosure that can be exchanged between devices and across borders.
-
-Dependency Chain:
-Code of Conduct (Authoritative policy)
-↓
-ISO/IEC 27560-1 Notice + Consent Record information structure
-
-↓
-code of practice(controls)/privacy policy/legislative/common law
-↓
-ISO/IEC 29100 Security & Privacy framework
-
-## 1 Scope
-
-This profile extends ISO/IEC TS 27560:2023 to specify a machine-readable online Notice Record and corresponding Notice Receipt that provide durable evidence of notice disclosure.
-The base extension defines a minimum interoperable set of artefacts:
-
-- Controller Identification Record (CIR)
-- Notice Record / First Notice Receipt
-- Notice Event Log
-- Reference integrity and version binding (including notice_id, notice_version_reference)
-
-Note: An online notice, Notifications, disclosure, or statement sequences differ according to
+Note: An online notice, notifications, disclosure, or statement sequences differ according to
 
 1. in person peer to peer using a device (notice and identity are physically verifiable
 2. remote (not in person), identification is not physically verifiable. Controller identification is required.
 Out of scope for the base extension (may be handled by optional appendices or companion specs):
-- authorization exchange protocol mechanics beyond the First Notice Receipt
+- authorization exchange protocol mechanics beyond the Anchored Notice Receipt
 - tokens/credentials and wallet portability mechanisms
 - full RoPA / processing-record completeness requirements
 - cross-border security requirements beyond baseline notice disclosure
@@ -84,44 +54,67 @@ Out of scope for the base extension (may be handled by optional appendices or co
 - ISO/IEC TS 27560:2023 Privacy technologies — Consent record information structure
 - ISO/IEC 29100, Privacy framework
 
-## Verbal forms
+## 3 Non-Normative references
+
+- ISO/IEC 29184, Online privacy notices and consent
+    - Note: a)  free and open  access to this standard is required for it to be listed as normative, or would block the use of 27568 directly, although it can be used for control interoperability between Profiles.
 
 The key words SHALL, SHOULD, and MAY in this document are to be interpreted as described in ISO/IEC Directives, Part 2.
 NOTE: This draft avoids the use of “must” as a normative keyword. Where “must” appears in examples or explanatory text, it is not intended to introduce a normative requirement.
 
-## 3 Additional references
-
-- ISO/IEC 29184, Online privacy notices and consent
-    - Note:  free and open  access pending
-
 ## 4 Terms and definitions
 
 Terms and definitions from ISO/IEC TS 27560:2023 and ISO/IEC 29100 apply.
-3.1 Controller Identification Record (CIR): publicly accessible controller accountability record used as an anchor for notice and receipt generation.
-3.2 Notice Record: controller-maintained record of notice content (versioned).
-3.3 First Notice Receipt: bilateral evidence artefact recording that a specific notice version was disclosed/presented.
-3.4 Notice Event Log: append-only record of lifecycle events related to notices/receipts (issuance, material change, withdrawal/objection hooks).
-3.5 notice_version_reference: immutable reference to the notice version in effect at the time of disclosure.
-3.6 transparency statement: versioned transparency disclosure artefact that expresses the standing terms of notice (controller identification, processing context, rights mechanisms) and is suitable for audit and stable referencing.
-3.7 transparency notification: event-bound message signaling that a transparency-relevant event has occurred (for example issuance, material change, rights-related lifecycle event), typically referencing a specific transparency statement version.
-3.8 reciprocal and proportionate transparency: disclosure property in which the technology-mediated processing capabilities and the practical rights controls available to the individual are stated in a manner that is proportionate to the risk surface and reciprocal to the controller’s technical capability (i.e., what the technology can do is matched by what the individual can see and control).
+
+3.1 Controller Identification Record (CIR): 
+publicly accessible controller accountability record used as an anchor for notice and receipt generation.
+
+3.2 Notice Record: 
+controller-maintained record of notice content (versioned).
+
+3.3 Anchored Notice Receipt: 
+the **first notice receipt** — bilateral evidence artefact recording that a specific notice version was disclosed/presented. When the lawful basis is consent, the Anchored Notice Receipt provides the required proof of notice disclosure needed for valid legal consent (and for linking any subsequent consent/authorization receipts to the anchored disclosure event).
+
+3.4 Notice Event Log: 
+append-only record of lifecycle events related to notices/receipts (issuance, material change, withdrawal/objection hooks).
+
+3.5 notice_version_reference: 
+immutable reference to the notice version in effect at the time of disclosure.
+
+3.6 transparency statement: 
+versioned transparency disclosure artefact that expresses the standing terms of notice (controller identification, processing context, rights mechanisms) and is suitable for audit and stable referencing.
+
+3.7 transparency notification: 
+event-bound message signaling that a transparency-relevant event has occurred (for example issuance, material change, rights-related lifecycle event), typically referencing a specific transparency statement version.
+
+3.8 reciprocal and proportionate transparency: 
+disclosure property in which the technology-mediated processing capabilities and the practical rights controls available to the individual are stated in a manner that is proportionate to the risk surface and reciprocal to the controller’s technical capability (i.e., what the technology can do is matched by what the individual can see and control).
 
 ## 5 Conformance
 
-An implementation conforms to the Base extension if it satisfies all mandatory requirements in Section 7. Implementations MAY additionally claim conformance to optional extensions defined in Annex B.
+An implementation conforms to the Base extension if it satisfies all mandatory requirements in Section 7. Implementations MAY additionally claim conformance to optional extension profiles for PII and Personal records of processing activity profiles defined in Annex B.
 
 ## 6 Overview of notice artefacts and reference integrity
 
-### 6.1 Notice Receipt Artefact set
+### 6.1 Overview: two-factor online notice (2FN) and receipt evidence
+
+This profile supports a two-factor online notice pattern (2FN) for establishing durable evidence of notice disclosure and (where applicable) consent.
+
+- **Factor 1 (presentation controls):** the notice is presented using ISO/IEC 29184-aligned online notice and consent presentation controls (e.g., layered notice presentation, timing, and interaction patterns) that are reusable across policy/notice types.
+- **Factor 2 (evidence receipt):** an Anchored Notice Receipt is generated to provide durable evidence that a specific notice version was presented/available at a specific time (and, when the lawful basis is consent, to support proof of informed consent by binding the authorization state to the disclosed notice version).
+
+Implementations SHOULD treat 2FN as an interoperability pattern: the presentation controls establish consistent user experience and meaningful choice, while the receipt provides verifiable, referenceable evidence for audit, later inquiry, and dispute resolution.
+
+### 6.2 Notice Receipt Object set
 
 1. CIR (controller accountability anchor)
 2. Notice Record (versioned notice content)
-3. First Notice Receipt (evidence)
+3. Anchored Notice Receipt (proof of notice evidence)
 4. Notice Event Log (lifecycle)
 
-### 6.2 Reference integrity and version binding
+### 6.3 Reference integrity and version binding
 
-A First Notice Receipt SHALL reference:
+A  Notice Receipt SHALL reference:
 
 - notice_id (stable family identifier)
 - notice_version_reference (immutable version reference)
@@ -135,9 +128,9 @@ Historic notice versions SHALL be retained as long as any processing or records 
 
 ## 7 Notice record specifications
 
-### 6.1 Controller Identification Record (CIR)
+### 7.1 Controller Identification Record (CIR)
 
-### 6.1.1 CIR minimum field set
+### 7.1.1 CIR minimum field set
 
 A CIR SHALL include at minimum:
 
@@ -155,72 +148,103 @@ A CIR MAY include:
 
 - derogation_reference (lawful withholding)
 
-### 6.1.1A CIR field specification table (normative)
+### 7.1.1 A CIR field specification table (normative)
 
-| Field | Description | Required? | Value type / format | Constraints | Exposure |
-| --- | --- | --- | --- | --- | --- |
-| controller_identity_record_id | Stable identifier for the CIR | Yes | URI or string identifier | SHALL be stable; SHALL be suitable for referencing by receipts and event logs | Public |
-| controller_public_id_uri | Public resolvable controller identifier | Yes | URI | SHALL be resolvable or dereferenceable by intended relying parties | Public |
-| controller_name | Controller legal name | Yes | String | SHALL represent the accountable controller entity | Public |
-| jurisdiction | Applicable jurisdiction indicator or pointer | Yes | Code or string | SHALL be present; MAY be a pointer to a code of conduct reference | Public |
-| privacy_access_point | Rights/contact access modalities | Yes | Array of objects | Each entry SHALL include type, value, label | Public |
-| notice_event_log_url | Pointer to the notice event log service or resource | No | URL/URI | When present, SHOULD be publicly discoverable | Public |
-| controller_address | Controller address (optional) | No | String or structured address | - | Public |
-| code_of_conduct_reference | Pointer to authoritative code of conduct / practice | No | URI | When present, SHOULD be versioned | Public |
+| Field | Description | Required? | Value type / format | Constraints | Exposure | TS 27560:2023 anchor |
+| --- | --- | --- | --- | --- | --- | --- |
+| controller_identity_record_id | Stable identifier for the CIR | Yes | URI or string identifier | SHALL be stable; SHALL be suitable for referencing by receipts and event logs | Public | 6.3.6.2 party_id (controller party) |
+| controller_public_id_uri | Public resolvable controller identifier | Yes | URI | SHALL be resolvable or dereferenceable by intended relying parties | Public | 6.3.6.5 party_url (closest anchor) |
+| controller_name | Controller legal name | Yes | String | SHALL represent the accountable controller entity | Public | 6.3.6.7 party_name |
+| jurisdiction | Applicable jurisdiction indicator or pointer | Yes | Code or string | SHALL be present; MAY be a pointer to a code of conduct reference | Public | 6.3.4.17 jurisdiction (PII processing) |
+| privacy_access_point | Rights/contact access modalities | Yes | Array of objects | Each entry SHALL include type, value, label | Public | 6.3.6.9 party_contact (closest anchor) |
+| notice_event_log_url | Pointer to the notice event log service or resource | No | URL/URI | When present, SHOULD be publicly discoverable | Public | N/A (extension field) |
+| controller_address | Controller address (optional) | No | String or structured address | - | Public | 6.3.6.3 party_address (closest anchor) |
+| code_of_conduct | Pointer to authoritative code of conduct / practice | No | URI | When present, SHOULD be versioned | Public | 6.3.4.21 codes_of_conduct (closest anchor) |
+| derogation_reference | Lawful withholding / derogation metadata (optional) | No | Object | When present, SHOULD include reference_uri, authority, valid_until | Public or restricted | N/A (extension field) |
 
-| Field | Description | Required? | Value type / format | Constraints | Exposure |
-| --- | --- | --- | --- | --- | --- |
-| derogation_reference | Lawful withholding / derogation metadata (optional) | No | Object | When present, SHOULD include reference_uri, authority, valid_until | Public or restricted |
-
-### 6.1.2 privacy_access_point
+### 7.1.2 privacy_access_point
 
 rights_access_point SHALL support multiple modalities.
 Each modality entry SHALL include: type, value, label.
 
-### 6.1.3 derogation_reference (optional)
+### 7.1.3 derogation_reference
 
-When lawful derogations apply, derogation_reference SHOULD include: reference_uri, authority, valid_until.
+When lawful derogations apply, derogation_reference SHOULD include: reference_uri, authority, valid_until. (optional)
 
-### 6.2 Notice Record (versioned)
+### 7.2 Notice Record
 
-A Notice Record SHALL be versioned and resolvable such that a First Notice Receipt can reference an immutable version.
-This profile uses First Notice Receipts to reference immutable notice versions.
+A Notice Record SHALL be versioned and resolvable such that an Anchored Notice Receipt can reference an immutable version.
+This profile uses Anchored Notice Receipts to reference immutable notice versions.
 Relationship note (terminology bridge): A Notice Record functions as the machine-readable transparency statement (standing, versioned disclosure artefact). A notification about issuance or change is represented as a transparency notification via the Notice Event Log and/or notice_type = notification, and SHOULD reference the relevant notice_version_reference.
 
-### 6.3 First Notice Receipt
+#### 7.2.1 Reciprocal and proportionate transparency disclosure set
 
-### 6.3.1 Anonymous-by-default
+For each Notice Record version relied upon by a receipt, the controller SHALL publish a **technology + controls disclosure set** that is:
 
-First Notice Receipts SHALL NOT require a pii_principal_id
+- bound to the exact notice_version_reference in effect at disclosure time; and
+- publicly retrievable either inline in the Notice Record or by stable reference.
 
-### 6.3.2 First Notice Receipt field specification table (normative)
+The disclosure set SHALL include, at minimum, the elements defined in **Appendix A (Reciprocal and proportionate transparency extensions)**, including:
 
-The following fields define the minimum interoperable First Notice Receipt.
+- technology_in_use;
+- controls_available_primary;
+- associated_or_derivative_controls (when applicable);
+- secondary_purposes_of_use (when present); and
+- limitations_or_derogations_on_controls (when applicable).
 
-| Field | Description | Required? | Value type / format | Constraints | Exposu |
+The Notice Record SHALL include a stable pointer to this disclosure set using `transparency_disclosure_reference` (URL/URI), unless the full disclosure set is embedded inline in the Notice Record itself.
+
+Changes to the disclosure set that affect technology class(es) in use, the availability/scope/effect of practical rights controls, or secondary purposes SHALL be treated as material changes and SHALL trigger a new notice version and a corresponding Notice Event Log entry (see Appendix A).
+
+#### 7.2.2 Lawful basis interoperability
+
+This profile is lawful-basis interoperable: the Notice Receipt structure SHALL support all lawful bases under applicable law. Each lawful basis has distinct rights, obligations, and dispute triggers.
+Implementations SHALL communicate the asserted lawful basis in the receipt header, and SHALL publish the applicable rights/obligations variant using the Annex C table structure.
+Consent-by-default for two-factor notice: Where an interaction is presented as a two-factor online notice that returns a bilateral receipt (2FN), the default interpretation SHALL be consent unless another lawful basis is explicitly asserted in the receipt header.
+If a lawful basis other than consent is asserted, the receipt header SHALL state that lawful basis explicitly (e.g., contract, legal obligation, legitimate interest, vital interest, public interest) and SHALL reference the corresponding Annex C row (rights/obligations variant).
+Receipts are designed to be detectable and reusable to reduce repetitive notice prompts and repetitive consent prompts in order to mitigate prompt fatigue. The profile is designed to complement existing physical signs and privacy policy pages by providing a standardized notice record that can be extended by context and external codes of conduct to support transparency by default codes of practice.
+By standardizing notice version references and receipt exchange, the profile supports cross border transparency and dispute resolution, including material change signalling through the notice event log.
+
+### 7.3 Anchored Notice Receipt
+
+This profile treats “Anchored Notice Receipt” as a **receipt classification**, not a separate primary artefact type. A receipt MAY be marked as an Anchored Notice Receipt using the optional indicator field `anchored_notice_receipt`.
+Where `anchored_notice_receipt` is not asserted (or is false), the receipt SHALL link to the applicable Anchored Notice Receipt via `anchored_notice_receipt_id` so that subsequent receipts are traceable to the initial notice disclosure event.
+
+### 7.3.1 Anonymous-by-default (Anchored Notice Receipt)
+
+Anchored Notice Receipts SHALL NOT require an account_id or pii_principal_id
+
+### 7.3.2  Notice Receipt field specification table
+
+The following fields define the minimum interoperable Anchored Notice Receipt.
+
+| Field | Description | Required? | Value type / format | Constraints | Exposure |
 | --- | --- | --- | --- | --- | --- |
+| schema_version | Schema reference for technical interpretation of the receipt structure | Yes | String identifier | SHALL reference the implementation documentation (receipt schema) in effect at issuance | Holder issuer |
+| anchored_notice_receipt | Indicator that the receipt instance is the Anchored Notice Receipt (first notice receipt) for the applicable notice version disclosure event | No | Boolean | When present and true, the receipt is classified as an Anchored Notice Receipt; when false or absent, the receipt SHALL reference the applicable Anchored Notice Receipt using anchored_notice_receipt_id | Holder issuer |
 | receipt_id | First Notice Receipt instance identifier | Yes | URI or string identifier | SHALL be unique within the issuer domain or as defined by the implementation | Holder issuer |
+| anchored_notice_receipt_id | Reference to the applicable Anchored Notice Receipt instance identifier | No | URI or string identifier | When anchored_notice_receipt is true, this field SHOULD be absent or equal to receipt_id; when anchored_notice_receipt is false or absent, this field SHALL reference the applicable Anchored Notice Receipt | Holder issuer |
+| account_id | Identifier or reference to the account or relationship context (pseudonymous where applicable) | No | URI or string identifier | When present, SHOULD be unlinkable and data-minimizing; MUST NOT be required for anonymous-by-default operation | Holder issuer |
 | notice_id | Stable notice family identifier | Yes | URI or string identifier | SHALL remain stable across notice versions | Holder issuer |
 | notice_version_reference | Immutable reference to the disclosed notice version | Yes | URI and/or hash reference | SHALL reference the exact notice version in effect at disclosure time | Holder issuer |
-
-| Field | Description | Required? | Value type / format | Constraints | Exposu |
-| --- | --- | --- | --- | --- | --- |
+| transparency_disclosure_reference | Stable pointer to the Notice Record’s technology + controls disclosure set | No | URL/URI | When the disclosure set is not embedded inline in the Notice Record, this field SHOULD be present so relying parties can retrieve the Appendix A disclosure elements bound to notice_version_reference | Holder issuer |
 | controller_identity_record_id | Reference to the CIR | Yes | URI or string identifier | SHALL reference a resolvable CIR | Holder issuer |
 | presented_at | Time of disclosure/presentation | Yes | Date-time | SHALL be recorded with sufficient precision for dispute resolution | Holder issuer |
 | lawful_basis | Asserted lawful basis for the processing context covered by the notice version | Yes | Controlled vocabulary | SHALL use the vocabulary in Annex C; SHALL be present in the receipt header for lawfulbasis interoperability | Holder issuer |
 | two_factor_notice | Indicates whether this disclosure event was a two-factor online notice (2FN) producing a bilateral receipt | No | Boolean | If true and no nonconsent lawful basis is explicitly asserted, the interpretation defaults to consent as per the lawful basis interoperability rule | Holder issuer |
-| notice_type | Notice classification | Yes | Controlled vocabulary | SHALL use the vocabulary in 6.3.1A | Holder issuer |
+| notice_type | Notice classification | Yes | Controlled vocabulary | SHALL use the vocabulary in 7.3.1A | Holder issuer |
 | recipient_jurisdictions | Destination jurisdiction(s) for cross-border transfer/disclosure | No | Array of country codes | When cross-border transfer/disclosure applies, this field SHALL be present; values SHOULD use ISO 31661 alpha-2 | Holder issuer |
 | transfer_mechanism | High-level transfer mechanism / safeguard class | No | Controlled vocabulary | When cross-border transfer/disclosure applies, this field SHALL be present; vocabulary MAY be profiled by jurisdiction | Holder issuer |
 | surveillance_risks | Material risk disclosure hook for state access/surveillance exposure | No | Text or structured reference | When applicable, SHOULD be present; if present, SHALL be version-bound via notice_version_reference | Holder issuer |
 | rights_derogations | Disclosure of rights limitations/derogations in the applicable context | No | Text or structured reference | When applicable, SHOULD be present; changes SHALL be treated as material change | Holder issuer |
 
-### 6.3.1A notice_type vocabulary (normative)
+### 7.3.1A notice_type vocabulary (normative)
 
 notice_type SHALL use one of the following values:
 
+- Statement
 - notification
-- disclosure
+- risk disclosure
 - policy
 - signal
 
@@ -228,7 +252,7 @@ Implementations MAY define additional notice types, but SHALL map them to one of
 
 ### 6.3.2 Required identifiers
 
-A First Notice Receipt SHALL include at minimum:
+An Anchored Notice Receipt SHALL include at minimum:
 
 - receipt_id
 - notice_id
@@ -237,16 +261,16 @@ A First Notice Receipt SHALL include at minimum:
 - presented_at (event_time)
 - notice_type
 
-### 6.4 Notice Event Log
+### 7.4 Notice Event Log
 
-### 6.4.1 Minimum event types
+### 7.4.1 Minimum event types
 
 The Notice Event Log SHALL support, at minimum:
 
 - notice_issued
 - notice_material_change
 
-### 6.4.2 Event record minimum fields (normative)
+### 7.4.2 Event record minimum fields (normative)
 
 Each Notice Event Log entry SHALL include at minimum:
 
@@ -256,7 +280,7 @@ Each Notice Event Log entry SHALL include at minimum:
 - notice_id and/or notice_version_reference
 - receipt_id (when applicable)
 
-### 6.4.3 Event type registry (normative)
+### 7.4.3 Event type registry (normative)
 
 Implementations SHALL support at minimum the following event types. Additive event types MAY be defined by companion specifications.
 
@@ -275,48 +299,140 @@ NOTE: Implementations MAY tier event-log requirements by assurance level; where 
 ## 8 Mandatory requirements
 
 1. CIR publication (publicly accessible)
-2. Anonymous First Notice Receipt-by-default (no pii_principal_id required), aligned with §6.3.1
+2. Anonymous Anchored Notice Receipt-by-default (no pii_principal_id required), aligned with §7.3.1
 3. Version binding and ongoing reference retention
 4. Material change rule + notice event log entry
-5. First Notice Receipt SHALL populate notice_type using the vocabulary in 6.3.1A.
+5. Anchored Notice Receipt SHALL populate notice_type using the vocabulary in 7.3.1A.
 6. Reciprocal and proportionate technology + rights-controls disclosure, aligned with the rule in “Lawful basis interoperability”.
 
 ## Annex A - Informative Mapping to ISO/IEC TS 27560:2023
 
 This annex provides an initial interoperability mapping between the base extension artefacts and ISO/IEC TS 27560:2023 anchors. It is intentionally a starter mapping suitable for committee review; field-level clause alignment can be expanded as the 27560:2023-1 text is stabilized.
 
-## A. 1 Artefact-to-anchor mapping (high level)
+- TS clause references refer to ISO/IEC TS 27560:2023 (not drafts).
+- “Profile field” names refer to fields defined in this document’s receipt and record tables.
+- “Action” is the recommended migration or interpretation rule for implementers exchanging records across the TS and this profile.
+
+## A.1 TS 27560:2023 record + receipt header alignment
+
+This profile supports TS-style schema governance and identifiers by carrying forward `schema_version` and receipt/record identifiers. Where TS uses `pii_principal_id` as required in the consent record header, this profile uses `account_id` as an optional identifier for relationship context (pseudonymous where applicable).
+
+## A.1.1 New vs updated fields
+
+This section classifies profile fields relative to TS 27560:2023:
+
+- **New fields**: not present in TS 27560:2023.
+- **Updated TS fields**: a TS field is renamed, constrained, or its semantics are adapted.
+
+## A.1.1A New fields introduced by this profile
+
+| Profile field | Status | Closest TS anchor | Notes |
+| --- | --- | --- | --- |
+| anchored_notice_receipt | New | N/A | Indicator that a receipt instance is classified as the First Notice Receipt for the applicable notice disclosure event. |
+| anchored_notice_receipt_id | New | N/A | Linkage field; when first_notice_receipt is false/absent, this field references the applicable First Notice Receipt. |
+| notice_id | New | privacy_notice (reference) | Stable notice family identifier; complements the TS privacy_notice URL/version reference by providing a stable family identifier across versions. |
+| notice_version_reference | New | privacy_notice (reference) | Immutable reference to the disclosed notice version; supports version binding beyond a mutable URL. |
+| controller_identity_record_id | New | party_id | Specializes controller party identification as a resolvable CIR identifier. |
+| presented_at | New | event_time | Time of disclosure/presentation; aligned to TS event_time semantics for the notice disclosure event. |
+| notice_type | New | N/A | Classification vocabulary (notification/disclosure/policy/signal). |
+| two_factor_notice | New | N/A | Optional indicator for the 2FN pattern producing a bilateral receipt. |
+| recipient_jurisdictions | New | recipient_third_parties / jurisdiction | Optional explicit cross-border destination jurisdictions (simplified hook for transfer disclosure). |
+| transfer_mechanism | New | N/A | Optional safeguard/transfer mechanism class for cross-border transfers. |
+| surveillance_risks | New | impact_assessment (optional) | Optional risk disclosure hook for surveillance/state access exposure. |
+| rights_derogations | New | N/A | Optional disclosure of rights limitations/derogations in the applicable context. |
+
+## A.1.1B Updated TS fields (rename / relax / specialize)
+
+| TS 27560:2023 field | Profile field | Change type | Notes |
+| --- | --- | --- | --- |
+| pii_principal_id | account_id | Renamed + relaxed | TS requires pii_principal_id in the consent record header; this profile replaces it with optional account_id to support anonymous-by-default operation (pseudonymous where applicable). |
+| party_id (controller) | controller_identity_record_id | Specialized | Controller party identifier is specialized as a CIR reference rather than an opaque party_id. |
+
+## A.1A Field mapping table
+
+| TS 27560:2023 field | TS clause | Profile field | Action | Notes |
+| --- | --- | --- | --- | --- |
+| schema_version | 6.3.3.2 / 6.4.5.2 | schema_version | Same | Required in TS record and TS receipt metadata; required in this profile’s receipt header. |
+| record_id | 6.3.3.3 | receipt_id (for receipt artefacts) | Map / rename | TS distinguishes record_id (record) and receipt_id (receipt). This profile uses receipt_id for receipt instances; implementations MAY also persist a TS-style record_id in controller-side records. |
+| receipt_id | 6.4.5.3 | receipt_id | Same | Unique receipt instance identifier. |
+| pii_principal_id | 6.3.3.4 | account_id | Map / relax | TS requires pii_principal_id in the record header. This profile makes account_id optional to support anonymous-by-default operation; when present it SHOULD be data-minimizing and unlinkable. |
+| event_time | 6.3.7.2 | presented_at | Map | For First Notice Receipt classification, presented_at captures the time of disclosure/presentation (TS event_time equivalent). |
+| party_id (controller) | 6.3.6.2 | controller_identity_record_id | Map / specialize | Controller party identifier is specialized as a reference to the CIR identifier. |
+| party_name (controller) | 6.3.6.7 | controller_name (CIR) | Map | Carried in the CIR rather than repeated per receipt where a reference receipt pattern is used. |
+| party_contact (controller) | 6.3.6.9 | privacy_access_point (CIR) | Map | Rights and contact modalities are carried as structured entries in CIR privacy_access_point. |
+| privacy_notice | 6.3.4.2 | notice_version_reference | Map / extend | TS uses a notice reference (typically URL/version). This profile uses an immutable notice_version_reference (URL and/or content hash) and MAY also carry a notice URL in a Notice Record. |
+| language | 6.3.4.3 | (Notice Record disclosure set) | Map | Language remains applicable to Notice Record rendering; include in the Notice Record and/or referenced transparency statement where multilingual delivery is supported. |
+| purposes | 6.3.4.4 | (Notice Record disclosure set) | Map | TS purposes are carried in the Notice Record and SHOULD be bindable to notice_version_reference; secondary purposes are disclosed via secondary_purposes_of_use (Appendix A) when present. |
+| purpose | 6.3.4.5 | (Notice Record disclosure set) | Map | Purpose labels/identifiers are disclosed in the Notice Record for the applicable notice version. |
+| lawful_basis | 6.3.4.7 | lawful_basis | Map / generalize | TS lawful_basis is consent-scoped; this profile generalizes lawful basis for interoperability across lawful bases (Annex C vocabulary). |
+| pii_information | 6.3.4.8 | (Optional Profile B1) | Map | PII attribute/category inventories are profile-extension scope (B1 processing record). A Stage 1 reference receipt MAY omit inventories. |
+| pii_controllers | 6.3.4.9 | controller_identity_record_id | Map / specialize | Controller identification is anchored in CIR via controller_identity_record_id; joint controllers MAY be represented as multiple CIR references. |
+| storage_locations | 6.3.4.12 | (Optional Profile B1) | Map | Storage location disclosure is processing-record scope (B1) and MAY be referenced from notice versions where required. |
+| retention_period | 6.3.4.13 | (Optional Profile B1) | Map | Retention disclosure is processing-record scope (B1) and MAY be referenced from notice versions where required. |
+| jurisdiction | 6.3.4.17 | jurisdiction (CIR) | Map | TS jurisdiction is a PII processing field; this profile additionally requires a controller-asserted jurisdiction in CIR for controller-id-first inspection. |
+| recipient_third_parties | 6.3.4.18 | (Optional Profile B1) / recipient_jurisdictions | Map / extend | Recipient inventory may be carried in B1; cross-border destinations are disclosed using recipient_jurisdictions when applicable. |
+| withdrawal_method | 6.3.4.19 | privacy_access_point (CIR) | Map / refactor | Withdrawal and other rights controls are represented as structured modalities via privacy_access_point and the Appendix A controls disclosure set. |
+| privacy_rights | 6.3.4.20 | privacy_access_point (CIR) | Map / refactor | Rights exercise is represented via structured privacy_access_point modalities and the Appendix A controls disclosure set. |
+| codes_of_conduct | 6.3.4.21 | code_of_conduct_reference (CIR) | Map | Code-of-conduct reference is carried in the CIR where applicable. |
+| impact_assessment | 6.3.4.22 | surveillance_risks (when applicable) | Map / specialize | Profile introduces surveillance_risks as a targeted risk disclosure hook; broader impact assessment remains optional processing-record scope. |
+| authority_party | 6.3.4.23 | privacy_access_point (CIR) | Map / refactor | Complaint/appeal access points are represented as privacy_access_point modalities and/or referenced authorities. |
+| event_time | 6.3.7.2 | presented_at | Map | Time of disclosure/presentation is recorded in presented_at for notice disclosure events. |
+| validity_duration | 6.3.7.3 | (Optional; basis-dependent) | Map | Validity duration MAY be represented for time-bounded authorizations; when used it SHOULD be bound to the applicable lawful basis and scope. |
+| entity_id | 6.3.7.4 | controller_identity_record_id | Map / constrain | For controller-issued notice events, the acting entity can be represented by the controller_identity_record_id (CIR reference). |
+| event_type | 6.3.7.5 | notice_type | Map / extend | TS event_type supports consent-type examples; this profile uses notice_type to classify notice context and supports Notice Event Log event_type for lifecycle events. |
+| event_state | 6.3.7.6 | (Notice Event Log event_type) | Map | Lifecycle state transitions are represented as Notice Event Log entries (notice_issued, notice_material_change, etc.). |
+| collection_method | 6.3.4.10 | (Optional Profile B1) | Map | Collection method disclosure is processing-record scope (B1) and MAY be referenced from notice versions where required. |
+| processing_method | 6.3.4.11 | technology_in_use | Map / refactor | Where processing methods imply technology-mediated capabilities (e.g., profiling, automated decision), represent them in technology_in_use (Appendix A) and disclose corresponding controls. |
+| processing_locations | 6.3.4.14 | (Optional Profile B1) / recipient_jurisdictions | Map / extend | Processing locations may be captured in B1; cross-border destinations are disclosed via recipient_jurisdictions when applicable. |
+| geographic_restrictions | 6.3.4.15 | (Optional Profile B1) | Map | Geographic restrictions are processing-record scope (B1) and MAY be referenced from notice versions where required. |
+| services | 6.3.4.16 | (Notice Record disclosure set) | Map | Service/business-process labels may be disclosed in the Notice Record to contextualize purposes; keep consistent with notice_version_reference. |
+| pii_type | 6.3.5.2 | (Optional Profile B1) | Map | PII category listing is processing-record scope (B1). Where disclosed in notices, it SHOULD be aligned to the same PII categories used in B1 records. |
+| pii_attribute_id | 6.3.5.3 | (Optional Profile B1) | Map | Attribute identifiers are an implementation detail within B1 schemas; maintain stable identifiers where possible. |
+| pii_optional | 6.3.5.4 | (Optional Profile B1) | Map | Optionality of PII disclosure is captured in B1 inventories and MAY be disclosed in the Notice Record where required for meaningful choice. |
+| sensitive_pii_category | 6.3.5.5 | (Optional Profile B1) | Map | Sensitivity classification is processing-record scope (B1) and MAY be disclosed in the Notice Record where required by jurisdiction/sector. |
+| special_pii_category | 6.3.5.6 | (Optional Profile B1) | Map | Special-category classification is processing-record scope (B1) and MAY be disclosed in the Notice Record where required by jurisdiction. |
+| party_address | 6.3.6.3 | controller_address (CIR) | Map | Controller address may be carried in CIR; for other parties, use TS party identification where B1 requires inventories. |
+| party_email | 6.3.6.4 | privacy_access_point (CIR) | Map / refactor | Email is represented as a modality entry in privacy_access_point. |
+| party_url | 6.3.6.5 | controller_public_id_uri | Map / specialize | Profile distinguishes a public controller identifier URI (controller_public_id_uri) and may also include general web URLs in CIR extensions. |
+| party_phone | 6.3.6.6 | privacy_access_point (CIR) | Map / refactor | Phone is represented as a modality entry in privacy_access_point. |
+| party_role | 6.3.6.8 | (CIR scoping) | Constrain | CIR represents the controller role; other roles MAY be represented in B1 party inventories using TS party_role values. |
+| party_type | 6.3.6.10 | (Optional CIR extension) | Map | Party type may be carried as an optional CIR extension where useful for accountability classification. |
+
+## A.2 Artefact-to-27560 TS mapping (
 
 | Base extension record | Primary purpose | ISO/IEC TS 27560:2023 anchor | Notes / deltas |
 | --- | --- | --- | --- |
 | Controller Identification Record (CIR) | Controller accountability anchor (controller-id-first) | Party identification (controller role) | Profiled subset of party fields + required pointers (rights access, event log, publication) |
 | Notice Record (versioned) | Machine-readable notice content + version binding | Consent record context (notice/policy content reference) | Adds explicit immutable notice version reference (notice_version_reference) |
-| First Notice Receipt | Evidence of disclosure (anonymous-bydefault) | Consent receipt / record header + context | Stage 1 explicitly removes pii_principal_id requirement; receipt is initially versionbound |
-| Notice Event Log | Lifecycle and material change spine | Event / lifecycle elements (event log / change record) | Adds minimum event type expectations + tiering note |
+| First Notice Receipt | Evidence of disclosure (anonymous-bydefault) | Consent receipt / record header + context | First notice receipt explicitly removes pii_principal_id requirement; receipt is initially versionbound |
+| Notice Event Log | Lifecycle and material change events | Event / lifecycle elements (event log / change record) | Adds minimum event type expectations + tiering note |
 
-## A. 2 CIR mapping
+## A.3 CIR mapping
 
 | CIR field (base extension) | TS 27560:2023 anchor (exact) | Change type | Notes |
 | --- | --- | --- | --- |
 | controller_public_id_uri | TBD (Party identification fields) | Constrained | Public resolvable controller identifier (URI form); profiled as required |
 | controller_name | TBD (Party name fields) | Constrained | Controller legal name; profiled as required |
-| jurisdiction | TBD (Jurisdiction / applicability context) | New | Controller-asserted applicable jurisdiction (or pointer) |
+| jurisdiction | 6.3.4.17 jurisdiction (PII processing) | New | Controller-asserted applicable jurisdiction (or pointer). Closest TS anchor is the PII processing jurisdiction field. |
 | privacy_access_point | TBD (Contact / rights contact fields) | Constrained | Structured modalities (web/email/phone/etc.); profiled as required and structured |
 | notice_event_log_url | TBD (Event / lifecycle reference) | New | Pointer to append-only lifecycle spine |
 
-## A. 3 First Notice Receipt mapping
+## A.4 Notice Receipt mapping
 
 | Notice Receipt field (base extension) | 27560:2023 anchor | Notes |
 | --- | --- | --- |
+| schema_version | schema_version | Required in TS receipt metadata; required in this profile’s receipt header. |
 | receipt_id | Record identifier | Receipt instance identifier |
+| first_notice_receipt (indicator) | N/A | New indicator field to classify a receipt instance as the First Notice Receipt. |
+| first_notice_receipt_id (reference) | N/A | New linkage field; subsequent receipts reference the applicable First Notice Receipt. |
 | notice_id | Notice/receipt linkage | Stable notice family identifier |
 | notice_version_reference | Notice reference | Immutable reference to disclosed notice version |
 | controller_identity_record_id | Party identification | Links receipt to CIR |
 | presented_at (event_time) | Event / record time | Time of disclosure/presentation |
 | notice_type | Context | Notification/disclosure/policy/signal (vocabulary defined by the extension) |
-| (explicit absence) pii_principal_id | Data subject / principal identifier | Removed for Stage 1 anonymous-bydefault conformance |
+| account_id (optional) | pii_principal_id | Profile replaces TS-required pii_principal_id with optional account_id for relationship context (pseudonymous where applicable). |
 
-## A. 4 Notice Event Log mapping
+## A.5 Notice Event Log mapping
 
 | Event Log element (base extension) | 27560:2023 anchor | Notes |
 | --- | --- | --- |
@@ -324,121 +440,61 @@ This annex provides an initial interoperability mapping between the base extensi
 | notice_material_change | Event type | Material change triggers new notice version and new receipt issuance |
 | tiering note | Conformance guidance | Allows assurance-tiered event-log requirements with explicit tier declaration |
 
-## Annex B - Optional profile-extension appendix
+## Annex B - Optional profile extensions
 
-This annex defines optional profile extensions for implementers that need processing-record alignment. These extensions are in addition to this existing UNRP and are not required for 27560:2023-1 base extension conformance.
-Editorial rule: any record created under these optional profiles SHALL preserve the base extension’s reference integrity requirements (e.g., stable notice_id and immutable notice_version_reference) and SHALL NOT redefine Stage 1 notice/receipt semantics.
+This annex defines two optional profile extensions that build on ISO/IEC TS 27560:2023 while preserving the base extension’s reference integrity and “reciprocal and proportionate” transparency requirements.
 
-## B. 1 Optional Profile - PII Processing Records (controller/processor governance)
+### B.0 Extension discipline
 
-## B.1.1 Scope
+Any record created under the optional profiles in this annex:
 
-Defines an optional controller/processor-side processing record profile (RoPA-aligned) that references base extension artefacts by identifier.
+- SHALL preserve base identifiers and version binding (notice_id + notice_version_reference).
+- SHALL NOT redefine Stage 1 (first) notice/receipt semantics.
+- SHALL reference the Controller Identification Record (CIR) via controller_identity_record_id.
 
-## B.1.2 Minimum interoperability requirements
+### B.1 Optional Profile B1 — PII Processing Record structure (controller/processor governance)
 
-- SHALL reference notice_id + notice_version_reference for any processing facts claimed to be disclosed.
-- SHALL reference controller_identity_record_id (CIR).
+**Purpose:** Add a RoPA-aligned, controller/processor-side processing record structure that is traceable to the disclosed notice version(s).
+
+#### B.1.1 Minimum conformance requirements (normative)
+
+A conforming B1 processing record:
+
+- SHALL include a unique processing_record_id.
+- SHALL include controller_identity_record_id (CIR reference).
+- SHALL include notice_id + notice_version_reference for every disclosed processing fact relied upon.
+- SHALL include lawful_basis and SHALL use the Annex C vocabulary.
 - SHOULD reference Notice Event Log entries where material change, withdrawal/objection, or scope escalation is relevant.
 
-## B.1.3 Conformance variants (starter)
+#### B.1.2 How to extend ISO/IEC TS 27560:2023 with B1
 
-- B1-Controller (controller record obligations)
-- B1-Processor (processor/sub-processor chain)
+Use TS 27560:2023 as the baseline for:
 
-## B. 2 Optional Profile - Personal PII Processing Records (individual-held)
+- party identification (controller role) — profile it into CIR and reference it by controller_identity_record_id;
+- event_time semantics — align record creation/update events with the Notice Event Log;
+- processing purposes + recipients + retention — reuse TS-style field naming where practical, but ensure each processing claim is bound to notice_version_reference.
 
-## B.2.1 Scope
+### B.2 Optional Profile B2 — Personal Processing Record structure (individual-held)
 
-Defines an optional individual-held evidence record set (receipt wallet spine) that supports portability and rights exercise while remaining data-minimizing.
+**Purpose:** Add an individual-held, data-minimizing personal evidence record that is portable and supports rights exercise.
 
-## B.2.2 Minimum interoperability requirements
+#### B.2.1 Minimum conformance requirements (normative)
 
-- SHALL support anonymous/pseudonymous operation by default.
-- SHALL support a minimal “reference receipt” pattern that points to notice_version_reference + CIR.
-- SHALL include a minimum rights exercise payload via privacy_access_point.
+A conforming B2 personal record:
 
-## B. 3 Mapping and field tables (to be completed)
+- SHALL include a unique personal_record_id.
+- SHALL include notice_id + notice_version_reference (the evidence spine).
+- SHALL include controller_identity_record_id (CIR reference).
+- SHALL include privacy_access_point (or a reference to it via CIR) sufficient to exercise rights.
+- SHALL support anonymous or pseudonymous operation by default.
+- MAY include receipt_id as a pointer to a specific receipt instance; when present it SHOULD be accompanied by notice_version_reference.
 
-Populate:
+#### B.2.2 How to extend ISO/IEC TS 27560:2023 with B2 Personal processing record
 
-1. Field lists + cardinality
-2. Relationship to ISO/IEC TS 27560:2023 anchors
-3. Worked examples
+Treat the TS receipt as the exchange artefact and the B2 record as the individual-held “wallet architecture”:
 
-## B.3.1 Field lists + requirement status (starter tables)
-
-B.3.1.1 Optional Profile B1 (Controller/Processor processing record) — minimum fields
-
-| Field | Description | Required? | Value type / format | Constraints |
-| --- | --- | --- | --- | --- |
-| processing_record_id | Identifier for the processing record instance | Yes | URI or string identifier | SHALL be unique within the issuer domain or as defined by the implementation |
-| controller_identity_record_id | Pointer to the Controller Identification Record (CIR) | Yes | URI or string identifier | SHALL reference a resolvable CIR |
-| notice_id | Stable notice family identifier | Yes | URI or string identifier | Each referenced notice_id SHALL be paired with a notice_version_reference |
-| notice_version_reference | Immutable reference(s) to notice versions relied upon for disclosure claims | Yes | URI and/or hash reference | SHALL reference the exact notice version in effect for the disclosed processing facts |
-| lawful_basis | Asserted lawful basis for the processing context | Yes | Controlled vocabulary | SHALL use Annex C vocabulary |
-
-| Field | Description | Required? | Value type / format | Constraints |
-| --- | --- | --- | --- | --- |
-|  | processing context |  |  |  |
-| purposes | Declared processing purposes covered by the record | Yes | Array of strings and/or purpose identifiers | SHALL be consistent with the referenced notice version(s) |
-| recipients_or_categories | Recipients or recipient categories | No | Array of strings and/or identifiers | When present, SHOULD include crossborder/jurisdiction indicators |
-| retention | Retention period or retention rule | No | String/object | When present, SHOULD be consistent with referenced notice version(s) |
-| notice_event_log_url | Pointer to relevant Notice Event Log (optional) | No | URL/URI | When present, SHOULD support discovery of material-change events impacting this record |
-
-B.3.1.2 Optional Profile B2 (Personal evidence spine / wallet-held) - minimum fields
-
-| Field | Description | Required? | Value type / format | Constraints |
-| --- | --- | --- | --- | --- |
-| personal_record_id | Identifier for the individual-held record instance | Yes | URI or string identifier | SHALL be unique within the holder domain or wallet context |
-| receipt_id | Referenced First Notice Receipt identifier | No | URI or string identifier | When present, SHOULD be accompanied by notice_version_reference |
-| notice_id | Stable notice family identifier | Yes | URI or string identifier | SHALL remain stable across notice versions |
-| notice_version_reference | Immutable reference(s) to disclosed notice versions | Yes | URI and/or hash reference | SHALL reference the exact notice version(s) held as evidence |
-| controller_identity_record_id | Pointer to the CIR | Yes | URI or string identifier | SHALL reference a resolvable CIR; MAY be cached by the holder |
-| privacy_access_point | Rights/contact access modalities | Yes | Array of objects | SHALL enable rights exercise without requiring additional identification by default |
-
-| Field | Description | Required? | Value type / format | Constraints |
-| --- | --- | --- | --- | --- |
-|  | (copied or referenced) |  |  |  |
-| notes | Optional holder annotations | No | String | SHOULD remain dataminimizing and unlinkable |
-
-B.3.2 Relationship to ISO/IEC TS 27560:2023 anchors (minimum mapping)
-
-| Optional profile element | Closest TS 27560:2023 anchor | Interoperability note |
-| --- | --- | --- |
-| B1 processing_record_id | Record identifier | Distinct from receipt_id; used to reference processing-record instances that cite notice versions |
-| B1 controller_identity_record_id | Party identification (controller role) | Uses the base extension CIR pointer as the stable accountability anchor |
-| B1 notice_id + notice_version_reference | Context / notice reference | Provides verifiable linkage between processing facts and disclosed notice versions |
-| B1 lawful_basis | Legal basis / justification context | Uses Annex C vocabulary so the same basis indicator is interoperable across receipts and processing records |
-| B2 receipt_id | Consent receipt / record identifier | Wallet-held evidence MAY store only references (reference receipt pattern) to remain data-minimizing |
-| B2 privacy_access_point | Contact / rights mechanisms | Supports rights exercise by carrying forward access modalities from the CIR |
-
-## B.3.3 Worked examples (frame)
-
-B.3.3.1 Example: B1 processing record citing a disclosed notice version
-
-| Field | Example value |
-| --- | --- |
-| processing_record_id | urn:example:processing-record:7f2b |
-| controller_identity_record_id | https://controller.example/cir/123 |
-| notice_id | https://controller.example/notice/abc |
-| notice_version_reference | sha256:2b7e… (immutable hash reference) |
-| lawful_basis | legitimate_interest |
-| purpose, or purpose bundle | [“fraud prevention”, “service security”] |
-
-B.3.3.2 Example: B2 personal evidence record storing a reference receipt set
-
-| Field | Example value |
-| --- | --- |
-| personal_record_id | urn:example:wallet:evidence:91aa |
-
-| Field | Example value |
-| --- | --- |
-| receipt_id | urn:example:receipt:55cc |
-| notice_id | https://controller.example/notice/abc |
-| notice_version_reference | sha256:2b7e… (immutable hash reference) |
-| controller_identity_record_id | https://controller.example/cir/123 |
-| privacy_access_point | [{type:"web", value:"https://controller.example/privacy", label:"Privacy access point"}] |
+- Keep B2 minimal (references first; no replication of full processing inventories).
+- When B2 stores additional details, they SHOULD be derived from the TS receipt fields (or TS-compatible receipt extensions) and remain unlinkable unless the individual chooses otherwise.
 
 ## B. 4 Relationship to companion specifications
 
@@ -456,54 +512,50 @@ This annex defines the lawful basis vocabulary and a minimum rights/obligations 
 | consent | Processing based on meaningful choice by the individual | Withdrawal; access; rectification; erasure (where applicable); objection (where applicable) | Record evidence of consent; enable withdrawal; ensure freely given/specific/informed/unambiguous; avoid coercion; demonstrate proof | 2FN MAY be used; if 2FN used and no other lawful basis asserted, consent is the default interpretation |
 | contract | Processing necessary for contract performance or steps at request of the individual | Access; rectification; objection/complaint pathways; portability where applicable | Disclose necessity scope; limit processing to contract purposes; document retention aligned to contract | Header SHALL assert contract and identify the contractpurpose scope covered by the notice version |
 | legal_obligation | Processing necessary to comply with a legal obligation | Access and explanation; complaint/appeal pathways; restrictions where lawful | Identify the obligation authority; document statutory basis; apply minimization; disclose retention mandates | Header SHALL assert legal obligation and provide authority reference (law/regulation/court order) or pointer |
-
-| lawful_basis (value) | Meaning (high level) | Rights commonly triggered | Controller obligations commonly triggered | Receipt/header requirements (minimum) |
-| --- | --- | --- | --- | --- |
 | legitimate_interest | Processing necessary for legitimate interests balanced against the individual’s rights | Right to object; access; explanation; complaint/appeal pathways | Document balancing/necessity; provide objection mechanism; apply safeguards and minimization | Header SHALL assert legitimate interest and provide a pointer to the balancing rationale or summary |
 | vital_interest | Processing necessary to protect vital interests | Access and explanation after the fact (where applicable) | Document emergency necessity; limit scope and duration; later notice and accountability | Header SHALL assert vital interest and record emergency context constraints |
 | public_interest | Processing necessary for a task carried out in the public interest or under official authority | Access; explanation; objection/appeal pathways as applicable | Identify authority; define task scope; apply proportionality; enable oversight mechanisms | Header SHALL assert public interest and provide authority/task reference or pointer |
 
-## Proposed Additions Appendix - A - Reciprocal and proportionate transparency extensions (normative)
+## Annex D - Use of the receipt in a four-stage exchange (informative)
 
-This appendix defines a normative extension pattern for implementers and committees who need explicit, testable requirements for reciprocal and proportionate transparency tied to the technologies in use and the practical rights controls (including associated or derivative rights controls).
+This annex describes a staged exchange pattern (commonly referred to as an ANCR-style exchange) in which a Notice Receipt is used as the **evidence architecture** across multiple stages. This annex is informative; it does not define protocol mechanics.
 
-### C.1 Normative objective
+### D.1 Stage 1 — Anchored Notice Receipt (notice disclosure proof)
 
-Where a technology-mediated processing capability is present, the Notice Record (and/or referenced transparency statement) SHALL disclose the corresponding practical rights controls in a manner that is:
+Purpose: establish bilateral evidence that a specific notice version was disclosed/presented, suitable for dispute resolution and (when the lawful basis is consent) valid legal consent proof-of-notice.
 
-- **proportionate** to the risk surface and the capability in use, and
-- **reciprocal** to the controller’s technical capability (what the technology can do is matched by what the individual can see and control).
+Minimum binding identifiers:
 
-### C.2 Minimum disclosure elements (normative)
+- `receipt_id`
+- `notice_id`
+- `notice_version_reference`
+- `controller_identity_record_id`
+- `presented_at`
 
-For each Notice Record version relied upon by a First Notice Receipt, the controller SHALL publish (inline or by stable reference) the following disclosure elements as represented in the record of notice.
+Optional linkage fields:
 
-### C.2.1 Disclosure element specification table (normative)
+- `anchored_notice_receipt` (true)
 
-| Element | Description | Required? | Value type / format | Constraints | Exposure |
-| --- | --- | --- | --- | --- | --- |
-| technology_in_use | Technology class(es) in use for the processing context (e.g., tracking, profiling, automated decision, biometric inference, cross-device linkage, data brokerage, disclosure/transfer mechanisms). | Yes | Array (controlled vocabulary values + optional free-text labels) | SHALL be specific enough for relying parties to understand the capability present and assess proportionality. | Public |
-| controls_available_primary | Controls that can be exercised by the individual, including at minimum: withdraw (when consent), object (when applicable), complain/appeal, and automatic information access. | Yes | Array of objects | Each entry SHALL include: control_type, modality (e.g., web, email, API, signal), scope, and effect. | Public |
-| associated_or_derivative_controls | Additional controls arising due to technology choices (e.g., opt-out of targeted advertising, signal-based controls, browser/device signals, global privacy controls, do-not-sell/share controls). | Yes (when applicable) | Array of objects | When a derivative control exists, it SHALL be disclosed with the same minimum structure as primary controls (control_type, modality, scope, effect). | Public |
-| secondary_purposes_of_use | Disclosure of secondary purposes (beyond the primary purpose) and the corresponding control(s) available for those secondary purposes. | Yes (when present) | Array of objects | Each secondary purpose entry SHALL disclose: purpose label/identifier, lawful basis (if distinct), and the control mechanism (e.g., separate opt-in/opt-out, withdrawal equivalence, or objection pathway), including scope and effect. | Public |
-| limitations_or_derogations_on_controls | Material limitations or derogations that constrain controls, including where a control is unavailable in a given context (and why), and the authority/pointer supporting that limitation. | Yes (when applicable) | Array of objects | Each entry SHOULD include: affected_control, limitation_type, rationale, authority_reference (URI), and valid_until (where applicable). | Public or restricted |
+### D.2 Stage 2 — Authorization receipt (basis-dependent)
 
-### C.3 Material change rule (normative addition)
+Purpose: express an authorization state (e.g., consent, contract acknowledgement, legal obligation acknowledgement) that is **explicitly linked** to the Stage 1 Anchored Notice Receipt.
 
-Changes to any of the following SHALL be treated as **material changes**:
+Interoperability rule: a Stage 2 receipt SHOULD reference the Stage 1 Anchored Notice Receipt using `anchored_notice_receipt_id` (or by reusing `receipt_id` where a single receipt instance is updated in-place by the implementation).
 
-- technology class(es) in use;
-- availability, scope of disclosure, or practical effect of any rights control (including associated or derivative controls);
-- secondary purposes of use and their control mechanisms.
+### D.3 Stage 3 — Micro credential (protocol-facing)
 
-Such changes SHALL trigger (a) a new notice version, and (b) a corresponding Notice Event Log entry.
+Purpose: represent Stage 2 authorization as a credential or signed assertion suitable for protocol enforcement (e.g., API/device authorization) without resharing full receipt content.
 
-### C.4 ISO/IEC JTC 1/SC 27/WG 5 comment table (proposed updates)
+Interoperability rule: any Stage 3 credential SHOULD carry (or be derivable from) the binding identifiers of Stage 1 (`controller_identity_record_id` + `notice_version_reference` + `receipt_id`) to prevent ambiguity and replay across relying parties.
 
-Use this table to submit exact normative changes into the relevant draft (clause numbers/line numbers to be updated to match the target working draft pagination).
+### D.4 Stage 4 — Portable token (portability)
 
-| **MB** | **NC** | **Line number** | **Clause/Subclause** | **Paragraph/Figure/Table** | **Type of comment** | **Comments** | **Proposed change** | **Observations of the secretariat** |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| CA | C-1 | TBD | 6.2 (Reference integrity and version binding) | Material change rule | te | Material change definition currently lists examples (purposes, lawful basis, recipients/jurisdictions, retention, rights mechanisms) but does not explicitly include technology class changes nor practical rights controls changes, which are essential for reciprocal and proportionate transparency. | Add to the material change list: “technology class(es) in use; availability/scope/effect of practical rights controls (including associated or derivative controls); and secondary purposes of use and corresponding controls.” Also require a Notice Event Log entry for these changes. |  |
-| CA | C-2 | TBD | 6.2 and/or 7 (Notice Record specifications) | Notice Record (versioned) | te | The profile introduces reciprocal and proportionate transparency as a normative rule, but the Notice Record specification does not require publishing the minimum disclosure elements needed for testable interoperability (technology in use, controls, derivative controls, limitations, and secondary purposes). | Insert normative minimum disclosure requirements for each Notice Record version relied upon by a receipt: (a) technology class(es) in use; (b) controls available including withdraw (where consent), object (where applicable), complain/appeal, automatic information access; (c) associated/derivative controls; (d) secondary purposes of use + corresponding controls; (e) limitations/derogations + authority/pointer. |  |
-| CA | C-3 | TBD | Annex C (Lawful basis variants) | Rights and obligations rows | te | Annex C enumerates rights and obligations per lawful basis but does not explicitly require a pointer to the technology/control disclosure set, and does not ensure secondary purposes are separately controllable and disclosed. | Add a minimum receipt/header requirement (or additional column) requiring a pointer/reference to the Notice Record’s “technology + rights controls + secondary purposes” disclosure set. For consent, explicitly require withdrawal mechanism and scope; for legitimate interest/public interest, explicitly require objection/complaint pathway and automatic information access. |  |
+Purpose: enable portability and re-use of authorization state across controllers and jurisdictions, subject to scope limits and revocation/withdrawal controls.
+
+Interoperability rule: any Stage 4 token SHOULD be traceable to Stage 1 via the binding identifiers and SHOULD include (or reference) a status pointer that enables relying parties to verify whether the Stage 1 notice version and the Stage 2 authorization remain active.
+
+### D.5 Lifecycle and invalidation
+
+Where staged exchanges are used, implementations SHOULD record lifecycle events (issuance, material change, withdrawal/objection, expiry, supersession) in the Notice Event Log so that credentials/tokens derived in Stages 3–4 can be invalidated or superseded when the underlying notice or authorization state changes.
+
+##
