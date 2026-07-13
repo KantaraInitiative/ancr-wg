@@ -22,12 +22,16 @@ evidence.
 
 1. **Kantara Consent Receipt** — the original specification that established the
    receipt as the unit of consent evidence.
-2. **ANCR (Anchored Notice and Consent Receipt)** — anchors the receipt to a
+2. **ISO/IEC 29184:2020 (Annex B)** — the Consent Receipt was adopted into ISO as
+   the hosted consent-receipt / consent-record reference, explicitly citing the
+   Kantara Consent Receipt specification.
+3. **ISO/IEC TS 27560:2023** — became the international consent record information
+   structure.
+4. **ANCR (Anchored Notice and Consent Receipt)** — anchors the receipt to a
    verifiable controller identity and a notice event, so the record is not just
    issued but traceable.
-3. **ISO/IEC TS 27560 Consent and Notice Receipt Extension** — carries the ANCR
-   model into the international standard, extending ISO/IEC TS 27560:2023 (the
-   consent record information structure) into a receipt-exchange profile.
+5. **Notice Receipt Extension (now complete)** — extends ISO/IEC TS 27560:2023 into
+   a receipt-exchange profile for anchored, inspectable notice evidence.
 
 **Where to find the spec:**
 
