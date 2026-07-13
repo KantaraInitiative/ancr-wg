@@ -12,20 +12,20 @@ v1.02 is the “delegation baseline uplift” release: it consolidates/organizes
 ## Start here
 
 - v1.02 package index: `./index.md`
-- Repository-level package index (all versions): `../index.md`
+- Repository-level package index (all versions): `../../index.md`
 
 ## How to use
 
 1. Read `index.md` to understand the v1.02 scope, included artefacts, and navigation.
 2. When referencing this version in issues or reviews, cite:
-   - `v 1.02` and the specific file path
+   - `v1.02` and the specific file path
    - the intent of the change (interoperability, implementability, conformance)
 3. Keep terminology consistent across the v1.02 artefacts, especially where delegation introduces additional roles/relationships.
 
 ## Feedback / contribution
 
 - Submit issues and change proposals with:
-  - version: `v 1.02`
+  - version: `v1.02`
   - file: exact path
   - rationale + expected impact
   - any security/privacy considerations (particularly linkability and identification risks)

@@ -3,5 +3,6 @@ description: Kantara Initiative — ANCR Working Group
 theme: minima
 
 # CRITICAL for project sites (not user sites):
-baseurl: "/WG-ANCR"
+# baseurl must match the repository name (case-sensitive): repo is "ancr-wg".
+baseurl: "/ancr-wg"
 url: "https://kantarainitiative.github.io"

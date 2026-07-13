@@ -20,15 +20,18 @@ They provide:
 - (1) a traceable Convention 108+ modelling structure, and
 - (2) evidence-first acceptance criteria for guidance that claims to represent valid consent evidence in digital/open-network contexts.
 
-## Files
-- conv108-dpv-legal-extension-explainer.md  
-  Explains the method used to derive a Convention 108+ DPV-style legal model and why evidence semantics are needed.
-- conv108-dpv-extension-spec.md  
-  The Convention 108+ extension draft specification (namespace, legal bases, rights, principles, transparency requirements).
-- dpv-27560-comments.md  
-  Comment set for DPV:27560 guidance gaps that affect evidence validity and interoperability.
-- dpv-27560-conformance-tests.md  
-  Evidence-first conformance tests for DPV:27560 guidance usage in open-network digital identification contexts.
+## Planned files (not yet published in this folder)
+The following artefacts are in preparation and are not yet committed to this
+repository. This section will list them as links once they land:
+
+- `conv108-dpv-legal-extension-explainer.md` — the method used to derive a
+  Convention 108+ DPV-style legal model and why evidence semantics are needed.
+- `conv108-dpv-extension-spec.md` — the Convention 108+ extension draft
+  specification (namespace, legal bases, rights, principles, transparency requirements).
+- `dpv-27560-comments.md` — comment set for DPV:27560 guidance gaps that affect
+  evidence validity and interoperability.
+- `dpv-27560-conformance-tests.md` — evidence-first conformance tests for DPV:27560
+  guidance usage in open-network digital identification contexts.
 
 ## Intended use
 - Support DPVCG evaluation and issue closure.

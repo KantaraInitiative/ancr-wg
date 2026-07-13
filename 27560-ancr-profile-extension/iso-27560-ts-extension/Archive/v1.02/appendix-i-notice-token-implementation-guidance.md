@@ -1,6 +1,5 @@
 # Appendix A — Field mapping to ISO/IEC 27560-1:2025 (v1.02)
 
-Source of truth (GitHub): https://github.com/0pn-lab/iso-27560-unrp
 
 Note: the full mapping tables (one row per field, with clause refs, cardinality, and types) still need to be completed. Until then, this appendix carries a minimum viable mapping set sufficient for implementer alignment.
 

@@ -1,6 +1,5 @@
 # Appendix B — Legal Bases and Context Implementation (v1.02)
 
-Source of truth (GitHub): https://github.com/0pn-lab/iso-27560-unrp
 
 Purpose: Provide implementable guidance for how lawful basis and context interact with `authorization_type`, `notice_type`, and Notice Event Log events.
 
