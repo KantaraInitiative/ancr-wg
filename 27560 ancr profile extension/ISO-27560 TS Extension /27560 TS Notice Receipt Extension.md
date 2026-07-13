@@ -1,4 +1,5 @@
-# Extension for  ISO/IEC TS 27560:2023
+# ANCR Extension for  ISO/IEC TS 27560:2023
+Anchored Notice and Consent Receipts for Operational Transparency a consent receipt extension for TS 27560:2023 - Posted [Posted-May2026](https://github.com/KantaraInitiative/ancr-wg/blob/d1a92ce689243708083e5723f02728b0cc00d810/27560%20ancr%20profile%20extension/ISO-27560%20TS%20Extension%20/27560%20TS%20Notice%20Receipt%20Extension.md)
 
 ## Foreword
 
