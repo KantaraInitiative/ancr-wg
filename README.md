@@ -33,7 +33,7 @@ their rights. It turns human consent from an unverifiable claim into inspectable
 Working-group outputs corresponding to the documents submitted for ISO/IEC JTC 1/SC 27/WG 5
 (PWI 26689 — Notice and Consent Records):
 
-- **27560 Consent Receipt Extension** — the receipt-exchange profile extending ISO/IEC TS 27560:2023.
+- **27560 Notice Receipt Extension** — the receipt-exchange profile extending ISO/IEC TS 27560:2023.
 - **PWI 26689 Gap Analysis, Part 1 (Scope A)** — TS 27560:2023 cross-referenced against receipt-exchange requirements.
 - **WG5 / CoE Liaison materials** — plenary and Council of Europe liaison decks
   ([`wg5-report-03-2026/`](27560-ancr-profile-extension/wg5-report-03-2026)).

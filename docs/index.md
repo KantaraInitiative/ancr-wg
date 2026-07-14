@@ -8,7 +8,7 @@ title: ANCR Working Group
 The Anchored Notice and Consent Receipt (ANCR) Working Group builds inspectable,
 implementation-ready artefacts for **notice and consent receipt exchange**. Our
 flagship artefact is the **Consent Receipt**, and its evolution into the ISO/IEC
-TS 27560 Consent and Notice Receipt Extension.
+TS 27560 Notice Receipt Extension.
 
 ## The Consent Receipt
 
@@ -46,7 +46,7 @@ evidence.
 The following working-group outputs correspond to the documents submitted for
 ISO/IEC JTC 1/SC 27/WG 5 (PWI 26689 — Notice and Consent Records):
 
-- **27560 Consent Receipt Extension** — the receipt-exchange profile extending
+- **27560 Notice Receipt Extension** — the receipt-exchange profile extending
   ISO/IEC TS 27560:2023 (the N-doc that carries the Consent Receipt into the
   standard).
 - **PWI 26689 Gap Analysis, Part 1 (Scope A)** — the cross-reference of ISO/IEC
@@ -63,7 +63,7 @@ ISO/IEC JTC 1/SC 27/WG 5 (PWI 26689 — Notice and Consent Records):
 - **Transparency Performance Indicators (TPI)** — the ANCR transparency-scheme and
   conformity work:
   [TPI](https://github.com/KantaraInitiative/ancr-wg/tree/main/TPI)
-- **DPV (Convention 108+ legal model)** — evidence-first DPV-style extension
+- **DPV (Transparency Code of Practice legal model)** — evidence-first DPV-style extension
   material:
   [dpv](https://github.com/KantaraInitiative/ancr-wg/tree/main/dpv)
 
