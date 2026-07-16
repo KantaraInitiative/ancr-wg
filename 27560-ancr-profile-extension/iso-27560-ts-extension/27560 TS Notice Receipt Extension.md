@@ -1,9 +1,9 @@
 # ANCR Extension for  ISO/IEC TS 27560:2023
-Anchored Notice and Consent Receipts for Operational Transparency a consent receipt extension for TS 27560:2023 - [Posted-May2026](https://github.com/KantaraInitiative/ancr-wg/blob/d1a92ce689243708083e5723f02728b0cc00d810/27560%20ancr%20profile%20extension/ISO-27560%20TS%20Extension%20/27560%20TS%20Notice%20Receipt%20Extension.md)
+Anchored Notice and Consent Receipts for Operational Transparency a consent receipt extension for TS 27560:2023 - [Posted](https://github.com/KantaraInitiative/ancr-wg/blob/d1a92ce689243708083e5723f02728b0cc00d810/27560%20ancr%20profile%20extension/ISO-27560%20TS%20Extension%20/27560%20TS%20Notice%20Receipt%20Extension.md)
 
 ## Foreword
 
-This document specifies a notice receipt information structure that profiles and extends ISO/IEC TS 27560:2023 (consent record information structure). It is published by the Kantara Initiative and the Anchored Notice and Consent Receipt (ANCR) Working Group as a companion specification, and is intended to be cited as prior art and an implementation reference for SC 27/WG 5 work that depends on machine-readable notice and consent records (notably ISO/IEC FDIS 27091 Annex B.4, ISO/IEC WD TS 27568 Table 2, ISO/IEC WD 27573, and ISO/IEC WD 27566-2 Annex F, ISO/IEC 27091 Annex B ).
+This document specifies a notice receipt information structure that profiles and extends ISO/IEC TS 27560:2023 (consent record information structure). It is published by the Kantara Initiative and the Anchored Notice and Consent Receipt (ANCR) Working Group as a companion specification, and is intended to be cited as prior art and an implementation reference for SC 27/WG 5 work that depends on machine-readable notice and consent records  (notably developed through contributions to  ISO/IEC 27560, ISO/IEC TS 27568, FDIS 27091 Annex B.4, and ISO/IEC WD 27566-2 Annex F).
 
 IPR Note: This ANCR Record Specification is required to be open, as specified under a Patent & Copyright: Reciprocal Royalty Free with Opt-out to Reasonable and Non-discriminatory (RAND) license agreement at the Kantara Initiative chartered to contribute the completed consent receipt work to ISO/IEC SC 27 WG 5.
 
