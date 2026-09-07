@@ -10,6 +10,38 @@ This changelog covers:
 
 Version identifiers are document revisions. The receipt schema identifier is versioned separately and is stated in clause 7.3.4 of the extension.
 
+## [Extension v1.0, DPV companion v0.3] - draft for ANCR Working Group approval
+
+### Summary
+
+Working group approval draft, 2026-09-04. Continues the lineage of the version circulated to ISO/IEC JTC 1/SC 27/WG 5 as N 5211 (2026-07-16). No schema change: the receipt schema remains `ancr-notice-receipt-2.0`. Closes seven of the thirteen open items carried into external review, and disposes of the remainder below.
+
+### Added
+
+- Annex F, clause level crosswalk to ISO/IEC PWI 26689 as registered by SC 27 Resolution 2026/32. Closes open item 11.
+- Annex C, normative profiling rule for jurisdictions whose lawful basis enumeration differs from the table, referenced from the notice version in the same manner as the profiling of 7.2.2. Closes open item 10.
+- 7.2.4, hash input rule: notice_hash is computed over the exact octet stream retrievable at notice_url, one NVO per representation. Closes open item 4.
+- 3.26 full receipt and 3.27 reference receipt, defining the artefacts named in clause 1, with cross references added to the clause 1 bullets. Closes open item 6.
+- 2.2, informative citations for the ANCR TPI Conformity Specification v0.9 and for the SC 27/WG 5 work items named in the Foreword, including ISO/IEC PWI 26689. Closes open item 9 and the citation half of open item 13.
+- Clause 5, assessment statement: criteria are assessed by inspection of the named artefact, C5 and C8 additionally by the procedures in 7.2.4 and 7.2.5, Annex E for deployed implementations. Addresses open item 2 at assessment level.
+- 7.2, composition statement for the Notice Record content; the consolidated field specification table is deferred. Addresses open item 7 at composition level.
+- Foreword, document status paragraph: ANCR Working Group approval, Kantara Recommendation track, liaison circulation in continuity with WG 5 N 5211.
+
+### Changed
+
+- Introduction, first two paragraphs rewritten: the receipt analogy opens, the one way evidence asymmetry is stated, and the missing artefact is named as the identification and tracking of the controller, not the creation of identifiers about individuals.
+- E.1, the ANCR TPI-R variant is the applicable assessment profile for this extension; the base composite remains usable without artefact conformance. Closes the decision half of open item 13, for ratification at v1.0 approval.
+- Revision line carries the full lineage, commit hash references are consolidated as the v0.4 baseline, and the DPV companion is cited by resolvable URL.
+
+### Open items after v1.0
+
+1. JSON Schema for the receipt, the CIR, the event log entry, and the Authorization State Object. Deferred to a companion artefact.
+2. Conformance test procedures for C1 to C8. Assessment is by inspection, with normative procedures for C5 and C8 only.
+3. LICENSE and IPR file in this directory. Repository action; the IPR position is stated in the Foreword.
+5. Integrity mechanism for an anonymous receipt in place of the per principal HMAC of ISO/IEC TS 27560:2023 Annex E.
+8. ISO/IEC 29184 normative reliance versus informative citation. Position stated in the 2.2 NOTE, unchanged.
+12. A field recording which consent construction is in use. Proposed for working group decision at v1.0 approval; adding it is a minor schema version increment under 7.3.4.
+
 ## [Extension v0.5, DPV companion v0.3] - external review draft
 
 ### Summary
