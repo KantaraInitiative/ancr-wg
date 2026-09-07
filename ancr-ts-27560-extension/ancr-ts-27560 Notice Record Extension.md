@@ -2,24 +2,23 @@
 
 Anchored Notice and Consent Receipts for operational transparency. A notice receipt profile and extension of ISO/IEC TS 27560:2023.
 
-**Revision:** v0.5, major revision.
-**Status:** ANCR Working Group draft Recommendation, submitted for the 14 day Working Group review.
-**Date:** 10 September 2026.
+**Revision:** v1.0, 2026-09-04. Draft for approval by the ANCR Working Group. Supersedes the external review draft v0.5 (2026-08-31, commit `d9dbe8b5`), the v0.4 baseline (the file published at commit `a09559d5`), and the version circulated to ISO/IEC JTC 1/SC 27/WG 5 as document N 5211, ANCR Notice Receipt Extension (2026-07-16). This document continues the lineage of N 5211 in the SC 27/WG 5 document register.
 **Editor:** Mark Lizar.
-**Supersedes:** v0.4 and the committed file at commit `a09559d5`.
-**Relationship to N 5211.** This revision is the version put forward for the Working Group review and supersedes the copy circulated as NDOC N 5211. The five priority comments raised against N 5211 are carried forward for disposition during the review and are not treated as resolved by this revision.
+**Disposition of N 5211 comments.** The five priority comments raised against N 5211 are carried forward for disposition by the Working Group and are not treated as resolved by this revision.
 
 ## Foreword
 
-This document specifies a notice receipt information structure that profiles and extends ISO/IEC TS 27560:2023, consent record information structure. It is published by the Kantara Initiative and the Anchored Notice and Consent Receipt (ANCR) Working Group as a companion specification. It is intended to be cited as prior art and as an implementation reference for SC 27/WG 5 work that depends on machine readable notice and consent records, notably contributions to ISO/IEC 27560, ISO/IEC TS 27568, ISO/IEC FDIS 27091 Annex B.4, and ISO/IEC WD 27566-2 Annex F.
+This document specifies a notice receipt information structure that profiles and extends ISO/IEC TS 27560:2023, consent record information structure. It is published by the Kantara Initiative and the Anchored Notice and Consent Receipt (ANCR) Working Group as a companion specification. It is intended to be cited as prior art and as an implementation reference for SC 27/WG 5 work that depends on machine readable notice and consent records, notably contributions to ISO/IEC 27560, ISO/IEC TS 27568, ISO/IEC FDIS 27091 Annex B.4, and ISO/IEC WD 27566-2 Annex F. A crosswalk to the registered scope of ISO/IEC PWI 26689 is provided in Annex F of this document.
+
+**Document status.** This v1.0 is presented for approval by the ANCR Working Group and, upon approval, for progression toward a Kantara Initiative Recommendation in accordance with Kantara operating procedures. The Working Group approved version is intended for circulation to ISO/IEC JTC 1/SC 27/WG 5 as a liaison contribution to the work items named above, in continuity with WG 5 N 5211.
 
 **IPR note.** This ANCR record specification is required to be open. It is published under the Kantara Initiative patent and copyright terms: reciprocal royalty free, with opt out to reasonable and non discriminatory (RAND) licensing. Kantara is chartered to contribute the completed consent receipt work to ISO/IEC SC 27/WG 5.
 
 ## Introduction
 
-Governing one's own identity digitally, with confidence in privacy, requires identifiers to be transparent and bound to a recorded artefact that can be referenced after the fact. Historically such identifiers have been encapsulated in a record and provided in receipt of an event, by context, at a time and place. A notice receipt is a container not only for identifiers, but for the integrity of the claims those identifiers represent.
+A receipt is the ordinary evidence of an exchange: it records who was involved, what took place, and the time and place, and each party keeps a copy that can be referenced after the fact. In digital identification, the evidence runs one way. The individual is identified exhaustively — identifiers presented, collected, linked, and inferred — while the controllers and processors doing the identifying are not identified to the individual in any record the individual holds: no durable evidence of who was accountable, what notice applied, or what was disclosed at the time. What is missing is not another identifier for the person. It is the identification and tracking of the controller. Governing one's own identity online begins with being able to identify the other party, and a notice receipt is the record that makes this possible: it anchors the controller's identification and the notice it published, so that the claims carried over an individual's identifiers can be verified without creating any new identifier about the individual.
 
-A notice receipt is generated through interaction, or a lack of interaction, with a physical sign, an access point, a device, or an online notification or statement. A notice receipt can also be generated independently by the individual, from the notice, by creating or accessing a Controller Identification Record to produce proof of notice disclosure that can be exchanged between devices and across borders.
+A notice receipt is generated wherever notice occurs: at a physical sign, an access point, a device, or an online notification or statement. The disclosure event exists whether or not the individual interacts with the notice, and evidence of the event can be generated either way. The receipt can be issued by the controller in the course of presenting the notice, or generated independently by the individual: working from the notice itself, the individual accesses, or creates, the Controller Identification Record and produces proof of notice disclosure anchored to it. By default the receipt identifies the controller, not the individual: it requires no identification of the person who generates it, and it is portable, exchangeable between devices and across borders.
 
 **Co-regulated digital identification.** This profile is specified for co-regulated identification. Co-regulation means one public policy with two rule sets operating on the same identifier at the same time: the controller's own rules, expressed in service terms, technical design, and internal policy; and the public rules, expressed in treaty, law, and standards. Neither self regulation nor state regulation alone governs identification at internet scale. Self regulation leaves the identifier privately defined. State regulation alone lacks operational artefacts that can be inspected at the time of interaction. This profile supplies the record structure through which the public rule set becomes machine readable, inspectable, and enforceable.
 
@@ -57,8 +56,8 @@ The base extension defines a minimum interoperable set of notice artefacts for o
 
 Interaction with an online Notice Record results in a Notice Receipt, which is either:
 
-- a full receipt, containing the required record fields, or
-- a reference receipt, containing the minimum fields plus stable references and a rights payload.
+- a full receipt, containing the required record fields, see 3.26, or
+- a reference receipt, containing the minimum fields plus stable references and a rights payload, see 3.27.
 
 NOTE: Notice, notification, disclosure, and statement sequences differ according to context.
 
@@ -86,7 +85,9 @@ Out of scope for the base extension, and addressed by optional annexes or compan
 
 - ISO/IEC 29184, Online privacy notices and consent
 - W3C Data Privacy Vocabularies and Controls Community Group, Consent Records and Receipts as per ISO/IEC TS 27560:2023 using DPV, https://w3id.org/dpv/guides/consent-27560
-- ANCR DPV Model Extension, Convention 108+ legal model with an AI transparency profile, `ancr-ts-27560-extension/ancr-dpv/ancr-dpv-extension-spec.md`, external review draft v0.3, in `KantaraInitiative/ancr-wg`. This companion document expresses the artefacts specified here in DPV terms and anchors them to the modernised Convention 108, see Annex B.3.
+- ANCR DPV Model Extension, Convention 108+ legal model with an AI transparency profile, external review draft v0.3, Kantara Initiative ANCR Working Group, available at https://github.com/KantaraInitiative/ancr-wg/tree/main/ancr-ts-27560-extension/ancr-dpv. This companion document expresses the artefacts specified here in DPV terms and anchors them to the modernised Convention 108, see Annex B.3.
+- ANCR TPI Conformity Specification, v0.9, Kantara Initiative ANCR Working Group, available at https://github.com/KantaraInitiative/ancr-wg/tree/main/TPI. Methodology for the TPI-R assessment applied in Annex E.
+- The SC 27/WG 5 work items to which this document is contributed, cited in the Foreword and tracked in B.3: ISO/IEC 27560 (revision, structure of PII processing records), ISO/IEC WD TS 27568 (digital twins), ISO/IEC FDIS 27091 (AI privacy protection), ISO/IEC WD 27566-2 (age assurance, Part 2), and ISO/IEC PWI 26689, Gap analysis for standards on privacy notices and consent and ways to address potential gaps, see Annex F. These work items are under development, and their stages are as at the date of this document.
 
 NOTE: ISO/IEC 29184 is cited informatively. Free and open access would be required for it to be listed as a normative reference. It remains usable for control interoperability between profiles that extend ISO/IEC TS 27560:2023.
 
@@ -94,7 +95,7 @@ NOTE: ISO/IEC 29184 is cited informatively. Free and open access would be requir
 
 The verbal forms used in this document are those defined in the ISO/IEC Directives, Part 2. A requirement is expressed by "shall" and "shall not". A recommendation is expressed by "should" and "should not". Permission is expressed by "may". Possibility and capability are expressed by "can".
 
-NOTE 1: The verbal forms are written in lower case, as they are in the ISO/IEC Directives, Part 2. Earlier ANCR drafts, including the committed file at commit a09559d5, wrote them in upper case following the RFC 2119 convention. The meaning is unchanged, and an implementation conforming to an earlier draft is not affected by the change of case.
+NOTE 1: The verbal forms are written in lower case, as they are in the ISO/IEC Directives, Part 2. Earlier ANCR drafts, including the v0.4 baseline, wrote them in upper case following the RFC 2119 convention. The meaning is unchanged, and an implementation conforming to an earlier draft is not affected by the change of case.
 
 NOTE 2: This document does not use "must" to express a requirement. Where "must" appears in explanatory text it carries no normative weight.
 
@@ -258,6 +259,18 @@ Note 2 to entry: The object applies under any lawful basis. Where the lawful bas
 
 Note 3 to entry: The field set, the state vocabularies, and the reconstruction procedure are specified in 7.2.5.
 
+### 3.26 full receipt
+
+Notice Receipt that carries inline the fields of 7.3.2 marked mandatory, together with the conditional fields that apply to the disclosure event.
+
+Note 1 to entry: A full receipt repeats content that a reference receipt carries by reference. See clause 1 and Annex A.3.
+
+### 3.27 reference receipt
+
+Notice Receipt that carries the fields of 7.3.2 marked mandatory, together with resolvable references to the Controller Identification Record and to the applicable Notice Version Object, and the applicable Annex C rights and obligations row reference.
+
+Note 1 to entry: The referenced content is not repeated in the receipt. Where resolution is not available to the relying party, notice_version_reference carries notice_version_id and notice_hash directly, see 7.2.4.
+
 ## 4 Abbreviated terms
 
 | Abbreviation | Expansion |
@@ -283,6 +296,8 @@ An implementation conforms to the base extension if it satisfies every mandatory
 **Relationship to conformance with ISO/IEC TS 27560:2023.** This document is an extension of ISO/IEC TS 27560:2023 and is not a stand alone specification. An implementation that conforms to this document conforms to ISO/IEC TS 27560:2023 for the record content it carries, subject to the single declared deviation in A.0, which relaxes the requirement for pii_principal_id. A controller that requires conformance to ISO/IEC TS 27560:2023 without that deviation shall populate a principal identifier in the controller held record as described in A.0, while keeping the individual side Anchored Notice Receipt free of it.
 
 Conformance to ISO/IEC TS 27560:2023 alone does not constitute conformance to this document, because clause 7 specifies artefacts that the technical specification does not: the Controller Identification Record, the Notice Version Object, the Authorization State Object, and the Notice Event Log.
+
+Assessment of the criteria in 5.1 is by inspection of the artefact each criterion names. C5 and C8 are additionally testable by the normative procedures in 7.2.4 and 7.2.5. Annex E provides the assessment profile for deployed implementations.
 
 ### 5.1 Co-regulation conformance criteria
 
@@ -365,7 +380,7 @@ A CIR may include:
 
 - derogation_reference, for lawful withholding
 
-NOTE: The identifier field is named controller_identification_record_id. Earlier drafts, including the committed file at commit a09559d5, used controller_identity_record_id. Implementations should treat controller_identity_record_id as deprecated, should accept it on input for one revision cycle, and shall emit controller_identification_record_id. The rename reflects that the record anchors identification carried out by a controller, and does not describe the identity of an individual.
+NOTE: The identifier field is named controller_identification_record_id. Earlier drafts, including the v0.4 baseline, used controller_identity_record_id. Implementations should treat controller_identity_record_id as deprecated, should accept it on input for one revision cycle, and shall emit controller_identification_record_id. The rename reflects that the record anchors identification carried out by a controller, and does not describe the identity of an individual.
 
 #### 7.1.2 CIR field specification table (normative)
 
@@ -396,6 +411,8 @@ Where lawful derogations apply, derogation_reference should include reference_ur
 A Notice Record shall be versioned and resolvable, so that a Notice Receipt can reference an immutable version.
 
 The Notice Record is the machine readable transparency statement defined in 3.7. A notification about issuance or change is the transparency notification defined in 3.8, and is represented as a Notice Event Log entry, optionally accompanied by a receipt carrying notice_type = notification, referencing the relevant notice_version_reference.
+
+The content of a Notice Record comprises the disclosure set specified in 7.2.1, represented as immutable versions through the Notice Version Object specified in 7.2.4, with issuance and change recorded in the Notice Event Log specified in 7.4. A consolidated field specification table for the Notice Record is deferred to a subsequent revision.
 
 #### 7.2.1 Reciprocal and proportionate transparency disclosure set
 
@@ -448,7 +465,7 @@ Where the disclosure event is outside the default described above, no authorizat
 
 NOTE: Separating disclosure evidence from authorization evidence keeps the notice record usable under every basis in Annex C, and prevents a transparency artefact from being read as a permission artefact.
 
-**Decision record.** The scoped default in this subclause supersedes the flat no-inference rule carried in the committed file at commit a09559d5. The distinction that governs is the consent construction in use, not the presence of a receipt: online consent for digital identification is recorded and defaults as stated above, while offline consent presented online assumes identity and location and therefore carries no default. Jurisdictions that reject an interpretive default for the online case shall profile this subclause explicitly and record the profiling rule with the notice version.
+**Decision record.** The scoped default in this subclause supersedes the flat no-inference rule carried in the v0.4 baseline. The distinction that governs is the consent construction in use, not the presence of a receipt: online consent for digital identification is recorded and defaults as stated above, while offline consent presented online assumes identity and location and therefore carries no default. Jurisdictions that reject an interpretive default for the online case shall profile this subclause explicitly and record the profiling rule with the notice version.
 
 Where a lawful basis other than consent is asserted, the receipt header shall state that basis explicitly, for example contract, legal obligation, legitimate interest, vital interest, or public interest, and shall reference the corresponding Annex C row.
 
@@ -482,6 +499,8 @@ An NVO should include:
 notice_version_reference shall resolve to the applicable NVO. Where resolution is not available to the relying party, notice_version_reference shall carry notice_version_id and notice_hash directly.
 
 A material change shall create a new NVO, with a new notice_version_id, a new notice_hash, and a new published_at, and shall not alter an existing NVO. Historic NVOs shall be retained for as long as any receipt, processing record, or event log entry references them.
+
+**Hash input rule (normative).** notice_hash shall be computed over the exact octet stream of the notice representation retrievable at notice_url, without canonicalization, transformation, or re-encoding. Where a notice version is published in more than one representation, each representation shall be represented by its own NVO, with its own notice_url, notice_hash, and published_at. Two implementations that retrieve the same representation therefore compute the same notice_hash.
 
 **Verification procedure (normative).** A relying party verifies a disclosure claim as follows.
 
@@ -603,14 +622,14 @@ The version identifier follows a major, minor, patch rule.
 - The **minor** component shall be incremented where a field, an event type, or a vocabulary value is added without invalidating a record produced under the previous version.
 - The **patch** component shall be incremented for editorial change that does not alter the record structure.
 
-This revision carries the major component 2 because four changes break an implementation built on the file published at commit a09559d5, which carried no stated schema version value.
+This revision carries the major component 2 because four changes break an implementation built on the v0.4 baseline, the file published at commit `a09559d5`, which carried no stated schema version value.
 
 1. `controller_identity_record_id` is renamed to `controller_identification_record_id`, see 7.1.1.
 2. Each notice version shall be represented by a Notice Version Object carrying `notice_hash` and `published_at`, see 7.2.4, and criterion C5 and mandatory requirement 3 now test it.
 3. The flat rule that no lawful basis is inferred from a receipt is replaced by the scoped default in 7.2.2, which changes how a receipt issued in an online digital identification context is interpreted.
 4. Where authorization state is relied upon, it shall be carried by an Authorization State Object, see 7.2.5, tested by criterion C8 and mandatory requirement 11.
 
-A relying party that encounters a receipt with an absent `schema_version`, or with a value carrying a major component below 2, shall interpret the record against the file published at commit a09559d5, and shall not apply the default in 7.2.2 to it.
+A relying party that encounters a receipt with an absent `schema_version`, or with a value carrying a major component below 2, shall interpret the record against the v0.4 baseline (commit `a09559d5`), and shall not apply the default in 7.2.2 to it.
 
 NOTE: A receipt issued under `ancr-notice-receipt-2.0` is not interchangeable with one issued under an earlier draft, because the same field name can carry a different interpretation of the disclosure event. Stating the schema version in the receipt header is what allows a relying party to detect that difference rather than infer it.
 
@@ -879,7 +898,7 @@ Cross border security and AI lifecycle governance requirements should be specifi
 
 - Cross border transfer mechanisms: alignment tracked against ISO/IEC 27091 Annex B.4, operational transparency, and ISO/IEC WD 27566-2 Annex F practice statements.
 - AI lifecycle governance: alignment tracked against ISO/IEC FDIS 27091 and ISO/IEC 42001.
-- Notice and consent record extension work: alignment tracked against ISO/IEC PWI 26689. A clause level crosswalk is required before liaison circulation and is listed as an open item.
+- Notice and consent record extension work: alignment tracked against ISO/IEC PWI 26689. A clause level crosswalk to the registered scope of the PWI is provided in Annex F.
 - Legal model and vocabulary alignment: expressed in the ANCR DPV Model Extension, which maps the fields specified in clause 7 into DPV terms and anchors them to Convention 108+ Articles 5, 8, 9, and 14. That companion reuses `notice_id`, `notice_version_reference`, `receipt_id`, and the Authorization State Object states specified in 7.2.5 as defined here, rather than minting duplicate terms, and treats this document as the source of the record structure. Where the two documents diverge, this document governs the record structure and the companion governs the vocabulary mapping.
 
 ## Annex C. Lawful basis variants, rights and obligations (normative)
@@ -898,7 +917,9 @@ This annex defines the lawful basis vocabulary and the minimum rights and obliga
 
 **Co-regulation note (normative).** The evidence obligation is constant across every row. The lawful basis determines which rights and objection mechanisms apply, and what the controller discloses as authority or justification. It does not determine whether the co-regulation artefacts are required. For every row, a resolvable Controller Identification Record, a versioned Notice Record, an Anchored Notice Receipt, and a Notice Event Log entry shall be available, and the criteria in 5.1 apply unchanged.
 
-NOTE 1: The vocabulary is drawn from Convention 108+ Article 5 and GDPR Article 6. Jurisdictions with a different enumeration require a profiling rule, which is not specified in this version.
+**Profiling rule (normative).** A jurisdiction whose lawful basis enumeration differs from this table shall publish a profiling rule that maps each jurisdictional basis to exactly one row of this table, using unresolved where no row corresponds. The profiling rule shall be referenced from each notice version to which it applies, in the same manner as the profiling of 7.2.2, so that a receipt generated under the jurisdictional enumeration remains interpretable against this annex.
+
+NOTE 1: The vocabulary is drawn from Convention 108+ Article 5 and GDPR Article 6.
 
 NOTE 2: The Convention 108+ DPV style legal model extension cited in 2.2 expresses `consent` and the non consent bases as DPV legal basis classes anchored to Convention 108+ Article 5.2, and models compatibility of further processing separately from legal basis. That mapping is one route to a profiling rule, and it does not change the vocabulary in this table.
 
@@ -950,7 +971,7 @@ TPI-R = (TPI-1 x 0.30) + (TPI-2 x 0.25) + (TPI-3 x 0.25) + (TPI-4 x 0.20)
 
 The composite produces a rating from glass box, meaning full transparency, to black box, meaning severe non-compliance. A second variant, ANCR TPI-R, extends the four indicators with conformance indicators that test the presence and the integrity of the artefacts this document specifies: the Controller Identification Record, the Notice Receipt, the Anchored Notice Receipt, and the Notice Event Log.
 
-Which variant becomes canonical for this extension is a working group decision, to be recorded here. This annex does not settle TPI-R versions.
+For this extension, the ANCR TPI-R variant is the applicable assessment profile, since its conformance indicators test the presence and the integrity of the artefacts this document specifies. The base TPI-R composite remains usable where an assessor evaluates transparency performance without artefact conformance. This annex does not settle TPI-R methodology versions.
 
 ### E.2 Indicator mapping
 
@@ -972,3 +993,25 @@ A TPI-R score is a compliance and conformance signal. It is not a conformance cl
 ### E.4 Attribution
 
 TPI-R is cited by its published methodology name, Transparency Performance Indicator Report, of Kantara Initiative and Digital Transparency Lab origin. The ANCR TPI-R variant referenced here is the Anchored Notice and Consent Receipt profile of that methodology.
+
+## Annex F. Crosswalk to ISO/IEC PWI 26689 (informative)
+
+ISO/IEC PWI 26689, Gap analysis for standards on privacy notices and consent and ways to address potential gaps, was registered by SC 27 Resolution 2026/32. This annex maps the registered scope and justification of the PWI to the clauses of this document, so that the gap analysis can evaluate this extension as documented, implemented prior art. Clause references are to this document unless stated otherwise.
+
+### F.1 Scope element mapping
+
+| PWI 26689 scope element | Where addressed in this document |
+| --- | --- |
+| Clarify the relationship between ISO/IEC 29184 and ISO/IEC 27560, and potentially other relevant standards | Introduction, relationship of related instruments; 2.2 NOTE on the citation status of ISO/IEC 29184; 6.1, in which ISO/IEC 29184 aligned presentation controls are factor 1 of two factor online notice; 7.6, which locates consent, the consent statement, and the consent record in ISO/IEC TS 27560:2023 and ISO/IEC 29184 and specifies only the notice evidence reference between them; Annex A, field level mapping to ISO/IEC TS 27560:2023 |
+| Evaluate and express digital notice requirements against cross-border transparency requirements to avoid conflicting authority models that prevent interoperability at scale | 3.10 co-regulated identification, one public policy with two rule sets operating on the same identifier; 5.1 criteria C1 to C8, the testable authority model; 7.2.1 co-regulation test; 7.1.2 jurisdiction in the Controller Identification Record; 7.3.2 recipient_jurisdictions and transfer_mechanism; Annex C, lawful basis variants with a jurisdiction profiling rule |
+
+### F.2 Justification gap mapping
+
+| PWI 26689 justification gap | Where addressed in this document |
+| --- | --- |
+| Digital credential wallets and portable credentials, new interaction surfaces and constrained device UI patterns | 3.15 non-exclusion and 7.1.3, operability without a digital identification credential; Annex B.2, personal processing record structure as the individual held wallet architecture; Annex D stages 3 and 4, micro credential and portable token traceable to the Anchored Notice Receipt |
+| Machine-processable notices, software agents, automated preference handling, audit tooling | 7.2 Notice Record as machine readable transparency statement; 7.2.4 Notice Version Object with a normative verification procedure; 7.2.5 Authorization State Object with a normative reconstruction procedure; 7.3.3 notice_type vocabulary; 7.4 Notice Event Log; Annex E, TPI-R assessment of deployed implementations |
+| Multi-jurisdictional enforcement expectations in cross-border contexts | 7.3.2 recipient_jurisdictions, transfer_mechanism, surveillance_risks, and rights_derogations; criterion C4, public rule reference; Annex C rights and obligations variants, drawn from Convention 108+ Article 5 and GDPR Article 6, with the normative profiling rule for differing enumerations |
+| Inconsistent notice quality and inconsistent evidence of choice across systems and jurisdictions | 3.13 minimum notice disclosure and criterion C2; 6.1 two factor online notice; 3.4 and 7.3, the Anchored Notice Receipt as the consistent bilateral evidence artefact; clause 8 mandatory requirements |
+
+NOTE: This mapping supports evaluation of this document within the PWI 26689 gap analysis. It does not assert that the identified gaps are closed, and it does not constrain the findings of the gap analysis.
