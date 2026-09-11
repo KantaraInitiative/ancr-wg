@@ -36,15 +36,37 @@ evidence.
 4. **ANCR (Anchored Notice and Consent Receipt)**, anchors the receipt to a
    verifiable controller identity and a notice event, so the record is not just
    issued but traceable.
-5. **Notice Receipt Extension (now complete)**, extends ISO/IEC TS 27560:2023 into
-   a receipt-exchange profile for anchored, inspectable notice evidence.
+5. **Notice Receipt Extension**, extends ISO/IEC TS 27560:2023 into
+   a receipt-exchange profile for anchored, inspectable notice evidence. Published as
+   Release 1 and under Working Group review.
+
+## Release 1, now open for Working Group review
+
+The ANCR Extension for ISO/IEC TS 27560:2023 is published as **Release 1**, the v1.0
+Release Candidate, released 7 September 2026 and put to the Working Group for
+candidate review and approval.
+
+- Release 1, with a line numbered review copy and the changelog:
+  [ancr-ext-release-1](https://github.com/KantaraInitiative/ancr-wg/releases/tag/ancr-ext-release-1)
+- Review and comments: [pull request #34](https://github.com/KantaraInitiative/ancr-wg/pull/34)
+
+Release 1 is 1,036 lines: clauses 1 to 8, twenty seven terms, twelve mandatory
+requirements, conformance criteria C1 to C8, and Annexes A to F. Annex A maps field by
+field to ISO/IEC TS 27560:2023 and A.0 states the single deviation from the base with
+its rationale. Annex F is a clause level crosswalk to the registered scope of ISO/IEC
+PWI 26689.
+
+The five priority comments raised against the version circulated to ISO/IEC JTC 1/SC
+27/WG 5 as N 5211 are carried forward for disposition by the Working Group and are not
+treated as resolved by this revision.
 
 **Where to find the spec:**
 
-- ISO/IEC 27560 ANCR Profile Extension package (versioned):
+- Release 1, the version under review, with line numbers:
+  [ancr-ext-release-1](https://github.com/KantaraInitiative/ancr-wg/releases/tag/ancr-ext-release-1)
+- Package directory on `main`, which carries the previous revision until Release 1 is
+  approved and merged:
   [27560 ANCR Profile Extension](https://github.com/KantaraInitiative/ancr-wg/tree/main/ancr-ts-27560-extension)
-- Current working entry point:
-  [ISO-27560 TS Extension](https://github.com/KantaraInitiative/ancr-wg/blob/main/ancr-ts-27560-extension/ancr-ts-27560%20Notice%20Record%20Extension.md)
 
 ## Submission index (PWI 26689)
 
@@ -54,12 +76,11 @@ ISO/IEC JTC 1/SC 27/WG 5 (PWI 26689, Notice and Consent Records):
 - **27560 Notice Receipt Extension**, the receipt-exchange profile extending
   ISO/IEC TS 27560:2023 (the N-doc that carries the Consent Receipt into the
   standard).
-- **WG5 / CoE Liaison materials**, the plenary and Council of Europe liaison
-  decks.
-  [WG5 Report 03-2026 materials](https://github.com/KantaraInitiative/ancr-wg/tree/main/ancr-ts-27560-extension/materials)
+- **WG5 / CoE Liaison materials**, the plenary and Council of Europe liaison decks.
 
-> Note: the canonical version for the submission is a working-group decision and is
-> not yet fixed in this repository. See the package index for details.
+> The canonical version for the submission is fixed by tag. Release 1 is tagged
+> `ancr-ext-release-1`, so a clause or line number cited against it points at a text
+> that does not move.
 
 ## Other working areas
 
@@ -68,7 +89,7 @@ ISO/IEC JTC 1/SC 27/WG 5 (PWI 26689, Notice and Consent Records):
   [TPI](https://github.com/KantaraInitiative/ancr-wg/tree/main/TPI)
 - **DPV (Transparency Code of Practice legal model)**, evidence-first DPV-style extension
   material:
-  [dpv](https://github.com/KantaraInitiative/ancr-wg/tree/main/dpv)
+  [ancr-dpv](https://github.com/KantaraInitiative/ancr-wg/tree/main/ancr-ts-27560-extension/ancr-dpv)
 
 ## Participate
 
