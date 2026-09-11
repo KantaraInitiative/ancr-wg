@@ -12,9 +12,9 @@ implementation-ready artefacts for **notice and consent receipt exchange**. Our
 flagship artefact is the **Consent Receipt**, and its evolution into the ISO/IEC
 TS 27560 Notice Receipt Extension.
 
-## Announcement: Co-Regulated Digital Identification (CDRI)
+## Announcement: Co-Regulated Digital Identification (CRDI)
 
-The ANCR Notice Receipt Extension now specifies **co-regulated digital identification (CDRI)**: a model in which identification is governed by two concurrent rule sets at once, the controller's own rules, and the public rules of treaty, law, and standards. The public rule set is expressed as inspectable record structure and is verifiable before identification occurs. Accountable controller identification and machine-readable notice come first; personal identification follows. This makes the difference between identification that is transparent and identification that is surveillance testable in the record itself.
+The ANCR Notice Receipt Extension now specifies **co-regulated digital identification (CRDI)**: a model in which identification is governed by two concurrent rule sets at once, the controller's own rules, and the public rules of treaty, law, and standards. The public rule set is expressed as inspectable record structure and is verifiable before identification occurs. Accountable controller identification and machine-readable notice come first; personal identification follows. This makes the difference between identification that is transparent and identification that is surveillance testable in the record itself.
 
 ## The Consent Receipt
 
