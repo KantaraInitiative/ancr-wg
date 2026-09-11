@@ -10,15 +10,17 @@ This changelog covers:
 
 Version identifiers are document revisions. The receipt schema identifier is versioned separately and is stated in clause 7.3.4 of the extension.
 
-## [Extension v1.0, DPV companion v0.3] - draft for ANCR Working Group approval
+## [Extension v1.0 Release Candidate, DPV companion v0.3] - Release 1, for ANCR Working Group candidate review and approval
 
 ### Summary
 
-Working group approval draft, 2026-09-04. Continues the lineage of the version circulated to ISO/IEC JTC 1/SC 27/WG 5 as N 5211 (2026-07-16). No schema change: the receipt schema remains `ancr-notice-receipt-2.0`. Closes seven of the thirteen open items carried into external review, and disposes of the remainder below.
+Release 1, released 7 September 2026, as the v1.0 Release Candidate put to the Working Group for candidate review and approval. Continues the lineage of the version circulated to ISO/IEC JTC 1/SC 27/WG 5 as N 5211 (2026-07-16). No schema change: the receipt schema remains `ancr-notice-receipt-2.0`. Closes seven of the thirteen open items carried into external review, and disposes of the remainder below.
 
 ### Added
 
 - Annex F, clause level crosswalk to ISO/IEC PWI 26689 as registered by SC 27 Resolution 2026/32. Closes open item 11.
+- Annex B.3, entry for the ISO/IEC preliminary work item on an internet transparency code of practice profile, established for ISO/IEC JTC 1/SC 44/WG 1 by resolution of the fifth SC 44 plenary, 3 September 2026, recording where that work item and this document meet and restating the SC 27/WG 5 boundary carried in the resolution.
+- Foreword, sentence offering this document as an implementation reference for the SC 44/WG 1 work item, cross referenced to Annex B.3.
 - Annex C, normative profiling rule for jurisdictions whose lawful basis enumeration differs from the table, referenced from the notice version in the same manner as the profiling of 7.2.2. Closes open item 10.
 - 7.2.4, hash input rule: notice_hash is computed over the exact octet stream retrievable at notice_url, one NVO per representation. Closes open item 4.
 - 3.26 full receipt and 3.27 reference receipt, defining the artefacts named in clause 1, with cross references added to the clause 1 bullets. Closes open item 6.
@@ -29,6 +31,9 @@ Working group approval draft, 2026-09-04. Continues the lineage of the version c
 
 ### Changed
 
+- Profile B2 renamed from personal processing record structure to personal data control record structure, in clause 5, Annex B.2 and Annex F.2.
+- Three passages moved from clause 7.2.2 to the Introduction and rewritten to state the mechanism rather than the outcome: detectability of a receipt already held, the reference joining a code of practice to a disclosure, and the version evidence available to either party across borders. Clause 7.2.2 now carries provisions only.
+- Editorial, co-regulation evidence set reads co-regulatory evidence set in 6.2; the decision record in 7.2.2 carries its supersession statement as a parenthetical note.
 - Introduction, first two paragraphs rewritten: the receipt analogy opens, the one way evidence asymmetry is stated, and the missing artefact is named as the identification and tracking of the controller, not the creation of identifiers about individuals.
 - E.1, the ANCR TPI-R variant is the applicable assessment profile for this extension; the base composite remains usable without artefact conformance. Closes the decision half of open item 13, for ratification at v1.0 approval.
 - Revision line carries the full lineage, commit hash references are consolidated as the v0.4 baseline, and the DPV companion is cited by resolvable URL.
