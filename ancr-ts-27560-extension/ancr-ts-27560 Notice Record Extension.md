@@ -2,7 +2,12 @@
 
 Anchored Notice and Consent Receipts for operational transparency. A notice receipt profile and extension of ISO/IEC TS 27560:2023.
 
-**Revision:** v0.5, major revision, external review draft. Supersedes v0.4 and the committed file at commit `a09559d5`.
+**Revision:** v0.5, major revision.
+**Status:** ANCR Working Group draft Recommendation, submitted for the 14 day Working Group review.
+**Date:** 10 September 2026.
+**Editor:** Mark Lizar.
+**Supersedes:** v0.4 and the committed file at commit `a09559d5`.
+**Relationship to N 5211.** This revision is the version put forward for the Working Group review and supersedes the copy circulated as NDOC N 5211. The five priority comments raised against N 5211 are carried forward for disposition during the review and are not treated as resolved by this revision.
 
 ## Foreword
 
