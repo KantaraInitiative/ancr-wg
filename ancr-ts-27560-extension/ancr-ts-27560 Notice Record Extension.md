@@ -963,15 +963,30 @@ This annex maps the normative artefacts of this document to the Transparency Per
 
 ### E.1 Purpose
 
-TPI-R is an external assessment methodology that scores how well a live deployment realises the transparency artefacts a standard such as this one specifies. It evaluates four indicators, each independently testable against observable evidence, combined into a composite score:
+TPI-R is an external assessment methodology that measures how well a live deployment realises the transparency artefacts a standard such as this one specifies. It applies four indicators, each independently testable against observable evidence.
 
-```text
-TPI-R = (TPI-1 x 0.30) + (TPI-2 x 0.25) + (TPI-3 x 0.25) + (TPI-4 x 0.20)
-```
+**Application.** The indicators are normally applied in three stages:
 
-The composite produces a rating from glass box, meaning full transparency, to black box, meaning severe non-compliance. A second variant, ANCR TPI-R, extends the four indicators with conformance indicators that test the presence and the integrity of the artefacts this document specifies: the Controller Identification Record, the Notice Receipt, the Anchored Notice Receipt, and the Notice Event Log.
+a) capture the practice, being what the deployment does rather than what it states;
+b) test the information captured against the requirement; and
+c) measure the performance of that information, including its use for rights access.
 
-For this extension, the ANCR TPI-R variant is the applicable assessment profile, since its conformance indicators test the presence and the integrity of the artefacts this document specifies. The base TPI-R composite remains usable where an assessor evaluates transparency performance without artefact conformance. This annex does not settle TPI-R methodology versions.
+The sequence carries the method. Capture is observational, so the assessment rests on what a deployment did rather than on its own account of itself. Testing establishes whether the captured information meets the requirement. Measurement then establishes whether the information performs, which for a transparency artefact means whether it can be used, and rights access is where that is tested.
+
+Each indicator is rated on the scale defined in the ANCR TPI Conformity Specification, from -3 to +1:
+
+| Rating | Meaning |
+| --- | --- |
+| +1 | Dynamic, in context transparency, an active state |
+| 0 | Present but static or out of context |
+| -1 | Present but obstructed |
+| -3 | Non-operable transparency |
+
+The four ratings are reported together as a profile. This document does not define a composite score, and none should be inferred. The ratings are ordinal categories rather than measurements on a continuous scale, so arithmetic across them, including any weighted sum, does not produce a comparable figure. Where a composite is required for a particular assessment, it is for the ANCR TPI Conformity Specification to define and justify it, not for this annex.
+
+A second variant, ANCR TPI-R, extends the four indicators with conformance indicators that test the presence and the integrity of the artefacts this document specifies: the Controller Identification Record, the Notice Receipt, the Anchored Notice Receipt, and the Notice Event Log.
+
+For this extension, the ANCR TPI-R variant is the applicable assessment profile, since its conformance indicators test the presence and the integrity of the artefacts this document specifies. The base TPI-R indicators remain usable where an assessor evaluates transparency performance without artefact conformance. This annex does not settle TPI-R methodology versions.
 
 ### E.2 Indicator mapping
 
