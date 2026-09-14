@@ -21,7 +21,7 @@ their rights. It turns human consent from an unverifiable claim into inspectable
    structure.
 4. **ANCR (Anchored Notice and Consent Receipt)** — anchors the receipt to a
    verifiable controller identity and a notice event, making the record traceable.
-5. **Transparency Performance Indicators (TPI)** Reporting, measuring controller transparency.
+5. **Transparency Performance Indicators (TPI)Reporting**, measuring controller transparency.
 5. **Notice Receipt Extension (now complete)** — extends ISO/IEC TS 27560:2023 into
    a receipt-exchange profile for anchored, inspectable notice evidence.
 
