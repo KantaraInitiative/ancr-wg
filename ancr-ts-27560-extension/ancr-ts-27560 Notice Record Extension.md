@@ -85,18 +85,15 @@ Out of scope for the base extension, and addressed by optional annexes or compan
 
 - ISO/IEC TS 27560:2023, Privacy technologies: consent record information structure
 - ISO/IEC 29100, Information technology: security techniques: privacy framework
+- ISO/IEC 29184, Online privacy notices and consent
 - ISO 3166-1, Codes for the representation of names of countries and their subdivisions, Part 1: Country codes
 - ISO 8601 (all parts), Date and time, representations for information interchange
 
 ### 2.2 Other references (informative)
-
-- ISO/IEC 29184, Online privacy notices and consent
 - W3C Data Privacy Vocabularies and Controls Community Group, Consent Records and Receipts as per ISO/IEC TS 27560:2023 using DPV, https://w3id.org/dpv/guides/consent-27560
 - ANCR DPV Model Extension, Convention 108+ legal model with an AI transparency profile, external review draft v0.3, Kantara Initiative ANCR Working Group, available at https://github.com/KantaraInitiative/ancr-wg/tree/main/ancr-ts-27560-extension/ancr-dpv. This companion document expresses the artefacts specified here in DPV terms and anchors them to the modernised Convention 108, see Annex B.3.
 - ANCR TPI Conformity Specification, v0.9, Kantara Initiative ANCR Working Group, available at https://github.com/KantaraInitiative/ancr-wg/tree/main/TPI. Methodology for the TPI-R assessment applied in Annex E.
 - The SC 27/WG 5 work items to which this document is contributed, cited in the Foreword and tracked in B.3: ISO/IEC 27560 (revision, structure of PII processing records), ISO/IEC WD TS 27568 (digital twins), ISO/IEC FDIS 27091 (AI privacy protection), ISO/IEC WD 27566-2 (age assurance, Part 2), and ISO/IEC PWI 26689, Gap analysis for standards on privacy notices and consent and ways to address potential gaps, see Annex F. These work items are under development, and their stages are as at the date of this document.
-
-NOTE: ISO/IEC 29184 is cited informatively. Free and open access would be required for it to be listed as a normative reference. It remains usable for control interoperability between profiles that extend ISO/IEC TS 27560:2023.
 
 ### 2.3 Verbal forms for the expression of provisions
 
