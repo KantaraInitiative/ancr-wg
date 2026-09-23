@@ -87,15 +87,17 @@ Out of scope for the base extension, and addressed by optional annexes or compan
 
 - ISO/IEC TS 27560:2023, Privacy technologies: consent record information structure
 - ISO/IEC 29100, Information technology: security techniques: privacy framework
-- ISO/IEC 29184, Online privacy notices and consent
 - ISO 3166-1, Codes for the representation of names of countries and their subdivisions, Part 1: Country codes
 - ISO 8601 (all parts), Date and time, representations for information interchange
 
 ### 2.2 Other references (informative)
+- ISO/IEC 29184:2020, Information technology: Online privacy notices and consent
 - W3C Data Privacy Vocabularies and Controls Community Group, Consent Records and Receipts as per ISO/IEC TS 27560:2023 using DPV, https://w3id.org/dpv/guides/consent-27560
 - ANCR DPV Model Extension, Convention 108+ legal model with an AI transparency profile, external review draft v0.3, Kantara Initiative ANCR Working Group, available at https://github.com/KantaraInitiative/ancr-wg/tree/main/ancr-ts-27560-extension/ancr-dpv. This companion document expresses the artefacts specified here in DPV terms and anchors them to the modernised Convention 108, see Annex B.3.
 - ANCR TPI Conformity Specification, v0.9, Kantara Initiative ANCR Working Group, available at https://github.com/KantaraInitiative/ancr-wg/tree/main/TPI. Methodology for the TPI-R assessment applied in Annex E.
 - The SC 27/WG 5 work items to which this document is contributed, cited in the Foreword and tracked in B.3: ISO/IEC 27560 (revision, structure of PII processing records), ISO/IEC WD TS 27568 (digital twins), ISO/IEC FDIS 27091 (AI privacy protection), ISO/IEC WD 27566-2 (age assurance, Part 2), and the preliminary work item *Gap analysis for standards on privacy notices and consent and ways to address potential gaps*, registered by SC 27 Resolution 2026/32, see Annex F. These work items are under development, and their stages are as at the date of this document.
+
+NOTE: ISO/IEC 29184:2020 is cited informatively. No conformance criterion in clause 5 and no mandatory requirement in clause 8 depends on it. The clauses of ISO/IEC 29184:2020 on which this document relies, and what this document adds to each, are set out in Annex G. Availability of ISO/IEC 29184:2020 at no cost would allow it to be used as a public transparency standard and to be listed as a normative reference.
 
 ### 2.3 Verbal forms for the expression of provisions
 
@@ -374,7 +376,7 @@ An implementation that satisfies C1 to C8 for a given notice version may assert 
 
 This profile supports a two factor online notice pattern (2FN) for establishing durable evidence of notice disclosure and, where applicable, of consent.
 
-- **Factor 1, presentation controls.** The notice is presented using ISO/IEC 29184 aligned presentation controls, for example layered presentation, timing, and interaction patterns, reusable across notice types.
+- **Factor 1, presentation controls.** The notice is presented using ISO/IEC 29184 aligned presentation controls, for example layered presentation, timing, and interaction patterns, reusable across notice types, see Annex G.
 - **Factor 2, evidence receipt.** A Notice Receipt is generated as durable evidence that a specific notice version was presented or available at a specific time. Where the lawful basis is consent, the receipt supports proof of informed consent by binding the authorization state to the disclosed notice version.
 
 Implementations should treat 2FN as an interoperability pattern. The presentation controls establish a consistent experience and meaningful choice. The receipt provides verifiable, referenceable evidence for audit, later inquiry, and dispute resolution.
@@ -771,7 +773,7 @@ NOTE 2: Purpose is carried in the Notice Record for the applicable notice versio
 
 ### 7.6 Relationship to consent records
 
-Where consent is the lawful basis, the consent statement and the consent record shall reference the prior notice disclosure event, by notice_version_reference and by the applicable Anchored Notice Receipt. This document specifies that reference only. It does not specify consent, the consent statement, or the consent record, which remain governed by ISO/IEC TS 27560:2023 and ISO/IEC 29184.
+Where consent is the lawful basis, the consent statement and the consent record shall reference the prior notice disclosure event, by notice_version_reference and by the applicable Anchored Notice Receipt. This document specifies that reference only. It does not specify consent, the consent statement, or the consent record, which remain governed by ISO/IEC TS 27560:2023 and ISO/IEC 29184:2020, see Annex G.
 
 ## 8 Mandatory requirements
 
@@ -1080,7 +1082,7 @@ The preliminary work item *Gap analysis for standards on privacy notices and con
 
 | Registered scope element | Where addressed in this document |
 | --- | --- |
-| Clarify the relationship between ISO/IEC 29184 and ISO/IEC 27560, and potentially other relevant standards | Introduction, relationship of related instruments; 2.2 NOTE on the citation status of ISO/IEC 29184; 6.1, in which ISO/IEC 29184 aligned presentation controls are factor 1 of two factor online notice; 7.6, which locates consent, the consent statement, and the consent record in ISO/IEC TS 27560:2023 and ISO/IEC 29184 and specifies only the notice evidence reference between them; Annex A, field level mapping to ISO/IEC TS 27560:2023 |
+| Clarify the relationship between ISO/IEC 29184 and ISO/IEC 27560, and potentially other relevant standards | Introduction, relationship of related instruments; 2.2 NOTE and Annex G, dependencies on ISO/IEC 29184:2020; 6.1, in which ISO/IEC 29184 aligned presentation controls are factor 1 of two factor online notice; 7.6, which locates consent, the consent statement, and the consent record in ISO/IEC TS 27560:2023 and ISO/IEC 29184 and specifies only the notice evidence reference between them; Annex A, field level mapping to ISO/IEC TS 27560:2023 |
 | Evaluate and express digital notice requirements against cross-border transparency requirements to avoid conflicting authority models that prevent interoperability at scale | 3.10 co-regulated identification, one public policy with two rule sets operating on the same identifier; 5.1 criteria C1 to C8, the testable authority model; 7.2.1 co-regulation test; 7.1.2 jurisdiction in the Controller Identity Record; 7.3.2 recipient_jurisdictions and transfer_mechanism; Annex C, lawful basis variants with a jurisdiction profiling rule |
 
 ### F.2 Justification gap mapping
@@ -1093,3 +1095,27 @@ The preliminary work item *Gap analysis for standards on privacy notices and con
 | Inconsistent notice quality and inconsistent evidence of choice across systems and jurisdictions | 3.13 minimum notice disclosure and criterion C2; 6.1 two factor online notice; 3.4 and 7.3, the Anchored Notice Receipt as the consistent bilateral evidence artefact; clause 8 mandatory requirements |
 
 NOTE: This mapping supports evaluation of this document within that gap analysis. The work item is cited by its title and registering resolution, which remain stable as the work item progresses. It does not assert that the identified gaps are closed, and it does not constrain the findings of the gap analysis.
+
+## Annex G. Dependencies on ISO/IEC 29184:2020 (informative)
+
+This annex sets out the clauses of ISO/IEC 29184:2020 on which this document relies, and what this document adds to each. The semantic content of notice remains that of ISO/IEC 29184:2020. This document adds the structure of the notice as presented, its version binding, and the custody of the evidence that it was presented. No amendment to ISO/IEC 29184:2020 is implied.
+
+### G.1 Clause dependencies
+
+| ISO/IEC 29184:2020 | Title | Clause of this document | What this document adds |
+| --- | --- | --- | --- |
+| 5.2.2 | Providing notice obligation | 7.1 Controller Identity Record | Controller identification published and resolvable before any demand for personal identification, so that it reaches a party who is not yet a PII principal |
+| 5.2.7 | Appropriate form | 6.1, Factor 1; 7.2 Notice Record | A specified, machine readable structure for the notice as presented, held as evidence |
+| 5.2.8 | Ongoing reference | 6.3; 7.2.4 Notice Version Object | A notice identifier and a version reference bound to every receipt and record, under any lawful basis |
+| 5.3.2, 5.3.3 | Purpose description; Presentation of purpose description | 7.5; purpose in 7.3.2 | Purpose recorded as an artefact and bound to the notice version in effect |
+| 5.3.4 | Identification of the PII controller | 7.1 Controller Identity Record | The controller's identity as a resolvable record, available before the individual is identified |
+| 5.3.9, 5.3.10 | Geo-location of, and legal jurisdiction over, stored PII; Third-party transfer | recipient_jurisdictions and transfer_mechanism in 7.3.2 | Location, jurisdiction and transfer content in a machine processable record bound to the notice version |
+| 5.3.11 | Retention period | 6.3; retention_period in profile B1, Annex A | A change to retention is a material change creating a new notice version. Retention per purpose is not specified by this document |
+| 5.3.15 | Basis for processing | lawful_basis in 7.3.2; Annex C | The lawful basis carried in the receipt header, using a controlled vocabulary |
+| 5.5.2 | Renewing notice | 6.3; 7.4 | A new notice version and a Notice Event Log entry on every material change |
+| 5.5.3 | Renewing consent | 6.3; 7.4; 7.2.5 | Change events and authorization state recorded under any lawful basis |
+| Annex B, reached from the NOTE in 5.4.3 | Example of a consent receipt or consent record | 7.3 Notice Receipt | The receipt specified as an evidence structure held by the individual, with version binding |
+
+### G.2 Obligations bound to consent
+
+In ISO/IEC 29184:2020, the retention of the version presented (5.2.8) and the renewal of consent on a change of conditions (5.5.3) apply where consent is the basis for processing, while 5.3.15 requires the notice to state the basis for any basis. This document applies version binding and change events under any lawful basis, see 6.3, 7.4 and 7.2.2.
