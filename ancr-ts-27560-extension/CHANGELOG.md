@@ -25,6 +25,8 @@ Amendments made during Working Group review of the v1.0 Release Candidate. Separ
 - Introduction, sentence stating that an offline notice is receipted through the online notice it links to.
 - 3.31 consent construction, the manner in which a consent authorization is informed and constructed, distinguished by whether the notice relied upon is presented in the context or recorded as a notice version, and by whether identification and location are inherent to the context (in person), recorded through the notice artefacts (online), or assumed. The assumed case covers an offline construction presented through an online interface and remote consent by a means that is not online, such as telephone or post. A note distinguishes it from consent type in ISO/IEC TS 27560:2023, 3.4. The term was used in 3.19 and 7.2.2 without a definition.
 - 7.4.4, lawful_basis added to the processing event minimum fields, using the Annex C vocabulary.
+- 3.30, Note 3 relating the consent event record to the Authorization State Object: the record carries the event, the Authorization State Object carries the resulting state, and the change is logged as authorization_state_changed.
+- Introduction, NOTE after the co-regulated digital identification paragraph: once both rule sets are expressed as records, they can be made operational for personal data control through consent based authorization, carried by the bilateral Authorization State Object, with the individual held record structured by profile B2. Responds to a review comment on PR #34.
 
 ### Changed
 

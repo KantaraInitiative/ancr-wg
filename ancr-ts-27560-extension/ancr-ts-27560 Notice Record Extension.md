@@ -23,6 +23,8 @@ A notice receipt is generated wherever notice occurs: at a physical sign, an acc
 
 **Co-regulated digital identification.** This profile is specified for co-regulated identification. Co-regulation means one public policy with two rule sets operating on the same identifier at the same time: the controller's own rules, expressed in service terms, technical design, and internal policy; and the public rules, expressed in treaty, law, and standards. Neither self regulation nor state regulation alone governs identification at internet scale. Self regulation leaves the identifier privately defined. State regulation alone lacks operational artefacts that can be inspected at the time of interaction. This profile supplies the record structure through which the public rule set becomes machine readable, inspectable, and enforceable.
 
+NOTE: Once both rule sets are expressed as records, they can be made operational for personal data control through consent based authorization. The authorization is carried by an Authorization State Object, 3.25, which is bilateral, so the individual can inspect and exercise the authorization state under both the controller's rules and the public rules. The individual's own record of that control is structured by profile B2, see Annex B.2.
+
 **Identity and identification are distinct.** Identity is self expression and self identification, managed by the individual. The identity of a controller is public, and this profile records it in the Controller Identity Record. Identification is the technical and organizational process a controller uses to discover, link, or assert claims about a person. The two are governed differently: consent is a human expression managed by humans, while permissions are managed by organizations and systems. Where the two are conflated, an interface permission is presented as consent. This profile keeps them separate by requiring controller identification, and the notice bound to it, before any demand for personal identification.
 
 **Notice already given is detectable.** A notice receipt carries the immutable reference to the notice version it was issued against, and that reference resolves to the version object holding the integrity hash and the publication time. A controller presenting notice can establish whether a receipt is already held for the version in effect, and an individual can establish the same thing without asking the controller. Repetition of a prompt then indicates that the notice has changed, rather than that no record of the previous one exists.
@@ -306,6 +308,8 @@ Record held by the PII controller, within its record of processing activities, o
 Note 1 to entry: Where the lawful basis is not consent, the corresponding controller held record is a processing event record under that basis, see 7.4.4. Every lawful basis is recorded in the same way.
 
 Note 2 to entry: The consent event record is the controller side counterpart of the consent record, 3.22, and is structured by profile B1, see Annex B.1.
+
+Note 3 to entry: A consent event record records the event. The authorization state that results from it is carried by an Authorization State Object, 3.25, whose change is logged in the Notice Event Log as authorization_state_changed, see 7.2.5.
 
 ### 3.31 consent construction
 
