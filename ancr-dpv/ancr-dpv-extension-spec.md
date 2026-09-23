@@ -341,7 +341,7 @@ TPI v2 assesses a governance instrument against I1 to I16, with Convention 108+ 
 
 Layer C applies where the instrument has a governance dimension, as a law or regulation does. A standard or a mechanism, including this document, is assessed primarily on Layer A.
 
-The method derives from the 0PN Bill C-27 Report and Rating (Lizar and Agassini, 2024). It is in development within the ANCR Working Group and is not implemented in a reference implementation.
+It is in development within the ANCR Working Group and is not implemented in a reference implementation.
 
 ### 9.3 Class 3, TPI v3
 
@@ -378,7 +378,6 @@ ISO/IEC TS 27560:2023 is identified as a Technical Specification titled *Privacy
 - Regulation (EU) 2024/1689 (Artificial Intelligence Act), Article 53.
 - Directive (EU) 2019/790, Article 4(3).
 - ANCR TPI Conformity Specification, Kantara Initiative ANCR Working Group, `TPI/` in `KantaraInitiative/ancr-wg`.
-- Well-Known URI for Controller Transparency Records, Internet-Draft, not submitted to the IETF, `IETF - Well-Known Location/` in `KantaraInitiative/ancr-wg`.
 
 ## Annex A Alignment with ISO/IEC FDIS 27091 operational transparency (informative)
 
@@ -396,5 +395,3 @@ ISO/IEC FDIS 27091, Annex B, addresses operational transparency for AI systems, 
 | B.2.4, Table B.4 | Traceability, logging, minimization, and retention | I12, I15; AC-ID-3 | 7.4; Annex H |
 | B.2.4, Table B.4 | Rights, access, and actionable control | I10; AC-RIGHTS-1 | 7.1.3 |
 | B.2.5 | Mechanisms for notice and consent of AI systems | I11 to I15 | 7.3, 7.4 |
-
-NOTE: A controller can publish its CIR and transparency information at a well-known location, as described in the Internet-Draft cited in clause 11. That draft has not been submitted to the IETF.

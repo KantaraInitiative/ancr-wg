@@ -16,7 +16,7 @@ Version identifiers are document revisions. The receipt schema identifier is ver
 
 - Clause 9, assessment classes over the record (informative): TPI v1 for a controller, TPI v2 for a governance instrument, TPI v3 for a dynamic data control system, with the class fixed by the object under assessment. The indicators and the -3 to +1 scale are those of the ANCR TPI Conformity Specification as applied in Annex E of the extension, mapped to the I elements. TPI v2 carries Layer A and Layer C, baselined to Convention 108+ Article 8.2. TPI v3 is marked proposed, with five indicators for properties that exist only across the lifecycle stages of 7.3.
 - Annex A, alignment with ISO/IEC FDIS 27091 operational transparency (informative): each subclause of 27091 Annex B related to this document and to the extension by reference only. No FDIS text is reproduced, and subclause numbers are to be checked against the published standard.
-- Clause 11, references to the ANCR TPI Conformity Specification and to the Well-Known URI for Controller Transparency Records Internet-Draft, which has not been submitted to the IETF.
+- Clause 11, reference to the ANCR TPI Conformity Specification.
 
 ### Changed
 
@@ -70,7 +70,7 @@ Amendments made during Working Group review of the v1.0 Release Candidate. Separ
 
 ### Open items added
 
-14. A constraint vocabulary for the Stage 3 micro credential, Annex D.3, and for purpose level conditions on the Authorization State Object, 7.2.5. A candidate is the Operational Constraint Vocabulary (OCV), currently a draft at https://github.com/0PN-lab/specs, subject to its contribution to the Working Group under the Kantara IPR Policy.
+14. A constraint vocabulary for the Stage 3 micro credential, Annex D.3, and for purpose level conditions on the Authorization State Object, 7.2.5. A candidate vocabulary is to be contributed to the Working Group under the Kantara IPR Policy.
 15. Receipt signing and witnessed timestamps. Receipts, Notice Version Objects and Notice Event Log entries are unsigned, carry self-asserted times, and are hosted by the controller, so a controller can replace a notice and its hash under the same version identifier. Candidate: a content-addressed notice_version_reference with the hash carried inline, the Anchored Notice Receipt signed with a key published in the CIR, and published_at and each Notice Version Object witnessed in an external append-only log.
 16. Canonical hash representation. The exact octet rule in 7.2.4 fails on dynamically rendered pages, and a per-visitor octet stream gives each visitor a distinct notice_hash that works as a tracker. Candidate: hash a machine readable representation served as a static resource, state whether the hash is over encoded or decoded bytes, and bound Notice Version Object retention.
 17. initiation_mode. The default in 7.2.2 depends on principal initiation, which no field records, so it cannot be assessed by inspection under clause 5. Add the field, or remove the default.
