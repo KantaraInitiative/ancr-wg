@@ -29,6 +29,7 @@ Amendments made during Working Group review of the v1.0 Release Candidate. Separ
 - Introduction, NOTE after the co-regulated digital identification paragraph: once both rule sets are expressed as records, they can be made operational for personal data control through consent based authorization, carried by the bilateral Authorization State Object, with the individual held record structured by profile B2. Responds to a review comment on PR #34.
 - Annex G, dependencies on ISO/IEC 29184:2020 (informative): the clauses of ISO/IEC 29184:2020 on which this document relies, with the clause of this document that relies on each and what it adds. Clause numbers and titles only.
 - Annex H, Blinding Identity Taxonomy profile for notice evidence (informative): a field level profile of the Blinding Identity Taxonomy 1.0 for the Anchored Notice Receipt, Notice Event Log entries and the Authorization State Object, so that anonymity by default can be assessed by inspection. 3.14 Note 3 and a NOTE in 7.3.1 refer to it. The Blinding Identity Taxonomy 1.0 and ISO/IEC 20889:2018 added to 2.2.
+- 3.32 notice artefact, defining the collective term used throughout the document: any of the records specified in clause 7.
 
 ### Changed
 
@@ -44,6 +45,8 @@ Amendments made during Working Group review of the v1.0 Release Candidate. Separ
 - Introduction, sentence added stating that the identity of a controller is public and is recorded in the Controller Identity Record.
 - References to ISO/IEC PWI 26689 in the Foreword, 2.2, B.3 and Annex F replaced by the registered title of the preliminary work item and its registering resolution, SC 27 Resolution 2026/32. A preliminary work item number is a temporary designation; the title and resolution remain stable as the work item progresses. Annex F retitled, and its table headings read Registered scope element and Registered justification gap. The SC 44/WG 1 work item was already cited in this form.
 - ISO/IEC 29184 moved from 2.1 Normative references to 2.2 Other references, dated 2020, with a NOTE stating that no conformance criterion in clause 5 and no mandatory requirement in clause 8 depends on it, so that the extension remains free and open to access. The NOTE records that availability of ISO/IEC 29184:2020 at no cost would allow it to be used as a public transparency standard and to be listed as a normative reference. 6.1 and 7.6 refer to Annex G, and Annex F, F.1 row 1, points to the 2.2 NOTE and Annex G in place of the NOTE removed in the previous revision. Closes open item 8.
+- 3.3 and 3.7: the genus of each definition changed from artefact to record. 7.2.2: "compliance artefact", "authorization artefact" and "transparency artefact … permission artefact" replaced by the specific terms, and the lead-in "Offline and online artefacts are named distinctly" corrected to "Consent records and consent event records are named distinctly", matching the rule it introduces.
+- Editorial: bold removed from running text, paragraph lead-ins and list item labels throughout. Headings are unchanged. The same applies to the DPV companion below its title block.
 
 ### Open items added
 
