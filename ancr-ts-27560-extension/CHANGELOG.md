@@ -10,6 +10,28 @@ This changelog covers:
 
 Version identifiers are document revisions. The receipt schema identifier is versioned separately and is stated in clause 7.3.4 of the extension.
 
+## [Unreleased] - v1.0 review amendments, PR #34
+
+### Summary
+
+Amendments made during Working Group review of the v1.0 Release Candidate. Separates the record held by the individual from the record held by the controller, defines the offline notice and its linkage to the online notice, and defines the Annex D Stage 3 artefact. No receipt schema change: the receipt schema remains `ancr-notice-receipt-2.0`.
+
+### Added
+
+- 3.28 micro credential, defining the Stage 3 artefact of Annex D.3, with notes separating it from a digital identification credential in the sense of 3.15.
+- 3.29 offline notice, notice presented outside an online environment, including a physical sign or printed material.
+- 3.30 consent event record, the record of a consent event held by the PII controller in its record of processing activities, bound to the notice version and to the Anchored Notice Receipt. Every other lawful basis is recorded in the same way through 7.4.4.
+- 7.2.6 Offline notice linkage: an offline notice carries a resolvable reference to the Controller Identification Record and to the Notice Version Object of the online notice that states its terms; a receipt generated from it binds to that online notice version.
+- Introduction, sentence stating that an offline notice is receipted through the online notice it links to.
+- 7.4.4, lawful_basis added to the processing event minimum fields, using the Annex C vocabulary.
+
+### Changed
+
+- 3.22 consent record restored to the wording of ISO/IEC TS 27560:2023, 3.3, with a SOURCE line. The previous text, "Controller retained evidence of consent", redefined the imported term while stating that it did not. In this document the consent record is the record held by the individual, and the controller held counterpart is the consent event record, 3.30.
+- 7.2.2, naming rule: the distinction is between a consent record, held by the individual and bilateral, and a consent event record, held privately by the controller. The terms offline consent record and online consent record are withdrawn. An offline notice is stated to be public and receipted through its link to an online notice.
+- 7.2.2, offline consent construction: where the lawful basis is consent, the controller held authorization record is a consent event record, 3.30.
+- Annex C, consent row aligned with 7.2.2.
+
 ## [Extension v1.0 Release Candidate, DPV companion v0.3] - Release 1, for ANCR Working Group candidate review and approval
 
 ### Summary

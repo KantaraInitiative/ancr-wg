@@ -19,7 +19,7 @@ This document specifies a notice receipt information structure that profiles and
 
 A receipt is the ordinary evidence of an exchange: it records who was involved, what took place, and the time and place, and each party keeps a copy that can be referenced after the fact. In digital identification, the evidence runs one way. The individual is identified exhaustively, through identifiers presented, collected, linked, and inferred, while the controllers and processors doing the identifying are not identified to the individual in any record the individual holds: no durable evidence of who was accountable, what notice applied, or what was disclosed at the time. What is missing is not another identifier for the person. It is the identification and tracking of the controller. Governing one's own identity online begins with being able to identify the other party, and a notice receipt is the record that makes this possible: it anchors the controller's identification and the notice it published, so that the claims carried over an individual's identifiers can be verified without creating any new identifier about the individual.
 
-A notice receipt is generated wherever notice occurs: at a physical sign, an access point, a device, or an online notification or statement. The disclosure event exists whether or not the individual interacts with the notice, and evidence of the event can be generated either way. The receipt can be issued by the controller in the course of presenting the notice, or generated independently by the individual: working from the notice itself, the individual accesses, or creates, the Controller Identification Record and produces proof of notice disclosure anchored to it. By default the receipt identifies the controller, not the individual: it requires no identification of the person who generates it, and it is portable, exchangeable between devices and across borders.
+A notice receipt is generated wherever notice occurs: at a physical sign, an access point, a device, or an online notification or statement. An offline notice, such as a physical sign, is linked to the Controller Identification Record and to the online notice that states its terms, and the receipt binds to that online notice version, see 7.2.6. The disclosure event exists whether or not the individual interacts with the notice, and evidence of the event can be generated either way. The receipt can be issued by the controller in the course of presenting the notice, or generated independently by the individual: working from the notice itself, the individual accesses, or creates, the Controller Identification Record and produces proof of notice disclosure anchored to it. By default the receipt identifies the controller, not the individual: it requires no identification of the person who generates it, and it is portable, exchangeable between devices and across borders.
 
 **Co-regulated digital identification.** This profile is specified for co-regulated identification. Co-regulation means one public policy with two rule sets operating on the same identifier at the same time: the controller's own rules, expressed in service terms, technical design, and internal policy; and the public rules, expressed in treaty, law, and standards. Neither self regulation nor state regulation alone governs identification at internet scale. Self regulation leaves the identifier privately defined. State regulation alone lacks operational artefacts that can be inspected at the time of interaction. This profile supplies the record structure through which the public rule set becomes machine readable, inspectable, and enforceable.
 
@@ -234,11 +234,13 @@ Note 1 to entry: Permission is not consent. Where an interface permission is pre
 
 ### 3.22 consent record
 
-Controller retained evidence of consent, derived from a consent statement and linked to notice evidence where consent is the lawful basis.
+information record describing a personally identifiable information (PII) principal's consent for processing of their PII, and the time and manner of a PII principal's acceptance of their PII processing notice
 
-Note 1 to entry: The term is imported from ISO/IEC TS 27560:2023, 3.3. This document does not redefine it, and adds only the offline and online distinction stated in Note 2.
+[SOURCE: ISO/IEC TS 27560:2023, 3.3]
 
-Note 2 to entry: An offline consent record and an online consent record are distinct artefacts and are named distinctly, as required by 7.2.2. An offline consent record assumes the identity and the location of the individual and is held privately in the controller's record of processing activities. An online consent record records the notice version, the time of disclosure, and the authorization state, and is bilateral.
+Note 1 to entry: In this document the consent record is the record held by the individual, consistent with the provision of a record of the consent to the PII principal stated in the scope of ISO/IEC TS 27560:2023. It is bilateral and linked to the Anchored Notice Receipt on which the consent depends.
+
+Note 2 to entry: The record of the same consent held by the controller is the consent event record, 3.30. The two are distinct artefacts and are named distinctly, as required by 7.2.2.
 
 ### 3.23 two factor online notice
 
@@ -277,6 +279,30 @@ Note 1 to entry: A full receipt repeats content that a reference receipt carries
 Notice Receipt that carries the fields of 7.3.2 marked mandatory, together with resolvable references to the Controller Identification Record and to the applicable Notice Version Object, and the applicable Annex C rights and obligations row reference.
 
 Note 1 to entry: The referenced content is not repeated in the receipt. Where resolution is not available to the relying party, notice_version_reference carries notice_version_id and notice_hash directly, see 7.2.4.
+
+### 3.28 micro credential
+
+Credential or signed assertion, derived from an authorization receipt that links to an Anchored Notice Receipt, that carries the binding identifiers of that Anchored Notice Receipt and is used by a relying party to enforce the authorization in a protocol without resharing the content of the receipt.
+
+Note 1 to entry: The binding identifiers are controller_identification_record_id, notice_version_reference and receipt_id, see Annex D.3.
+
+Note 2 to entry: A micro credential is not a digital identification credential in the sense of 3.15. It asserts an authorization state, not a claim about the individual, and it is not required of the individual to reach the minimum notice disclosure.
+
+Note 3 to entry: A micro credential is invalidated or superseded when the notice version or the authorization state from which it is derived changes, see Annex D.5.
+
+### 3.29 offline notice
+
+Notice presented outside an online environment, including a physical sign or printed material.
+
+Note 1 to entry: An offline notice is linked to the Controller Identification Record and to an online notice, 3.17, that states its terms, so that a Notice Receipt can be generated and verified for it, see 7.2.6.
+
+### 3.30 consent event record
+
+Record held by the PII controller, within its record of processing activities, of an event in which consent is given, refused, modified or withdrawn, bound to the notice version and to the Anchored Notice Receipt on which the consent depends.
+
+Note 1 to entry: Where the lawful basis is not consent, the corresponding controller held record is a processing event record under that basis, see 7.4.4. Every lawful basis is recorded in the same way.
+
+Note 2 to entry: The consent event record is the controller side counterpart of the consent record, 3.22, and is structured by profile B1, see Annex B.1.
 
 ## 4 Abbreviated terms
 
@@ -456,9 +482,9 @@ The default provides for operational transparency, accommodating dynamic active 
 
 The basis for the default is the discovery act. An individual who seeks out and reads a public notice does so in order to discover the terms of the interaction, and online consent is implied operationally in that act unless the individual is notified otherwise. The established analogue is the physical sign: absent a sign, approach and looking are ordinarily permitted, and the sign is the mechanism that notifies otherwise. The controller carries the burden of notification, and silence on the part of the controller is not the assertion of another basis.
 
-**Offline consent presented online is outside the default.** Where the interaction presents an offline consent construction through an online interface, that is a construction in which the identity and the location of the individual are assumed rather than recorded, the default in this subclause shall not apply. In that case the lawful basis shall be asserted explicitly in the receipt header, and it shall be evidenced by an authorization record distinct from the Anchored Notice Receipt, captured in a PII Controller held record of processing activities that is private and not accessible by default. Such a construction is governed by the applicable data protection regulation and is a controller held compliance artefact. Online consent, by contrast, is the mechanism through which the individual controls processing of their own data online, and it is recorded rather than assumed.
+**Offline consent presented online is outside the default.** Where the interaction presents an offline consent construction through an online interface, that is a construction in which the identity and the location of the individual are assumed rather than recorded, the default in this subclause shall not apply. In that case the lawful basis shall be asserted explicitly in the receipt header, and it shall be evidenced by an authorization record distinct from the Anchored Notice Receipt, captured in a PII Controller held record of processing activities that is private and not accessible by default. Where the lawful basis is consent, that authorization record is a consent event record, 3.30. Such a construction is governed by the applicable data protection regulation and is a controller held compliance artefact. Online consent, by contrast, is the mechanism through which the individual controls processing of their own data online, and it is recorded rather than assumed.
 
-**Offline and online artefacts are named distinctly.** Implementations shall distinguish, in naming and in reference, between an offline notice record and an offline consent record on the one hand, and an online notice record and an online consent record on the other. An offline artefact assumes the identity and the location of the individual and is held privately by the controller in its record of processing activities. An online artefact records identification, notice version, and time of disclosure, and is bilateral. The two shall not be exchanged, mapped, or reported as equivalent artefacts, and a receipt shall not reference an offline consent record as evidence of online consent.
+**Offline and online artefacts are named distinctly.** Implementations shall distinguish, in naming and in reference, between a consent record, which is held by the individual and is bilateral, and a consent event record, which is held privately by the controller in its record of processing activities. A consent event record that assumes the identity and the location of the individual shall not be exchanged, mapped, or reported as equivalent to a consent record, and a receipt shall not reference a consent event record as evidence of online consent. An offline notice is public and is receipted through its link to an online notice, see 7.2.6.
 
 NOTE: The distinction is what allows a relying party to tell whether the evidence in hand was recorded or assumed. Where the two are named identically, an offline construction presented through an online interface becomes indistinguishable from online consent at the point of inspection, which is the conflation this profile exists to prevent.
 
@@ -558,6 +584,16 @@ An ASO shall not require an account_id or a pii_principal_id, in accordance with
 5. Verify the notice version the instance references using the procedure in 7.2.4. Where the notice version is unverified, the state shall be treated as unverified for evidential purposes.
 
 NOTE: The ASO is the authorization side counterpart of the Notice Version Object. Without it, 7.2.2 requires state to be reconstructable while nothing in the record structure carries the state, and a relying party evaluating a receipt issued in the past cannot tell whether the authorization it references still stands. Specifying one object rather than a consent object and a separate record validity flag prevents two state models that can disagree. The DPV style companion expresses this object rather than proposing its own state property.
+
+#### 7.2.6 Offline notice linkage
+
+An offline notice, 3.29, shall carry a resolvable reference, for example a printed URL or a machine readable code, that resolves to the Controller Identification Record of the accountable controller and to the Notice Version Object of the online notice that states its terms.
+
+A Notice Receipt generated from an offline notice shall carry the controller_identification_record_id and the notice_version_reference of that online notice, and shall be verifiable by the procedure in 7.2.4.
+
+Where the offline notice presents part of the terms, as a layered notice, the terms it presents shall not conflict with the referenced notice version.
+
+NOTE: The link is what makes an offline notice receiptable. Without it, the notice_url and hash requirements of 7.2.4 cannot be met for a physical sign, and the disclosure event it represents cannot be evidenced.
 
 ### 7.3 Notice Receipt and the Anchored Notice Receipt classification
 
@@ -695,6 +731,7 @@ A processing event record shall include at minimum:
 - notice_version_reference, the notice version relied upon for the processing
 - controller_identification_record_id, the accountable controller
 - purpose, the recorded purpose relied upon, see 7.5
+- lawful_basis, the lawful basis relied upon for the processing, using the Annex C vocabulary
 
 Note 1 to entry: Separating processing events from notice lifecycle events allows an implementation to demonstrate that recorded processing was governed by a disclosed notice version, and allows a relying party to detect processing that is bound to no notice version and no recorded purpose.
 
@@ -911,7 +948,7 @@ This annex defines the lawful basis vocabulary and the minimum rights and obliga
 
 | lawful_basis | Meaning | Rights commonly triggered | Controller obligations commonly triggered | Minimum header requirement |
 | --- | --- | --- | --- | --- |
-| consent | Processing based on meaningful choice by the individual | Withdrawal, access, rectification, erasure where applicable, objection where applicable | Record evidence of consent; enable withdrawal; ensure consent is freely given, specific, informed, and unambiguous; avoid coercion; demonstrate proof | 2FN may be used; in an online digital identification context, where 2FN is used and no other basis is asserted, online consent is the default interpretation, see 7.2.2; offline consent presented online carries no default, shall be asserted explicitly, and shall be captured in a private controller held record of processing activities; offline and online consent records are named distinctly |
+| consent | Processing based on meaningful choice by the individual | Withdrawal, access, rectification, erasure where applicable, objection where applicable | Record evidence of consent; enable withdrawal; ensure consent is freely given, specific, informed, and unambiguous; avoid coercion; demonstrate proof | 2FN may be used; in an online digital identification context, where 2FN is used and no other basis is asserted, online consent is the default interpretation, see 7.2.2; offline consent presented online carries no default, shall be asserted explicitly, and shall be captured in a private controller held record of processing activities as a consent event record, 3.30; consent records and consent event records are named distinctly |
 | contract | Processing necessary for contract performance, or for steps taken at the request of the individual | Access, rectification, objection and complaint pathways, portability where applicable | Disclose the necessity scope; limit processing to contract purposes; document retention aligned to the contract | Header shall assert contract and identify the contract purpose scope covered by the notice version |
 | legal_obligation | Processing necessary to comply with a legal obligation | Access and explanation, complaint and appeal pathways, restriction where lawful | Identify the obligation authority; document the statutory basis; apply minimization; disclose retention mandates | Header shall assert legal obligation and provide an authority reference or a pointer to it |
 | legitimate_interest | Processing necessary for legitimate interests balanced against the rights of the individual | Objection, access, explanation, complaint and appeal pathways | Document the balancing and necessity assessment; provide an objection mechanism; apply safeguards and minimization | Header shall assert legitimate interest and point to the balancing rationale or its summary |
