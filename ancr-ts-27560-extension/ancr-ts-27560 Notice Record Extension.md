@@ -9,7 +9,7 @@ Anchored Notice and Consent Receipts for operational transparency. A notice rece
 
 ## Foreword
 
-This document specifies a notice receipt information structure that profiles and extends ISO/IEC TS 27560:2023, consent record information structure. It is published by the Kantara Initiative and the Anchored Notice and Consent Receipt (ANCR) Working Group as a companion specification. It is intended to be cited as prior art and as an implementation reference for SC 27/WG 5 work that depends on machine readable notice and consent records, notably contributions to ISO/IEC 27560, ISO/IEC TS 27568, ISO/IEC FDIS 27091 Annex B.4, and ISO/IEC WD 27566-2 Annex F. A crosswalk to the registered scope of ISO/IEC PWI 26689 is provided in Annex F of this document. It is further offered as an implementation reference for the ISO/IEC JTC 1/SC 44/WG 1 preliminary work item *Internet Transparency Code of Practice Profile through privacy by design*, established by resolution of the fifth ISO/IEC JTC 1/SC 44 plenary, 3 September 2026, which aligns that work item to ISO/IEC 29100, ISO/IEC 29184 and ISO/IEC TS 27560:2023.
+This document specifies a notice receipt information structure that profiles and extends ISO/IEC TS 27560:2023, consent record information structure. It is published by the Kantara Initiative and the Anchored Notice and Consent Receipt (ANCR) Working Group as a companion specification. It is intended to be cited as prior art and as an implementation reference for SC 27/WG 5 work that depends on machine readable notice and consent records, notably contributions to ISO/IEC 27560, ISO/IEC TS 27568, ISO/IEC FDIS 27091 Annex B.4, and ISO/IEC WD 27566-2 Annex F. A crosswalk to the registered scope of the SC 27/WG 5 preliminary work item *Gap analysis for standards on privacy notices and consent and ways to address potential gaps*, registered by SC 27 Resolution 2026/32, is provided in Annex F of this document. It is further offered as an implementation reference for the ISO/IEC JTC 1/SC 44/WG 1 preliminary work item *Internet Transparency Code of Practice Profile through privacy by design*, established by resolution of the fifth ISO/IEC JTC 1/SC 44 plenary, 3 September 2026, which aligns that work item to ISO/IEC 29100, ISO/IEC 29184 and ISO/IEC TS 27560:2023.
 
 **Document status.** This v1.0 Release Candidate is Release 1 of this specification and is presented for candidate review and approval by the ANCR Working Group and, upon approval, for progression toward a Kantara Initiative Recommendation in accordance with Kantara operating procedures. The Working Group approved version is intended for circulation to ISO/IEC JTC 1/SC 27/WG 5 as a liaison contribution to the work items named above, in continuity with WG 5 N 5211.
 
@@ -19,15 +19,15 @@ This document specifies a notice receipt information structure that profiles and
 
 A receipt is the ordinary evidence of an exchange: it records who was involved, what took place, and the time and place, and each party keeps a copy that can be referenced after the fact. In digital identification, the evidence runs one way. The individual is identified exhaustively, through identifiers presented, collected, linked, and inferred, while the controllers and processors doing the identifying are not identified to the individual in any record the individual holds: no durable evidence of who was accountable, what notice applied, or what was disclosed at the time. What is missing is not another identifier for the person. It is the identification and tracking of the controller. Governing one's own identity online begins with being able to identify the other party, and a notice receipt is the record that makes this possible: it anchors the controller's identification and the notice it published, so that the claims carried over an individual's identifiers can be verified without creating any new identifier about the individual.
 
-A notice receipt is generated wherever notice occurs: at a physical sign, an access point, a device, or an online notification or statement. An offline notice, such as a physical sign, is linked to the Controller Identification Record and to the online notice that states its terms, and the receipt binds to that online notice version, see 7.2.6. The disclosure event exists whether or not the individual interacts with the notice, and evidence of the event can be generated either way. The receipt can be issued by the controller in the course of presenting the notice, or generated independently by the individual: working from the notice itself, the individual accesses, or creates, the Controller Identification Record and produces proof of notice disclosure anchored to it. By default the receipt identifies the controller, not the individual: it requires no identification of the person who generates it, and it is portable, exchangeable between devices and across borders.
+A notice receipt is generated wherever notice occurs: at a physical sign, an access point, a device, or an online notification or statement. An offline notice, such as a physical sign, is linked to the Controller Identity Record and to the online notice that states its terms, and the receipt binds to that online notice version, see 7.2.6. The disclosure event exists whether or not the individual interacts with the notice, and evidence of the event can be generated either way. The receipt can be issued by the controller in the course of presenting the notice, or generated independently by the individual: working from the notice itself, the individual accesses, or creates, the Controller Identity Record and produces proof of notice disclosure anchored to it. By default the receipt identifies the controller, not the individual: it requires no identification of the person who generates it, and it is portable, exchangeable between devices and across borders.
 
 **Co-regulated digital identification.** This profile is specified for co-regulated identification. Co-regulation means one public policy with two rule sets operating on the same identifier at the same time: the controller's own rules, expressed in service terms, technical design, and internal policy; and the public rules, expressed in treaty, law, and standards. Neither self regulation nor state regulation alone governs identification at internet scale. Self regulation leaves the identifier privately defined. State regulation alone lacks operational artefacts that can be inspected at the time of interaction. This profile supplies the record structure through which the public rule set becomes machine readable, inspectable, and enforceable.
 
-**Identity and identification are distinct.** Identity is self expression and self identification, managed by the individual. Identification is the technical and organizational process a controller uses to discover, link, or assert claims about a person. The two are governed differently: consent is a human expression managed by humans, while permissions are managed by organizations and systems. Where the two are conflated, an interface permission is presented as consent. This profile keeps them separate by requiring controller identification, and the notice bound to it, before any demand for personal identification.
+**Identity and identification are distinct.** Identity is self expression and self identification, managed by the individual. The identity of a controller is public, and this profile records it in the Controller Identity Record. Identification is the technical and organizational process a controller uses to discover, link, or assert claims about a person. The two are governed differently: consent is a human expression managed by humans, while permissions are managed by organizations and systems. Where the two are conflated, an interface permission is presented as consent. This profile keeps them separate by requiring controller identification, and the notice bound to it, before any demand for personal identification.
 
 **Notice already given is detectable.** A notice receipt carries the immutable reference to the notice version it was issued against, and that reference resolves to the version object holding the integrity hash and the publication time. A controller presenting notice can establish whether a receipt is already held for the version in effect, and an individual can establish the same thing without asking the controller. Repetition of a prompt then indicates that the notice has changed, rather than that no record of the previous one exists.
 
-**A code of practice becomes something a record can point at.** Physical signs, privacy policy pages, and published codes of conduct state what a controller undertakes. What they do not carry is the version in effect at a particular disclosure, or an artefact joining the two. The Notice Record states the applicable public rule set, and the Controller Identification Record carries that reference in resolvable form, so an undertaking published under a code and a disclosure made under it are joined by an identifier rather than by assertion. A code extends the record by context and by jurisdiction without the record structure changing.
+**A code of practice becomes something a record can point at.** Physical signs, privacy policy pages, and published codes of conduct state what a controller undertakes. What they do not carry is the version in effect at a particular disclosure, or an artefact joining the two. The Notice Record states the applicable public rule set, and the Controller Identity Record carries that reference in resolvable form, so an undertaking published under a code and a disclosure made under it are joined by an identifier rather than by assertion. A code extends the record by context and by jurisdiction without the record structure changing.
 
 **Across borders, the undertaking travels and the disclosure event does not.** Transfer mechanisms bind an exporter and an importer to terms. An individual relying on those terms can obtain a copy of the promise, and never a record of the event: what was disclosed, when, and under which version of the notice. Binding each receipt to an immutable notice version reference, and recording issuance and material change in the Notice Event Log, means the version in effect at a stated time can be established from the record by either party independently. Silence is not continuity: a version that remains in effect is a recorded fact rather than an assumption. A question about what was presented is then answerable from records rather than from recollection.
 
@@ -49,13 +49,13 @@ Applicable code of conduct, code of practice, privacy policy, or law (jurisdicti
 
 This profile extends ISO/IEC TS 27560:2023, the technical specification that adopted the minimum viable consent receipt specification titled Consent Receipt v1.1. This profile specifies a machine readable online Notice and Consent Record and a corresponding Notice Receipt that together provide durable evidence of notice disclosure.
 
-This profile specifies the record structure through which identification is co-regulated. Controller identification shall precede any demand for personal identification, and the artefacts specified in clause 7 shall be inspectable independently of any personal identifier. Where an implementation demands personal identification before a resolvable Controller Identification Record (CIR) and its bound online notice version are available, that implementation does not conform to this profile.
+This profile specifies the record structure through which identification is co-regulated. Controller identification shall precede any demand for personal identification, and the artefacts specified in clause 7 shall be inspectable independently of any personal identifier. Where an implementation demands personal identification before a resolvable Controller Identity Record (CIR) and its bound online notice version are available, that implementation does not conform to this profile.
 
 The profile supports layered and sequenced notices, notifications, and disclosures. Its requirements are lawful basis agnostic. Where the lawful basis is consent, the corresponding authorization can be represented as a specialisation of the TS 27560:2023 consent receipt.
 
 The base extension defines a minimum interoperable set of notice artefacts for operational online notice transparency and contextual integrity:
 
-- Controller Identification Record (CIR)
+- Controller Identity Record (CIR)
 - Notice Record
 - Notice Receipt, including the Anchored Notice Receipt classification
 - Notice Event Log
@@ -93,7 +93,7 @@ Out of scope for the base extension, and addressed by optional annexes or compan
 - W3C Data Privacy Vocabularies and Controls Community Group, Consent Records and Receipts as per ISO/IEC TS 27560:2023 using DPV, https://w3id.org/dpv/guides/consent-27560
 - ANCR DPV Model Extension, Convention 108+ legal model with an AI transparency profile, external review draft v0.3, Kantara Initiative ANCR Working Group, available at https://github.com/KantaraInitiative/ancr-wg/tree/main/ancr-ts-27560-extension/ancr-dpv. This companion document expresses the artefacts specified here in DPV terms and anchors them to the modernised Convention 108, see Annex B.3.
 - ANCR TPI Conformity Specification, v0.9, Kantara Initiative ANCR Working Group, available at https://github.com/KantaraInitiative/ancr-wg/tree/main/TPI. Methodology for the TPI-R assessment applied in Annex E.
-- The SC 27/WG 5 work items to which this document is contributed, cited in the Foreword and tracked in B.3: ISO/IEC 27560 (revision, structure of PII processing records), ISO/IEC WD TS 27568 (digital twins), ISO/IEC FDIS 27091 (AI privacy protection), ISO/IEC WD 27566-2 (age assurance, Part 2), and ISO/IEC PWI 26689, Gap analysis for standards on privacy notices and consent and ways to address potential gaps, see Annex F. These work items are under development, and their stages are as at the date of this document.
+- The SC 27/WG 5 work items to which this document is contributed, cited in the Foreword and tracked in B.3: ISO/IEC 27560 (revision, structure of PII processing records), ISO/IEC WD TS 27568 (digital twins), ISO/IEC FDIS 27091 (AI privacy protection), ISO/IEC WD 27566-2 (age assurance, Part 2), and the preliminary work item *Gap analysis for standards on privacy notices and consent and ways to address potential gaps*, registered by SC 27 Resolution 2026/32, see Annex F. These work items are under development, and their stages are as at the date of this document.
 
 ### 2.3 Verbal forms for the expression of provisions
 
@@ -107,9 +107,13 @@ NOTE 2: This document does not use "must" to express a requirement. Where "must"
 
 Terms and definitions given in ISO/IEC TS 27560:2023 and ISO/IEC 29100 apply, together with the following.
 
-### 3.1 Controller Identification Record
+### 3.1 Controller Identity Record
 
 Publicly accessible controller accountability record, used as the anchor for notice and receipt generation.
+
+Note 1 to entry: The record states the identity of the controller, comprising its name, address, jurisdiction, public identifier and access points. It corresponds to the party identification section of ISO/IEC TS 27560:2023, 6.3.6, see Annex A.
+
+Note 2 to entry: The identity recorded is that of the controller. It is not identity in the sense of 3.12, and it is not a record of identification in the sense of 3.11.
 
 ### 3.2 Notice Record
 
@@ -169,11 +173,13 @@ Technical and organizational process by which a controller recognises, links, or
 
 ### 3.12 identity
 
-Self expression and self identification managed by the individual, including the individual's own choice of which identifiers to bind to a given Controller Identification Record.
+Self expression and self identification managed by the individual, including the individual's own choice of which identifiers to bind to a given Controller Identity Record.
+
+Note 1 to entry: This entry defines the identity of the individual. The identity of the controller is recorded in the Controller Identity Record, 3.1.
 
 ### 3.13 minimum notice disclosure
 
-Smallest set of disclosures that is present, resolvable, and inspectable before identification or processing begins, comprising the Controller Identification Record, the notice version in effect, the asserted lawful basis, the scope of disclosure, and the privacy access point.
+Smallest set of disclosures that is present, resolvable, and inspectable before identification or processing begins, comprising the Controller Identity Record, the notice version in effect, the asserted lawful basis, the scope of disclosure, and the privacy access point.
 
 Note 1 to entry: The requirement to make this set available is stated in 7.2.3 and tested by criterion C2 in 5.1.
 
@@ -183,7 +189,7 @@ Property whereby notice disclosure and the resulting evidence artefacts are gene
 
 Note 1 to entry: Anonymity by default applies to the notice and evidence layer. It does not restrict identification required by the lawful basis for the processing itself.
 
-Note 2 to entry: Retrieval of a Controller Identification Record is not an identification event, see 7.1.
+Note 2 to entry: Retrieval of a Controller Identity Record is not an identification event, see 7.1.
 
 ### 3.15 non-exclusion
 
@@ -273,7 +279,7 @@ Note 1 to entry: A full receipt repeats content that a reference receipt carries
 
 ### 3.27 reference receipt
 
-Notice Receipt that carries the fields of 7.3.2 marked mandatory, together with resolvable references to the Controller Identification Record and to the applicable Notice Version Object, and the applicable Annex C rights and obligations row reference.
+Notice Receipt that carries the fields of 7.3.2 marked mandatory, together with resolvable references to the Controller Identity Record and to the applicable Notice Version Object, and the applicable Annex C rights and obligations row reference.
 
 Note 1 to entry: The referenced content is not repeated in the receipt. Where resolution is not available to the relying party, notice_version_reference carries notice_version_id and notice_hash directly, see 7.2.4.
 
@@ -281,7 +287,7 @@ Note 1 to entry: The referenced content is not repeated in the receipt. Where re
 
 Credential or signed assertion, derived from an authorization receipt that links to an Anchored Notice Receipt, that carries the binding identifiers of that Anchored Notice Receipt and is used by a relying party to enforce the authorization in a protocol without resharing the content of the receipt.
 
-Note 1 to entry: The binding identifiers are controller_identification_record_id, notice_version_reference and receipt_id, see Annex D.3.
+Note 1 to entry: The binding identifiers are controller_identity_record_id, notice_version_reference and receipt_id, see Annex D.3.
 
 Note 2 to entry: A micro credential is not a digital identification credential in the sense of 3.15. It asserts an authorization state, not a claim about the individual, and it is not required of the individual to reach the minimum notice disclosure.
 
@@ -291,7 +297,7 @@ Note 3 to entry: A micro credential is invalidated or superseded when the notice
 
 Notice presented outside an online environment, including a physical sign or printed material.
 
-Note 1 to entry: An offline notice is linked to the Controller Identification Record and to an online notice, 3.17, that states its terms, so that a Notice Receipt can be generated and verified for it, see 7.2.6.
+Note 1 to entry: An offline notice is linked to the Controller Identity Record and to an online notice, 3.17, that states its terms, so that a Notice Receipt can be generated and verified for it, see 7.2.6.
 
 ### 3.30 consent event record
 
@@ -301,13 +307,27 @@ Note 1 to entry: Where the lawful basis is not consent, the corresponding contro
 
 Note 2 to entry: The consent event record is the controller side counterpart of the consent record, 3.22, and is structured by profile B1, see Annex B.1.
 
+### 3.31 consent construction
+
+Manner in which a consent authorization is informed and constructed, distinguished by whether the notice relied upon is presented in the context or recorded as a notice version, and by whether the identification and the location of the individual are inherent to the context, recorded through the notice artefacts, or assumed.
+
+Note 1 to entry: In person, identification and location come with the context: the individual is present, and notice and identity are physically verifiable, see the NOTE in clause 1. They are not recorded because the context supplies them. An in person interaction that uses a device can also record them.
+
+Note 2 to entry: Where identification and location are neither inherent to the context nor recorded, they are assumed. This is the case where an offline construction is presented through an online interface, and where consent is given remotely by a means that is not online, such as by telephone or by post. An assumed construction is not online consent, 3.20, see 3.19, Note 3, and 7.2.2.
+
+Note 3 to entry: Online consent, 3.20, is the construction in which the notice is recorded as a notice version, see 7.2.4, and identification and location are recorded through the notice artefacts. An offline notice, 3.29, presents the notice in the context and links it to a recorded notice version, see 7.2.6.
+
+Note 4 to entry: Consent construction is distinct from consent type, ISO/IEC TS 27560:2023, 3.4, which describes the way in which consent is expressed by the PII principal. Consent type states how consent is expressed; consent construction states how the conditions for relying on it are supplied. The term refers to how a consent is formed and evidenced, not to the interpretation of a consent or to consent deemed to have been given.
+
+Note 5 to entry: The construction in use, not the presence of a receipt, determines how a disclosure event is interpreted, see 7.2.2.
+
 ## 4 Abbreviated terms
 
 | Abbreviation | Expansion |
 | --- | --- |
 | ANCR | Anchored Notice and Consent Receipt |
 | ASO | Authorization State Object |
-| CIR | Controller Identification Record |
+| CIR | Controller Identity Record |
 | CRDI | Co-regulated digital identification |
 | MVCR | Minimum Viable Consent Receipt |
 | NVO | Notice Version Object |
@@ -325,7 +345,7 @@ An implementation conforms to the base extension if it satisfies every mandatory
 
 **Relationship to conformance with ISO/IEC TS 27560:2023.** This document is an extension of ISO/IEC TS 27560:2023 and is not a stand alone specification. An implementation that conforms to this document conforms to ISO/IEC TS 27560:2023 for the record content it carries, subject to the single declared deviation in A.0, which relaxes the requirement for pii_principal_id. A controller that requires conformance to ISO/IEC TS 27560:2023 without that deviation shall populate a principal identifier in the controller held record as described in A.0, while keeping the individual side Anchored Notice Receipt free of it.
 
-Conformance to ISO/IEC TS 27560:2023 alone does not constitute conformance to this document, because clause 7 specifies artefacts that the technical specification does not: the Controller Identification Record, the Notice Version Object, the Authorization State Object, and the Notice Event Log.
+Conformance to ISO/IEC TS 27560:2023 alone does not constitute conformance to this document, because clause 7 specifies artefacts that the technical specification does not: the Controller Identity Record, the Notice Version Object, the Authorization State Object, and the Notice Event Log.
 
 Assessment of the criteria in 5.1 is by inspection of the artefact each criterion names. C5 and C8 are additionally testable by the normative procedures in 7.2.4 and 7.2.5. Annex E provides the assessment profile for deployed implementations.
 
@@ -333,7 +353,7 @@ Assessment of the criteria in 5.1 is by inspection of the artefact each criterio
 
 An implementation claiming conformance to co-regulated identification shall satisfy all of the following.
 
-- **C1 Sequence.** A resolvable Controller Identification Record is available before any demand for personal identification.
+- **C1 Sequence.** A resolvable Controller Identity Record is available before any demand for personal identification.
 - **C2 Minimum notice disclosure.** The elements described in 3.13 are resolvable at the time of the disclosure event.
 - **C3 Anonymity by default.** The Anchored Notice Receipt is generable and verifiable without an account_id or a pii_principal_id.
 - **C4 Public rule reference.** The Notice Record states the applicable public rule set by reference to the code of conduct, code of practice, or legal instrument relied upon.
@@ -363,7 +383,7 @@ NOTE: Where this profile is read alongside work items that use one factor notice
 
 ### 6.2 The notice artefact set
 
-1. Controller Identification Record, the accountability anchor
+1. Controller Identity Record, the accountability anchor
 2. Notice Record, the versioned notice content
 3. Notice Receipt, including the Anchored Notice Receipt classification, the disclosure evidence
 4. Notice Event Log, the lifecycle evidence
@@ -386,7 +406,7 @@ Historic notice versions shall be retained for as long as any processing or reco
 
 ## 7 Notice record specifications
 
-### 7.1 Controller Identification Record
+### 7.1 Controller Identity Record
 
 The CIR is the public rule anchor for co-regulated identification. The CIR shall be resolvable before any demand for personal identification, shall be retrievable without authentication, and shall not require the individual to identify in order to retrieve it. Retrieval of a CIR shall not be recorded as an identification event.
 
@@ -394,7 +414,7 @@ The CIR is the public rule anchor for co-regulated identification. The CIR shall
 
 A CIR shall include at minimum:
 
-- controller_identification_record_id
+- controller_identity_record_id
 - controller_public_id_uri
 - controller_name
 - jurisdiction
@@ -410,13 +430,13 @@ A CIR may include:
 
 - derogation_reference, for lawful withholding
 
-NOTE: The identifier field is named controller_identification_record_id. Earlier drafts, including the v0.4 baseline, used controller_identity_record_id. Implementations should treat controller_identity_record_id as deprecated, should accept it on input for one revision cycle, and shall emit controller_identification_record_id. The rename reflects that the record anchors identification carried out by a controller, and does not describe the identity of an individual.
+NOTE: The identifier field is named controller_identity_record_id, the name used in the v0.4 baseline. The v0.5 external review draft and the v1.0 Release Candidate used controller_identification_record_id. Implementations should treat controller_identification_record_id as deprecated, should accept it on input for one revision cycle, and shall emit controller_identity_record_id. The record states the identity of the controller. Identification in the sense of 3.11 is carried out by a controller on an individual, and identity in the sense of 3.12 belongs to the individual; neither is what this record describes.
 
 #### 7.1.2 CIR field specification table (normative)
 
 | Field | Description | Required | Value type | Constraints | Exposure | TS 27560:2023 anchor |
 | --- | --- | --- | --- | --- | --- | --- |
-| controller_identification_record_id | Stable identifier for the CIR | Yes | URI or string identifier | The value shall be stable and suitable for reference by receipts and event log entries | Public | 6.3.6.2 party_id, controller party |
+| controller_identity_record_id | Stable identifier for the CIR | Yes | URI or string identifier | The value shall be stable and suitable for reference by receipts and event log entries | Public | 6.3.6.2 party_id, controller party |
 | controller_public_id_uri | Public resolvable controller identifier | Yes | URI | The value shall be resolvable or dereferenceable by intended relying parties | Public | 6.3.6.5 party_url, closest anchor |
 | controller_name | Controller legal name | Yes | String | The value shall represent the accountable controller entity | Public | 6.3.6.7 party_name |
 | jurisdiction | Applicable jurisdiction indicator or pointer | Yes | Code or string | The value shall be present, and may point to a code of conduct reference | Public | 6.3.4.17 jurisdiction, PII processing |
@@ -519,7 +539,7 @@ An NVO shall include:
 An NVO should include:
 
 - hash_algorithm, where an algorithm other than SHA-256 is used
-- controller_identification_record_id, the controller accountable for the version
+- controller_identity_record_id, the controller accountable for the version
 - supersedes, the notice_version_id of the version replaced
 
 notice_version_reference shall resolve to the applicable NVO. Where resolution is not available to the relying party, notice_version_reference shall carry notice_version_id and notice_hash directly.
@@ -544,7 +564,7 @@ Where authorization state is relied upon for a processing context, that state sh
 An ASO shall include:
 
 - authorization_state_id, the identifier of this state instance
-- controller_identification_record_id, the accountable controller
+- controller_identity_record_id, the accountable controller
 - notice_id and notice_version_reference, the notice version the state was formed against
 - purpose_state, an array in which each entry states the purpose reference, the lawful_basis relied upon for that purpose, the state value, and the state_time
 - record_validity, the validity state of the record
@@ -584,9 +604,9 @@ NOTE: The ASO is the authorization side counterpart of the Notice Version Object
 
 #### 7.2.6 Offline notice linkage
 
-An offline notice, 3.29, shall carry a resolvable reference, for example a printed URL or a machine readable code, that resolves to the Controller Identification Record of the accountable controller and to the Notice Version Object of the online notice that states its terms.
+An offline notice, 3.29, shall carry a resolvable reference, for example a printed URL or a machine readable code, that resolves to the Controller Identity Record of the accountable controller and to the Notice Version Object of the online notice that states its terms.
 
-A Notice Receipt generated from an offline notice shall carry the controller_identification_record_id and the notice_version_reference of that online notice, and shall be verifiable by the procedure in 7.2.4.
+A Notice Receipt generated from an offline notice shall carry the controller_identity_record_id and the notice_version_reference of that online notice, and shall be verifiable by the procedure in 7.2.4.
 
 Where the offline notice presents part of the terms, as a layered notice, the terms it presents shall not conflict with the referenced notice version.
 
@@ -606,7 +626,7 @@ Generation, retention, and verification of an Anchored Notice Receipt shall be p
 
 #### 7.3.2 Notice Receipt field specification table (normative)
 
-At minimum, an Anchored Notice Receipt shall include schema_version, receipt_id, notice_id, notice_version_reference, controller_identification_record_id or a resolvable pointer to the CIR, presented_at, lawful_basis, purpose, and notice_type.
+At minimum, an Anchored Notice Receipt shall include schema_version, receipt_id, notice_id, notice_version_reference, controller_identity_record_id or a resolvable pointer to the CIR, presented_at, lawful_basis, purpose, and notice_type.
 
 **Exposure values used in this document.**
 
@@ -625,10 +645,10 @@ At minimum, an Anchored Notice Receipt shall include schema_version, receipt_id,
 | notice_version_reference | Immutable reference to the disclosed notice version | Yes | URI or hash reference | The value shall reference the exact notice version in effect at the time of disclosure, and shall resolve to the applicable Notice Version Object, see 7.2.4 | Public |
 | notice_version_hash | Integrity hash of the notice version disclosed | No | Hash string | The value should be present where the receipt is verified without resolving the Notice Version Object; where present, it shall equal notice_hash in the applicable NVO, see 7.2.4 | Public |
 | transparency_disclosure_reference | Stable pointer to the technology and controls disclosure set of the Notice Record | No | URI | Where the disclosure set is not embedded inline in the Notice Record, this field should be present so that relying parties can retrieve the 7.2.1 elements bound to notice_version_reference | Public |
-| controller_identification_record_id | Reference to the CIR | Yes | URI or string identifier | The value shall reference a resolvable CIR | Public |
+| controller_identity_record_id | Reference to the CIR | Yes | URI or string identifier | The value shall reference a resolvable CIR | Public |
 | presented_at | Time of disclosure or presentation | Yes | Date and time | The value shall be recorded using the date and time format specified in the ISO 8601 series, in the UTC time zone | Bilateral |
 | lawful_basis | Asserted lawful basis for the processing context covered by the notice version | Yes | Controlled vocabulary | The value shall use the vocabulary in Annex C, and shall be present in the receipt header | Public |
-| purpose | Recorded purpose relied upon for the processing context | Yes | Text or structured reference | The value shall be bound to notice_version_reference and controller_identification_record_id, and may be carried by reference to the Notice Record for the applicable version, see 7.5 | Public |
+| purpose | Recorded purpose relied upon for the processing context | Yes | Text or structured reference | The value shall be bound to notice_version_reference and controller_identity_record_id, and may be carried by reference to the Notice Record for the applicable version, see 7.5 | Public |
 | two_factor_notice | Indicates that the disclosure event was a two factor online notice producing a bilateral receipt | No | Boolean | Where true in an online digital identification context and no other basis is asserted, the disclosure event is by default interpreted as online consent under 7.2.2; outside that context the field records presentation and acknowledgement only | Bilateral |
 | notice_type | Notice classification | Yes | Controlled vocabulary | The value shall use the vocabulary in 7.3.3 | Public |
 | recipient_jurisdictions | Destination jurisdictions for cross border transfer or disclosure | Conditional | Array of country codes | Where cross border transfer or disclosure applies, this field shall be present; values should use ISO 3166-1 alpha-2 | Public |
@@ -658,12 +678,13 @@ The version identifier follows a major, minor, patch rule.
 - The **minor** component shall be incremented where a field, an event type, or a vocabulary value is added without invalidating a record produced under the previous version.
 - The **patch** component shall be incremented for editorial change that does not alter the record structure.
 
-This revision carries the major component 2 because four changes break an implementation built on the v0.4 baseline, the file published at commit `a09559d5`, which carried no stated schema version value.
+This revision carries the major component 2 because three changes break an implementation built on the v0.4 baseline, the file published at commit `a09559d5`, which carried no stated schema version value.
 
-1. `controller_identity_record_id` is renamed to `controller_identification_record_id`, see 7.1.1.
-2. Each notice version shall be represented by a Notice Version Object carrying `notice_hash` and `published_at`, see 7.2.4, and criterion C5 and mandatory requirement 3 now test it.
-3. The flat rule that no lawful basis is inferred from a receipt is replaced by the scoped default in 7.2.2, which changes how a receipt issued in an online digital identification context is interpreted.
-4. Where authorization state is relied upon, it shall be carried by an Authorization State Object, see 7.2.5, tested by criterion C8 and mandatory requirement 11.
+1. Each notice version shall be represented by a Notice Version Object carrying `notice_hash` and `published_at`, see 7.2.4, and criterion C5 and mandatory requirement 3 now test it.
+2. The flat rule that no lawful basis is inferred from a receipt is replaced by the scoped default in 7.2.2, which changes how a receipt issued in an online digital identification context is interpreted.
+3. Where authorization state is relied upon, it shall be carried by an Authorization State Object, see 7.2.5, tested by criterion C8 and mandatory requirement 11.
+
+The controller identifier field keeps its v0.4 baseline name, controller_identity_record_id, see 7.1.1.
 
 A relying party that encounters a receipt with an absent `schema_version`, or with a value carrying a major component below 2, shall interpret the record against the v0.4 baseline (commit `a09559d5`), and shall not apply the default in 7.2.2 to it.
 
@@ -685,7 +706,7 @@ Where an Authorization State Object is maintained under 7.2.5, the Notice Event 
 
 The Notice Event Log should additionally support:
 
-- cir_updated, for a change to the Controller Identification Record relied upon by a notice version
+- cir_updated, for a change to the Controller Identity Record relied upon by a notice version
 - disclosure_set_updated, for a change to the disclosure set in 7.2.1
 
 #### 7.4.2 Event record minimum fields (normative)
@@ -726,7 +747,7 @@ A processing event record shall include at minimum:
 - event_time
 - processing_event_type
 - notice_version_reference, the notice version relied upon for the processing
-- controller_identification_record_id, the accountable controller
+- controller_identity_record_id, the accountable controller
 - purpose, the recorded purpose relied upon, see 7.5
 - lawful_basis, the lawful basis relied upon for the processing, using the Annex C vocabulary
 
@@ -737,7 +758,7 @@ Note 1 to entry: Separating processing events from notice lifecycle events allow
 Purpose shall be recorded, and shall be specified before identification or transfer. Each recorded purpose shall be bound to:
 
 - the legal authority relied upon;
-- the controller_identification_record_id of the accountable controller; and
+- the controller_identity_record_id of the accountable controller; and
 - the notice_version_reference in effect at the time the purpose is disclosed.
 
 NOTE 1: Unrecorded purpose is a security defect, not a documentation omission. Transparency evidence that cannot be inspected after the fact cannot support accountability or enforcement, so the absence of a recorded and bound purpose is a defect in the evidence rather than a missing document. The conformance consequence is stated in clause 8.
@@ -794,7 +815,7 @@ This profile carries forward TS style schema governance and identifiers through 
 | Notice Version Object | privacy_notice, reference | Structured version object carrying notice location, version identifier, integrity hash, and publication time; the TS carries a notice reference but no integrity or publication metadata |
 | notice_version_hash | None | Optional integrity hash of the disclosed notice version, equal to notice_hash in the applicable Notice Version Object |
 | Authorization State Object | 6.3.7.6 event_state, closest anchor | Structured object carrying per purpose authorization state and record validity, with append only state changes and a reconstruction procedure; the TS represents lifecycle state through event elements but specifies no state object that can be evaluated at a past time |
-| controller_identification_record_id | party_id | Specializes controller party identification as a resolvable CIR identifier |
+| controller_identity_record_id | party_id | Specializes controller party identification as a resolvable CIR identifier |
 | presented_at | event_time | Time of disclosure or presentation, aligned to TS event_time semantics |
 | transparency_disclosure_reference | None | Pointer to the technology and controls disclosure set in 7.2.1 |
 | notice_type | None | Classification vocabulary: statement, notification, risk_disclosure, policy, signal |
@@ -813,7 +834,7 @@ This profile carries forward TS style schema governance and identifiers through 
 | receipt_id | 6.4.5.3 | receipt_id | Same | Unique receipt instance identifier |
 | pii_principal_id | 6.3.3.4 | account_id | Deviation, see A.0 | Optional in this profile; where present it should be data minimizing and unlinkable |
 | event_time | 6.3.7.2 | presented_at | Map | Captures the time of disclosure or presentation |
-| party_id, controller | 6.3.6.2 | controller_identification_record_id | Map and specialize | Controller party identifier specialized as a CIR reference |
+| party_id, controller | 6.3.6.2 | controller_identity_record_id | Map and specialize | Controller party identifier specialized as a CIR reference |
 | party_name, controller | 6.3.6.7 | controller_name, CIR | Map | Carried in the CIR rather than repeated per receipt where a reference receipt is used |
 | party_contact, controller | 6.3.6.9 | privacy_access_point, CIR | Map | Rights and contact modalities carried as structured entries |
 | privacy_notice | 6.3.4.2 | notice_version_reference | Map and extend | Immutable reference, URL or content hash; a notice URL may also be carried in the Notice Record |
@@ -822,7 +843,7 @@ This profile carries forward TS style schema governance and identifiers through 
 | purpose | 6.3.4.5 | Notice Record disclosure set | Map | Purpose labels and identifiers disclosed for the applicable notice version |
 | lawful_basis | 6.3.4.7 | lawful_basis | Map and generalize | TS lawful_basis is consent scoped; this profile generalizes it across lawful bases, see Annex C |
 | pii_information | 6.3.4.8 | Optional Profile B1 | Map | Attribute and category inventories are processing record scope; a reference receipt may omit them |
-| pii_controllers | 6.3.4.9 | controller_identification_record_id | Map and specialize | Joint controllers may be represented as multiple CIR references |
+| pii_controllers | 6.3.4.9 | controller_identity_record_id | Map and specialize | Joint controllers may be represented as multiple CIR references |
 | collection_method | 6.3.4.10 | Optional Profile B1 | Map | Processing record scope; may be referenced from notice versions where required |
 | processing_method | 6.3.4.11 | technology_in_use | Map and refactor | Where processing methods imply technology mediated capabilities, for example profiling or automated decision, disclose them with the corresponding controls |
 | storage_locations | 6.3.4.12 | Optional Profile B1 | Map | Processing record scope |
@@ -849,7 +870,7 @@ This profile carries forward TS style schema governance and identifiers through 
 | party_role | 6.3.6.8 | CIR scoping | Constrain | The CIR represents the controller role; other roles may be represented in B1 |
 | party_type | 6.3.6.10 | Optional CIR extension | Map | Useful for accountability classification |
 | validity_duration | 6.3.7.3 | Optional, basis dependent | Map | Where used, should be bound to the applicable lawful basis and scope |
-| entity_id | 6.3.7.4 | controller_identification_record_id | Map and constrain | For controller issued notice events, the acting entity is the CIR reference |
+| entity_id | 6.3.7.4 | controller_identity_record_id | Map and constrain | For controller issued notice events, the acting entity is the CIR reference |
 | event_type | 6.3.7.5 | notice_type, Notice Event Log event_type | Map and extend | notice_type classifies the notice context; the event log carries lifecycle event types |
 | event_state | 6.3.7.6 | Notice Event Log event_type | Map | Lifecycle transitions represented as log entries such as notice_issued and notice_material_change |
 
@@ -857,7 +878,7 @@ This profile carries forward TS style schema governance and identifiers through 
 
 | Base extension artefact | Primary purpose | TS 27560:2023 anchor | Notes and deltas |
 | --- | --- | --- | --- |
-| Controller Identification Record | Controller accountability anchor, controller identification first | Party identification, controller role | Profiled subset of party fields plus required pointers for rights access, event log, and publication |
+| Controller Identity Record | Controller accountability anchor, controller identification first | Party identification, controller role | Profiled subset of party fields plus required pointers for rights access, event log, and publication |
 | Notice Record, versioned | Machine readable notice content and version binding | Consent record context, notice or policy content reference | Adds an explicit immutable notice_version_reference |
 | Anchored Notice Receipt | Evidence of disclosure, anonymous by default | Consent receipt, record header and context | Removes the required principal identifier, see A.0; the receipt is version bound |
 | Notice Event Log | Lifecycle and material change events | Event and lifecycle elements | Adds minimum event type expectations and an assurance tiering note |
@@ -890,7 +911,7 @@ Any record created under an optional profile in this annex:
 
 - shall preserve the base identifiers and version binding, notice_id and notice_version_reference;
 - shall not redefine Anchored Notice Receipt semantics; and
-- shall reference the Controller Identification Record through controller_identification_record_id.
+- shall reference the Controller Identity Record through controller_identity_record_id.
 
 ### B.1 Profile B1, PII processing record structure
 
@@ -901,7 +922,7 @@ Any record created under an optional profile in this annex:
 A conforming B1 processing record:
 
 - shall include a unique processing_record_id;
-- shall include controller_identification_record_id;
+- shall include controller_identity_record_id;
 - shall include notice_id and notice_version_reference for every disclosed processing fact relied upon;
 - shall include lawful_basis using the Annex C vocabulary; and
 - should reference Notice Event Log entries where material change, withdrawal, objection, or scope escalation is relevant.
@@ -920,7 +941,7 @@ A conforming B2 personal record:
 
 - shall include a unique personal_record_id;
 - shall include notice_id and notice_version_reference as the evidence anchor;
-- shall include controller_identification_record_id;
+- shall include controller_identity_record_id;
 - shall include privacy_access_point, or a reference to it through the CIR, sufficient to exercise rights;
 - shall support anonymous or pseudonymous operation by default; and
 - may include receipt_id as a pointer to a specific receipt instance, accompanied by notice_version_reference.
@@ -935,8 +956,8 @@ Cross border security and AI lifecycle governance requirements should be specifi
 
 - Cross border transfer mechanisms: alignment tracked against ISO/IEC 27091 Annex B.4, operational transparency, and ISO/IEC WD 27566-2 Annex F practice statements.
 - AI lifecycle governance: alignment tracked against ISO/IEC FDIS 27091 and ISO/IEC 42001.
-- Notice and consent record extension work: alignment tracked against ISO/IEC PWI 26689. A clause level crosswalk to the registered scope of the PWI is provided in Annex F.
-- Online transparency code of practice profiling: alignment tracked against the ISO/IEC preliminary work item *Internet Transparency Code of Practice Profile through privacy by design*, established for ISO/IEC JTC 1/SC 44/WG 1 by resolution of the fifth ISO/IEC JTC 1/SC 44 plenary, 3 September 2026, which aligns that work item to ISO/IEC 29100, ISO/IEC 29184 and ISO/IEC TS 27560:2023. No project number had been assigned at the date of this revision. That work item selects and constrains base standards to produce a code of practice; this document specifies the record structure through which a disclosure made under such a code is published, referenced by version, and evidenced. The two meet at conformance criterion C4 in 5.1, which requires the Notice Record to state the applicable public rule set by reference to the code of conduct, code of practice, or legal instrument relied upon, and at the code_of_conduct field specified in 7.1, which carries that reference on the Controller Identification Record. A code of practice produced under that work item is one such public rule set. The resolution states that the profile does not replace or duplicate the technical work of ISO/IEC JTC 1/SC 27/WG 5, and nothing in this document alters that boundary.
+- Notice and consent record extension work: alignment tracked against the preliminary work item registered by SC 27 Resolution 2026/32 and against ISO/IEC 27560. A clause level crosswalk to the registered scope of that work item is provided in Annex F.
+- Online transparency code of practice profiling: alignment tracked against the ISO/IEC preliminary work item *Internet Transparency Code of Practice Profile through privacy by design*, established for ISO/IEC JTC 1/SC 44/WG 1 by resolution of the fifth ISO/IEC JTC 1/SC 44 plenary, 3 September 2026, which aligns that work item to ISO/IEC 29100, ISO/IEC 29184 and ISO/IEC TS 27560:2023. No project number had been assigned at the date of this revision. That work item selects and constrains base standards to produce a code of practice; this document specifies the record structure through which a disclosure made under such a code is published, referenced by version, and evidenced. The two meet at conformance criterion C4 in 5.1, which requires the Notice Record to state the applicable public rule set by reference to the code of conduct, code of practice, or legal instrument relied upon, and at the code_of_conduct field specified in 7.1, which carries that reference on the Controller Identity Record. A code of practice produced under that work item is one such public rule set. The resolution states that the profile does not replace or duplicate the technical work of ISO/IEC JTC 1/SC 27/WG 5, and nothing in this document alters that boundary.
 - Legal model and vocabulary alignment: expressed in the ANCR DPV Model Extension, which maps the fields specified in clause 7 into DPV terms and anchors them to Convention 108+ Articles 5, 8, 9, and 14. That companion reuses `notice_id`, `notice_version_reference`, `receipt_id`, and the Authorization State Object states specified in 7.2.5 as defined here, rather than minting duplicate terms, and treats this document as the source of the record structure. Where the two documents diverge, this document governs the record structure and the companion governs the vocabulary mapping.
 
 ## Annex C. Lawful basis variants, rights and obligations (normative)
@@ -953,7 +974,7 @@ This annex defines the lawful basis vocabulary and the minimum rights and obliga
 | public_interest | Processing necessary for a task carried out in the public interest or under official authority | Access, explanation, objection and appeal pathways as applicable | Identify the authority; define the task scope; apply proportionality; enable oversight mechanisms | Header shall assert public interest and provide an authority or task reference, or a pointer to it |
 | unresolved | No lawful basis was established for the exchange at the time of recording | Access and explanation; objection; complaint pathways as applicable | Resolve the basis, or cease the processing that depends on it; record the unresolved state against the notice version relied upon | Header shall record unresolved, and shall not default to consent, see 7.2.2 |
 
-**Co-regulation note (normative).** The evidence obligation is constant across every row. The lawful basis determines which rights and objection mechanisms apply, and what the controller discloses as authority or justification. It does not determine whether the co-regulation artefacts are required. For every row, a resolvable Controller Identification Record, a versioned Notice Record, an Anchored Notice Receipt, and a Notice Event Log entry shall be available, and the criteria in 5.1 apply unchanged.
+**Co-regulation note (normative).** The evidence obligation is constant across every row. The lawful basis determines which rights and objection mechanisms apply, and what the controller discloses as authority or justification. It does not determine whether the co-regulation artefacts are required. For every row, a resolvable Controller Identity Record, a versioned Notice Record, an Anchored Notice Receipt, and a Notice Event Log entry shall be available, and the criteria in 5.1 apply unchanged.
 
 **Profiling rule (normative).** A jurisdiction whose lawful basis enumeration differs from this table shall publish a profiling rule that maps each jurisdictional basis to exactly one row of this table, using unresolved where no row corresponds. The profiling rule shall be referenced from each notice version to which it applies, in the same manner as the profiling of 7.2.2, so that a receipt generated under the jurisdictional enumeration remains interpretable against this annex.
 
@@ -969,7 +990,7 @@ This annex describes a staged exchange pattern in which a Notice Receipt is used
 
 Purpose: establish bilateral evidence that a specific notice version was disclosed or presented, suitable for dispute resolution and, where the lawful basis is consent, for proof of notice supporting valid consent.
 
-Minimum binding identifiers: receipt_id, notice_id, notice_version_reference, controller_identification_record_id, presented_at.
+Minimum binding identifiers: receipt_id, notice_id, notice_version_reference, controller_identity_record_id, presented_at.
 
 Optional linkage: anchored_notice_receipt set to true.
 
@@ -983,7 +1004,7 @@ Interoperability rule: a Stage 2 receipt should reference the Stage 1 receipt us
 
 Purpose: represent the Stage 2 authorization as a credential or signed assertion suitable for protocol enforcement, for example API or device authorization, without resharing the full receipt content.
 
-Interoperability rule: a Stage 3 credential should carry, or be derivable from, the Stage 1 binding identifiers, controller_identification_record_id with notice_version_reference and receipt_id, so that ambiguity and replay across relying parties are prevented.
+Interoperability rule: a Stage 3 credential should carry, or be derivable from, the Stage 1 binding identifiers, controller_identity_record_id with notice_version_reference and receipt_id, so that ambiguity and replay across relying parties are prevented.
 
 ### D.4 Stage 4, portable token, portability
 
@@ -1022,7 +1043,7 @@ Each indicator is rated on the scale defined in the ANCR TPI Conformity Specific
 
 The four ratings are reported together as a profile. This document does not define a composite score, and none should be inferred. The ratings are ordinal categories rather than measurements on a continuous scale, so arithmetic across them, including any weighted sum, does not produce a comparable figure. Where a composite is required for a particular assessment, it is for the ANCR TPI Conformity Specification to define and justify it, not for this annex.
 
-A second variant, ANCR TPI-R, extends the four indicators with conformance indicators that test the presence and the integrity of the artefacts this document specifies: the Controller Identification Record, the Notice Receipt, the Anchored Notice Receipt, and the Notice Event Log.
+A second variant, ANCR TPI-R, extends the four indicators with conformance indicators that test the presence and the integrity of the artefacts this document specifies: the Controller Identity Record, the Notice Receipt, the Anchored Notice Receipt, and the Notice Event Log.
 
 For this extension, the ANCR TPI-R variant is the applicable assessment profile, since its conformance indicators test the presence and the integrity of the artefacts this document specifies. The base TPI-R indicators remain usable where an assessor evaluates transparency performance without artefact conformance. This annex does not settle TPI-R methodology versions.
 
@@ -1047,24 +1068,24 @@ A TPI-R score is a compliance and conformance signal. It is not a conformance cl
 
 TPI-R is cited by its published methodology name, Transparency Performance Indicator Report, of Kantara Initiative and Digital Transparency Lab origin. The ANCR TPI-R variant referenced here is the Anchored Notice and Consent Receipt profile of that methodology.
 
-## Annex F. Crosswalk to ISO/IEC PWI 26689 (informative)
+## Annex F. Crosswalk to the preliminary work item registered by SC 27 Resolution 2026/32 (informative)
 
-ISO/IEC PWI 26689, Gap analysis for standards on privacy notices and consent and ways to address potential gaps, was registered by SC 27 Resolution 2026/32. This annex maps the registered scope and justification of the PWI to the clauses of this document, so that the gap analysis can evaluate this extension as documented, implemented prior art. Clause references are to this document unless stated otherwise.
+The preliminary work item *Gap analysis for standards on privacy notices and consent and ways to address potential gaps* was registered by SC 27 Resolution 2026/32. This annex maps the registered scope and justification of the work item to the clauses of this document, so that the gap analysis can evaluate this extension as documented, implemented prior art. Clause references are to this document unless stated otherwise.
 
 ### F.1 Scope element mapping
 
-| PWI 26689 scope element | Where addressed in this document |
+| Registered scope element | Where addressed in this document |
 | --- | --- |
 | Clarify the relationship between ISO/IEC 29184 and ISO/IEC 27560, and potentially other relevant standards | Introduction, relationship of related instruments; 2.2 NOTE on the citation status of ISO/IEC 29184; 6.1, in which ISO/IEC 29184 aligned presentation controls are factor 1 of two factor online notice; 7.6, which locates consent, the consent statement, and the consent record in ISO/IEC TS 27560:2023 and ISO/IEC 29184 and specifies only the notice evidence reference between them; Annex A, field level mapping to ISO/IEC TS 27560:2023 |
-| Evaluate and express digital notice requirements against cross-border transparency requirements to avoid conflicting authority models that prevent interoperability at scale | 3.10 co-regulated identification, one public policy with two rule sets operating on the same identifier; 5.1 criteria C1 to C8, the testable authority model; 7.2.1 co-regulation test; 7.1.2 jurisdiction in the Controller Identification Record; 7.3.2 recipient_jurisdictions and transfer_mechanism; Annex C, lawful basis variants with a jurisdiction profiling rule |
+| Evaluate and express digital notice requirements against cross-border transparency requirements to avoid conflicting authority models that prevent interoperability at scale | 3.10 co-regulated identification, one public policy with two rule sets operating on the same identifier; 5.1 criteria C1 to C8, the testable authority model; 7.2.1 co-regulation test; 7.1.2 jurisdiction in the Controller Identity Record; 7.3.2 recipient_jurisdictions and transfer_mechanism; Annex C, lawful basis variants with a jurisdiction profiling rule |
 
 ### F.2 Justification gap mapping
 
-| PWI 26689 justification gap | Where addressed in this document |
+| Registered justification gap | Where addressed in this document |
 | --- | --- |
 | Digital credential wallets and portable credentials, new interaction surfaces and constrained device UI patterns | 3.15 non-exclusion and 7.1.3, operability without a digital identification credential; Annex B.2, personal data control record structure as the individual held wallet architecture; Annex D stages 3 and 4, micro credential and portable token traceable to the Anchored Notice Receipt |
 | Machine-processable notices, software agents, automated preference handling, audit tooling | 7.2 Notice Record as machine readable transparency statement; 7.2.4 Notice Version Object with a normative verification procedure; 7.2.5 Authorization State Object with a normative reconstruction procedure; 7.3.3 notice_type vocabulary; 7.4 Notice Event Log; Annex E, TPI-R assessment of deployed implementations |
 | Multi-jurisdictional enforcement expectations in cross-border contexts | 7.3.2 recipient_jurisdictions, transfer_mechanism, surveillance_risks, and rights_derogations; criterion C4, public rule reference; Annex C rights and obligations variants, drawn from Convention 108+ Article 5 and GDPR Article 6, with the normative profiling rule for differing enumerations |
 | Inconsistent notice quality and inconsistent evidence of choice across systems and jurisdictions | 3.13 minimum notice disclosure and criterion C2; 6.1 two factor online notice; 3.4 and 7.3, the Anchored Notice Receipt as the consistent bilateral evidence artefact; clause 8 mandatory requirements |
 
-NOTE: This mapping supports evaluation of this document within the PWI 26689 gap analysis. It does not assert that the identified gaps are closed, and it does not constrain the findings of the gap analysis.
+NOTE: This mapping supports evaluation of this document within that gap analysis. The work item is cited by its title and registering resolution, which remain stable as the work item progresses. It does not assert that the identified gaps are closed, and it does not constrain the findings of the gap analysis.

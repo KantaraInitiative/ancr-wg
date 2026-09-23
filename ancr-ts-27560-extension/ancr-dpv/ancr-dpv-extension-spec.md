@@ -19,7 +19,7 @@ The proposal distinguishes three concepts:
 - **Permission:** a technical control enforced by a system after the applicable authority has been established.
 - **Identification:** information or processes used to distinguish or recognize a party. Identification is not consent or permission.
 
-The proposed model supports three related artefacts: a machine readable notice or consent receipt, a resolvable Controller Identification Record (CIR), and a transparency code of practice. Together, these artefacts are intended to make the accountable party, purpose, legal basis, recipients, rights mechanisms, and record state inspectable.
+The proposed model supports three related artefacts: a machine readable notice or consent receipt, a resolvable Controller Identity Record (CIR), and a transparency code of practice. Together, these artefacts are intended to make the accountable party, purpose, legal basis, recipients, rights mechanisms, and record state inspectable.
 
 The record structure for those artefacts is specified in the ANCR Extension for ISO/IEC TS 27560:2023. This document does not restate it, and does not mint vocabulary terms for fields that document already defines.
 
@@ -39,7 +39,7 @@ This document is an independent draft. It is not an official Council of Europe t
 
 The Convention 108+ article references identify relevant source provisions. Proposed technical requirements that go beyond the treaty text are identified as implementation requirements, not treaty obligations. Items anchored to the EU AI Act or to ISO/IEC 22989 are identified as such and are not attributed to Convention 108+.
 
-**Relationship to the ANCR extension.** The ANCR Extension for ISO/IEC TS 27560:2023 governs the record structure: the Controller Identification Record field set, the Notice Record, the Notice Version Object, the Notice Receipt, and the Notice Event Log. This document governs the vocabulary mapping and the legal model. Where the two diverge, the ANCR extension governs the record structure and this document is corrected.
+**Relationship to the ANCR extension.** The ANCR Extension for ISO/IEC TS 27560:2023 governs the record structure: the Controller Identity Record field set, the Notice Record, the Notice Version Object, the Notice Receipt, and the Notice Event Log. This document governs the vocabulary mapping and the legal model. Where the two diverge, the ANCR extension governs the record structure and this document is corrected.
 
 ### 1.2 Verbal forms
 
@@ -144,7 +144,7 @@ Transparency requirements express what is inspectable, and when, using DPV timin
 
 The timing and dual custody requirements are technical design requirements. They are not presented as verbatim Convention 108+ obligations.
 
-## 5 The Controller Identification Record: accountability expressed
+## 5 The Controller Identity Record: accountability expressed
 
 The CIR is the artefact through which the controller information required by Article 8 is made resolvable before the individual is asked to identify themselves.
 
@@ -152,7 +152,7 @@ The CIR is the artefact through which the controller information required by Art
 
 | ANCR CIR field | DPV or conv108 expression | Anchor | Status |
 | --- | --- | --- | --- |
-| controller_identification_record_id | dpv:hasDataController plus dpv:hasIdentifier, for example did:web | Article 8; I1 | Specified in ANCR 7.1.1 |
+| controller_identity_record_id | dpv:hasDataController plus dpv:hasIdentifier, for example did:web | Article 8; I1 | Specified in ANCR 7.1.1 |
 | controller_public_id_uri | dpv:hasDataController plus dpv:hasIdentifier | Article 8; I1 | Specified in ANCR 7.1.1 |
 | controller_name | dpv:hasName on the controller | Article 8 | Specified in ANCR 7.1.1 |
 | jurisdiction | dpv:hasJurisdiction | Article 8, Article 14 | Specified in ANCR 7.1.1 |

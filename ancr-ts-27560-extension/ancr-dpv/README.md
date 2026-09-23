@@ -12,7 +12,7 @@ It covers:
 - Convention 108+ legal bases, Article 5.2, and compatibility of further processing, Article 5.4(b), kept separate from legal basis;
 - principles, Articles 5, 8, and 14, and rights, Article 9;
 - transparency requirements, Article 8 and Article 14, expressed with timing and custody conditions;
-- the DPV expression of the Controller Identification Record field set;
+- the DPV expression of the Controller Identity Record field set;
 - a proposed information set for dynamic data and AI systems, I1 to I16;
 - an AI transparency profile, I3, I5, I6, and I16, anchored to the EU AI Act and ISO/IEC 22989 rather than to Convention 108+;
 - evidence based acceptance criteria: sequence integrity, notice binding, receipt availability and custody, recipient transparency, identifier governance, the AI transparency profile, and rights and lifecycle routes.
@@ -25,7 +25,7 @@ It is not a Council of Europe text, a W3C DPVCG deliverable, a Kantara Initiativ
 
 ## Scope discipline
 
-**Precedence.** The ANCR extension governs the record structure: the Controller Identification Record field set, the Notice Record, the Notice Version Object, the Notice Receipt, the Authorization State Object, and the Notice Event Log. This document governs the vocabulary mapping and the legal model. Where the two diverge, the ANCR extension governs and this document is corrected.
+**Precedence.** The ANCR extension governs the record structure: the Controller Identity Record field set, the Notice Record, the Notice Version Object, the Notice Receipt, the Authorization State Object, and the Notice Event Log. This document governs the vocabulary mapping and the legal model. Where the two diverge, the ANCR extension governs and this document is corrected.
 
 **No duplicate terms.** No `conv108:` term is minted for a field the ANCR extension already defines. `notice_id`, `notice_version_reference`, `notice_hash`, `published_at`, `receipt_id`, `purpose_state`, and `record_validity` are reused by name and mapped in clause 7.2. The earlier candidates `conv108:hasNoticeVersionHash` and `conv108:hasReceiptIdentifier` are retired.
 

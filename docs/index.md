@@ -46,10 +46,10 @@ evidence.
 - Current working entry point:
   [ISO-27560 TS Extension](https://github.com/KantaraInitiative/ancr-wg/blob/main/ancr-ts-27560-extension/ancr-ts-27560%20Notice%20Record%20Extension.md)
 
-## Submission index (PWI 26689)
+## Submission index
 
 The following working-group outputs correspond to the documents submitted for
-ISO/IEC JTC 1/SC 27/WG 5 (PWI 26689, Notice and Consent Records):
+ISO/IEC JTC 1/SC 27/WG 5, under the preliminary work item registered by SC 27 Resolution 2026/32:
 
 - **27560 Notice Receipt Extension**, the receipt-exchange profile extending
   ISO/IEC TS 27560:2023 (the N-doc that carries the Consent Receipt into the

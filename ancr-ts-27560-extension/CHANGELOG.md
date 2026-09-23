@@ -14,15 +14,16 @@ Version identifiers are document revisions. The receipt schema identifier is ver
 
 ### Summary
 
-Amendments made during Working Group review of the v1.0 Release Candidate. Separates the record held by the individual from the record held by the controller, defines the offline notice and its linkage to the online notice, and defines the Annex D Stage 3 artefact. No receipt schema change: the receipt schema remains `ancr-notice-receipt-2.0`.
+Amendments made during Working Group review of the v1.0 Release Candidate. Separates the record held by the individual from the record held by the controller, defines the offline notice and its linkage to the online notice, and defines the Annex D Stage 3 artefact. Restores the v0.4 baseline name of the controller record. The receipt schema identifier remains `ancr-notice-receipt-2.0`, which is not yet approved; its controller record field reverts to the v0.4 baseline name, so the rename is removed from the list of breaking changes rather than added to it.
 
 ### Added
 
 - 3.28 micro credential, defining the Stage 3 artefact of Annex D.3, with notes separating it from a digital identification credential in the sense of 3.15.
 - 3.29 offline notice, notice presented outside an online environment, including a physical sign or printed material.
 - 3.30 consent event record, the record of a consent event held by the PII controller in its record of processing activities, bound to the notice version and to the Anchored Notice Receipt. Every other lawful basis is recorded in the same way through 7.4.4.
-- 7.2.6 Offline notice linkage: an offline notice carries a resolvable reference to the Controller Identification Record and to the Notice Version Object of the online notice that states its terms; a receipt generated from it binds to that online notice version.
+- 7.2.6 Offline notice linkage: an offline notice carries a resolvable reference to the Controller Identity Record and to the Notice Version Object of the online notice that states its terms; a receipt generated from it binds to that online notice version.
 - Introduction, sentence stating that an offline notice is receipted through the online notice it links to.
+- 3.31 consent construction, the manner in which a consent authorization is informed and constructed, distinguished by whether the notice relied upon is presented in the context or recorded as a notice version, and by whether identification and location are inherent to the context (in person), recorded through the notice artefacts (online), or assumed. The assumed case covers an offline construction presented through an online interface and remote consent by a means that is not online, such as telephone or post. A note distinguishes it from consent type in ISO/IEC TS 27560:2023, 3.4. The term was used in 3.19 and 7.2.2 without a definition.
 - 7.4.4, lawful_basis added to the processing event minimum fields, using the Annex C vocabulary.
 
 ### Changed
@@ -31,6 +32,13 @@ Amendments made during Working Group review of the v1.0 Release Candidate. Separ
 - 7.2.2, naming rule: the distinction is between a consent record, held by the individual and bilateral, and a consent event record, held privately by the controller. The terms offline consent record and online consent record are withdrawn. An offline notice is stated to be public and receipted through its link to an online notice.
 - 7.2.2, offline consent construction: where the lawful basis is consent, the controller held authorization record is a consent event record, 3.30.
 - Annex C, consent row aligned with 7.2.2.
+- Controller Identification Record renamed Controller Identity Record, abbreviation CIR unchanged, throughout the extension and the DPV companion. The field reverts to its v0.4 baseline name, controller_identity_record_id; controller_identification_record_id, used in v0.5 and the v1.0 Release Candidate, is deprecated, accepted on input for one revision cycle, and not emitted. Reason: the record states the identity of the controller, while identification in 3.11 is carried out by a controller on an individual, and the baseline name is the one used by deployed implementations.
+- 7.1.1 NOTE rewritten to state the reverted name and the deprecation.
+- 7.3.4, the list of changes that break a v0.4 baseline implementation is reduced from four to three.
+- 3.1, notes added: the record states the identity of the controller and corresponds to the party identification section of ISO/IEC TS 27560:2023, 6.3.6; it is not identity in the sense of 3.12 nor identification in the sense of 3.11.
+- 3.12, note added confining the entry to the identity of the individual.
+- Introduction, sentence added stating that the identity of a controller is public and is recorded in the Controller Identity Record.
+- References to ISO/IEC PWI 26689 in the Foreword, 2.2, B.3 and Annex F replaced by the registered title of the preliminary work item and its registering resolution, SC 27 Resolution 2026/32. A preliminary work item number is a temporary designation; the title and resolution remain stable as the work item progresses. Annex F retitled, and its table headings read Registered scope element and Registered justification gap. The SC 44/WG 1 work item was already cited in this form.
 
 ## [Extension v1.0 Release Candidate, DPV companion v0.3] - Release 1, for ANCR Working Group candidate review and approval
 
