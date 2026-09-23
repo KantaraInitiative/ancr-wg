@@ -1153,4 +1153,4 @@ An assessor applying criterion C3 can inspect each field of an artefact in H.1 a
 
 ### H.4 Limits
 
-BIT 1.0 dates from 2020. Identifiers not listed in it, including mobile advertising identifiers, device fingerprints, passkey credential identifiers and wallet identifiers, are treated as network and device identifiers in the row for categories 38 to 41 and 43 to 47. Blinding of datasets held by a controller is outside the scope of this annex.
+BIT 1.0 dates from 2020. Identifiers not listed in it, including mobile advertising identifiers, device fingerprints, passkey credential identifiers, wallet identifiers and session identifiers however carried, are treated as network and device identifiers in the row for categories 38 to 41 and 43 to 47. Blinding of datasets held by a controller is outside the scope of this annex.
