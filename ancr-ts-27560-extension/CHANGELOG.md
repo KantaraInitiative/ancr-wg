@@ -10,6 +10,20 @@ This changelog covers:
 
 Version identifiers are document revisions. The receipt schema identifier is versioned separately and is stated in clause 7.3.4 of the extension.
 
+## [Unreleased] - DPV companion v0.4 draft
+
+### Added
+
+- Clause 9, assessment classes over the record (informative): TPI v1 for a controller, TPI v2 for a governance instrument, TPI v3 for a dynamic data control system, with the class fixed by the object under assessment. The indicators and the -3 to +1 scale are those of the ANCR TPI Conformity Specification as applied in Annex E of the extension, mapped to the I elements. TPI v2 carries Layer A and Layer C, baselined to Convention 108+ Article 8.2. TPI v3 is marked proposed, with five indicators for properties that exist only across the lifecycle stages of 7.3.
+- Annex A, alignment with ISO/IEC FDIS 27091 operational transparency (informative): each subclause of 27091 Annex B related to this document and to the extension by reference only. No FDIS text is reproduced, and subclause numbers are to be checked against the published standard.
+- Clause 11, references to the ANCR TPI Conformity Specification and to the Well-Known URI for Controller Transparency Records Internet-Draft, which has not been submitted to the IETF.
+
+### Changed
+
+- Attribution and publication status renumbered 10, references renumbered 11. The statement on ISO/IEC 27091 now records that its text is not quoted and that Annex A relates it by reference.
+- Scope list in clause 1 extended to clause 9 and Annex A.
+- `ancr-dpv/README.md` updated to v0.4; "legal model layer" reads "legal model".
+
 ## [Unreleased] - v1.0 review amendments, PR #34
 
 ### Summary

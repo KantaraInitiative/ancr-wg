@@ -4,7 +4,7 @@ A Convention 108+ legal model expressed in DPV style, with an AI transparency pr
 
 ## What this is
 
-A vocabulary and legal model layer. It maps the fields specified in the ANCR extension into DPV terms, anchors them to the modernised Convention 108, and states acceptance criteria that can be tested against a record or a receipt rather than against a policy document.
+A vocabulary and legal model. It maps the fields specified in the ANCR extension into DPV terms, anchors them to the modernised Convention 108, and states acceptance criteria that can be tested against a record or a receipt rather than against a policy document.
 
 It covers:
 
@@ -15,7 +15,9 @@ It covers:
 - the DPV expression of the Controller Identity Record field set;
 - a proposed information set for dynamic data and AI systems, I1 to I16;
 - an AI transparency profile, I3, I5, I6, and I16, anchored to the EU AI Act and ISO/IEC 22989 rather than to Convention 108+;
-- evidence based acceptance criteria: sequence integrity, notice binding, receipt availability and custody, recipient transparency, identifier governance, the AI transparency profile, and rights and lifecycle routes.
+- evidence based acceptance criteria: sequence integrity, notice binding, receipt availability and custody, recipient transparency, identifier governance, the AI transparency profile, and rights and lifecycle routes;
+- the classes of assessment applied over a record, TPI v1, v2, and v3; and
+- an informative alignment with ISO/IEC FDIS 27091 operational transparency, by clause reference only.
 
 ## What this is not
 
@@ -33,7 +35,7 @@ It is not a Council of Europe text, a W3C DPVCG deliverable, a Kantara Initiativ
 
 ## Files
 
-- `ancr-dpv-extension-spec.md`. The ANCR DPV Model Extension: proposed namespace, Convention 108+ legal bases, principles, rights, transparency requirements, the DPV expression of the CIR field set, the I1 to I16 information set with its AI transparency profile, the ANCR field mapping for I12, I13, and I15, the chain of notice role binding, and the acceptance criteria. Status: 0.3 external review draft.
+- `ancr-dpv-extension-spec.md`. The ANCR DPV Model Extension: proposed namespace, Convention 108+ legal bases, principles, rights, transparency requirements, the DPV expression of the CIR field set, the I1 to I16 information set with its AI transparency profile, the ANCR field mapping for I12, I13, and I15, the chain of notice role binding, the acceptance criteria, the assessment classes, and the ISO/IEC FDIS 27091 alignment annex. Status: 0.4 draft.
 - `README.md`. This file.
 
 ## Intended use

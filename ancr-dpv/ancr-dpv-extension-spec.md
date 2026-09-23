@@ -5,8 +5,8 @@
 **External review draft**
 
 **Author and editor:** Mark Lizar
-**Version:** 0.3 draft
-**Date:** 30 August 2026
+**Version:** 0.4 draft
+**Date:** 23 September 2026
 **Review context:** Prepared for technical review in relation to the ANCR Working Group at Kantara Initiative. This attribution does not imply endorsement, adoption, or authorship by Kantara Initiative, the ANCR Working Group, the W3C Data Privacy Vocabularies and Controls Community Group, the Council of Europe, ISO, or IEC.
 
 ## Abstract
@@ -30,8 +30,10 @@ This document:
 1. provides a traceable modelling structure based on the modernised Convention 108;
 2. uses established DPV terms where suitable and labels every proposed term;
 3. defines testable acceptance criteria for evidence carried in notice and consent records;
-4. describes alignment with ISO/IEC TS 27560:2023, the ANCR extension, and related standards; and
-5. states an AI transparency profile, clause 7 items I3, I5, I6, and I16, anchored to the EU AI Act and to ISO/IEC 22989 rather than to Convention 108+.
+4. describes alignment with ISO/IEC TS 27560:2023, the ANCR extension, and related standards;
+5. states an AI transparency profile, clause 7 items I3, I5, I6, and I16, anchored to the EU AI Act and to ISO/IEC 22989 rather than to Convention 108+;
+6. describes the classes of assessment applied over a record, clause 9; and
+7. relates ISO/IEC FDIS 27091 operational transparency to this document, Annex A.
 
 ### 1.1 Status
 
@@ -303,15 +305,69 @@ Each criterion is a testable condition on a record or receipt. Detailed test pro
 - AC-RIGHTS-1. Each applicable right in 4.2 resolves to at least one access modality through `conv108:hasRightsAccessReference` or the ANCR `privacy_access_point`, and at least one modality is operable without the individual holding, presenting, or authenticating a digital identification credential. (I10; ANCR 7.1.3)
 - AC-RIGHTS-2. Where consent is the legal basis, a withdrawal route is recorded and a withdrawal event is capable of being written to the Notice Event Log against the same `notice_id` and `notice_version_reference`. (I10; ANCR 7.4)
 
-## 9 Attribution and publication status
+## 9 Assessment classes over the record (informative)
+
+An assessment is applied over a record expressed in this model. The information set I1 to I16 in clause 7 and the acceptance criteria in clause 8 are the same whichever assessment is applied. The class of assessment is determined by the object under assessment.
+
+| Class | Object assessed | Assessment | Keyed by |
+| --- | --- | --- | --- |
+| 1 | A controller: a party that processes personal data | TPI v1, controller control | Domain |
+| 2 | A governance instrument: a standard, a regulation, or a mechanism, including this document | TPI v2, regulatory control | Instrument identifier |
+| 3 | A dynamic data control system: a system whose processing changes across the lifecycle stages of 7.3, for example a generative AI system | TPI v3, data control | System identifier |
+
+The classes are additive. A dynamic data control system is composed of controllers, each assessable in class 1, which rely on instruments, each assessable in class 2. Class 3 assesses the properties of the chain those parts form. A controller that relies on an instrument remains a class 1 object.
+
+Each assessment record references the I elements it assessed and, through the CIR in clause 5, the accountable party. A rating can then be traced to the elements and the Convention 108+ articles on which it rests.
+
+The indicators and the rating scale are those of the ANCR TPI Conformity Specification, as applied in Annex E of the ANCR extension: TPI-1 Timing, TPI-2 Required elements, TPI-3 Accessibility, and TPI-4 Security integrity, each rated from -3 to +1. Over this model they apply as follows.
+
+| Indicator | I elements | Expression in this model |
+| --- | --- | --- |
+| TPI-1 Timing | I1 | conv108:TransparencyBeforeCollection; AC-SEQ-1 |
+| TPI-2 Required elements | I1 to I10, I14 | conv108:TransparencyInformation; clause 5 |
+| TPI-3 Accessibility | I10 | conv108:hasRightsAccessReference; AC-RIGHTS-1 |
+| TPI-4 Security integrity | I12 | ANCR Notice Version Object; AC-BIND-1 |
+
+### 9.1 Class 1, TPI v1
+
+TPI v1 is applied to the transparency a controller publishes at its CIR and at the point of collection.
+
+### 9.2 Class 2, TPI v2
+
+TPI v2 assesses a governance instrument against I1 to I16, with Convention 108+ Article 8.2 as its baseline. The assessment is made by a human assessor over the record and is not produced automatically. It has two parts:
+
+- Layer A, the four indicators above, applied to the instrument; and
+- Layer C, ten questions on digital privacy governance trust, reported as a percentage.
+
+Layer C applies where the instrument has a governance dimension, as a law or regulation does. A standard or a mechanism, including this document, is assessed primarily on Layer A.
+
+The method derives from the 0PN Bill C-27 Report and Rating (Lizar and Agassini, 2024). It is in development within the ANCR Working Group and is not implemented in a reference implementation.
+
+### 9.3 Class 3, TPI v3
+
+TPI v3 is proposed. It has no equivalent in the EU AI Act conformity framework, in DPV, or in adopted ISO/IEC text. Like TPI v2, the assessment is made by a human assessor. It tests properties that exist only across the lifecycle stages of 7.3, which an assessment of a single controller or a single instrument cannot observe.
+
+| Indicator | I elements | Condition tested | Anchor |
+| --- | --- | --- | --- |
+| Chain of notice integrity | I16 | Each stage's notice is bound to its ISO/IEC 22989 role and is tested by the next stage before that stage relies on it. A single summary issued at the end of the chain does not meet the condition. | ISO/IEC 22989; Convention 108+ Article 8; AC-SEQ-2 |
+| Training data provenance and further processing | I5, I3 | Training data provenance is declared, and model training carries a recorded compatibility determination, conv108:CompatibleFurtherProcessing. | Convention 108+ Article 5.4(b); AI Act Article 53(1)(d); AC-AI-1 |
+| Model state at the point of reliance | I15 | record_validity is evaluable as valid, invalid, or suspended at the time a downstream stage or a relying party relies on it. | ANCR 7.2.5; AC-ID-2 |
+| Transborder safeguard per stage | I8 | The Article 14 safeguard is resolved for each stage, since stages can sit in different jurisdictions. | Convention 108+ Article 14; AC-RECIP-1 |
+| Custody at each transition | I11 | The record is held by at least two parties at each transition between stages. | 3.2; AC-RCPT-1 |
+
+### 9.4 Status of the assessment classes
+
+TPI v2 and TPI v3 are in development within the ANCR Working Group and are not adopted standard text. TPI v3 is the least developed of the three. Convention 108+ Article 8.2 is cited as the baseline anchor of TPI v2 and does not indicate endorsement of the method by the treaty. The record and the assessments remain separable: a change to an assessment method does not change the record.
+
+## 10 Attribution and publication status
 
 This document is an independent external review draft authored and edited by Mark Lizar. It was prepared for technical discussion in relation to the ANCR Working Group at Kantara Initiative. Kantara Initiative and the ANCR Working Group are not identified as authors or editors, and no endorsement or adoption is implied.
 
 All `conv108:` terms are proposals in this document. They are not Council of Europe treaty text, published DPV terms, or ISO/IEC terms. Existing `dpv:`, `pd:`, `loc:`, `tech:`, `dct:`, and `dcat:` terms remain attributable to their respective specifications. The `ancr:` references identify an alignment target and do not claim a published namespace.
 
-ISO/IEC TS 27560:2023 is identified as a Technical Specification titled *Privacy technologies: Consent record information structure*. ISO/IEC 27091 is not quoted or analysed in this draft because, as of 30 August 2026, it remains under development at the Final Draft International Standard stage.
+ISO/IEC TS 27560:2023 is identified as a Technical Specification titled *Privacy technologies: Consent record information structure*. ISO/IEC 27091 remains under development at the Final Draft International Standard stage. Its text is not quoted in this draft; Annex A relates its subclauses to this document by reference only.
 
-## 10 References
+## 11 References
 
 - Council of Europe, [Convention 108 as it will be amended by Protocol CETS No. 223](https://rm.coe.int/16808ade9d).
 - ISO/IEC TS 27560:2023, [Privacy technologies: Consent record information structure](https://www.iso.org/standard/80392.html).
@@ -321,3 +377,24 @@ ISO/IEC TS 27560:2023 is identified as a Technical Specification titled *Privacy
 - ISO/IEC FDIS 27091, [Cybersecurity and Privacy: Artificial Intelligence: Privacy protection](https://www.iso.org/standard/56582.html).
 - Regulation (EU) 2024/1689 (Artificial Intelligence Act), Article 53.
 - Directive (EU) 2019/790, Article 4(3).
+- ANCR TPI Conformity Specification, Kantara Initiative ANCR Working Group, `TPI/` in `KantaraInitiative/ancr-wg`.
+- Well-Known URI for Controller Transparency Records, Internet-Draft, not submitted to the IETF, `IETF - Well-Known Location/` in `KantaraInitiative/ancr-wg`.
+
+## Annex A Alignment with ISO/IEC FDIS 27091 operational transparency (informative)
+
+ISO/IEC FDIS 27091, Annex B, addresses operational transparency for AI systems, including the allocation of transparency responsibilities between upstream and downstream parties and the mechanisms that support notice and consent. Its text is not reproduced here. The table relates each subclause of that annex to this document and to the ANCR extension. Subclause and table numbers refer to the FDIS text and are to be checked against the published standard.
+
+| ISO/IEC FDIS 27091 | Topic | This document | ANCR extension |
+| --- | --- | --- | --- |
+| B.2.1 | Operational transparency across the AI lifecycle, and responsibility distributed across deployers, integrators, and recipients | I16, 7.3; clause 9, class 3 | 7.2, 7.4 |
+| B.2.2 | Transparency by default, information provided before use | I1; AC-SEQ-1 | 3.13, 7.2.3 |
+| B.2.3, Table B.3 | Allocation and propagation of transparency responsibilities between upstream and downstream parties | I16, 7.3; AC-SEQ-2 | 7.1 |
+| B.2.4, Table B.4 | Notice alignment with runtime behaviour | I12; AC-BIND-1 | 7.2.4 |
+| B.2.4, Table B.4 | Consent and permission management across boundaries | I11, I15; AC-RCPT-1, AC-ID-2 | 7.2.5 |
+| B.2.4, Table B.4 | Model transparency propagation and change management | I15, I16 | 7.4.1, notice_material_change |
+| B.2.4, Table B.4 | Purpose limitation and supply chain processing visibility | I3, I4; AC-AI-1 | 7.5 |
+| B.2.4, Table B.4 | Traceability, logging, minimization, and retention | I12, I15; AC-ID-3 | 7.4; Annex H |
+| B.2.4, Table B.4 | Rights, access, and actionable control | I10; AC-RIGHTS-1 | 7.1.3 |
+| B.2.5 | Mechanisms for notice and consent of AI systems | I11 to I15 | 7.3, 7.4 |
+
+NOTE: A controller can publish its CIR and transparency information at a well-known location, as described in the Internet-Draft cited in clause 11. That draft has not been submitted to the IETF.
