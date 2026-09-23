@@ -6,7 +6,7 @@ ANCR WG focuses on interoperable, implementation-ready artefacts that support **
 
 ## The Consent Receipt
 
-The **Consent Receipt** is Kantara ANCR WG's foundational transparency artefact for co-regulated digital identification: a machine-readable record handed to a person at the point of notice, capturing who is
+The **Consent Receipt** is the Kantara ANCR WG's foundational transparency artefact for co-regulated digital identification: a machine-readable record handed to a person at the point of notice, capturing who is
 processing their data, for what purpose, under what legal basis, and how to exercise
 their rights. It turns human consent from an unverifiable claim into inspectable evidence that scale digital trust online.
 
@@ -21,7 +21,8 @@ their rights. It turns human consent from an unverifiable claim into inspectable
    structure.
 4. **ANCR (Anchored Notice and Consent Receipt)** — anchors the receipt to a
    verifiable controller identity and a notice event, making the record traceable.
-5. **Notice Receipt Extension (now complete)** — extends ISO/IEC TS 27560:2023 into
+5. **Transparency Performance Indicator (TPI) Reporting**, measuring controller transparency.
+5. **Notice Receipt Extension** — extends ISO/IEC TS 27560:2023 into
    a receipt-exchange profile for anchored, inspectable notice evidence.
 
 **Spec location:** [`27560-ancr-profile-extension/`](27560-ancr-profile-extension/index.md)
