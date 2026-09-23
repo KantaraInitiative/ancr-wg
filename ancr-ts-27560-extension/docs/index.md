@@ -53,8 +53,7 @@ candidate review and approval.
 Release 1 is 1,036 lines: clauses 1 to 8, twenty seven terms, twelve mandatory
 requirements, conformance criteria C1 to C8, and Annexes A to F. Annex A maps field by
 field to ISO/IEC TS 27560:2023 and A.0 states the single deviation from the base with
-its rationale. Annex F is a clause level crosswalk to the registered scope of ISO/IEC
-PWI 26689.
+its rationale. Annex F is a clause level crosswalk to the registered scope of the SC 27/WG 5 preliminary work item *Gap analysis for standards on privacy notices and consent and ways to address potential gaps*, registered by SC 27 Resolution 2026/32.
 
 The five priority comments raised against the version circulated to ISO/IEC JTC 1/SC
 27/WG 5 as N 5211 are carried forward for disposition by the Working Group and are not
@@ -68,10 +67,10 @@ treated as resolved by this revision.
   approved and merged:
   [27560 ANCR Profile Extension](https://github.com/KantaraInitiative/ancr-wg/tree/main/ancr-ts-27560-extension)
 
-## Submission index (PWI 26689)
+## Submission index
 
 The following working-group outputs correspond to the documents submitted for
-ISO/IEC JTC 1/SC 27/WG 5 (PWI 26689, Notice and Consent Records):
+ISO/IEC JTC 1/SC 27/WG 5, under the preliminary work item registered by SC 27 Resolution 2026/32:
 
 - **27560 Notice Receipt Extension**, the receipt-exchange profile extending
   ISO/IEC TS 27560:2023 (the N-doc that carries the Consent Receipt into the
