@@ -47,13 +47,13 @@ Applicable code of conduct, code of practice, privacy policy, or law (jurisdicti
 
 ## 1 Scope
 
-This profile extends ISO/IEC TS 27560:2023, the technical specification that adopted the consent receipt specification. It specifies a machine readable online Notice Record and a corresponding Notice Receipt that together provide durable evidence of notice disclosure.
+This profile extends ISO/IEC TS 27560:2023, the technical specification that adopted the minimum viable consent receipt specification titled Consent Receipt v1.1. This profile specifies a machine readable online Notice and Consent Record and a corresponding Notice Receipt that together provide durable evidence of notice disclosure.
 
-This profile specifies the record structure through which identification is co-regulated. Controller identification shall precede any demand for personal identification, and the artefacts specified in clause 7 shall be inspectable independently of any personal identifier. Where an implementation demands personal identification before a resolvable Controller Identification Record and its bound notice version are available, that implementation does not conform to this profile.
+This profile specifies the record structure through which identification is co-regulated. Controller identification shall precede any demand for personal identification, and the artefacts specified in clause 7 shall be inspectable independently of any personal identifier. Where an implementation demands personal identification before a resolvable Controller Identification Record (CIR) and its bound online notice version are available, that implementation does not conform to this profile.
 
 The profile supports layered and sequenced notices, notifications, and disclosures. Its requirements are lawful basis agnostic. Where the lawful basis is consent, the corresponding authorization can be represented as a specialisation of the TS 27560:2023 consent receipt.
 
-The base extension defines a minimum interoperable set of notice artefacts for operational transparency:
+The base extension defines a minimum interoperable set of notice artefacts for operational online notice transparency and contextual integrity:
 
 - Controller Identification Record (CIR)
 - Notice Record
