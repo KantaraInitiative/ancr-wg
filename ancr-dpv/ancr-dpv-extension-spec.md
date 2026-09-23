@@ -172,9 +172,9 @@ A CIR may be self asserted or registry verified. The record shall state its assu
 
 NOTE: The four proposed additions are candidates for a later revision of the ANCR extension. Until they are adopted there, an implementation carrying them is carrying extension fields, and its CIR remains conforming only on the ANCR 7.1.1 field set.
 
-## 6 New and existing terms in the legal model layer
+## 6 New and existing terms in the legal model
 
-Existing means already in DPV or a DPV module. Proposed means introduced by this document as a design layer, not adopted standard text.
+Existing means already in DPV or a DPV module. Proposed means introduced by this document as a proposal and not adopted standard text.
 
 | Term | Status |
 | --- | --- |

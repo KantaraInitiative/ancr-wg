@@ -1,28 +1,28 @@
-# Kantara Initiative — ANCR Working Group (ANCR WG)
+# Kantara Initiative ANCR Working Group (ANCR WG)
 
-This repository contains the working materials, drafts, and versioned packages produced by the **Anchored Notice and Consent Receipt (ANCR) Working Group** under the Kantara Initiative.
+This repository contains the working materials, drafts, and versioned packages produced by the Anchored Notice and Consent Receipt (ANCR) Working Group under the Kantara Initiative.
 
-ANCR WG focuses on interoperable, implementation-ready artefacts that support **inspectable, accountable notice and consent receipt exchange**.
+ANCR WG develops interoperable, implementation-ready artefacts for inspectable, accountable notice and consent receipt exchange.
 
 ## The Consent Receipt
 
-The **Consent Receipt** is the Kantara ANCR WG's foundational transparency artefact for co-regulated digital identification: a machine-readable record handed to a person at the point of notice, capturing who is
+The Consent Receipt is the Kantara ANCR WG's transparency artefact for co-regulated digital identification: a machine-readable record handed to a person at the point of notice, capturing who is
 processing their data, for what purpose, under what legal basis, and how to exercise
-their rights. It turns human consent from an unverifiable claim into inspectable evidence that scale digital trust online.
+their rights. It records consent as inspectable evidence that can support digital trust online.
 
-**Lineage:**
+Lineage:
 
-1. **Kantara Consent Receipt** — the original specification that established the
+1. Kantara Consent Receipt: the original specification that established the
    receipt as the unit of consent evidence.
-2. **ISO/IEC 29184:2020 (Annex B)** — the Consent Receipt was adopted into ISO as
+2. ISO/IEC 29184:2020 (Annex B): the Consent Receipt was adopted into ISO as
    the hosted consent-receipt / consent-record reference, explicitly citing the
    Kantara Consent Receipt specification.
-3. **ISO/IEC TS 27560:2023** — became the international consent record information
+3. ISO/IEC TS 27560:2023: became the international consent record information
    structure.
-4. **ANCR (Anchored Notice and Consent Receipt)** — anchors the receipt to a
+4. ANCR (Anchored Notice and Consent Receipt): anchors the receipt to a
    verifiable controller identity and a notice event, making the record traceable.
-5. **Transparency Performance Indicator (TPI) Reporting**, measuring controller transparency.
-5. **Notice Receipt Extension** — extends ISO/IEC TS 27560:2023 into
+5. Transparency Performance Indicator (TPI) Reporting, measuring controller transparency.
+6. Notice Receipt Extension: extends ISO/IEC TS 27560:2023 into
    a receipt-exchange profile for anchored, inspectable notice evidence.
 
 **Spec location:** [`27560-ancr-profile-extension/`](27560-ancr-profile-extension/index.md)
@@ -33,12 +33,12 @@ their rights. It turns human consent from an unverifiable claim into inspectable
 
 Working-group outputs corresponding to contributions submitted for ISO/IEC JTC 1/SC 27/WG 5:
 
-- **27560 Notice Receipt Extension** — the receipt-exchange profile extending ISO/IEC TS 27560:2023.
-- **Gap analysis for privacy notices and consent, Part 1 (Scope A)**, for the preliminary work item registered by SC 27 Resolution 2026/32: TS 27560:2023 cross-referenced against receipt-exchange requirements.
-- **WG5 / CoE Liaison materials** — plenary and Council of Europe liaison decks
+- 27560 Notice Receipt Extension: the receipt-exchange profile extending ISO/IEC TS 27560:2023.
+- Gap analysis for privacy notices and consent, Part 1 (Scope A), for the preliminary work item registered by SC 27 Resolution 2026/32: TS 27560:2023 cross-referenced against receipt-exchange requirements.
+- WG5 / CoE Liaison materials: plenary and Council of Europe liaison decks
   ([`wg5-report-03-2026/`](27560-ancr-profile-extension/wg5-report-03-2026)).
 
-> The canonical version for the submission is a working-group decision and is not
+> The authoritative version for the submission is a working-group decision and is not
 > yet fixed in this repository. See the package index before citing a version.
 
 ## Quick links
@@ -48,7 +48,7 @@ Working-group outputs corresponding to contributions submitted for ISO/IEC JTC 1
 
 - Join the ANCR Working Group (membership / participation):  
   https://kantara.atlassian.net/wiki/spaces/WA/overview?homepageId=2916356
-  ** Calls twice a month starting Aug 20, 2026 **
+  Calls twice a month, starting 20 August 2026.
   
 
 ## What’s in this repo
