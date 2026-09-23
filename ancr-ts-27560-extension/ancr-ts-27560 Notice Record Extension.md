@@ -1106,8 +1106,6 @@ NOTE: This mapping supports evaluation of this document within that gap analysis
 
 This annex sets out the clauses of ISO/IEC 29184:2020 on which this document relies, and what this document adds to each. The semantic content of notice remains that of ISO/IEC 29184:2020. This document adds the structure of the notice as presented, its version binding, and the custody of the evidence that it was presented. No amendment to ISO/IEC 29184:2020 is implied.
 
-### G.1 Clause dependencies
-
 | ISO/IEC 29184:2020 | Title | Clause of this document | What this document adds |
 | --- | --- | --- | --- |
 | 5.2.2 | Providing notice obligation | 7.1 Controller Identity Record | Controller identification published and resolvable before any demand for personal identification, so that it reaches a party who is not yet a PII principal |
@@ -1121,10 +1119,6 @@ This annex sets out the clauses of ISO/IEC 29184:2020 on which this document rel
 | 5.5.2 | Renewing notice | 6.3; 7.4 | A new notice version and a Notice Event Log entry on every material change |
 | 5.5.3 | Renewing consent | 6.3; 7.4; 7.2.5 | Change events and authorization state recorded under any lawful basis |
 | Annex B, reached from the NOTE in 5.4.3 | Example of a consent receipt or consent record | 7.3 Notice Receipt | The receipt specified as an evidence structure held by the individual, with version binding |
-
-### G.2 Obligations bound to consent
-
-In ISO/IEC 29184:2020, the retention of the version presented (5.2.8) and the renewal of consent on a change of conditions (5.5.3) apply where consent is the basis for processing, while 5.3.15 requires the notice to state the basis for any basis. This document applies version binding and change events under any lawful basis, see 6.3, 7.4 and 7.2.2.
 
 ## Annex H. Blinding Identity Taxonomy profile for notice evidence (informative)
 
