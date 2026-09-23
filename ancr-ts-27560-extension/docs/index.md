@@ -99,5 +99,5 @@ ISO/IEC JTC 1/SC 27/WG 5, under the preliminary work item registered by SC 27 Re
 
 ## Notes
 
-- This site is published from the `docs/` folder (GitHub Pages / Jekyll). Pages
-  outside `docs/` are linked to the GitHub repository tree, which always resolves.
+- This site is published from the `ancr-ts-27560-extension/docs/` folder (GitHub Pages / Jekyll). Pages
+  outside that folder are linked to the GitHub repository tree, which always resolves.
