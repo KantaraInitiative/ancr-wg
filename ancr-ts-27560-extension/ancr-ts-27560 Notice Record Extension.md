@@ -2,10 +2,14 @@
 
 Anchored Notice and Consent Receipts for operational transparency. A notice receipt profile and extension of ISO/IEC TS 27560:2023.
 
-**Release:** Release 1, 7 September 2026.
-**Revision:** v1.0 Release Candidate, put to the ANCR Working Group for candidate review and approval. Supersedes the external review draft v0.5 (2026-08-31, commit `d9dbe8b5`), the v0.4 baseline (the file published at commit `a09559d5`), and the version circulated to ISO/IEC JTC 1/SC 27/WG 5 as document N 5211, ANCR Notice Receipt Extension (2026-07-16). This document continues the lineage of N 5211 in the SC 27/WG 5 document register.
-**Editor:** Mark Lizar.
-Disposition of N 5211 comments. The five priority comments raised against N 5211 are carried forward for disposition by the Working Group and are not treated as resolved by this revision.
+**Release:** Release 1, 23 September 2026.
+**Revision:** v1.0 Release Candidate, put to the ANCR Working Group for candidate review and approval.
+**Editor:** Mark Lizar; Contributors Gigliolla Agassini, Sal D'Aostino, Paul Knowles, Daniel Schleifer, Tim Lloyd, Michele Drgon
+
+In memory of Tim Lloyd
+
+Tim Lloyd was a member of the Anchored Notice and Consent Receipt Work Group and a contributor to the Transparency Performance Indicators Recommendation that this report applies. He took part in the discussions that shaped the four indicators and the idea behind them: that a person is entitled to know who is identifying them before it happens, and that this can be measured rather than asserted. Tim passed away during the preparation of this report. The Work Group dedicates it to him, with gratitude for his contribution and for his company in the work. — The ANCR Work Group
+
 
 ## Foreword
 
