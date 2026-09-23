@@ -15,11 +15,11 @@ This document proposes a DPV style model for representing selected requirements 
 
 The proposal distinguishes three concepts:
 
-- **Consent:** an individual's freely given, specific, informed, and unambiguous authorization where consent is the applicable legal basis.
-- **Permission:** a technical control enforced by a system after the applicable authority has been established.
-- **Identification:** information or processes used to distinguish or recognize a party. Identification is not consent or permission.
+- Consent: an individual's freely given, specific, informed, and unambiguous authorization where consent is the applicable legal basis.
+- Permission: a technical control enforced by a system after the applicable authority has been established.
+- Identification: information or processes used to distinguish or recognize a party. Identification is not consent or permission.
 
-The proposed model supports three related artefacts: a machine readable notice or consent receipt, a resolvable Controller Identification Record (CIR), and a transparency code of practice. Together, these artefacts are intended to make the accountable party, purpose, legal basis, recipients, rights mechanisms, and record state inspectable.
+The proposed model supports three related artefacts: a machine readable notice or consent receipt, a resolvable Controller Identity Record (CIR), and a transparency code of practice. Together, these artefacts are intended to make the accountable party, purpose, legal basis, recipients, rights mechanisms, and record state inspectable.
 
 The record structure for those artefacts is specified in the ANCR Extension for ISO/IEC TS 27560:2023. This document does not restate it, and does not mint vocabulary terms for fields that document already defines.
 
@@ -39,7 +39,7 @@ This document is an independent draft. It is not an official Council of Europe t
 
 The Convention 108+ article references identify relevant source provisions. Proposed technical requirements that go beyond the treaty text are identified as implementation requirements, not treaty obligations. Items anchored to the EU AI Act or to ISO/IEC 22989 are identified as such and are not attributed to Convention 108+.
 
-**Relationship to the ANCR extension.** The ANCR Extension for ISO/IEC TS 27560:2023 governs the record structure: the Controller Identification Record field set, the Notice Record, the Notice Version Object, the Notice Receipt, and the Notice Event Log. This document governs the vocabulary mapping and the legal model. Where the two diverge, the ANCR extension governs the record structure and this document is corrected.
+Relationship to the ANCR extension. The ANCR Extension for ISO/IEC TS 27560:2023 governs the record structure: the Controller Identity Record field set, the Notice Record, the Notice Version Object, the Notice Receipt, and the Notice Event Log. This document governs the vocabulary mapping and the legal model. Where the two diverge, the ANCR extension governs the record structure and this document is corrected.
 
 ### 1.2 Verbal forms
 
@@ -55,7 +55,7 @@ Proposed namespace and prefix for the Convention 108+ legal model extension:
 conv108: https://kantarainitiative.github.io/ancr-wg/ns/conv108plus#
 ```
 
-**Intended migration destination.** Should the DPVCG accept these terms, the intended target IRI is `https://w3id.org/dpv/legal/int/conv108plus#`, with `conv108plus` used in the path because a literal plus sign can be re-encoded by intermediaries. The short prefix remains `conv108` in either case.
+Intended migration destination. Should the DPVCG accept these terms, the intended target IRI is `https://w3id.org/dpv/legal/int/conv108plus#`, with `conv108plus` used in the path because a literal plus sign can be re-encoded by intermediaries. The short prefix remains `conv108` in either case.
 
 NOTE: The DPV IRI space is controlled by W3C and the DPVCG. Terms proposed by this document are published under an ANCR controlled base until the group has considered them, so that a draft proposal is not mistaken for a registered DPV namespace.
 
@@ -95,8 +95,8 @@ This proposal does not create Convention 108+ legal bases for legal obligation, 
 
 Where consent is the legal basis, this document adopts the distinction stated in the ANCR extension at 3.20 and 7.2.2.
 
-- **Online consent** is expressed online, where notice, choice, action, and the resulting evidence are represented by machine readable records of the interaction. Identification, notice version, and time are recorded rather than assumed, and the resulting record is bilateral.
-- **Offline consent presented through an online interface** is a construction in which the identity and the location of the individual are assumed rather than recorded. It is a controller held compliance artefact, captured in a private record of processing activities and not accessible by default, and it is governed by the applicable data protection regulation.
+- Online consent is expressed online, where notice, choice, action, and the resulting evidence are represented by machine readable records of the interaction. Identification, notice version, and time are recorded rather than assumed, and the resulting record is bilateral.
+- Offline consent presented through an online interface is a construction in which the identity and the location of the individual are assumed rather than recorded. It is a controller held compliance artefact, captured in a private record of processing activities and not accessible by default, and it is governed by the applicable data protection regulation.
 
 The two constructions shall be named distinctly in a record, shall not be exchanged or reported as equivalent, and an offline consent record shall not be referenced as evidence of online consent. Where `conv108:ConsentBasis` is asserted, the record shall state which construction is in use.
 
@@ -144,15 +144,15 @@ Transparency requirements express what is inspectable, and when, using DPV timin
 
 The timing and dual custody requirements are technical design requirements. They are not presented as verbatim Convention 108+ obligations.
 
-## 5 The Controller Identification Record: accountability expressed
+## 5 The Controller Identity Record: accountability expressed
 
 The CIR is the artefact through which the controller information required by Article 8 is made resolvable before the individual is asked to identify themselves.
 
-**Normative source.** The CIR field set is specified in clause 7.1.1 and 7.1.2 of the ANCR extension. This document does not restate or vary it. The table below gives the DPV expression of those fields, and states four additions proposed by this document.
+Normative source. The CIR field set is specified in clause 7.1.1 and 7.1.2 of the ANCR extension. This document does not restate or vary it. The table below gives the DPV expression of those fields, and states four additions proposed by this document.
 
 | ANCR CIR field | DPV or conv108 expression | Anchor | Status |
 | --- | --- | --- | --- |
-| controller_identification_record_id | dpv:hasDataController plus dpv:hasIdentifier, for example did:web | Article 8; I1 | Specified in ANCR 7.1.1 |
+| controller_identity_record_id | dpv:hasDataController plus dpv:hasIdentifier, for example did:web | Article 8; I1 | Specified in ANCR 7.1.1 |
 | controller_public_id_uri | dpv:hasDataController plus dpv:hasIdentifier | Article 8; I1 | Specified in ANCR 7.1.1 |
 | controller_name | dpv:hasName on the controller | Article 8 | Specified in ANCR 7.1.1 |
 | jurisdiction | dpv:hasJurisdiction | Article 8, Article 14 | Specified in ANCR 7.1.1 |
@@ -189,7 +189,7 @@ Existing means already in DPV or a DPV module. Proposed means introduced by this
 | conv108:ChainOfNotice, hasNoticeParticipant, hasParticipantScope, hasLifecycleRole | Proposed, chain of notice, I16 |
 | conv108:hasTrainingDataProvenance, hasRightsReservationStatus | Proposed, AI transparency profile, I5 and I6 |
 
-**No duplicate terms for ANCR fields.** No `conv108:` term is minted for the notice version reference, the notice integrity hash, the notice publication time, or the receipt identifier. These reuse the ANCR field names `notice_id`, `notice_version_reference`, `notice_hash`, `published_at`, and `receipt_id`, and are mapped in 7.2. The earlier candidates `conv108:hasNoticeVersionHash` and `conv108:hasReceiptIdentifier` are retired. No `conv108:` term is minted for authorization state either. `purpose_state` and `record_validity` are specified in the ANCR Authorization State Object at 7.2.5, and this document supplies only their expression, mapped in 7.2.
+No duplicate terms for ANCR fields. No `conv108:` term is minted for the notice version reference, the notice integrity hash, the notice publication time, or the receipt identifier. These reuse the ANCR field names `notice_id`, `notice_version_reference`, `notice_hash`, `published_at`, and `receipt_id`, and are mapped in 7.2. The earlier candidates `conv108:hasNoticeVersionHash` and `conv108:hasReceiptIdentifier` are retired. No `conv108:` term is minted for authorization state either. `purpose_state` and `record_validity` are specified in the ANCR Authorization State Object at 7.2.5, and this document supplies only their expression, mapped in 7.2.
 
 ## 7 Proposed information set for dynamic data and AI systems
 
@@ -214,18 +214,18 @@ The I1 to I16 set is a proposed implementation profile. It combines treaty ancho
 | I15 | Authorization state per purpose, and live record validity, valid, invalid, or suspended, evaluable at a stated time | ancr Authorization State Object; conv108:hasAuthorizationState expressing purpose_state, conv108:hasActiveState expressing record_validity | Reused from ANCR, mapped and not minted | ANCR clause 7.2.5 |
 | I16 | Per participant notice through the chain, bound to ISO/IEC 22989 AI lifecycle roles | conv108:ChainOfNotice, conv108:hasNoticeParticipant typed by conv108:hasLifecycleRole, conv108:hasParticipantScope | New, AI profile | Chain of notice; ISO/IEC 22989 roles |
 
-**AI transparency profile.** I3, I5, I6, and I16 are anchored to the EU AI Act and to ISO/IEC 22989, not to Convention 108+. An implementation operating outside those instruments can conform to I1, I2, I4, I7 to I15 without them.
+AI transparency profile. I3, I5, I6, and I16 are anchored to the EU AI Act and to ISO/IEC 22989, not to Convention 108+. An implementation operating outside those instruments can conform to I1, I2, I4, I7 to I15 without them.
 
 ### 7.1 Additional implementation requirements, I11 to I16
 
 I11 to I16 are proposed design requirements. They are not attributed to Convention 108+, DPV, the EU AI Act, or adopted ISO text unless a specific field is identified as reused from another source.
 
-- **I11, conv108:DualHeldRecordRequirement.** The record of I1 to I10 is machine readable and held by at least two parties, so the affected person can produce it, not only the provider. Custody is what distinguishes the online construction from an offline construction presented online, see 3.2. Where only the controller holds the record, the record is an offline consent artefact and shall be named as one.
-- **I12, notice version identity and integrity.** The notice is a first class object with a stable family identifier and an immutable version reference. "What was presented at time T" has an answer that does not depend on the presenting party's goodwill or retention practice. The ANCR extension defines this as a Notice Version Object carrying `notice_url`, `notice_version_id`, `notice_hash`, and `published_at`, resolved through `notice_version_reference`, with `notice_id` supplying the stable notice family identifier. This document reuses those field names and mints no duplicate property.
-- **I13, receipt identifier.** A receipt identifier carried with a training contribution converts a consent claim into an artefact that is validatable before training and revisitable on withdrawal. The ANCR extension defines `receipt_id`, the base ISO/IEC TS 27560 `record_id` field renamed for receipt instance tracking. This document reuses it.
-- **I14, conv108:hasRegistryIdentifier.** A jurisdiction scoped identifier issued after registry verification, so that a receipt issued under one authority can be evaluated against the authority claimed in another.
-- **I15, authorization state and live validity.** State is evaluable at a stated time, because a receipt issued last month cannot represent an authorization or a risk posture that changed last week. The ANCR extension specifies this as one Authorization State Object at 3.25 and 7.2.5, carrying `purpose_state` per disclosed purpose, from the vocabulary not_given, given, altered, restricted, objected, withdrawn, expired, and `record_validity` from valid, invalid, suspended, with each change appended and logged against the same `notice_id` and `notice_version_reference`. This document expresses those values through `conv108:hasAuthorizationState` and `conv108:hasActiveState`, and mints no state property of its own.
-- **I16, conv108:ChainOfNotice.** Notice per participant through the AI lifecycle, each notice bound to the participant that issued it and to the notice version it issued, and tested by the next participant before that participant relies on it. Each `conv108:hasNoticeParticipant` is typed by `conv108:hasLifecycleRole` naming the ISO/IEC 22989 role it acts in, so that who issued a notice, in which lifecycle role, at which version, is answerable from the record.
+- I11, conv108:DualHeldRecordRequirement. The record of I1 to I10 is machine readable and held by at least two parties, so the affected person can produce it, not only the provider. Custody is what distinguishes the online construction from an offline construction presented online, see 3.2. Where only the controller holds the record, the record is an offline consent artefact and shall be named as one.
+- I12, notice version identity and integrity. The notice is a first class object with a stable family identifier and an immutable version reference. "What was presented at time T" has an answer that does not depend on the presenting party's goodwill or retention practice. The ANCR extension defines this as a Notice Version Object carrying `notice_url`, `notice_version_id`, `notice_hash`, and `published_at`, resolved through `notice_version_reference`, with `notice_id` supplying the stable notice family identifier. This document reuses those field names and mints no duplicate property.
+- I13, receipt identifier. A receipt identifier carried with a training contribution converts a consent claim into an artefact that is validatable before training and revisitable on withdrawal. The ANCR extension defines `receipt_id`, the base ISO/IEC TS 27560 `record_id` field renamed for receipt instance tracking. This document reuses it.
+- I14, conv108:hasRegistryIdentifier. A jurisdiction scoped identifier issued after registry verification, so that a receipt issued under one authority can be evaluated against the authority claimed in another.
+- I15, authorization state and live validity. State is evaluable at a stated time, because a receipt issued last month cannot represent an authorization or a risk posture that changed last week. The ANCR extension specifies this as one Authorization State Object at 3.25 and 7.2.5, carrying `purpose_state` per disclosed purpose, from the vocabulary not_given, given, altered, restricted, objected, withdrawn, expired, and `record_validity` from valid, invalid, suspended, with each change appended and logged against the same `notice_id` and `notice_version_reference`. This document expresses those values through `conv108:hasAuthorizationState` and `conv108:hasActiveState`, and mints no state property of its own.
+- I16, conv108:ChainOfNotice. Notice per participant through the AI lifecycle, each notice bound to the participant that issued it and to the notice version it issued, and tested by the next participant before that participant relies on it. Each `conv108:hasNoticeParticipant` is typed by `conv108:hasLifecycleRole` naming the ISO/IEC 22989 role it acts in, so that who issued a notice, in which lifecycle role, at which version, is answerable from the record.
 
 ### 7.2 ANCR field mapping for I12, I13, and I15
 
@@ -266,46 +266,46 @@ Each criterion is a testable condition on a record or receipt. Detailed test pro
 
 ### 8.1 Sequence integrity
 
-- **AC-SEQ-1.** The CIR or accountable party record is resolvable at a timestamp before the first collection event. Evidence: the notice event or receipt timestamp precedes the first processing timestamp. This is a transparency by default implementation requirement aligned with the information listed in Article 8.
-- **AC-SEQ-2.** Where a chain of notice is claimed, each participant is typed by its ISO/IEC 22989 lifecycle role through `conv108:hasLifecycleRole`, each notice is bound to the issuing party and notice version, and each participant's notice timestamp precedes the next participant's build or test event. Ordering is verifiable, the next role in the chain has tested the upstream notice, and any stage merge is explicit in the record. (I16)
+- AC-SEQ-1. The CIR or accountable party record is resolvable at a timestamp before the first collection event. Evidence: the notice event or receipt timestamp precedes the first processing timestamp. This is a transparency by default implementation requirement aligned with the information listed in Article 8.
+- AC-SEQ-2. Where a chain of notice is claimed, each participant is typed by its ISO/IEC 22989 lifecycle role through `conv108:hasLifecycleRole`, each notice is bound to the issuing party and notice version, and each participant's notice timestamp precedes the next participant's build or test event. Ordering is verifiable, the next role in the chain has tested the upstream notice, and any stage merge is explicit in the record. (I16)
 
 ### 8.2 Notice binding
 
-- **AC-BIND-1.** The record carries `notice_version_reference` bound to the stable notice family `notice_id`, and that reference resolves to a Notice Version Object. The notice is retrieved using `notice_url`, its hash is computed using the stated algorithm, and the computed value equals `notice_hash`. Where the values differ, the notice version is unverified and the record shall not be relied upon as evidence of the content disclosed. Where resolution is not available to the relying party, `notice_version_reference` carries `notice_version_id` and `notice_hash` directly. (I12; ANCR 7.2.4)
-- **AC-BIND-2.** The legal basis for each purpose, and any applicable further processing compatibility assessment, are bound to the versioned notice. The record identifies the basis relied on, the purpose, and the relevant time. (I2 and I3; Article 5.2 and 5.4(b))
-- **AC-BIND-3.** The Notice Version Object carries `published_at`, and the publication time precedes the disclosure time recorded in the receipt. (I12; ANCR 7.2.4)
+- AC-BIND-1. The record carries `notice_version_reference` bound to the stable notice family `notice_id`, and that reference resolves to a Notice Version Object. The notice is retrieved using `notice_url`, its hash is computed using the stated algorithm, and the computed value equals `notice_hash`. Where the values differ, the notice version is unverified and the record shall not be relied upon as evidence of the content disclosed. Where resolution is not available to the relying party, `notice_version_reference` carries `notice_version_id` and `notice_hash` directly. (I12; ANCR 7.2.4)
+- AC-BIND-2. The legal basis for each purpose, and any applicable further processing compatibility assessment, are bound to the versioned notice. The record identifies the basis relied on, the purpose, and the relevant time. (I2 and I3; Article 5.2 and 5.4(b))
+- AC-BIND-3. The Notice Version Object carries `published_at`, and the publication time precedes the disclosure time recorded in the receipt. (I12; ANCR 7.2.4)
 
 ### 8.3 Receipt availability and custody
 
-- **AC-RCPT-1.** A receipt exists and is held by the individual, or by an agent acting for them, and not only by the controller. (I11; conv108:DualHeldRecordRequirement)
-- **AC-RCPT-2.** The receipt carries a receipt identifier, ANCR `receipt_id`, that can be carried with a training contribution and re-resolved on withdrawal. (I13)
-- **AC-RCPT-3.** Where `conv108:ConsentBasis` is asserted, the record states whether the construction is online consent or offline consent presented through an online interface, and the two are not reported as equivalent. A record that is held only by the controller is not reported as online consent. (3.2; ANCR 7.2.2)
+- AC-RCPT-1. A receipt exists and is held by the individual, or by an agent acting for them, and not only by the controller. (I11; conv108:DualHeldRecordRequirement)
+- AC-RCPT-2. The receipt carries a receipt identifier, ANCR `receipt_id`, that can be carried with a training contribution and re-resolved on withdrawal. (I13)
+- AC-RCPT-3. Where `conv108:ConsentBasis` is asserted, the record states whether the construction is online consent or offline consent presented through an online interface, and the two are not reported as equivalent. A record that is held only by the controller is not reported as online consent. (3.2; ANCR 7.2.2)
 
 ### 8.4 Recipient transparency
 
-- **AC-RECIP-1.** Processing and destination locations, `dpv:hasLocation`, and for transborder flows the Article 14 safeguard, `conv108:hasTransborderSafeguard`, are resolvable in advance of the transfer. (I8; conv108:TransborderTransparency)
-- **AC-RECIP-2.** Automated decision and inference scope, `conv108:AutomatedProcessingTransparency`, is disclosed before processing, so that the Article 9.1(c) right is meaningful. (I9)
+- AC-RECIP-1. Processing and destination locations, `dpv:hasLocation`, and for transborder flows the Article 14 safeguard, `conv108:hasTransborderSafeguard`, are resolvable in advance of the transfer. (I8; conv108:TransborderTransparency)
+- AC-RECIP-2. Automated decision and inference scope, `conv108:AutomatedProcessingTransparency`, is disclosed before processing, so that the Article 9.1(c) right is meaningful. (I9)
 
 ### 8.5 Identifier governance
 
-- **AC-ID-1.** The controller identifier resolves to an issuing authority, `conv108:hasIssuingAuthority`, and where verified, to a jurisdiction scoped registry identifier, `conv108:hasRegistryIdentifier`. A self asserted CIR is distinguishable from a registry verified one through `conv108:hasAssuranceStatus`. (I14; Article 8 and registry)
-- **AC-ID-2.** An Authorization State Object exists for the processing context, its `record_validity`, expressed as `conv108:hasActiveState`, is evaluable as valid, invalid, or suspended, and an expired or suspended state is detectable at the point of reliance. (I15; ANCR 7.2.5)
-- **AC-ID-3.** The state applying at a stated past time is reconstructable using the procedure in ANCR 7.2.5: state instances are ordered by `supersedes`, cross checked against the `authorization_state_changed` and `record_validity_changed` entries in the Notice Event Log, and evaluated against the notice version the state was formed against. A record that carries only a current state value, with no history, does not satisfy this criterion. (I15; ANCR 7.2.5 and 7.4.1)
+- AC-ID-1. The controller identifier resolves to an issuing authority, `conv108:hasIssuingAuthority`, and where verified, to a jurisdiction scoped registry identifier, `conv108:hasRegistryIdentifier`. A self asserted CIR is distinguishable from a registry verified one through `conv108:hasAssuranceStatus`. (I14; Article 8 and registry)
+- AC-ID-2. An Authorization State Object exists for the processing context, its `record_validity`, expressed as `conv108:hasActiveState`, is evaluable as valid, invalid, or suspended, and an expired or suspended state is detectable at the point of reliance. (I15; ANCR 7.2.5)
+- AC-ID-3. The state applying at a stated past time is reconstructable using the procedure in ANCR 7.2.5: state instances are ordered by `supersedes`, cross checked against the `authorization_state_changed` and `record_validity_changed` entries in the Notice Event Log, and evaluated against the notice version the state was formed against. A record that carries only a current state value, with no history, does not satisfy this criterion. (I15; ANCR 7.2.5 and 7.4.1)
 
 ### 8.6 AI transparency profile
 
-- **AC-AI-1.** Where model training is claimed as further processing, the record carries the purpose as a named secondary purpose and a recorded compatibility determination, `conv108:CompatibleFurtherProcessing`, bound to the notice version in effect. (I3 and I4)
-- **AC-AI-2.** Training data provenance, `conv108:hasTrainingDataProvenance`, and rights reservation status, `conv108:hasRightsReservationStatus`, are recorded and resolvable, and the rights reservation status is machine actionable. (I5 and I6; AI Act Article 53(1)(c) and (d))
-- **AC-AI-3.** Personal data categories present in training data are recorded using `dpv:hasPersonalData` with `pd:` categories, and are bound to the notice version relied upon for the training purpose. (I7)
+- AC-AI-1. Where model training is claimed as further processing, the record carries the purpose as a named secondary purpose and a recorded compatibility determination, `conv108:CompatibleFurtherProcessing`, bound to the notice version in effect. (I3 and I4)
+- AC-AI-2. Training data provenance, `conv108:hasTrainingDataProvenance`, and rights reservation status, `conv108:hasRightsReservationStatus`, are recorded and resolvable, and the rights reservation status is machine actionable. (I5 and I6; AI Act Article 53(1)(c) and (d))
+- AC-AI-3. Personal data categories present in training data are recorded using `dpv:hasPersonalData` with `pd:` categories, and are bound to the notice version relied upon for the training purpose. (I7)
 
 ### 8.7 Rights and lifecycle routes
 
-- **AC-RIGHTS-1.** Each applicable right in 4.2 resolves to at least one access modality through `conv108:hasRightsAccessReference` or the ANCR `privacy_access_point`, and at least one modality is operable without the individual holding, presenting, or authenticating a digital identification credential. (I10; ANCR 7.1.3)
-- **AC-RIGHTS-2.** Where consent is the legal basis, a withdrawal route is recorded and a withdrawal event is capable of being written to the Notice Event Log against the same `notice_id` and `notice_version_reference`. (I10; ANCR 7.4)
+- AC-RIGHTS-1. Each applicable right in 4.2 resolves to at least one access modality through `conv108:hasRightsAccessReference` or the ANCR `privacy_access_point`, and at least one modality is operable without the individual holding, presenting, or authenticating a digital identification credential. (I10; ANCR 7.1.3)
+- AC-RIGHTS-2. Where consent is the legal basis, a withdrawal route is recorded and a withdrawal event is capable of being written to the Notice Event Log against the same `notice_id` and `notice_version_reference`. (I10; ANCR 7.4)
 
 ## 9 Attribution and publication status
 
-This document is an independent external review draft authored and edited by **Mark Lizar**. It was prepared for technical discussion in relation to the ANCR Working Group at Kantara Initiative. Kantara Initiative and the ANCR Working Group are not identified as authors or editors, and no endorsement or adoption is implied.
+This document is an independent external review draft authored and edited by Mark Lizar. It was prepared for technical discussion in relation to the ANCR Working Group at Kantara Initiative. Kantara Initiative and the ANCR Working Group are not identified as authors or editors, and no endorsement or adoption is implied.
 
 All `conv108:` terms are proposals in this document. They are not Council of Europe treaty text, published DPV terms, or ISO/IEC terms. Existing `dpv:`, `pd:`, `loc:`, `tech:`, `dct:`, and `dcat:` terms remain attributable to their respective specifications. The `ancr:` references identify an alignment target and do not claim a published namespace.
 

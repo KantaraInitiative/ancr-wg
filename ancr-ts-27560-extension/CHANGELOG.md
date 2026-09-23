@@ -10,6 +10,85 @@ This changelog covers:
 
 Version identifiers are document revisions. The receipt schema identifier is versioned separately and is stated in clause 7.3.4 of the extension.
 
+## [Unreleased] - v1.0 review amendments, PR #34
+
+### Summary
+
+Amendments made during Working Group review of the v1.0 Release Candidate. Separates the record held by the individual from the record held by the controller, defines the offline notice and its linkage to the online notice, and defines the Annex D Stage 3 artefact. Restores the v0.4 baseline name of the controller record. The receipt schema identifier remains `ancr-notice-receipt-2.0`, which is not yet approved; its controller record field reverts to the v0.4 baseline name, so the rename is removed from the list of breaking changes rather than added to it.
+
+### Added
+
+- 3.28 micro credential, defining the Stage 3 artefact of Annex D.3, with notes separating it from a digital identification credential in the sense of 3.15.
+- 3.29 offline notice, notice presented outside an online environment, including a physical sign or printed material.
+- 3.30 consent event record, the record of a consent event held by the PII controller in its record of processing activities, bound to the notice version and to the Anchored Notice Receipt. Every other lawful basis is recorded in the same way through 7.4.4.
+- 7.2.6 Offline notice linkage: an offline notice carries a resolvable reference to the Controller Identity Record and to the Notice Version Object of the online notice that states its terms; a receipt generated from it binds to that online notice version.
+- Introduction, sentence stating that an offline notice is receipted through the online notice it links to.
+- 3.31 consent construction, the manner in which a consent authorization is informed and constructed, distinguished by whether the notice relied upon is presented in the context or recorded as a notice version, and by whether identification and location are inherent to the context (in person), recorded through the notice artefacts (online), or assumed. The assumed case covers an offline construction presented through an online interface and remote consent by a means that is not online, such as telephone or post. A note distinguishes it from consent type in ISO/IEC TS 27560:2023, 3.4. The term was used in 3.19 and 7.2.2 without a definition.
+- 7.4.4, lawful_basis added to the processing event minimum fields, using the Annex C vocabulary.
+- 3.30, Note 3 relating the consent event record to the Authorization State Object: the record carries the event, the Authorization State Object carries the resulting state, and the change is logged as authorization_state_changed.
+- Introduction, NOTE after the co-regulated digital identification paragraph: once both rule sets are expressed as records, they can be made operational for personal data control through consent based authorization, carried by the bilateral Authorization State Object, with the individual held record structured by profile B2. Responds to a review comment on PR #34.
+- Annex G, dependencies on ISO/IEC 29184:2020 (informative): the clauses of ISO/IEC 29184:2020 on which this document relies, with the clause of this document that relies on each and what it adds. Clause numbers and titles only.
+- Annex H, Blinding Identity Taxonomy profile for notice evidence (informative): a field level profile of the Blinding Identity Taxonomy 1.0 for the Anchored Notice Receipt, Notice Event Log entries and the Authorization State Object, so that anonymity by default can be assessed by inspection. 3.14 Note 3 and a NOTE in 7.3.1 refer to it. The Blinding Identity Taxonomy 1.0 and ISO/IEC 20889:2018 added to 2.2.
+- 3.32 notice artefact, defining the collective term used throughout the document: any of the records specified in clause 7.
+
+### Changed
+
+- 3.22 consent record restored to the wording of ISO/IEC TS 27560:2023, 3.3, with a SOURCE line. The previous text, "Controller retained evidence of consent", redefined the imported term while stating that it did not. In this document the consent record is the record held by the individual, and the controller held counterpart is the consent event record, 3.30.
+- 7.2.2, naming rule: the distinction is between a consent record, held by the individual and bilateral, and a consent event record, held privately by the controller. The terms offline consent record and online consent record are withdrawn. An offline notice is stated to be public and receipted through its link to an online notice.
+- 7.2.2, offline consent construction: where the lawful basis is consent, the controller held authorization record is a consent event record, 3.30.
+- Annex C, consent row aligned with 7.2.2.
+- Controller Identification Record renamed Controller Identity Record, abbreviation CIR unchanged, throughout the extension and the DPV companion. The field reverts to its v0.4 baseline name, controller_identity_record_id; controller_identification_record_id, used in v0.5 and the v1.0 Release Candidate, is deprecated, accepted on input for one revision cycle, and not emitted. Reason: the record states the identity of the controller, while identification in 3.11 is carried out by a controller on an individual, and the baseline name is the one used by deployed implementations.
+- 7.1.1 NOTE rewritten to state the reverted name and the deprecation.
+- 7.3.4, the list of changes that break a v0.4 baseline implementation is reduced from four to three.
+- 3.1, notes added: the record states the identity of the controller and corresponds to the party identification section of ISO/IEC TS 27560:2023, 6.3.6; it is not identity in the sense of 3.12 nor identification in the sense of 3.11.
+- 3.12, note added confining the entry to the identity of the individual.
+- Introduction, sentence added stating that the identity of a controller is public and is recorded in the Controller Identity Record.
+- References to ISO/IEC PWI 26689 in the Foreword, 2.2, B.3 and Annex F replaced by the registered title of the preliminary work item and its registering resolution, SC 27 Resolution 2026/32. A preliminary work item number is a temporary designation; the title and resolution remain stable as the work item progresses. Annex F retitled, and its table headings read Registered scope element and Registered justification gap. The SC 44/WG 1 work item was already cited in this form.
+- ISO/IEC 29184 moved from 2.1 Normative references to 2.2 Other references, dated 2020, with a NOTE stating that no conformance criterion in clause 5 and no mandatory requirement in clause 8 depends on it, so that the extension remains free and open to access. The NOTE records that availability of ISO/IEC 29184:2020 at no cost would allow it to be used as a public transparency standard and to be listed as a normative reference. 6.1 and 7.6 refer to Annex G, and Annex F, F.1 row 1, points to the 2.2 NOTE and Annex G in place of the NOTE removed in the previous revision. Closes open item 8.
+- 3.3 and 3.7: the genus of each definition changed from artefact to record. 7.2.2: "compliance artefact", "authorization artefact" and "transparency artefact … permission artefact" replaced by the specific terms, and the lead-in "Offline and online artefacts are named distinctly" corrected to "Consent records and consent event records are named distinctly", matching the rule it introduces.
+- Editorial: bold removed from running text, paragraph lead-ins and list item labels throughout. Headings are unchanged. The same applies to the DPV companion below its title block.
+
+### Open items added
+
+14. A constraint vocabulary for the Stage 3 micro credential, Annex D.3, and for purpose level conditions on the Authorization State Object, 7.2.5. A candidate is the Operational Constraint Vocabulary (OCV), currently a draft at https://github.com/0PN-lab/specs, subject to its contribution to the Working Group under the Kantara IPR Policy.
+
+## [Extension v1.0 Release Candidate, DPV companion v0.3] - Release 1, for ANCR Working Group candidate review and approval
+
+### Summary
+
+Release 1, released 7 September 2026, as the v1.0 Release Candidate put to the Working Group for candidate review and approval. Continues the lineage of the version circulated to ISO/IEC JTC 1/SC 27/WG 5 as N 5211 (2026-07-16). No schema change: the receipt schema remains `ancr-notice-receipt-2.0`. Closes seven of the thirteen open items carried into external review, and disposes of the remainder below.
+
+### Added
+
+- Annex F, clause level crosswalk to ISO/IEC PWI 26689 as registered by SC 27 Resolution 2026/32. Closes open item 11.
+- Annex B.3, entry for the ISO/IEC preliminary work item on an internet transparency code of practice profile, established for ISO/IEC JTC 1/SC 44/WG 1 by resolution of the fifth SC 44 plenary, 3 September 2026, recording where that work item and this document meet and restating the SC 27/WG 5 boundary carried in the resolution.
+- Foreword, sentence offering this document as an implementation reference for the SC 44/WG 1 work item, cross referenced to Annex B.3.
+- Annex C, normative profiling rule for jurisdictions whose lawful basis enumeration differs from the table, referenced from the notice version in the same manner as the profiling of 7.2.2. Closes open item 10.
+- 7.2.4, hash input rule: notice_hash is computed over the exact octet stream retrievable at notice_url, one NVO per representation. Closes open item 4.
+- 3.26 full receipt and 3.27 reference receipt, defining the artefacts named in clause 1, with cross references added to the clause 1 bullets. Closes open item 6.
+- 2.2, informative citations for the ANCR TPI Conformity Specification v0.9 and for the SC 27/WG 5 work items named in the Foreword, including ISO/IEC PWI 26689. Closes open item 9 and the citation half of open item 13.
+- Clause 5, assessment statement: criteria are assessed by inspection of the named artefact, C5 and C8 additionally by the procedures in 7.2.4 and 7.2.5, Annex E for deployed implementations. Addresses open item 2 at assessment level.
+- 7.2, composition statement for the Notice Record content; the consolidated field specification table is deferred. Addresses open item 7 at composition level.
+- Foreword, document status paragraph: ANCR Working Group approval, Kantara Recommendation track, liaison circulation in continuity with WG 5 N 5211.
+
+### Changed
+
+- Profile B2 renamed from personal processing record structure to personal data control record structure, in clause 5, Annex B.2 and Annex F.2.
+- Three passages moved from clause 7.2.2 to the Introduction and rewritten to state the mechanism rather than the outcome: detectability of a receipt already held, the reference joining a code of practice to a disclosure, and the version evidence available to either party across borders. Clause 7.2.2 now carries provisions only.
+- Editorial, co-regulation evidence set reads co-regulatory evidence set in 6.2; the decision record in 7.2.2 carries its supersession statement as a parenthetical note.
+- Introduction, first two paragraphs rewritten: the receipt analogy opens, the one way evidence asymmetry is stated, and the missing artefact is named as the identification and tracking of the controller, not the creation of identifiers about individuals.
+- E.1, the ANCR TPI-R variant is the applicable assessment profile for this extension; the base composite remains usable without artefact conformance. Closes the decision half of open item 13, for ratification at v1.0 approval.
+- Revision line carries the full lineage, commit hash references are consolidated as the v0.4 baseline, and the DPV companion is cited by resolvable URL.
+
+### Open items after v1.0
+
+1. JSON Schema for the receipt, the CIR, the event log entry, and the Authorization State Object. Deferred to a companion artefact.
+2. Conformance test procedures for C1 to C8. Assessment is by inspection, with normative procedures for C5 and C8 only.
+3. LICENSE and IPR file in this directory. Repository action; the IPR position is stated in the Foreword.
+5. Integrity mechanism for an anonymous receipt in place of the per principal HMAC of ISO/IEC TS 27560:2023 Annex E.
+8. ISO/IEC 29184 normative reliance versus informative citation. Position stated in the 2.2 NOTE, unchanged.
+12. A field recording which consent construction is in use. Proposed for working group decision at v1.0 approval; adding it is a minor schema version increment under 7.3.4.
+
 ## [Extension v0.5, DPV companion v0.3] - external review draft
 
 ### Summary
