@@ -28,6 +28,7 @@ Amendments made during Working Group review of the v1.0 Release Candidate. Separ
 - 3.30, Note 3 relating the consent event record to the Authorization State Object: the record carries the event, the Authorization State Object carries the resulting state, and the change is logged as authorization_state_changed.
 - Introduction, NOTE after the co-regulated digital identification paragraph: once both rule sets are expressed as records, they can be made operational for personal data control through consent based authorization, carried by the bilateral Authorization State Object, with the individual held record structured by profile B2. Responds to a review comment on PR #34.
 - Annex G, dependencies on ISO/IEC 29184:2020 (informative): the clauses of ISO/IEC 29184:2020 on which this document relies, with the clause of this document that relies on each and what it adds. Clause numbers and titles only.
+- Annex H, Blinding Identity Taxonomy profile for notice evidence (informative): a field level profile of the Blinding Identity Taxonomy 1.0 for the Anchored Notice Receipt, Notice Event Log entries and the Authorization State Object, so that anonymity by default can be assessed by inspection. 3.14 Note 3 and a NOTE in 7.3.1 refer to it. The Blinding Identity Taxonomy 1.0 and ISO/IEC 20889:2018 added to 2.2.
 
 ### Changed
 
@@ -43,6 +44,10 @@ Amendments made during Working Group review of the v1.0 Release Candidate. Separ
 - Introduction, sentence added stating that the identity of a controller is public and is recorded in the Controller Identity Record.
 - References to ISO/IEC PWI 26689 in the Foreword, 2.2, B.3 and Annex F replaced by the registered title of the preliminary work item and its registering resolution, SC 27 Resolution 2026/32. A preliminary work item number is a temporary designation; the title and resolution remain stable as the work item progresses. Annex F retitled, and its table headings read Registered scope element and Registered justification gap. The SC 44/WG 1 work item was already cited in this form.
 - ISO/IEC 29184 moved from 2.1 Normative references to 2.2 Other references, dated 2020, with a NOTE stating that no conformance criterion in clause 5 and no mandatory requirement in clause 8 depends on it, so that the extension remains free and open to access. The NOTE records that availability of ISO/IEC 29184:2020 at no cost would allow it to be used as a public transparency standard and to be listed as a normative reference. 6.1 and 7.6 refer to Annex G, and Annex F, F.1 row 1, points to the 2.2 NOTE and Annex G in place of the NOTE removed in the previous revision. Closes open item 8.
+
+### Open items added
+
+14. A constraint vocabulary for the Stage 3 micro credential, Annex D.3, and for purpose level conditions on the Authorization State Object, 7.2.5. A candidate is the Operational Constraint Vocabulary (OCV), currently a draft at https://github.com/0PN-lab/specs, subject to its contribution to the Working Group under the Kantara IPR Policy.
 
 ## [Extension v1.0 Release Candidate, DPV companion v0.3] - Release 1, for ANCR Working Group candidate review and approval
 

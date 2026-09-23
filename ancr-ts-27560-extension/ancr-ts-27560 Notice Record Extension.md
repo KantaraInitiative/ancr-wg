@@ -92,6 +92,8 @@ Out of scope for the base extension, and addressed by optional annexes or compan
 
 ### 2.2 Other references (informative)
 - ISO/IEC 29184:2020, Information technology: Online privacy notices and consent
+- Blinding Identity Taxonomy 1.0, Kantara Initiative Information Sharing Interoperability Work Group, Kantara Initiative Report, 15 June 2020
+- ISO/IEC 20889:2018, Privacy enhancing data de-identification terminology and classification of techniques
 - W3C Data Privacy Vocabularies and Controls Community Group, Consent Records and Receipts as per ISO/IEC TS 27560:2023 using DPV, https://w3id.org/dpv/guides/consent-27560
 - ANCR DPV Model Extension, Convention 108+ legal model with an AI transparency profile, external review draft v0.3, Kantara Initiative ANCR Working Group, available at https://github.com/KantaraInitiative/ancr-wg/tree/main/ancr-ts-27560-extension/ancr-dpv. This companion document expresses the artefacts specified here in DPV terms and anchors them to the modernised Convention 108, see Annex B.3.
 - ANCR TPI Conformity Specification, v0.9, Kantara Initiative ANCR Working Group, available at https://github.com/KantaraInitiative/ancr-wg/tree/main/TPI. Methodology for the TPI-R assessment applied in Annex E.
@@ -194,6 +196,8 @@ Property whereby notice disclosure and the resulting evidence artefacts are gene
 Note 1 to entry: Anonymity by default applies to the notice and evidence layer. It does not restrict identification required by the lawful basis for the processing itself.
 
 Note 2 to entry: Retrieval of a Controller Identity Record is not an identification event, see 7.1.
+
+Note 3 to entry: Annex H gives a field level profile, drawn from the Blinding Identity Taxonomy, against which the absence of identifying data in the evidence artefacts can be inspected.
 
 ### 3.15 non-exclusion
 
@@ -629,6 +633,8 @@ Where anchored_notice_receipt is absent or false, the receipt shall link to the 
 An Anchored Notice Receipt shall not require an account_id or a pii_principal_id.
 
 Generation, retention, and verification of an Anchored Notice Receipt shall be possible without identification of the individual. Where an implementation offers receipt verification, that verification shall not require the individual to authenticate or to present a digital identification credential. Anonymity by default applies to the notice and evidence layer and does not restrict identification required by the lawful basis for the processing itself.
+
+NOTE: The absence of a pii_principal_id does not by itself show that a receipt does not identify the individual. Annex H lists the field categories that are absent from the artefacts in its scope and the conditions under which the remainder are carried.
 
 #### 7.3.2 Notice Receipt field specification table (normative)
 
@@ -1119,3 +1125,38 @@ This annex sets out the clauses of ISO/IEC 29184:2020 on which this document rel
 ### G.2 Obligations bound to consent
 
 In ISO/IEC 29184:2020, the retention of the version presented (5.2.8) and the renewal of consent on a change of conditions (5.5.3) apply where consent is the basis for processing, while 5.3.15 requires the notice to state the basis for any basis. This document applies version binding and change events under any lawful basis, see 6.3, 7.4 and 7.2.2.
+
+## Annex H. Blinding Identity Taxonomy profile for notice evidence (informative)
+
+This annex profiles the Blinding Identity Taxonomy 1.0 (BIT) for the evidence artefacts specified in this document, so that anonymity by default, 3.14 and 7.3.1, can be assessed by inspecting fields. The terms identifier, quasi-identifier and pseudonym are used as in ISO/IEC 20889:2018. The field category numbers are those of BIT, 6.4.
+
+The profile applies to data about the individual. It does not apply to the Controller Identity Record, which identifies the controller by design.
+
+### H.1 Artefacts in scope
+
+- the Anchored Notice Receipt, and any Notice Receipt issued without an account_id, 7.3;
+- Notice Event Log entries, 7.4.2;
+- the Authorization State Object, 7.2.5.
+
+### H.2 Treatment of field categories
+
+| BIT categories | Description | Treatment in the artefacts in scope |
+| --- | --- | --- |
+| 1 to 15 | Names, physical and e-mail addresses, telephone numbers, postal codes, software handles, profile pages, passport, social security, national insurance, driving licence, vehicle registration, bank account and card numbers, PINs | Absent |
+| 16, 17, 19, 28 | Private and master keys, symmetric keys, link secrets, passwords | Absent |
+| 18, 20, 29, 30 | Public keys, decentralized identifiers, signatures, digital certificates | Carried only where they identify the controller or the issuing system, or sign the artefact. Absent where they identify the individual |
+| 21, 23 to 27 | Employee, government, membership, institutional, case and user identifiers | Absent |
+| 22 | Account identifiers | Absent from the Anchored Notice Receipt and the Authorization State Object. Carried in other receipts only as account_id, 7.3.2, pseudonymous and unlinkable |
+| 31 to 34, 36, 37 | Photos, videos, images, voice, genetic and biometric identifiers | Absent |
+| 35 | Dates and timestamps | Carried only as event and version times: presented_at, event_time, state_time, evaluated_at, expires_at and published_at. No date concerning the individual, such as a date of birth |
+| 38 to 41, 43 to 47 | IP, MAC and Bluetooth addresses, SSIDs, cookie, radio frequency and IoT identifiers, IMEI, IMSI | Absent, including from log and transport metadata retained with the artefact |
+| 42 | Locational information | Absent. Jurisdiction is carried at the level of recipient_jurisdictions, 7.3.2, and not as a location of the individual |
+| 48, 49 | Social media posts and comments, free-form text | Absent |
+
+### H.3 Use in assessment
+
+An assessor applying criterion C3 can inspect each field of an artefact in H.1 against H.2. A field that falls in a category marked Absent is a finding against anonymity by default, whether or not an account_id or a pii_principal_id is present.
+
+### H.4 Limits
+
+BIT 1.0 dates from 2020. Identifiers not listed in it, including mobile advertising identifiers, device fingerprints, passkey credential identifiers and wallet identifiers, are treated as network and device identifiers in the row for categories 38 to 41 and 43 to 47. Blinding of datasets held by a controller is outside the scope of this annex.
