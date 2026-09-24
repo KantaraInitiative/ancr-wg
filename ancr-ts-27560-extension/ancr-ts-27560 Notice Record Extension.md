@@ -5,7 +5,7 @@ Anchored Notice and Consent Receipts for operational transparency. A notice rece
 **Release:** Release 1, 23 September 2026.
 **Revision:** v1.0 Release Candidate, put to the ANCR Working Group for candidate review and approval.
 **Editor:** Mark Lizar.
-**Reviewers:** Sal D'Agostino.
+**Reviewer(s):** Sal D'Agostino.
 **Contributors:** Gigliolla Agassini, Sal D'Agostino, Paul Knowles, Daniel Schleifer, Tim Lloyd, Michele Drgon.
 
 In memory of Timothy Edward Lloyd, 27 January 1965 to 25 August 2026
