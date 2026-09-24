@@ -10,9 +10,7 @@ Anchored Notice and Consent Receipts for operational transparency. A notice rece
 
 In memory of Timothy Edward Lloyd, 27 January 1965 to 25 August 2026
 
-Tim Lloyd was a member of the Anchored Notice and Consent Receipt Working Group and a contributor to the Transparency Performance Indicators Recommendation, to which Annex E of this document refers. He was a natural and passionate facilitator, and took part in the discussions that shaped the four indicators and the idea behind them: that a person is entitled to know who is identifying them before it happens, and that this can be measured. Tim passed away during the preparation of this document. The Working Group dedicates it to him, with gratitude for his contribution and for his company in the work.
-
-The ANCR Working Group
+Tim Lloyd was a member of the Anchored Notice and Consent Receipt Working Group and a contributor to the Transparency Performance Indicators Recommendation, to which Annex E of this document refers. He was a natural and passionate facilitator, and took part in the discussions that shaped the four indicators and the idea behind them: that a person is entitled to know who is identifying them before it happens, and that this can be measured. Tim passed away during the preparation of this document. The Working Group dedicates it to him, with gratitude for his contribution and for his company in the work. The ANCR Working Group
 
 ## Foreword
 
