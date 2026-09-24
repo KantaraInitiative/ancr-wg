@@ -166,13 +166,13 @@ Normative source. The CIR field set is specified in clause 7.1.1 and 7.1.2 of th
 | Purposes, including any model training purpose | dpv:hasPurpose plus conv108:CompatibleFurtherProcessing where applicable | Article 5.4(b); I3, I4 | Reused DPV plus proposed condition |
 | Processing and destination locations | dpv:hasLocation, loc: | Article 14; I8 | Reused DPV |
 | Transborder safeguard | conv108:hasTransborderSafeguard | Article 14; I8 | Proposed addition |
-| Issuing authority and registry identifier | conv108:hasIssuingAuthority, conv108:hasRegistryIdentifier | registry; I14 | Proposed addition |
+| Issuing authority and registry identifier | conv108:hasIssuingAuthority, conv108:hasRegistryIdentifier, expressing issuing_authority and registry_identifier | registry; I14 | Specified in ANCR B.4.1, expressed here |
 | Active validity state | conv108:hasActiveState, expressing record_validity in the ANCR Authorization State Object | ANCR 7.2.5; I15 | Specified in ANCR 7.2.5, expressed here |
-| Assurance status, self asserted or registry verified | conv108:hasAssuranceStatus | registry | Proposed addition |
+| Assurance status, self asserted or registry verified | conv108:hasAssuranceStatus, expressing assurance_level | registry | Specified in ANCR B.4.1, expressed here |
 
 A CIR may be self asserted or registry verified. The record shall state its assurance status. A registry verified CIR may include evidence of domain control, legal entity verification, issuing authority, jurisdiction, and registry identifier. These are proposed assurance features of this document, not requirements stated in Convention 108+.
 
-NOTE: The four proposed additions are candidates for a later revision of the ANCR extension. Until they are adopted there, an implementation carrying them is carrying extension fields, and its CIR remains conforming only on the ANCR 7.1.1 field set.
+NOTE: The issuing authority, registry identifier and assurance status are specified in profile B4 of the ANCR extension, B.4.1, where a CIR is resolved through a registry operator. The transborder safeguard remains a proposal of this document and a candidate for a later revision of the ANCR extension. Until it is adopted there, an implementation carrying it is carrying an extension field, and its CIR remains conforming only on the ANCR 7.1.1 field set.
 
 ## 6 New and existing terms in the legal model
 

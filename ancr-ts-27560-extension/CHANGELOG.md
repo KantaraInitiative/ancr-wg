@@ -10,6 +10,20 @@ This changelog covers:
 
 Version identifiers are document revisions. The receipt schema identifier is versioned separately and is stated in clause 7.3.4 of the extension.
 
+## [Unreleased] - Extension, profile B4
+
+### Added
+
+- 3.33 resolution path, 3.34 registry operator, 3.35 operator intervention and 3.36 online notice notary. A registry operator is a PII controller for its own purposes and can act as a PII processor for records it serves; an online notice notary is a party other than the controller that witnesses a notice version, receipt or event log entry over its hash and time, without access to the content or the identity of the individual. 3.36 identifies the party behind the notary proof verified in 7.2.4, step 4.
+- Annex B.4, profile B4, registry operator and online notice notary accountability. B.4.1 fields where a CIR is resolved through a registry operator; B.4.2 requirements, including a CIR for the operator, an event for every operator intervention, no identification of an inspecting party and no retention of identifying request metadata; B.4.3 notary proof fields and requirements, including independence from the controller and receipt of the hash and time only.
+- 7.4.1 and 7.4.3: operator_correction, operator_suspension, operator_withdrawal and record_re_registration, required where profile B4 is claimed.
+
+### Changed
+
+- Clause 5 lists profile B4 among the optional profiles. Annex B introduction reads three optional profile extensions. Base conformance under 5.1 is unchanged.
+- DPV companion clause 5: issuing authority, registry identifier and assurance status are expressions of the B.4.1 fields; the transborder safeguard remains a proposal.
+- Open item 15: the witnessing part is addressed by B.4.3. Open item 19: operator accountability and assurance status are addressed by B.4.
+
 ## [Unreleased] - DPV companion v0.4 draft
 
 ### Added
@@ -71,11 +85,11 @@ Amendments made during Working Group review of the v1.0 Release Candidate. Separ
 ### Open items added
 
 14. A constraint vocabulary for the Stage 3 micro credential, Annex D.3, and for purpose level conditions on the Authorization State Object, 7.2.5. A candidate vocabulary is to be contributed to the Working Group under the Kantara IPR Policy.
-15. Receipt signing and witnessed timestamps. Receipts, Notice Version Objects and Notice Event Log entries are unsigned, carry self-asserted times, and are hosted by the controller, so a controller can replace a notice and its hash under the same version identifier. Candidate: a content-addressed notice_version_reference with the hash carried inline, the Anchored Notice Receipt signed with a key published in the CIR, and published_at and each Notice Version Object witnessed in an external append-only log.
+15. Receipt signing and witnessed timestamps. Receipts, Notice Version Objects and Notice Event Log entries are unsigned, carry self-asserted times, and are hosted by the controller, so a controller can replace a notice and its hash under the same version identifier. Candidate: a content-addressed notice_version_reference with the hash carried inline, the Anchored Notice Receipt signed with a key published in the CIR, and published_at and each Notice Version Object witnessed in an external append-only log. Witnessing is addressed by B.4.3; signing of receipts and a content addressed reference remain open.
 16. Canonical hash representation. The exact octet rule in 7.2.4 fails on dynamically rendered pages, and a per-visitor octet stream gives each visitor a distinct notice_hash that works as a tracker. Candidate: hash a machine readable representation served as a static resource, state whether the hash is over encoded or decoded bytes, and bound Notice Version Object retention.
 17. initiation_mode. The default in 7.2.2 depends on principal initiation, which no field records, so it cannot be assessed by inspection under clause 5. Add the field, or remove the default.
 18. Authorization State Object chain key. Step 1 of the reconstruction procedure in 7.2.5 retrieves instances by notice_id, which returns the state of every individual under that notice, and no rule resolves two instances superseding the same parent. Candidate: a chain key carried in the individual's receipt, with supersedes authoritative and a fixed precedence rule.
-19. CIR binding. controller_identity_record_id may be a string, nothing binds the CIR to domain control or registration, and loss of the resolver leaves receipts unverifiable. A substituted code on an offline notice passes 7.2.4, because the substituted hash matches the substituted content. Candidate: URI form required, an assurance status field, the CIR served from the named origin with an archive mirror, and authorized origins and premises listed in the CIR.
+19. CIR binding. controller_identity_record_id may be a string, nothing binds the CIR to domain control or registration, and loss of the resolver leaves receipts unverifiable. A substituted code on an offline notice passes 7.2.4, because the substituted hash matches the substituted content. Candidate: URI form required, an assurance status field, the CIR served from the named origin with an archive mirror, and authorized origins and premises listed in the CIR. Operator accountability and assurance status are addressed by B.4; the remaining parts stay open.
 20. 7.4.4 under B.1. Mandatory requirement 10 and 7.4.4 make controller processing records mandatory, while clause 1 places complete records of processing activity out of scope. Move 7.4.4 under profile B1, conditional on a B1 claim.
 21. ISO/IEC Directives, Part 2 cleanup: clause 2 limited to normative references, with 2.2 moved to a Bibliography and 2.3 relocated; the standard clause 3 opening paragraph; term entries without capitals or final full stops; numbered NOTEs where a subclause carries more than one; annexes separated into normative and informative and ordered normative first; shall statements outside clause 8 brought within the conformance clause.
 
