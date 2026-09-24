@@ -350,7 +350,7 @@ party that operates a registry, directory or equivalent service through which Co
 
 Note 1 to entry: A registry operator is a PII controller for PII it processes for its own purposes in operating the service, and can act as a PII processor where it serves records on the instruction of the controller to which they relate. In either capacity it holds a Controller Identity Record, 3.1. This document specifies no separate artefact for it.
 
-Note 2 to entry: Issuing a listing, being accountable for the service, and running the serving infrastructure can be held by one party or by several. Where they are held by several, each is identified under B.4.1.
+Note 2 to entry: Issuing a listing, being accountable for the service, and running the serving infrastructure can be held by one party or by several. Where they are held by several, each is identified under B.5.1.
 
 ### 3.35 operator intervention
 
@@ -382,7 +382,7 @@ Note 2 to entry: An online notice notary is a PII controller for PII it processe
 
 ## 5 Conformance
 
-An implementation conforms to the base extension if it satisfies every mandatory requirement in clause 8. An implementation may additionally claim conformance to the optional profiles defined in Annex B, that is profile B1, PII processing record structure, profile B2, personal data control record structure, and profile B4, registry operator and online notice notary accountability.
+An implementation conforms to the base extension if it satisfies every mandatory requirement in clause 8. An implementation may additionally claim conformance to the optional profiles defined in Annex B, that is profile B1, PII processing record structure, profile B2, personal data control record structure, and profile B5, registry operator and online notice notary accountability.
 
 Relationship to conformance with ISO/IEC TS 27560:2023. This document is an extension of ISO/IEC TS 27560:2023 and is not a stand alone specification. An implementation that conforms to this document conforms to ISO/IEC TS 27560:2023 for the record content it carries, subject to the single declared deviation in A.0, which relaxes the requirement for pii_principal_id. A controller that requires conformance to ISO/IEC TS 27560:2023 without that deviation shall populate a principal identifier in the controller held record as described in A.0, while keeping the individual side Anchored Notice Receipt free of it.
 
@@ -780,7 +780,7 @@ The Notice Event Log should additionally support:
 - cir_updated, for a change to the Controller Identity Record relied upon by a notice version
 - disclosure_set_updated, for a change to the disclosure set in 7.2.1
 
-Where an implementation claims profile B4, the Notice Event Log shall additionally support:
+Where an implementation claims profile B5, the Notice Event Log shall additionally support:
 
 - operator_correction
 - operator_suspension
@@ -1044,13 +1044,13 @@ Cross border security and AI lifecycle governance requirements should be specifi
 - Online transparency code of practice profiling: alignment tracked against the ISO/IEC preliminary work item *Internet Transparency Code of Practice Profile through privacy by design*, established for ISO/IEC JTC 1/SC 44/WG 1 by resolution of the fifth ISO/IEC JTC 1/SC 44 plenary, 3 September 2026, which aligns that work item to ISO/IEC 29100, ISO/IEC 29184 and ISO/IEC TS 27560:2023. That work item selects and constrains base standards to produce a code of practice; this document specifies the record structure through which a disclosure made under such a code is published, referenced by version, and evidenced. The two meet at conformance criterion C4 in 5.1, which requires the Notice Record to state the applicable public rule set by reference to the code of conduct, code of practice, or legal instrument relied upon, and at the code_of_conduct field specified in 7.1, which carries that reference on the Controller Identity Record. A code of practice produced under that work item is one such public rule set. The resolution states that the profile does not replace or duplicate the technical work of ISO/IEC JTC 1/SC 27/WG 5.
 - Legal model and vocabulary alignment: expressed in the ANCR DPV Model Extension, which maps the fields specified in clause 7 into DPV terms and anchors them to Convention 108+ Articles 5, 8, 9, and 14. That companion reuses `notice_id`, `notice_version_reference`, `receipt_id`, and the Authorization State Object states specified in 7.2.5 as defined here, and treats this document as the source of the record structure. Where the two documents diverge, this document governs the record structure and the companion governs the vocabulary mapping.
 
-### B.4 Profile B4, registry operator and online notice notary accountability
+### B.5 Profile B5, registry operator and online notice notary accountability
 
 Purpose. Make the resolution path of a Controller Identity Record, and the witnessing of a notice or receipt, inspectable on the same terms as the record they concern.
 
-A controller that serves its own Controller Identity Record is its own resolution path. B.4.1 and B.4.2 apply only where a CIR is resolved through a registry operator. B.4.3 applies only where a notary proof is issued.
+A controller that serves its own Controller Identity Record is its own resolution path. B.5.1 and B.5.2 apply only where a CIR is resolved through a registry operator. B.5.3 applies only where a notary proof is issued.
 
-#### B.4.1 Fields (normative)
+#### B.5.1 Fields (normative)
 
 Where a CIR is resolved through a registry operator, the CIR as served shall carry the following fields, in addition to those specified in 7.1.2.
 
@@ -1067,9 +1067,9 @@ Where a CIR is resolved through a registry operator, the CIR as served shall car
 
 This profile does not specify an assurance model. It requires the level to be stated against a published model, in the same way that criterion C4 requires the public rule set to be stated by reference.
 
-#### B.4.2 Requirements (normative)
+#### B.5.2 Requirements (normative)
 
-An implementation claiming profile B4 shall satisfy the following.
+An implementation claiming profile B5 shall satisfy the following.
 
 1. The registry operator's own CIR is resolvable by the same means as the records it serves, before any demand for identification, and without authentication.
 2. Every operator intervention produces a Notice Event Log entry of the corresponding type in 7.4.1.
@@ -1079,7 +1079,7 @@ An implementation claiming profile B4 shall satisfy the following.
 
 NOTE: Where the controller serves its own record, the requirements in this subclause are met by criterion C1 in 5.1.
 
-#### B.4.3 Online notice notary (normative)
+#### B.5.3 Online notice notary (normative)
 
 Where a notary proof is issued for a Notice Version Object, a Notice Receipt or a Notice Event Log entry, the proof shall carry the following fields.
 
