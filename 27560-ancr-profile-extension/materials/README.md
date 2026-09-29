@@ -9,4 +9,4 @@ Presentations and introductions for the ANCR Extension for ISO/IEC TS 27560:2023
 | [ISOIEC-27560-1-Profile-ANCR-Notice-Consent-Receipt-Exchange.pdf](ISOIEC-27560-1-Profile-ANCR-Notice-Consent-Receipt-Exchange.pdf) | Earlier profile presentation: ANCR notice and consent receipt exchange |
 | [Co-Regulated Identification An Industry Introduction.md](Co-Regulated%20Identification%20An%20Industry%20Introduction.md) | Co-regulated identification, an industry introduction |
 
-The specification itself is [ancr-ts-27560 Notice Record Extension.md](../ancr-ts-27560%20Notice%20Record%20Extension.md).
+The specification itself is [ancr-ts-27560 Notice Record Extension.md](../../ancr-ts-27560-extension/ancr-ts-27560%20Notice%20Record%20Extension.md).
