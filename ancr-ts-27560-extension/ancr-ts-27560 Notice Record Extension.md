@@ -1,6 +1,6 @@
 # ANCR Extension for ISO/IEC TS 27560:2023
 
-Anchored Notice and Consent Receipts for operational transparency. A notice receipt profile and extension of ISO/IEC TS 27560:2023.
+Anchored Notice and Consent Receipts for notice and consent records. A notice receipt profile and extension of ISO/IEC TS 27560:2023.
 
 **Release:** Release 1, 7 September 2026.
 **Revision:** v1.0 Release Candidate, put to the ANCR Working Group for candidate review and approval. Supersedes the external review draft v0.5 (2026-08-31, commit `d9dbe8b5`), the v0.4 baseline (the file published at commit `a09559d5`), and the version circulated to ISO/IEC JTC 1/SC 27/WG 5 as document N 5211, ANCR Notice Receipt Extension (2026-07-16). This document continues the lineage of N 5211 in the SC 27/WG 5 document register.
