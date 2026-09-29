@@ -25,9 +25,9 @@ Lineage:
 6. Notice Receipt Extension: extends ISO/IEC TS 27560:2023 into
    a receipt-exchange profile for anchored, inspectable notice evidence.
 
-**Spec location:** [`27560-ancr-profile-extension/`](27560-ancr-profile-extension/index.md)
-(current working entry point:
-[`iso-27560-ts-extension/`](27560-ancr-profile-extension/iso-27560-ts-extension/index.md)).
+**Spec location:** [`ancr-ts-27560-extension/`](ancr-ts-27560-extension/ancr-ts-27560%20Notice%20Record%20Extension.md)
+(Release 1, v1.0 Release Candidate). Presentations and introductions:
+[`27560-ancr-profile-extension/materials/`](27560-ancr-profile-extension/materials).
 
 ## Submission index 
 
