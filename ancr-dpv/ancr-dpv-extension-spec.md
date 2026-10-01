@@ -268,7 +268,7 @@ Each criterion is a testable condition on a record or receipt. Detailed test pro
 
 ### 8.1 Sequence integrity
 
-- AC-SEQ-1. The CIR or accountable party record is resolvable at a timestamp before the first collection event. Evidence: the notice event or receipt timestamp precedes the first processing timestamp. This is a transparency by default implementation requirement aligned with the information listed in Article 8.
+- AC-SEQ-1. The CIR or accountable party record is resolvable/auditable to a consent purpose at a timestamp before the first collection event. Evidence: the notice event or receipt timestamp precedes the first processing timestamp. This is a transparency by default implementation requirement aligned with the information listed in Article 8.
 - AC-SEQ-2. Where a chain of notice is claimed, each participant is typed by its ISO/IEC 22989 lifecycle role through `conv108:hasLifecycleRole`, each notice is bound to the issuing party and notice version, and each participant's notice timestamp precedes the next participant's build or test event. Ordering is verifiable, the next role in the chain has tested the upstream notice, and any stage merge is explicit in the record. (I16)
 
 ### 8.2 Notice binding
