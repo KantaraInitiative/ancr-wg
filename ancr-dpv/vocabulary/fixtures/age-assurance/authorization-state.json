@@ -1,0 +1,10 @@
+{
+  "authorization_state_id": "aso-0002",
+  "controller_identification_record_id": "https://example.ca/.well-known/cir",
+  "purpose_state": [
+    { "purpose": "Age assurance for account opening", "lawful_basis": "legal_obligation", "state": "given" },
+    { "purpose": "Product analytics", "lawful_basis": "legitimate_interest", "state": "objected" }
+  ],
+  "record_validity": "valid",
+  "state_source": "individual"
+}

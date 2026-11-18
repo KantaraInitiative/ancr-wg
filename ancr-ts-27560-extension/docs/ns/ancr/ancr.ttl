@@ -1,0 +1,787 @@
+@prefix ancr: <https://kantarainitiative.github.io/ancr-wg/ns/ancr#> .
+@prefix conv108: <https://kantarainitiative.github.io/ancr-wg/ns/conv108plus#> .
+@prefix ancrf: <https://kantarainitiative.github.io/ancr-wg/ns/ancr-fields#> .
+@prefix ntc: <urn:x-ntc:v1:> .
+@prefix dpv: <https://w3id.org/dpv#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://kantarainitiative.github.io/ancr-wg/ns/ancr> a owl:Ontology ;
+    dct:title "ANCR Extension fields and controlled values"@en ;
+    dct:description "Module 1 of the ANCR DPV vocabulary. An identifier for each field and controlled value of the ANCR Extension for ISO/IEC TS 27560:2023, Release 1. Each identifier is an address for the Extension definition, not a new definition."@en ;
+    dct:creator "Mark Lizar" ;
+    owl:versionInfo "0.7" ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> .
+
+# Fields
+ancr:controller_identification_record_id a rdf:Property ;
+    rdfs:label "controller_identification_record_id" ;
+    skos:definition "Stable identifier of the Controller Identification Record; in other artefacts, a reference to it"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.1.2, 7.2.4, 7.2.5, 7.2.7, 7.3.2, 7.4.4" ;
+    sw:term_status "proposed" .
+
+ancr:controller_public_id_uri a rdf:Property ;
+    rdfs:label "controller_public_id_uri" ;
+    skos:definition "Public resolvable controller identifier"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.1.2" ;
+    sw:term_status "proposed" .
+
+ancr:controller_name a rdf:Property ;
+    rdfs:label "controller_name" ;
+    skos:definition "Controller legal name"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.1.2" ;
+    sw:term_status "proposed" .
+
+ancr:jurisdiction a rdf:Property ;
+    rdfs:label "jurisdiction" ;
+    skos:definition "Applicable jurisdiction indicator or pointer"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.1.2" ;
+    sw:term_status "proposed" .
+
+ancr:privacy_access_point a rdf:Property ;
+    rdfs:label "privacy_access_point" ;
+    skos:definition "Rights and contact access modalities, each with type, value and label"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.1.2, 7.1.3" ;
+    sw:term_status "proposed" .
+
+ancr:type a rdf:Property ;
+    rdfs:label "type" ;
+    skos:definition "Modality type of a privacy_access_point entry"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.1.3" ;
+    sw:term_status "proposed" .
+
+ancr:value a rdf:Property ;
+    rdfs:label "value" ;
+    skos:definition "Modality value of a privacy_access_point entry"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.1.3" ;
+    sw:term_status "proposed" .
+
+ancr:label a rdf:Property ;
+    rdfs:label "label" ;
+    skos:definition "Human readable label of a privacy_access_point entry"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.1.3" ;
+    sw:term_status "proposed" .
+
+ancr:notice_event_log_url a rdf:Property ;
+    rdfs:label "notice_event_log_url" ;
+    skos:definition "Pointer to the notice event log service or resource"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.1.2" ;
+    sw:term_status "proposed" .
+
+ancr:controller_address a rdf:Property ;
+    rdfs:label "controller_address" ;
+    skos:definition "Controller address"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.1.2" ;
+    sw:term_status "proposed" .
+
+ancr:code_of_conduct a rdf:Property ;
+    rdfs:label "code_of_conduct" ;
+    skos:definition "Pointer to the authoritative code of conduct or code of practice"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.1.2" ;
+    sw:term_status "proposed" .
+
+ancr:derogation_reference a rdf:Property ;
+    rdfs:label "derogation_reference" ;
+    skos:definition "Lawful withholding or derogation metadata"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.1.4, 7.2.5" ;
+    sw:term_status "proposed" .
+
+ancr:reference_uri a rdf:Property ;
+    rdfs:label "reference_uri" ;
+    skos:definition "Reference to the provision relied on for a derogation"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.1.4" ;
+    sw:term_status "proposed" .
+
+ancr:authority a rdf:Property ;
+    rdfs:label "authority" ;
+    skos:definition "Authority under which a derogation applies"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.1.4" ;
+    sw:term_status "proposed" .
+
+ancr:valid_until a rdf:Property ;
+    rdfs:label "valid_until" ;
+    skos:definition "Time until which a derogation applies"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.1.4" ;
+    sw:term_status "proposed" .
+
+ancr:notice_id a rdf:Property ;
+    rdfs:label "notice_id" ;
+    skos:definition "Stable notice family identifier"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.2.7, 7.3.2, 7.4.2" ;
+    sw:term_status "proposed" .
+
+ancr:notice_version_reference a rdf:Property ;
+    rdfs:label "notice_version_reference" ;
+    skos:definition "Immutable reference to a notice version, resolving to its Notice Version Object"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.2.7, 7.3.2, 7.4.2" ;
+    sw:term_status "proposed" .
+
+ancr:public_rule_reference a rdf:Property ;
+    rdfs:label "public_rule_reference" ;
+    skos:definition "Reference to the applicable code of conduct, code of practice or legal instrument"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.2.7" ;
+    sw:term_status "proposed" .
+
+ancr:lawful_basis a rdf:Property ;
+    rdfs:label "lawful_basis" ;
+    skos:definition "Asserted lawful basis, from the Annex C vocabulary"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.2.7, 7.3.2, 7.4.4, Annex C" ;
+    sw:term_status "proposed" .
+
+ancr:purpose a rdf:Property ;
+    rdfs:label "purpose" ;
+    skos:definition "Recorded purpose relied upon"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.2.7, 7.3.2, 7.4.4, 7.5" ;
+    sw:term_status "proposed" .
+
+ancr:technology_in_use a rdf:Property ;
+    rdfs:label "technology_in_use" ;
+    skos:definition "Technology classes in use and their processing capabilities"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.2.1, 7.2.7" ;
+    sw:term_status "proposed" .
+
+ancr:controls_available_primary a rdf:Property ;
+    rdfs:label "controls_available_primary" ;
+    skos:definition "Practical rights controls available to the individual"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.2.1, 7.2.7" ;
+    sw:term_status "proposed" .
+
+ancr:associated_or_derivative_controls a rdf:Property ;
+    rdfs:label "associated_or_derivative_controls" ;
+    skos:definition "Controls associated with or derived from the primary controls"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.2.1, 7.2.7" ;
+    sw:term_status "proposed" .
+
+ancr:secondary_purposes_of_use a rdf:Property ;
+    rdfs:label "secondary_purposes_of_use" ;
+    skos:definition "Secondary purposes of use"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.2.1, 7.2.7" ;
+    sw:term_status "proposed" .
+
+ancr:limitations_or_derogations_on_controls a rdf:Property ;
+    rdfs:label "limitations_or_derogations_on_controls" ;
+    skos:definition "Limitations or derogations on the controls disclosed"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.2.1, 7.2.7" ;
+    sw:term_status "proposed" .
+
+ancr:transparency_disclosure_reference a rdf:Property ;
+    rdfs:label "transparency_disclosure_reference" ;
+    skos:definition "Stable pointer to the disclosure set"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.2.7, 7.3.2" ;
+    sw:term_status "proposed" .
+
+ancr:recipient_jurisdictions a rdf:Property ;
+    rdfs:label "recipient_jurisdictions" ;
+    skos:definition "Destination jurisdictions, ISO 3166-1 alpha-2"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.2.7, 7.3.2" ;
+    sw:term_status "proposed" .
+
+ancr:transfer_mechanism a rdf:Property ;
+    rdfs:label "transfer_mechanism" ;
+    skos:definition "Transfer mechanism or safeguard class"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.2.7, 7.3.2" ;
+    sw:term_status "proposed" .
+
+ancr:profiling_rule_reference a rdf:Property ;
+    rdfs:label "profiling_rule_reference" ;
+    skos:definition "Reference to the jurisdiction profiling rule applied"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.2.7" ;
+    sw:term_status "proposed" .
+
+ancr:retention_period a rdf:Property ;
+    rdfs:label "retention_period" ;
+    skos:definition "Retention stated in the notice"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.2.7" ;
+    sw:term_status "proposed" .
+
+ancr:language a rdf:Property ;
+    rdfs:label "language" ;
+    skos:definition "Language of the notice representation"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.2.7" ;
+    sw:term_status "proposed" .
+
+ancr:surveillance_risks a rdf:Property ;
+    rdfs:label "surveillance_risks" ;
+    skos:definition "Material risk disclosure for state access and surveillance exposure"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.2.7, 7.3.2" ;
+    sw:term_status "proposed" .
+
+ancr:rights_derogations a rdf:Property ;
+    rdfs:label "rights_derogations" ;
+    skos:definition "Disclosure of rights limitations or derogations"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.2.7, 7.3.2" ;
+    sw:term_status "proposed" .
+
+ancr:notice_url a rdf:Property ;
+    rdfs:label "notice_url" ;
+    skos:definition "Location at which a notice version is retrievable"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.2.4" ;
+    sw:term_status "proposed" .
+
+ancr:notice_version_id a rdf:Property ;
+    rdfs:label "notice_version_id" ;
+    skos:definition "Notice version identifier"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.2.4" ;
+    sw:term_status "proposed" .
+
+ancr:notice_hash a rdf:Property ;
+    rdfs:label "notice_hash" ;
+    skos:definition "Integrity hash of the notice content as published"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.2.4" ;
+    sw:term_status "proposed" .
+
+ancr:published_at a rdf:Property ;
+    rdfs:label "published_at" ;
+    skos:definition "Time at which a notice version was published"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.2.4" ;
+    sw:term_status "proposed" .
+
+ancr:hash_algorithm a rdf:Property ;
+    rdfs:label "hash_algorithm" ;
+    skos:definition "Hash algorithm, where other than SHA-256"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.2.4, B.5.3" ;
+    sw:term_status "proposed" .
+
+ancr:supersedes a rdf:Property ;
+    rdfs:label "supersedes" ;
+    skos:definition "Identifier of the version or state instance replaced"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.2.4, 7.2.5" ;
+    sw:term_status "proposed" .
+
+ancr:authorization_state_id a rdf:Property ;
+    rdfs:label "authorization_state_id" ;
+    skos:definition "Identifier of an Authorization State Object instance"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.2.5" ;
+    sw:term_status "proposed" .
+
+ancr:purpose_state a rdf:Property ;
+    rdfs:label "purpose_state" ;
+    skos:definition "Per purpose authorization state entries"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.2.5" ;
+    sw:term_status "proposed" .
+
+ancr:state a rdf:Property ;
+    rdfs:label "state" ;
+    skos:definition "State value of a purpose_state entry (key name proposed, see 11)"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.2.5" ;
+    sw:term_status "proposed" .
+
+ancr:state_time a rdf:Property ;
+    rdfs:label "state_time" ;
+    skos:definition "Time at which a state was formed"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.2.5" ;
+    sw:term_status "proposed" .
+
+ancr:record_validity a rdf:Property ;
+    rdfs:label "record_validity" ;
+    skos:definition "Validity state of the record"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.2.5" ;
+    sw:term_status "proposed" .
+
+ancr:anchored_notice_receipt_id a rdf:Property ;
+    rdfs:label "anchored_notice_receipt_id" ;
+    skos:definition "Reference to the applicable Anchored Notice Receipt"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.2.5, 7.3.2" ;
+    sw:term_status "proposed" .
+
+ancr:state_source a rdf:Property ;
+    rdfs:label "state_source" ;
+    skos:definition "Whether a state change was initiated by the individual, the controller or expiry"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.2.5" ;
+    sw:term_status "proposed" .
+
+ancr:evaluated_at a rdf:Property ;
+    rdfs:label "evaluated_at" ;
+    skos:definition "Time at which a relying party evaluated the state"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.2.5" ;
+    sw:term_status "proposed" .
+
+ancr:expires_at a rdf:Property ;
+    rdfs:label "expires_at" ;
+    skos:definition "Time at which a time limited state expires"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.2.5" ;
+    sw:term_status "proposed" .
+
+ancr:schema_version a rdf:Property ;
+    rdfs:label "schema_version" ;
+    skos:definition "Receipt schema in effect at issuance"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.3.2, 7.3.4" ;
+    sw:term_status "proposed" .
+
+ancr:anchored_notice_receipt a rdf:Property ;
+    rdfs:label "anchored_notice_receipt" ;
+    skos:definition "Indicator that a receipt is the Anchored Notice Receipt"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.3.2" ;
+    sw:term_status "proposed" .
+
+ancr:receipt_id a rdf:Property ;
+    rdfs:label "receipt_id" ;
+    skos:definition "Receipt instance identifier"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.3.2, 7.4.2" ;
+    sw:term_status "proposed" .
+
+ancr:account_id a rdf:Property ;
+    rdfs:label "account_id" ;
+    skos:definition "Pseudonymous account or relationship reference, optional"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.3.2" ;
+    sw:term_status "proposed" .
+
+ancr:notice_version_hash a rdf:Property ;
+    rdfs:label "notice_version_hash" ;
+    skos:definition "Integrity hash of the notice version disclosed"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.3.2" ;
+    sw:term_status "proposed" .
+
+ancr:presented_at a rdf:Property ;
+    rdfs:label "presented_at" ;
+    skos:definition "Time of disclosure or presentation"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.3.2" ;
+    sw:term_status "proposed" .
+
+ancr:two_factor_notice a rdf:Property ;
+    rdfs:label "two_factor_notice" ;
+    skos:definition "Indicator of a two factor online notice"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.3.2" ;
+    sw:term_status "proposed" .
+
+ancr:notice_type a rdf:Property ;
+    rdfs:label "notice_type" ;
+    skos:definition "Notice classification, from the 7.3.3 vocabulary"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.3.2, 7.3.3" ;
+    sw:term_status "proposed" .
+
+ancr:event_id a rdf:Property ;
+    rdfs:label "event_id" ;
+    skos:definition "Notice Event Log entry identifier"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.4.2" ;
+    sw:term_status "proposed" .
+
+ancr:event_time a rdf:Property ;
+    rdfs:label "event_time" ;
+    skos:definition "Time of a notice lifecycle or processing event"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.4.2, 7.4.4" ;
+    sw:term_status "proposed" .
+
+ancr:event_type a rdf:Property ;
+    rdfs:label "event_type" ;
+    skos:definition "Notice lifecycle event type"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.4.1, 7.4.3" ;
+    sw:term_status "proposed" .
+
+ancr:prior_notice_version_reference a rdf:Property ;
+    rdfs:label "prior_notice_version_reference" ;
+    skos:definition "Notice version replaced by a material change (key name proposed, see 11)"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.4.3" ;
+    sw:term_status "proposed" .
+
+ancr:processing_event_id a rdf:Property ;
+    rdfs:label "processing_event_id" ;
+    skos:definition "Processing event identifier"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.4.4" ;
+    sw:term_status "proposed" .
+
+ancr:processing_event_type a rdf:Property ;
+    rdfs:label "processing_event_type" ;
+    skos:definition "Processing event type (no controlled vocabulary yet, see 11)"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, 7.4.4" ;
+    sw:term_status "proposed" .
+
+ancr:resolution_path a rdf:Property ;
+    rdfs:label "resolution_path" ;
+    skos:definition "Whether a record is served by the controller or by a registry operator"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, B.5.1" ;
+    sw:term_status "proposed" .
+
+ancr:operator_identification_record_id a rdf:Property ;
+    rdfs:label "operator_identification_record_id" ;
+    skos:definition "Reference to the registry operator's own Controller Identification Record"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, B.5.1, 7.4.3" ;
+    sw:term_status "proposed" .
+
+ancr:assurance_level a rdf:Property ;
+    rdfs:label "assurance_level" ;
+    skos:definition "Level at which the registry operator holds itself"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, B.5.1" ;
+    sw:term_status "proposed" .
+
+ancr:assurance_model_reference a rdf:Property ;
+    rdfs:label "assurance_model_reference" ;
+    skos:definition "Published assurance model for assurance_level"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, B.5.1" ;
+    sw:term_status "proposed" .
+
+ancr:issuing_authority a rdf:Property ;
+    rdfs:label "issuing_authority" ;
+    skos:definition "Party under whose name a listing is issued"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, B.5.1" ;
+    sw:term_status "proposed" .
+
+ancr:accountable_operator a rdf:Property ;
+    rdfs:label "accountable_operator" ;
+    skos:definition "Party accountable for operation of the service"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, B.5.1" ;
+    sw:term_status "proposed" .
+
+ancr:service_operator a rdf:Property ;
+    rdfs:label "service_operator" ;
+    skos:definition "Party running the serving infrastructure"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, B.5.1" ;
+    sw:term_status "proposed" .
+
+ancr:registry_identifier a rdf:Property ;
+    rdfs:label "registry_identifier" ;
+    skos:definition "Identifier assigned to the record by the registry"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, B.5.1" ;
+    sw:term_status "proposed" .
+
+ancr:notary_identification_record_id a rdf:Property ;
+    rdfs:label "notary_identification_record_id" ;
+    skos:definition "Reference to the online notice notary's own Controller Identification Record"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, B.5.3" ;
+    sw:term_status "proposed" .
+
+ancr:witnessed_hash a rdf:Property ;
+    rdfs:label "witnessed_hash" ;
+    skos:definition "Hash witnessed by an online notice notary"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, B.5.3" ;
+    sw:term_status "proposed" .
+
+ancr:witnessed_at a rdf:Property ;
+    rdfs:label "witnessed_at" ;
+    skos:definition "Time of witnessing"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, B.5.3" ;
+    sw:term_status "proposed" .
+
+ancr:proof a rdf:Property ;
+    rdfs:label "proof" ;
+    skos:definition "Signature or inclusion proof over witnessed_hash and witnessed_at"@en ;
+    dct:source "ANCR Extension for ISO/IEC TS 27560:2023, B.5.3" ;
+    sw:term_status "proposed" .
+
+# Deprecated field names, accepted on input for one revision cycle
+ancr:controller_identity_record_id a rdf:Property ;
+    owl:equivalentProperty ancr:controller_identification_record_id ;
+    owl:deprecated true ;
+    skos:definition "Deprecated name of ancr:controller_identification_record_id"@en .
+
+ancr:operator_identity_record_id a rdf:Property ;
+    owl:equivalentProperty ancr:operator_identification_record_id ;
+    owl:deprecated true ;
+    skos:definition "Deprecated name of ancr:operator_identification_record_id"@en .
+
+ancr:notary_identity_record_id a rdf:Property ;
+    owl:equivalentProperty ancr:notary_identification_record_id ;
+    owl:deprecated true ;
+    skos:definition "Deprecated name of ancr:notary_identification_record_id"@en .
+
+# Controlled values
+ancr:UnresolvedLegalBasis a rdfs:Class, skos:Concept ;
+    rdfs:subClassOf dpv:LegalBasis ;
+    skos:broader dpv:LegalBasis ;
+    skos:notation "unresolved" ;
+    skos:definition "No lawful basis was established for the exchange at the time of recording; recorded against the notice version relied upon, and never defaulted to consent"@en ;
+    dct:source "ANCR Extension, Annex C, value unresolved of lawful_basis" ;
+    sw:term_status "proposed" .
+
+ancr:NoticeType a rdfs:Class, skos:Concept ;
+    skos:broader dpv:Notice ;
+    skos:definition "Classification of a notice, from the vocabulary of ANCR Extension 7.3.3; each value is narrower than dpv:Notice"@en ;
+    dct:source "ANCR Extension, 7.3.3" ;
+    sw:term_status "proposed" .
+
+ancr:NoticeTypeStatement a rdfs:Class, skos:Concept ;
+    rdfs:subClassOf ancr:NoticeType ;
+    skos:broader ancr:NoticeType ;
+    skos:notation "statement" ;
+    skos:definition "Versioned disclosure expressing the standing terms of notice, the transparency statement of Extension 3.7"@en ;
+    dct:source "ANCR Extension, 7.3.3, value statement of notice_type" ;
+    sw:term_status "proposed" .
+
+ancr:NoticeTypeNotification a rdfs:Class, skos:Concept ;
+    rdfs:subClassOf ancr:NoticeType ;
+    skos:broader ancr:NoticeType ;
+    skos:notation "notification" ;
+    skos:definition "Event bound message that a transparency relevant event occurred, the transparency notification of Extension 3.8"@en ;
+    dct:source "ANCR Extension, 7.3.3, value notification of notice_type" ;
+    sw:term_status "proposed" .
+
+ancr:NoticeTypeRiskDisclosure a rdfs:Class, skos:Concept ;
+    rdfs:subClassOf ancr:NoticeType ;
+    skos:broader ancr:NoticeType ;
+    skos:notation "risk_disclosure" ;
+    skos:definition "Notice whose content is a material risk disclosure, as carried by surveillance_risks"@en ;
+    dct:source "ANCR Extension, 7.3.3, value risk_disclosure of notice_type" ;
+    sw:term_status "proposed" .
+
+ancr:NoticeTypePolicy a rdfs:Class, skos:Concept ;
+    rdfs:subClassOf ancr:NoticeType ;
+    skos:broader ancr:NoticeType ;
+    skos:notation "policy" ;
+    skos:related dpv:PrivacyNotice ;
+    skos:definition "Notice in the form of a published policy; related to dpv:PrivacyNotice"@en ;
+    dct:source "ANCR Extension, 7.3.3, value policy of notice_type" ;
+    sw:term_status "proposed" .
+
+ancr:NoticeTypeSignal a rdfs:Class, skos:Concept ;
+    rdfs:subClassOf ancr:NoticeType ;
+    skos:broader ancr:NoticeType ;
+    skos:notation "signal" ;
+    skos:definition "Machine readable indicator that points to a notice or to its state, such as a transparency signal or badge"@en ;
+    dct:source "ANCR Extension, 7.3.3, value signal of notice_type" ;
+    sw:term_status "proposed" .
+
+ancr:PurposeState a rdfs:Class, skos:Concept ;
+    skos:definition "Authorization state of one disclosed purpose in an Authorization State Object, ANCR Extension 7.2.5; applies under any lawful basis and records state, not validity"@en ;
+    dct:source "ANCR Extension, 7.2.5" ;
+    sw:term_status "proposed" .
+
+ancr:PurposeStateNotGiven a rdfs:Class, skos:Concept ;
+    rdfs:subClassOf ancr:PurposeState ;
+    skos:broader ancr:PurposeState ;
+    skos:notation "not_given" ;
+    skos:definition "No authorization has been given for the purpose"@en ;
+    dct:source "ANCR Extension, 7.2.5, value not_given of state" ;
+    sw:term_status "proposed" .
+
+ancr:PurposeStateGiven a rdfs:Class, skos:Concept ;
+    rdfs:subClassOf ancr:PurposeState ;
+    skos:broader ancr:PurposeState ;
+    skos:notation "given" ;
+    skos:definition "Authorization has been given for the purpose"@en ;
+    dct:source "ANCR Extension, 7.2.5, value given of state" ;
+    sw:term_status "proposed" .
+
+ancr:PurposeStateAltered a rdfs:Class, skos:Concept ;
+    rdfs:subClassOf ancr:PurposeState ;
+    skos:broader ancr:PurposeState ;
+    skos:notation "altered" ;
+    skos:definition "A given authorization has been changed in scope"@en ;
+    dct:source "ANCR Extension, 7.2.5, value altered of state" ;
+    sw:term_status "proposed" .
+
+ancr:PurposeStateRestricted a rdfs:Class, skos:Concept ;
+    rdfs:subClassOf ancr:PurposeState ;
+    skos:broader ancr:PurposeState ;
+    skos:notation "restricted" ;
+    skos:definition "Processing for the purpose is restricted"@en ;
+    dct:source "ANCR Extension, 7.2.5, value restricted of state" ;
+    sw:term_status "proposed" .
+
+ancr:PurposeStateObjected a rdfs:Class, skos:Concept ;
+    rdfs:subClassOf ancr:PurposeState ;
+    skos:broader ancr:PurposeState ;
+    skos:notation "objected" ;
+    skos:definition "The individual has objected to processing for the purpose"@en ;
+    dct:source "ANCR Extension, 7.2.5, value objected of state" ;
+    sw:term_status "proposed" .
+
+ancr:PurposeStateWithdrawn a rdfs:Class, skos:Concept ;
+    rdfs:subClassOf ancr:PurposeState ;
+    skos:broader ancr:PurposeState ;
+    skos:notation "withdrawn" ;
+    skos:definition "A given authorization has been withdrawn"@en ;
+    dct:source "ANCR Extension, 7.2.5, value withdrawn of state" ;
+    sw:term_status "proposed" .
+
+ancr:PurposeStateExpired a rdfs:Class, skos:Concept ;
+    rdfs:subClassOf ancr:PurposeState ;
+    skos:broader ancr:PurposeState ;
+    skos:notation "expired" ;
+    skos:definition "A time limited authorization has ended"@en ;
+    dct:source "ANCR Extension, 7.2.5, value expired of state" ;
+    sw:term_status "proposed" .
+
+ancr:RecordValidity a rdfs:Class, skos:Concept ;
+    skos:definition "Validity state of the record that carries an authorization state, ANCR Extension 7.2.5"@en ;
+    dct:source "ANCR Extension, 7.2.5" ;
+    sw:term_status "proposed" .
+
+ancr:RecordValid a rdfs:Class, skos:Concept ;
+    rdfs:subClassOf ancr:RecordValidity ;
+    skos:broader ancr:RecordValidity ;
+    skos:notation "valid" ;
+    skos:definition "The record may be relied upon"@en ;
+    dct:source "ANCR Extension, 7.2.5, value valid of record_validity" ;
+    sw:term_status "proposed" .
+
+ancr:RecordInvalid a rdfs:Class, skos:Concept ;
+    rdfs:subClassOf ancr:RecordValidity ;
+    skos:broader ancr:RecordValidity ;
+    skos:notation "invalid" ;
+    skos:definition "The record shall not be relied upon"@en ;
+    dct:source "ANCR Extension, 7.2.5, value invalid of record_validity" ;
+    sw:term_status "proposed" .
+
+ancr:RecordSuspended a rdfs:Class, skos:Concept ;
+    rdfs:subClassOf ancr:RecordValidity ;
+    skos:broader ancr:RecordValidity ;
+    skos:notation "suspended" ;
+    skos:definition "Reliance is suspended, with derogation_reference where the suspension is lawful"@en ;
+    dct:source "ANCR Extension, 7.2.5, value suspended of record_validity" ;
+    sw:term_status "proposed" .
+
+ancr:StateSource a rdfs:Class, skos:Concept ;
+    skos:definition "Initiator of a change of authorization state; values proposed by this document for ANCR Extension 7.2.5"@en ;
+    dct:source "ANCR Extension, 7.2.5 (values proposed)" ;
+    sw:term_status "proposed" .
+
+ancr:StateSourceIndividual a rdfs:Class, skos:Concept ;
+    rdfs:subClassOf ancr:StateSource ;
+    skos:broader ancr:StateSource ;
+    skos:notation "individual" ;
+    skos:definition "The change was initiated by the individual or an agent acting for them"@en ;
+    dct:source "ANCR Extension, 7.2.5 (values proposed), value individual of state_source" ;
+    sw:term_status "proposed" .
+
+ancr:StateSourceController a rdfs:Class, skos:Concept ;
+    rdfs:subClassOf ancr:StateSource ;
+    skos:broader ancr:StateSource ;
+    skos:notation "controller" ;
+    skos:definition "The change was initiated by the controller"@en ;
+    dct:source "ANCR Extension, 7.2.5 (values proposed), value controller of state_source" ;
+    sw:term_status "proposed" .
+
+ancr:StateSourceExpiry a rdfs:Class, skos:Concept ;
+    rdfs:subClassOf ancr:StateSource ;
+    skos:broader ancr:StateSource ;
+    skos:notation "expiry" ;
+    skos:definition "The change followed from the end of a stated duration"@en ;
+    dct:source "ANCR Extension, 7.2.5 (values proposed), value expiry of state_source" ;
+    sw:term_status "proposed" .
+
+ancr:NoticeEventType a rdfs:Class, skos:Concept ;
+    skos:definition "Type of a Notice Event Log entry, ANCR Extension 7.4.1 and 7.4.3"@en ;
+    dct:source "ANCR Extension, 7.4.1, 7.4.3" ;
+    sw:term_status "proposed" .
+
+ancr:NoticeIssued a rdfs:Class, skos:Concept ;
+    rdfs:subClassOf ancr:NoticeEventType ;
+    skos:broader ancr:NoticeEventType ;
+    skos:notation "notice_issued" ;
+    skos:definition "Issuance or publication of a new notice version"@en ;
+    dct:source "ANCR Extension, 7.4.1, 7.4.3, value notice_issued of event_type" ;
+    sw:term_status "proposed" .
+
+ancr:NoticeMaterialChange a rdfs:Class, skos:Concept ;
+    rdfs:subClassOf ancr:NoticeEventType ;
+    skos:broader ancr:NoticeEventType ;
+    skos:notation "notice_material_change" ;
+    skos:definition "A material change creating a new notice version"@en ;
+    dct:source "ANCR Extension, 7.4.1, 7.4.3, value notice_material_change of event_type" ;
+    sw:term_status "proposed" .
+
+ancr:AuthorizationStateChanged a rdfs:Class, skos:Concept ;
+    rdfs:subClassOf ancr:NoticeEventType ;
+    skos:broader ancr:NoticeEventType ;
+    skos:notation "authorization_state_changed" ;
+    skos:definition "A new Authorization State Object instance changed a purpose_state value"@en ;
+    dct:source "ANCR Extension, 7.4.1, 7.4.3, value authorization_state_changed of event_type" ;
+    sw:term_status "proposed" .
+
+ancr:RecordValidityChanged a rdfs:Class, skos:Concept ;
+    rdfs:subClassOf ancr:NoticeEventType ;
+    skos:broader ancr:NoticeEventType ;
+    skos:notation "record_validity_changed" ;
+    skos:definition "A new Authorization State Object instance changed record_validity"@en ;
+    dct:source "ANCR Extension, 7.4.1, 7.4.3, value record_validity_changed of event_type" ;
+    sw:term_status "proposed" .
+
+ancr:CIRUpdated a rdfs:Class, skos:Concept ;
+    rdfs:subClassOf ancr:NoticeEventType ;
+    skos:broader ancr:NoticeEventType ;
+    skos:notation "cir_updated" ;
+    skos:definition "A change to the Controller Identification Record relied upon by a notice version"@en ;
+    dct:source "ANCR Extension, 7.4.1, 7.4.3, value cir_updated of event_type" ;
+    sw:term_status "proposed" .
+
+ancr:DisclosureSetUpdated a rdfs:Class, skos:Concept ;
+    rdfs:subClassOf ancr:NoticeEventType ;
+    skos:broader ancr:NoticeEventType ;
+    skos:notation "disclosure_set_updated" ;
+    skos:definition "A change to the disclosure set of Extension 7.2.1"@en ;
+    dct:source "ANCR Extension, 7.4.1, 7.4.3, value disclosure_set_updated of event_type" ;
+    sw:term_status "proposed" .
+
+ancr:OperatorCorrection a rdfs:Class, skos:Concept ;
+    rdfs:subClassOf ancr:NoticeEventType ;
+    skos:broader ancr:NoticeEventType ;
+    skos:notation "operator_correction" ;
+    skos:definition "Alteration of a record by a registry operator, profile B5"@en ;
+    dct:source "ANCR Extension, 7.4.1, 7.4.3, value operator_correction of event_type" ;
+    sw:term_status "proposed" .
+
+ancr:OperatorSuspension a rdfs:Class, skos:Concept ;
+    rdfs:subClassOf ancr:NoticeEventType ;
+    skos:broader ancr:NoticeEventType ;
+    skos:notation "operator_suspension" ;
+    skos:definition "Suspension of a record by a registry operator, profile B5"@en ;
+    dct:source "ANCR Extension, 7.4.1, 7.4.3, value operator_suspension of event_type" ;
+    sw:term_status "proposed" .
+
+ancr:OperatorWithdrawal a rdfs:Class, skos:Concept ;
+    rdfs:subClassOf ancr:NoticeEventType ;
+    skos:broader ancr:NoticeEventType ;
+    skos:notation "operator_withdrawal" ;
+    skos:definition "Withdrawal of a record by a registry operator, profile B5"@en ;
+    dct:source "ANCR Extension, 7.4.1, 7.4.3, value operator_withdrawal of event_type" ;
+    sw:term_status "proposed" .
+
+ancr:RecordReRegistration a rdfs:Class, skos:Concept ;
+    rdfs:subClassOf ancr:NoticeEventType ;
+    skos:broader ancr:NoticeEventType ;
+    skos:notation "record_re_registration" ;
+    skos:definition "A new registration made in place of an amended record, profile B5"@en ;
+    dct:source "ANCR Extension, 7.4.1, 7.4.3, value record_re_registration of event_type" ;
+    sw:term_status "proposed" .
+
+ancr:ResolutionPath a rdfs:Class, skos:Concept ;
+    skos:definition "How a Controller Identification Record is served, ANCR Extension B.5.1"@en ;
+    dct:source "ANCR Extension, B.5.1" ;
+    sw:term_status "proposed" .
+
+ancr:ResolutionDirect a rdfs:Class, skos:Concept ;
+    rdfs:subClassOf ancr:ResolutionPath ;
+    skos:broader ancr:ResolutionPath ;
+    skos:notation "direct" ;
+    skos:definition "Served by the controller"@en ;
+    dct:source "ANCR Extension, B.5.1, value direct of resolution_path" ;
+    sw:term_status "proposed" .
+
+ancr:ResolutionOperated a rdfs:Class, skos:Concept ;
+    rdfs:subClassOf ancr:ResolutionPath ;
+    skos:broader ancr:ResolutionPath ;
+    skos:notation "operated" ;
+    skos:definition "Served by a registry operator"@en ;
+    dct:source "ANCR Extension, B.5.1, value operated of resolution_path" ;
+    sw:term_status "proposed" .
+
+# Exposure classes
+ancr:Exposure a rdfs:Class ;
+    skos:definition "Exposure of a field value, ANCR Extension 7.3.2"@en ;
+    sw:term_status "proposed" .
+
+ancr:ExposurePublic a rdfs:Class ;
+    rdfs:subClassOf ancr:Exposure ;
+    skos:definition "Published and retrievable by any party without authentication"@en ;
+    sw:term_status "proposed" .
+
+ancr:ExposureBilateral a rdfs:Class ;
+    rdfs:subClassOf ancr:Exposure ;
+    skos:definition "Held by the issuing controller and the receiving individual, not required to be published"@en ;
+    sw:term_status "proposed" .
+
+ancr:ExposureRestricted a rdfs:Class ;
+    rdfs:subClassOf ancr:Exposure ;
+    skos:definition "Withheld from publication under a stated lawful derogation, disclosed only to an authorized party"@en ;
+    sw:term_status "proposed" .
+
+# Relation from a field to the legal element it carries evidence for
+ancr:evidences a rdf:Property ;
+    rdfs:domain rdf:Property ;
+    skos:definition "The field carries evidence for the legal element. The relation adds no obligation."@en ;
+    sw:term_status "proposed" .

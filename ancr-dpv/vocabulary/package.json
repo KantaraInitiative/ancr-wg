@@ -1,0 +1,7 @@
+{
+  "name": "ancr-dpv-vocabulary",
+  "private": true,
+  "license": "Apache-2.0",
+  "scripts": { "build": "bun build.ts", "test": "bun build.ts && bun test.ts" },
+  "devDependencies": { "jsonld": "8.3.3", "n3": "1.17.4" }
+}

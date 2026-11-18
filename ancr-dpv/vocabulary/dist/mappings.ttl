@@ -1,0 +1,118 @@
+@prefix ancr: <https://kantarainitiative.github.io/ancr-wg/ns/ancr#> .
+@prefix conv108: <https://kantarainitiative.github.io/ancr-wg/ns/conv108plus#> .
+@prefix ancrf: <https://kantarainitiative.github.io/ancr-wg/ns/ancr-fields#> .
+@prefix ntc: <urn:x-ntc:v1:> .
+@prefix dpv: <https://w3id.org/dpv#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://kantarainitiative.github.io/ancr-wg/ns/ancr-dpv-mappings> a owl:Ontology ;
+    dct:title "ANCR DPV mappings"@en ;
+    dct:description "Module 4 of the ANCR DPV vocabulary. Each Extension field or value has one identifier, in ancr:. Other names for it are kept as deprecated equivalents. Also relates fields to the legal elements they carry evidence for."@en ;
+    dct:creator "Mark Lizar" ;
+    owl:versionInfo "0.7" ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> .
+
+# conv108: properties retired in favour of the ancr: field
+conv108:hasRightsAccessReference a rdf:Property ;
+    owl:equivalentProperty ancr:privacy_access_point ;
+    owl:deprecated true ;
+    skos:definition "Retired. Use ancr:privacy_access_point, ANCR Extension 7.1.2"@en .
+
+conv108:hasDerogationReference a rdf:Property ;
+    owl:equivalentProperty ancr:derogation_reference ;
+    owl:deprecated true ;
+    skos:definition "Retired. Use ancr:derogation_reference, ANCR Extension 7.1.4"@en .
+
+conv108:hasIssuingAuthority a rdf:Property ;
+    owl:equivalentProperty ancr:issuing_authority ;
+    owl:deprecated true ;
+    skos:definition "Retired. Use ancr:issuing_authority, ANCR Extension B.5.1"@en .
+
+conv108:hasRegistryIdentifier a rdf:Property ;
+    owl:equivalentProperty ancr:registry_identifier ;
+    owl:deprecated true ;
+    skos:definition "Retired. Use ancr:registry_identifier, ANCR Extension B.5.1"@en .
+
+conv108:hasAssuranceStatus a rdf:Property ;
+    owl:equivalentProperty ancr:assurance_level ;
+    owl:deprecated true ;
+    skos:definition "Retired. Use ancr:assurance_level, ANCR Extension B.5.1"@en .
+
+conv108:hasAuthorizationState a rdf:Property ;
+    owl:equivalentProperty ancr:purpose_state ;
+    owl:deprecated true ;
+    skos:definition "Retired. Use ancr:purpose_state, ANCR Extension 7.2.5"@en .
+
+conv108:hasActiveState a rdf:Property ;
+    owl:equivalentProperty ancr:record_validity ;
+    owl:deprecated true ;
+    skos:definition "Retired. Use ancr:record_validity, ANCR Extension 7.2.5"@en .
+
+# ancrf: withdrawn
+ancrf:code_of_conduct owl:equivalentProperty ancr:code_of_conduct ;
+    owl:deprecated true .
+
+ancrf:controller_identification_record_id owl:equivalentProperty ancr:controller_identification_record_id ;
+    owl:deprecated true .
+
+ancrf:controller_name owl:equivalentProperty ancr:controller_name ;
+    owl:deprecated true .
+
+ancrf:controller_public_id_uri owl:equivalentProperty ancr:controller_public_id_uri ;
+    owl:deprecated true .
+
+ancrf:derogation_reference owl:equivalentProperty ancr:derogation_reference ;
+    owl:deprecated true .
+
+ancrf:jurisdiction owl:equivalentProperty ancr:jurisdiction ;
+    owl:deprecated true .
+
+ancrf:notice_event_log_url owl:equivalentProperty ancr:notice_event_log_url ;
+    owl:deprecated true .
+
+ancrf:notice_hash owl:equivalentProperty ancr:notice_hash ;
+    owl:deprecated true .
+
+ancrf:notice_id owl:equivalentProperty ancr:notice_id ;
+    owl:deprecated true .
+
+ancrf:notice_url owl:equivalentProperty ancr:notice_url ;
+    owl:deprecated true .
+
+ancrf:notice_version_id owl:equivalentProperty ancr:notice_version_id ;
+    owl:deprecated true .
+
+ancrf:notice_version_reference owl:equivalentProperty ancr:notice_version_reference ;
+    owl:deprecated true .
+
+ancrf:privacy_access_point owl:equivalentProperty ancr:privacy_access_point ;
+    owl:deprecated true .
+
+ancrf:published_at owl:equivalentProperty ancr:published_at ;
+    owl:deprecated true .
+
+ancrf:purpose_state owl:equivalentProperty ancr:purpose_state ;
+    owl:deprecated true .
+
+ancrf:receipt_id owl:equivalentProperty ancr:receipt_id ;
+    owl:deprecated true .
+
+ancrf:record_validity owl:equivalentProperty ancr:record_validity ;
+    owl:deprecated true .
+
+# Fields and the legal elements they carry evidence for
+ancr:controller_identification_record_id ancr:evidences conv108:Art8 .
+ancr:controller_public_id_uri ancr:evidences conv108:Art8 .
+ancr:controller_name ancr:evidences conv108:Art8 .
+ancr:jurisdiction ancr:evidences conv108:Art8, conv108:Art14 .
+ancr:privacy_access_point ancr:evidences conv108:Art9 .
+ancr:notice_event_log_url ancr:evidences conv108:Art8 .
+ancr:code_of_conduct ancr:evidences conv108:Art8 .
+ancr:lawful_basis ancr:evidences conv108:Art5-2 .
+ancr:purpose ancr:evidences conv108:Art5-4-b .

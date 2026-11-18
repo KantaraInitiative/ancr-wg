@@ -1,0 +1,24 @@
+{
+  "controller_identification_record_id": "https://example.ca/.well-known/cir",
+  "controller_public_id_uri": "https://example.ca",
+  "controller_name": "Example Services Inc.",
+  "jurisdiction": "CA",
+  "privacy_access_point": [
+    { "type": "web", "value": "https://example.ca/privacy/rights", "label": "Rights requests" },
+    { "type": "email", "value": "privacy@example.ca", "label": "Privacy office" }
+  ],
+  "notice_event_log_url": "https://example.ca/.well-known/notice-event-log",
+  "code_of_conduct": [
+    {
+      "type": "code_of_practice_declaration",
+      "code_id": "https://example.org/itcop/v3.7",
+      "code_title": "Internet Transparency Code of Practice",
+      "code_version": "3.7",
+      "profile_id": "https://example.org/itcop-code-of-conduct-profile/v0.2",
+      "profile_version": "0.2",
+      "principles_claimed": ["P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8", "P9", "P11"],
+      "declaration_basis": "self_declared",
+      "declared_at": "2026-11-01T00:00:00Z"
+    }
+  ]
+}

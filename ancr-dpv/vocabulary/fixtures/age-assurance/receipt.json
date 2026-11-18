@@ -1,0 +1,11 @@
+{
+  "receipt_id": "urn:uuid:7d1f0c2e-0b8a-4c51-9a63-2f0e6c1d4b11",
+  "controller_identification_record_id": "https://example.ca/.well-known/cir",
+  "notice_version_reference": "https://example.ca/notice/v/2026-11-01",
+  "presented_at": "2026-11-18T14:05:00Z",
+  "notice_type": "statement",
+  "lawful_basis": "legal_obligation",
+  "purpose": "Age assurance for account opening",
+  "recipient_jurisdictions": ["GB"],
+  "transfer_mechanism": "contract"
+}
