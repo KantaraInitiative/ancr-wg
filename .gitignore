@@ -12,3 +12,6 @@ _site/
 # Ruby / bundler
 .bundle/
 vendor/
+
+# Node / bun
+node_modules/

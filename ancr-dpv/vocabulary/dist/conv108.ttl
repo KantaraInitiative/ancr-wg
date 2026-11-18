@@ -1,0 +1,1573 @@
+@prefix ancr: <https://kantarainitiative.github.io/ancr-wg/ns/ancr#> .
+@prefix conv108: <https://kantarainitiative.github.io/ancr-wg/ns/conv108plus#> .
+@prefix ancrf: <https://kantarainitiative.github.io/ancr-wg/ns/ancr-fields#> .
+@prefix ntc: <urn:x-ntc:v1:> .
+@prefix dpv: <https://w3id.org/dpv#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://kantarainitiative.github.io/ancr-wg/ns/conv108plus> a owl:Ontology ;
+    dct:title "Convention 108+ legal model"@en ;
+    dct:description "Module 2 of the ANCR DPV vocabulary. The requirements of the modernised Convention 108 that a notice and consent record evidences, with an identifier for each legal element and an AI transparency profile anchored outside Convention 108+. Convention 108+ (CETS 223) is not yet in force."@en ;
+    dct:creator "Mark Lizar" ;
+    owl:versionInfo "0.7" ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> .
+
+conv108:LegalElements a skos:ConceptScheme ;
+    skos:prefLabel "Convention 108+ legal elements"@en ;
+    skos:definition "Identifiers for the articles, paragraphs and points of Convention 108+, its preamble and appendix, and the Explanatory Report paragraphs relied on. They name the treaty structure and add no obligation."@en .
+
+conv108:Preamble-1 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Preamble, recital 1"@en ;
+    skos:definition "The member States of the Council of Europe, and the other signatories hereto,"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Preamble-2 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Preamble, recital 2"@en ;
+    skos:definition "Considering that the aim of the Council of Europe is to achieve greater unity between its members, based in particular on respect for the rule of law, as well as human rights and fundamental freedoms;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Preamble-3 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Preamble, recital 3"@en ;
+    skos:definition "Considering that it is necessary to secure the human dignity and protection of the human rights and fundamental freedoms of every individual and, given the diversification, intensification and globalisation of data processing and personal data flows, personal autonomy based on a person’s right to control of his or her personal data and the processing of such data;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Preamble-4 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Preamble, recital 4"@en ;
+    skos:definition "Recalling that the right to protection of personal data is to be considered in respect of its role in society and that it has to be reconciled with other human rights and fundamental freedoms, including freedom of expression;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Preamble-5 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Preamble, recital 5"@en ;
+    skos:definition "Considering that this Convention permits account to be taken, in the implementation of the rules laid down therein, of the principle of the right of access to official documents;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Preamble-6 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Preamble, recital 6"@en ;
+    skos:definition "Recognising that it is necessary to promote at the global level the fundamental values of respect for privacy and protection of personal data, thereby contributing to the free flow of information between people;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Preamble-7 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Preamble, recital 7"@en ;
+    skos:definition "Recognising the interest of a reinforcement of international co-operation between the Parties to the Convention,"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art1 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Article 1"@en ;
+    skos:altLabel "Object and purpose"@en ;
+    skos:definition "The purpose of this Convention is to protect every individual, whatever his or her nationality or residence, with regard to the processing of their personal data, thereby contributing to respect for his or her human rights and fundamental freedoms, and in particular the right to privacy."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art2 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Article 2"@en ;
+    skos:altLabel "Definitions"@en ;
+    skos:definition "For the purposes of this Convention:"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art2-a a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 2(a)"@en ;
+    skos:altLabel "Definitions"@en ;
+    skos:definition "“personal data” means any information relating to an identified or identifiable individual (“data subject”);"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art2-b a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 2(b)"@en ;
+    skos:altLabel "Definitions"@en ;
+    skos:definition "“data processing” means any operation or set of operations performed on personal data, such as the collection, storage, preservation, alteration, retrieval, disclosure, making available, erasure, or destruction of, or the carrying out of logical and/or arithmetical operations on such data;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art2-c a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 2(c)"@en ;
+    skos:altLabel "Definitions"@en ;
+    skos:definition "Where automated processing is not used, “data processing” means an operation or set of operations performed upon personal data within a structured set of such data which are accessible or retrievable according to specific criteria;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art2-d a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 2(d)"@en ;
+    skos:altLabel "Definitions"@en ;
+    skos:definition "“controller” means the natural or legal person, public authority, service, agency or any other body which, alone or jointly with others, has decision-making power with respect to data processing;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art2-e a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 2(e)"@en ;
+    skos:altLabel "Definitions"@en ;
+    skos:definition "“recipient” means a natural or legal person, public authority, service, agency or any other body to whom data are disclosed or made available;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art2-f a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 2(f)"@en ;
+    skos:altLabel "Definitions"@en ;
+    skos:definition "“processor” means a natural or legal person, public authority, service, agency or any other body which processes personal data on behalf of the controller."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art3 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Article 3"@en ;
+    skos:altLabel "Scope"@en ;
+    skos:definition ""@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art3-1 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 3(1)"@en ;
+    skos:altLabel "Scope"@en ;
+    skos:definition "Each Party undertakes to apply this Convention to data processing subject to its jurisdiction in the public and private sectors, thereby securing every individual’s right to protection of his or her personal data."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art3-2 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 3(2)"@en ;
+    skos:altLabel "Scope"@en ;
+    skos:definition "This Convention shall not apply to data processing carried out by an individual in the course of purely personal or household activities."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art4 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Article 4"@en ;
+    skos:altLabel "Duties of the Parties"@en ;
+    skos:definition ""@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art4-1 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 4(1)"@en ;
+    skos:altLabel "Duties of the Parties"@en ;
+    skos:definition "Each Party shall take the necessary measures in its law to give effect to the provisions of this Convention and secure their effective application."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art4-2 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 4(2)"@en ;
+    skos:altLabel "Duties of the Parties"@en ;
+    skos:definition "These measures shall be taken by each Party and shall have come into force by the time of ratification or of accession to this Convention."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art4-3 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 4(3)"@en ;
+    skos:altLabel "Duties of the Parties"@en ;
+    skos:definition "Each Party undertakes:"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art4-3-a a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 4(3)(a)"@en ;
+    skos:altLabel "Duties of the Parties"@en ;
+    skos:definition "to allow the Convention Committee provided for in Chapter VI to evaluate the effectiveness of the measures it has taken in its law to give effect to the provisions of this Convention; and"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art4-3-b a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 4(3)(b)"@en ;
+    skos:altLabel "Duties of the Parties"@en ;
+    skos:definition "to contribute actively to this evaluation process."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art5 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Article 5"@en ;
+    skos:altLabel "Legitimacy of data processing and quality of data"@en ;
+    skos:definition ""@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art5-1 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 5(1)"@en ;
+    skos:altLabel "Legitimacy of data processing and quality of data"@en ;
+    skos:definition "Data processing shall be proportionate in relation to the legitimate purpose pursued and reflect at all stages of the processing a fair balance between all interests concerned, whether public or private, and the rights and freedoms at stake."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art5-2 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 5(2)"@en ;
+    skos:altLabel "Legitimacy of data processing and quality of data"@en ;
+    skos:definition "Each Party shall provide that data processing can be carried out on the basis of the free, specific, informed and unambiguous consent of the data subject or of some other legitimate basis laid down by law."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art5-3 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 5(3)"@en ;
+    skos:altLabel "Legitimacy of data processing and quality of data"@en ;
+    skos:definition "Personal data undergoing processing shall be processed lawfully."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art5-4 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 5(4)"@en ;
+    skos:altLabel "Legitimacy of data processing and quality of data"@en ;
+    skos:definition "Personal data undergoing processing shall be:"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art5-4-a a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 5(4)(a)"@en ;
+    skos:altLabel "Legitimacy of data processing and quality of data"@en ;
+    skos:definition "processed fairly and in a transparent manner;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art5-4-b a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 5(4)(b)"@en ;
+    skos:altLabel "Legitimacy of data processing and quality of data"@en ;
+    skos:definition "collected for explicit, specified and legitimate purposes and not processed in a way incompatible with those purposes; further processing for archiving purposes in the public interest, scientific or historical research purposes or statistical purposes is, subject to appropriate safeguards, compatible with those purposes;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art5-4-c a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 5(4)(c)"@en ;
+    skos:altLabel "Legitimacy of data processing and quality of data"@en ;
+    skos:definition "adequate, relevant and not excessive in relation to the purposes for which they are processed;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art5-4-d a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 5(4)(d)"@en ;
+    skos:altLabel "Legitimacy of data processing and quality of data"@en ;
+    skos:definition "accurate and, where necessary, kept up to date;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art5-4-e a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 5(4)(e)"@en ;
+    skos:altLabel "Legitimacy of data processing and quality of data"@en ;
+    skos:definition "preserved in a form which permits identification of data subjects for no longer than is necessary for the purposes for which those data are processed."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art6 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Article 6"@en ;
+    skos:altLabel "Special categories of data"@en ;
+    skos:definition ""@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art6-1 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 6(1)"@en ;
+    skos:altLabel "Special categories of data"@en ;
+    skos:definition "The processing of: – genetic data; – personal data relating to offences, criminal proceedings and convictions, and related security measures; – biometric data uniquely identifying a person; – personal data for the information they reveal relating to racial or ethnic origin, political opinions, trade-union membership, religious or other beliefs, health or sexual life, shall only be allowed where appropriate safeguards are enshrined in law, complementing those of this Convention."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art6-2 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 6(2)"@en ;
+    skos:altLabel "Special categories of data"@en ;
+    skos:definition "Such safeguards shall guard against the risks that the processing of sensitive data may present for the interests, rights and fundamental freedoms of the data subject, notably a risk of discrimination."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art7 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Article 7"@en ;
+    skos:altLabel "Data security"@en ;
+    skos:definition ""@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art7-1 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 7(1)"@en ;
+    skos:altLabel "Data security"@en ;
+    skos:definition "Each Party shall provide that the controller, and, where applicable the processor, takes appropriate security measures against risks such as accidental or unauthorised access to, destruction, loss, use, modification or disclosure of personal data."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art7-2 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 7(2)"@en ;
+    skos:altLabel "Data security"@en ;
+    skos:definition "Each Party shall provide that the controller notifies, without delay, at least the competent supervisory authority within the meaning of Article 15 of this Convention, of those data breaches which may seriously interfere with the rights and fundamental freedoms of data subjects."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art8 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Article 8"@en ;
+    skos:altLabel "Transparency of processing"@en ;
+    skos:definition ""@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art8-1 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 8(1)"@en ;
+    skos:altLabel "Transparency of processing"@en ;
+    skos:definition "Each Party shall provide that the controller informs the data subjects of:"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art8-1-a a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 8(1)(a)"@en ;
+    skos:altLabel "Transparency of processing"@en ;
+    skos:definition "his or her identity and habitual residence or establishment;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art8-1-b a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 8(1)(b)"@en ;
+    skos:altLabel "Transparency of processing"@en ;
+    skos:definition "the legal basis and the purposes of the intended processing;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art8-1-c a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 8(1)(c)"@en ;
+    skos:altLabel "Transparency of processing"@en ;
+    skos:definition "the categories of personal data processed;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art8-1-d a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 8(1)(d)"@en ;
+    skos:altLabel "Transparency of processing"@en ;
+    skos:definition "the recipients or categories of recipients of the personal data, if any; and"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art8-1-e a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 8(1)(e)"@en ;
+    skos:altLabel "Transparency of processing"@en ;
+    skos:definition "the means of exercising the rights set out in Article 9, as well as any necessary additional information in order to ensure fair and transparent processing of the personal data."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art8-2 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 8(2)"@en ;
+    skos:altLabel "Transparency of processing"@en ;
+    skos:definition "Paragraph 1 shall not apply where the data subject already has the relevant information."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art8-3 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 8(3)"@en ;
+    skos:altLabel "Transparency of processing"@en ;
+    skos:definition "Where the personal data are not collected from the data subjects, the controller shall not be required to provide such information where the processing is expressly prescribed by law or this proves to be impossible or involves disproportionate efforts."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art9 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Article 9"@en ;
+    skos:altLabel "Rights of the data subject"@en ;
+    skos:definition ""@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art9-1 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 9(1)"@en ;
+    skos:altLabel "Rights of the data subject"@en ;
+    skos:definition "Every individual shall have a right:"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art9-1-a a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 9(1)(a)"@en ;
+    skos:altLabel "Rights of the data subject"@en ;
+    skos:definition "not to be subject to a decision significantly affecting him or her based solely on an automated processing of data without having his or her views taken into consideration;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art9-1-b a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 9(1)(b)"@en ;
+    skos:altLabel "Rights of the data subject"@en ;
+    skos:definition "to obtain, on request, at reasonable intervals and without excessive delay or expense, confirmation of the processing of personal data relating to him or her, the communication in an intelligible form of the data processed, all available information on their origin, on the preservation period as well as any other information that the controller is required to provide in order to ensure the transparency of processing in accordance with Article 8, paragraph 1;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art9-1-c a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 9(1)(c)"@en ;
+    skos:altLabel "Rights of the data subject"@en ;
+    skos:definition "to obtain, on request, knowledge of the reasoning underlying data processing where the results of such processing are applied to him or her;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art9-1-d a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 9(1)(d)"@en ;
+    skos:altLabel "Rights of the data subject"@en ;
+    skos:definition "to object at any time, on grounds relating to his or her situation, to the processing of personal data concerning him or her unless the controller demonstrates legitimate grounds for the processing which override his or her interests or rights and fundamental freedoms;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art9-1-e a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 9(1)(e)"@en ;
+    skos:altLabel "Rights of the data subject"@en ;
+    skos:definition "to obtain, on request, free of charge and without excessive delay, rectification or erasure, as the case may be, of such data if these are being, or have been, processed contrary to the provisions of this Convention;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art9-1-f a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 9(1)(f)"@en ;
+    skos:altLabel "Rights of the data subject"@en ;
+    skos:definition "to have a remedy under Article 12 where his or her rights under this Convention have been violated;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art9-1-g a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 9(1)(g)"@en ;
+    skos:altLabel "Rights of the data subject"@en ;
+    skos:definition "to benefit, whatever his or her nationality or residence, from the assistance of a supervisory authority within the meaning of Article 15, in exercising his or her rights under this Convention."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art9-2 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 9(2)"@en ;
+    skos:altLabel "Rights of the data subject"@en ;
+    skos:definition "Paragraph 1.a shall not apply if the decision is authorised by a law to which the controller is subject and which also lays down suitable measures to safeguard the data subject’s rights, freedoms and legitimate interests."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art10 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Article 10"@en ;
+    skos:altLabel "Additional obligations"@en ;
+    skos:definition ""@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art10-1 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 10(1)"@en ;
+    skos:altLabel "Additional obligations"@en ;
+    skos:definition "Each Party shall provide that controllers and, where applicable, processors, take all appropriate measures to comply with the obligations of this Convention and be able to demonstrate, subject to the domestic legislation adopted in accordance with Article 11, paragraph 3, in particular to the competent supervisory authority provided for in Article 15, that the data processing under their control is in compliance with the provisions of this Convention."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art10-2 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 10(2)"@en ;
+    skos:altLabel "Additional obligations"@en ;
+    skos:definition "Each Party shall provide that controllers and, where applicable, processors, examine the likely impact of intended data processing on the rights and fundamental freedoms of data subjects prior to the commencement of such processing, and shall design the data processing in such a manner as to prevent or minimise the risk of interference with those rights and fundamental freedoms."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art10-3 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 10(3)"@en ;
+    skos:altLabel "Additional obligations"@en ;
+    skos:definition "Each Party shall provide that controllers, and, where applicable, processors, implement technical and organisational measures which take into account the implications of the right to the protection of personal data at all stages of the data processing."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art10-4 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 10(4)"@en ;
+    skos:altLabel "Additional obligations"@en ;
+    skos:definition "Each Party may, having regard to the risks arising for the interests, rights and fundamental freedoms of the data subjects, adapt the application of the provisions of paragraphs 1, 2 and 3 in the law giving effect to the provisions of this Convention, according to the nature and volume of the data, the nature, scope and purpose of the processing and, where appropriate, the size of the controller or processor."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art11 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Article 11"@en ;
+    skos:altLabel "Exceptions and restrictions"@en ;
+    skos:definition ""@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art11-1 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 11(1)"@en ;
+    skos:altLabel "Exceptions and restrictions"@en ;
+    skos:definition "No exception to the provisions set out in this Chapter shall be allowed except to the provisions of Article 5 paragraph 4, Article 7 paragraph 2, Article 8 paragraph 1 and Article 9, when such an exception is provided for by law, respects the essence of the fundamental rights and freedoms and constitutes a necessary and proportionate measure in a democratic society for:"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art11-1-a a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 11(1)(a)"@en ;
+    skos:altLabel "Exceptions and restrictions"@en ;
+    skos:definition "the protection of national security, defense, public safety, important economic and financial interests of the State, the impartiality and independence of the judiciary or the prevention, investigation and prosecution of criminal offences and the execution of criminal penalties, and other essential objectives of general public interest;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art11-1-b a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 11(1)(b)"@en ;
+    skos:altLabel "Exceptions and restrictions"@en ;
+    skos:definition "the protection of the data subject or the rights and fundamental freedoms of others, notably freedom of expression."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art11-2 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 11(2)"@en ;
+    skos:altLabel "Exceptions and restrictions"@en ;
+    skos:definition "Restrictions on the exercise of the provisions specified in Articles 8 and 9 may be provided for by law with respect to data processing for archiving purposes in the public interest, scientific or historical research purposes or statistical purposes when there is no recognisable risk of infringement of the rights and fundamental freedoms of data subjects."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art11-3 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 11(3)"@en ;
+    skos:altLabel "Exceptions and restrictions"@en ;
+    skos:definition "In addition to the exceptions allowed for in paragraph 1 of this article, with reference to processing activities for national security and defense purposes, each Party may provide, by law and only to the extent that it constitutes a necessary and proportionate measure in a democratic society to fulfill such aim, exceptions to Article 4 paragraph 3, Article 14 paragraphs 5 and 6 and Article 15, paragraph 2, litterae a, b, c and d. This is without prejudice to the requirement that processing activities for national security and defense purposes are subject to independent and effective review and supervision under the domestic legislation of the respective Party."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art12 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Article 12"@en ;
+    skos:altLabel "Sanctions and remedies"@en ;
+    skos:definition "Each Party undertakes to establish appropriate judicial and non-judicial sanctions and remedies for violations of the provisions of this Convention."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art13 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Article 13"@en ;
+    skos:altLabel "Extended protection"@en ;
+    skos:definition "None of the provisions of this chapter shall be interpreted as limiting or otherwise affecting the possibility for a Party to grant data subjects a wider measure of protection than that stipulated in this Convention."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art14 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Article 14"@en ;
+    skos:altLabel "Transborder flows of personal data"@en ;
+    skos:definition ""@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art14-1 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 14(1)"@en ;
+    skos:altLabel "Transborder flows of personal data"@en ;
+    skos:definition "A Party shall not, for the sole purpose of the protection of personal data, prohibit or subject to special authorisation the transfer of such data to a recipient who is subject to the jurisdiction of another Party to the Convention. Such a Party may, however, do so if there is a real and serious risk that the transfer to another Party, or from that other Party to a non-Party, would lead to circumventing the provisions of the Convention. A Party may also do so, if bound by harmonised rules of protection shared by States belonging to a regional international organisation."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art14-2 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 14(2)"@en ;
+    skos:altLabel "Transborder flows of personal data"@en ;
+    skos:definition "When the recipient is subject to the jurisdiction of a State or international organisation which is not Party to this Convention, the transfer of personal data may only take place where an appropriate level of protection based on the provisions of this Convention is secured."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art14-3 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 14(3)"@en ;
+    skos:altLabel "Transborder flows of personal data"@en ;
+    skos:definition "An appropriate level of protection can be secured by:"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art14-3-a a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 14(3)(a)"@en ;
+    skos:altLabel "Transborder flows of personal data"@en ;
+    skos:definition "the law of that State or international organisation, including the applicable international treaties or agreements; or"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art14-3-b a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 14(3)(b)"@en ;
+    skos:altLabel "Transborder flows of personal data"@en ;
+    skos:definition "ad hoc or approved standardised safeguards provided by legally-binding and enforceable instruments adopted and implemented by the persons involved in the transfer and further processing."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art14-4 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 14(4)"@en ;
+    skos:altLabel "Transborder flows of personal data"@en ;
+    skos:definition "Notwithstanding the provisions of the previous paragraphs, each Party may provide that the transfer of personal data may take place if:"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art14-4-a a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 14(4)(a)"@en ;
+    skos:altLabel "Transborder flows of personal data"@en ;
+    skos:definition "the data subject has given explicit, specific and free consent, after being informed of risks arising in the absence of appropriate safeguards; or"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art14-4-b a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 14(4)(b)"@en ;
+    skos:altLabel "Transborder flows of personal data"@en ;
+    skos:definition "the specific interests of the data subject require it in the particular case; or"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art14-4-c a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 14(4)(c)"@en ;
+    skos:altLabel "Transborder flows of personal data"@en ;
+    skos:definition "prevailing legitimate interests, in particular important public interests, are provided for by law and such transfer constitutes a necessary and proportionate measure in a democratic society; or"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art14-4-d a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 14(4)(d)"@en ;
+    skos:altLabel "Transborder flows of personal data"@en ;
+    skos:definition "it constitutes a necessary and proportionate measure in a democratic society for freedom of expression."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art14-5 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 14(5)"@en ;
+    skos:altLabel "Transborder flows of personal data"@en ;
+    skos:definition "Each Party shall provide that the competent supervisory authority within the meaning of Article 15 of this Convention is provided with all relevant information concerning the transfers of data referred to in paragraph 3.b and, upon request, paragraphs 4.b and 4.c."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art14-6 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 14(6)"@en ;
+    skos:altLabel "Transborder flows of personal data"@en ;
+    skos:definition "Each Party shall also provide that the supervisory authority is entitled to request that the person who transfers data demonstrates the effectiveness of the safeguards or the existence of prevailing legitimate interests and that the supervisory authority may, in order to protect the rights and fundamental freedoms of data subjects, prohibit such transfers, suspend them or subject them to condition."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art15 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Article 15"@en ;
+    skos:altLabel "Supervisory authorities"@en ;
+    skos:definition ""@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art15-1 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 15(1)"@en ;
+    skos:altLabel "Supervisory authorities"@en ;
+    skos:definition "Each Party shall provide for one or more authorities to be responsible for ensuring compliance with the provisions of this Convention."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art15-2 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 15(2)"@en ;
+    skos:altLabel "Supervisory authorities"@en ;
+    skos:definition "To this end, such authorities:"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art15-2-a a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 15(2)(a)"@en ;
+    skos:altLabel "Supervisory authorities"@en ;
+    skos:definition "shall have powers of investigation and intervention;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art15-2-b a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 15(2)(b)"@en ;
+    skos:altLabel "Supervisory authorities"@en ;
+    skos:definition "shall perform the functions relating to transfers of data provided for under Article 14, notably the approval of standardised safeguards;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art15-2-c a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 15(2)(c)"@en ;
+    skos:altLabel "Supervisory authorities"@en ;
+    skos:definition "shall have powers to issue decisions with respect to violations of the provisions of this Convention and may, in particular, impose administrative sanctions;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art15-2-d a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 15(2)(d)"@en ;
+    skos:altLabel "Supervisory authorities"@en ;
+    skos:definition "shall have the power to engage in legal proceedings or to bring to the attention of the competent judicial authorities violations of the provisions of this Convention;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art15-2-e a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 15(2)(e)"@en ;
+    skos:altLabel "Supervisory authorities"@en ;
+    skos:definition "shall promote: i. public awareness of their functions and powers as well as their activities; ii. public awareness of the rights of data subjects and the exercise of such rights; iii. awareness of controllers and processors of their responsibilities under this Convention; specific attention shall be given to the data protection rights of children and other vulnerable individuals."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art15-3 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 15(3)"@en ;
+    skos:altLabel "Supervisory authorities"@en ;
+    skos:definition "The competent supervisory authorities shall be consulted on proposals for any legislative or administrative measures which provide for the processing of personal data."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art15-4 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 15(4)"@en ;
+    skos:altLabel "Supervisory authorities"@en ;
+    skos:definition "Each competent supervisory authority shall deal with requests and complaints lodged by data subjects concerning their data protection rights and shall keep data subjects informed of progress."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art15-5 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 15(5)"@en ;
+    skos:altLabel "Supervisory authorities"@en ;
+    skos:definition "The supervisory authorities shall act with complete independence and impartiality in performing their duties and exercising their powers and in doing so shall neither seek nor accept instructions."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art15-6 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 15(6)"@en ;
+    skos:altLabel "Supervisory authorities"@en ;
+    skos:definition "Each Party shall ensure that the supervisory authorities are provided with the resources necessary for the effective performance of their functions and exercise of their powers."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art15-7 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 15(7)"@en ;
+    skos:altLabel "Supervisory authorities"@en ;
+    skos:definition "Each supervisory authority shall prepare and publish a periodical report outlining its activities."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art15-8 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 15(8)"@en ;
+    skos:altLabel "Supervisory authorities"@en ;
+    skos:definition "Members and staff of the supervisory authorities shall be bound by obligations of confidentiality with regard to confidential information to which they have access, or have had access to, in the performance of their duties and exercise of their powers."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art15-9 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 15(9)"@en ;
+    skos:altLabel "Supervisory authorities"@en ;
+    skos:definition "Decisions of the supervisory authorities may be subject to appeal through the courts."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art15-10 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 15(10)"@en ;
+    skos:altLabel "Supervisory authorities"@en ;
+    skos:definition "The supervisory authorities shall not be competent with respect to processing carried out by bodies when acting in their judicial capacity."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art16 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Article 16"@en ;
+    skos:altLabel "Designation of supervisory authorities"@en ;
+    skos:definition ""@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art16-1 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 16(1)"@en ;
+    skos:altLabel "Designation of supervisory authorities"@en ;
+    skos:definition "The Parties agree to co-operate and render each other mutual assistance in order to implement this Convention."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art16-2 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 16(2)"@en ;
+    skos:altLabel "Designation of supervisory authorities"@en ;
+    skos:definition "For that purpose:"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art16-2-a a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 16(2)(a)"@en ;
+    skos:altLabel "Designation of supervisory authorities"@en ;
+    skos:definition "each Party shall designate one or more supervisory authorities within the meaning of Article 15 of this Convention, the name and address of each of which it shall communicate to the Secretary General of the Council of Europe;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art16-2-b a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 16(2)(b)"@en ;
+    skos:altLabel "Designation of supervisory authorities"@en ;
+    skos:definition "each Party which has designated more than one supervisory authority shall specify the competence of each authority in its communication referred to in the previous littera ."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art17 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Article 17"@en ;
+    skos:altLabel "Forms of co-operation"@en ;
+    skos:definition ""@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art17-1 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 17(1)"@en ;
+    skos:altLabel "Forms of co-operation"@en ;
+    skos:definition "The supervisory authorities shall co-operate with one another to the extent necessary for the performance of their duties and exercise of their powers, in particular by:"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art17-1-a a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 17(1)(a)"@en ;
+    skos:altLabel "Forms of co-operation"@en ;
+    skos:definition "providing mutual assistance by exchanging relevant and useful information and co-operating with each other under the condition that, as regards the protection of personal data, all the rules and safeguards of this Convention are complied with;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art17-1-b a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 17(1)(b)"@en ;
+    skos:altLabel "Forms of co-operation"@en ;
+    skos:definition "co-ordinating their investigations or interventions, or conducting joint actions;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art17-1-c a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 17(1)(c)"@en ;
+    skos:altLabel "Forms of co-operation"@en ;
+    skos:definition "providing information and documentation on their law and administrative practice relating to data protection."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art17-2 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 17(2)"@en ;
+    skos:altLabel "Forms of co-operation"@en ;
+    skos:definition "The information referred to in paragraph 1 shall not include personal data undergoing processing unless such data are essential for co-operation, or where the data subject concerned has given explicit, specific, free and informed consent to its provision."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art17-3 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 17(3)"@en ;
+    skos:altLabel "Forms of co-operation"@en ;
+    skos:definition "In order to organise their co-operation and to perform the duties set out in the preceding paragraphs, the supervisory authorities of the Parties shall form a network."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art18 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Article 18"@en ;
+    skos:altLabel "Assistance to data subjects"@en ;
+    skos:definition ""@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art18-1 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 18(1)"@en ;
+    skos:altLabel "Assistance to data subjects"@en ;
+    skos:definition "Each Party shall assist any data subject, whatever his or her nationality or residence, to exercise his or her rights under Article 9 of this Convention."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art18-2 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 18(2)"@en ;
+    skos:altLabel "Assistance to data subjects"@en ;
+    skos:definition "Where a data subject resides on the territory of another Party, he or she shall be given the option of submitting the request through the intermediary of the supervisory authority designated by that Party."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art18-3 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 18(3)"@en ;
+    skos:altLabel "Assistance to data subjects"@en ;
+    skos:definition "The request for assistance shall contain all the necessary particulars, relating inter alia to:"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art18-3-a a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 18(3)(a)"@en ;
+    skos:altLabel "Assistance to data subjects"@en ;
+    skos:definition "the name, address and any other relevant particulars identifying the data subject making the request;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art18-3-b a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 18(3)(b)"@en ;
+    skos:altLabel "Assistance to data subjects"@en ;
+    skos:definition "the processing to which the request pertains, or its controller;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art18-3-c a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 18(3)(c)"@en ;
+    skos:altLabel "Assistance to data subjects"@en ;
+    skos:definition "the purpose of the request."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art19 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Article 19"@en ;
+    skos:altLabel "Safeguards"@en ;
+    skos:definition ""@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art19-1 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 19(1)"@en ;
+    skos:altLabel "Safeguards"@en ;
+    skos:definition "A supervisory authority which has received information from another supervisory authority, either accompanying a request or in reply to its own request, shall not use that information for purposes other than those specified in the request."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art19-2 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 19(2)"@en ;
+    skos:altLabel "Safeguards"@en ;
+    skos:definition "In no case may a supervisory authority be allowed to make a request on behalf of a data subject of its own accord and without the express approval of the data subject concerned."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art20 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Article 20"@en ;
+    skos:altLabel "Refusal of requests"@en ;
+    skos:definition "A supervisory authority to which a request is addressed under Article 17 of this Convention may not refuse to comply with it unless:"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art20-a a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 20(a)"@en ;
+    skos:altLabel "Refusal of requests"@en ;
+    skos:definition "the request is not compatible with its powers;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art20-b a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 20(b)"@en ;
+    skos:altLabel "Refusal of requests"@en ;
+    skos:definition "the request does not comply with the provisions of this Convention;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art20-c a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 20(c)"@en ;
+    skos:altLabel "Refusal of requests"@en ;
+    skos:definition "compliance with the request would be incompatible with the sovereignty, national security or public order of the Party by which it was designated, or with the rights and fundamental freedoms of individuals under the jurisdiction of that Party."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art21 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Article 21"@en ;
+    skos:altLabel "Costs and procedures"@en ;
+    skos:definition ""@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art21-1 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 21(1)"@en ;
+    skos:altLabel "Costs and procedures"@en ;
+    skos:definition "Co-operation and mutual assistance which the Parties render each other under Article 17 and assistance they render to data subjects under Articles 9 and 18 shall not give rise to the payment of any costs or fees other than those incurred for experts and interpreters. The latter costs or fees shall be borne by the Party making the request."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art21-2 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 21(2)"@en ;
+    skos:altLabel "Costs and procedures"@en ;
+    skos:definition "The data subject may not be charged costs or fees in connection with the steps taken on his or her behalf in the territory of another Party other than those lawfully payable by residents of that Party."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art21-3 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 21(3)"@en ;
+    skos:altLabel "Costs and procedures"@en ;
+    skos:definition "Other details concerning the co-operation and assistance, relating in particular to the forms and procedures and the languages to be used, shall be established directly between the Parties concerned."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art22 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Article 22"@en ;
+    skos:altLabel "Composition of the committee"@en ;
+    skos:definition ""@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art22-1 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 22(1)"@en ;
+    skos:altLabel "Composition of the committee"@en ;
+    skos:definition "A Convention Committee shall be set up after the entry into force of this Convention."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art22-2 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 22(2)"@en ;
+    skos:altLabel "Composition of the committee"@en ;
+    skos:definition "Each Party shall appoint a representative to the committee and a deputy representative. Any member State of the Council of Europe which is not a Party to the Convention shall have the right to be represented on the committee by an observer."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art22-3 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 22(3)"@en ;
+    skos:altLabel "Composition of the committee"@en ;
+    skos:definition "The Convention Committee may, by a decision taken by a majority of two-thirds of the representatives of the Parties, invite an observer to be represented at its meetings."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art22-4 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 22(4)"@en ;
+    skos:altLabel "Composition of the committee"@en ;
+    skos:definition "Any Party which is not a member of the Council of Europe shall contribute to the funding of the activities of the Convention Committee according to the modalities established by the Committee of Ministers in agreement with that Party."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art23 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Article 23"@en ;
+    skos:altLabel "Functions of the committee"@en ;
+    skos:definition "The Convention Committee:"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art23-a a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 23(a)"@en ;
+    skos:altLabel "Functions of the committee"@en ;
+    skos:definition "may make recommendations with a view to facilitating or improving the application of the Convention;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art23-b a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 23(b)"@en ;
+    skos:altLabel "Functions of the committee"@en ;
+    skos:definition "may make proposals for amendment of this Convention in accordance with Article 25;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art23-c a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 23(c)"@en ;
+    skos:altLabel "Functions of the committee"@en ;
+    skos:definition "shall formulate its opinion on any proposal for amendment of this Convention which is referred to it in accordance with Article 25, paragraph 3;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art23-d a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 23(d)"@en ;
+    skos:altLabel "Functions of the committee"@en ;
+    skos:definition "may express an opinion on any question concerning the interpretation or application of this Convention;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art23-e a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 23(e)"@en ;
+    skos:altLabel "Functions of the committee"@en ;
+    skos:definition "shall prepare, before any new accession to the Convention, an opinion for the Committee of Ministers relating to the level of personal data protection of the candidate for accession and, where necessary, recommend measures to take to reach compliance with the provisions of this Convention;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art23-f a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 23(f)"@en ;
+    skos:altLabel "Functions of the committee"@en ;
+    skos:definition "may, at the request of a State or an international organisation, evaluate whether the level of personal data protection the former provides is in compliance with the provisions of this Convention and, where necessary, recommend measures to be taken to reach such compliance;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art23-g a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 23(g)"@en ;
+    skos:altLabel "Functions of the committee"@en ;
+    skos:definition "may develop or approve models of standardised safeguards referred to in Article 14;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art23-h a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 23(h)"@en ;
+    skos:altLabel "Functions of the committee"@en ;
+    skos:definition "shall review the implementation of this Convention by the Parties and recommend measures to be taken in the case where a Party is not in compliance with this Convention;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art23-i a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 23(i)"@en ;
+    skos:altLabel "Functions of the committee"@en ;
+    skos:definition "shall facilitate, where necessary, the friendly settlement of all difficulties related to the application of this Convention."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art24 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Article 24"@en ;
+    skos:altLabel "Procedure"@en ;
+    skos:definition ""@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art24-1 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 24(1)"@en ;
+    skos:altLabel "Procedure"@en ;
+    skos:definition "The Convention Committee shall be convened by the Secretary General of the Council of Europe. Its first meeting shall be held within twelve months of the entry into force of this Convention. It shall subsequently meet at least once a year, and in any case when one-third of the representatives of the Parties request its convocation."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art24-2 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 24(2)"@en ;
+    skos:altLabel "Procedure"@en ;
+    skos:definition "After each of its meetings, the Convention Committee shall submit to the Committee of Ministers of the Council of Europe a report on its work and on the functioning of this Convention."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art24-3 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 24(3)"@en ;
+    skos:altLabel "Procedure"@en ;
+    skos:definition "The voting arrangements in the Convention Committee are laid down in the elements for the Rules of Procedure appended to Protocol CETS No. [223]."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art24-4 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 24(4)"@en ;
+    skos:altLabel "Procedure"@en ;
+    skos:definition "The Convention Committee shall draw up the other elements of its Rules of Procedure and establish, in particular, the procedures for evaluation and review referred to in Article 4, paragraph 3, and Article 23, litterae e, f and h on the basis of objective criteria."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art25 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Article 25"@en ;
+    skos:altLabel "Amendments"@en ;
+    skos:definition ""@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art25-1 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 25(1)"@en ;
+    skos:altLabel "Amendments"@en ;
+    skos:definition "Amendments to this Convention may be proposed by a Party, the Committee of Ministers of the Council of Europe or the Convention Committee."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art25-2 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 25(2)"@en ;
+    skos:altLabel "Amendments"@en ;
+    skos:definition "Any proposal for amendment shall be communicated by the Secretary General of the Council of Europe to the Parties to this Convention, to the other member States of the Council of Europe, to the European Union and to every non-member State or international organisation which has been invited to accede to this Convention in accordance with the provisions of Article 27."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art25-3 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 25(3)"@en ;
+    skos:altLabel "Amendments"@en ;
+    skos:definition "Moreover, any amendment proposed by a Party or the Committee of Ministers shall be communicated to the Convention Committee, which shall submit to the Committee of Ministers its opinion on that proposed amendment."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art25-4 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 25(4)"@en ;
+    skos:altLabel "Amendments"@en ;
+    skos:definition "The Committee of Ministers shall consider the proposed amendment and any opinion submitted by the Convention Committee and may approve the amendment."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art25-5 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 25(5)"@en ;
+    skos:altLabel "Amendments"@en ;
+    skos:definition "The text of any amendment approved by the Committee of Ministers in accordance with paragraph 4 of this article shall be forwarded to the Parties for acceptance."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art25-6 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 25(6)"@en ;
+    skos:altLabel "Amendments"@en ;
+    skos:definition "Any amendment approved in accordance with paragraph 4 of this article shall come into force on the thirtieth day after all Parties have informed the Secretary General of their acceptance thereof."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art25-7 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 25(7)"@en ;
+    skos:altLabel "Amendments"@en ;
+    skos:definition "Moreover, the Committee of Ministers may, after consulting the Convention Committee, decide unanimously that a particular amendment shall enter into force at the expiration of a period of three years from the date on which it has been opened to acceptance, unless a Party notifies the Secretary General of the Council of Europe of an objection to its entry into force. If such an objection is notified, the amendment shall enter into force on the first day of the month following the date on which the Party to this Convention which has notified the objection has deposited its instrument of acceptance with the Secretary General of the Council of Europe."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art26 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Article 26"@en ;
+    skos:altLabel "Entry into force"@en ;
+    skos:definition ""@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art26-1 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 26(1)"@en ;
+    skos:altLabel "Entry into force"@en ;
+    skos:definition "This Convention shall be open for signature by the member States of the Council of Europe and by the European Union. It is subject to ratification, acceptance or approval. Instruments of ratification, acceptance or approval shall be deposited with the Secretary General of the Council of Europe."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art26-2 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 26(2)"@en ;
+    skos:altLabel "Entry into force"@en ;
+    skos:definition "This Convention shall enter into force on the first day of the month following the expiration of a period of three months after the date on which five member States of the Council of Europe have expressed their consent to be bound by the Convention in accordance with the provisions of the preceding paragraph."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art26-3 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 26(3)"@en ;
+    skos:altLabel "Entry into force"@en ;
+    skos:definition "In respect of any Party which subsequently expresses its consent to be bound by it, the Convention shall enter into force on the first day of the month following the expiration of a period of three months after the date of deposit of the instrument of ratification, acceptance or approval."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art27 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Article 27"@en ;
+    skos:altLabel "Accession by non-member States or international organisations"@en ;
+    skos:definition ""@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art27-1 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 27(1)"@en ;
+    skos:altLabel "Accession by non-member States or international organisations"@en ;
+    skos:definition "After the entry into force of this Convention, the Committee of Ministers of the Council of Europe may, after consulting the Parties to this Convention and obtaining their unanimous agreement, and in light of the opinion prepared by the Convention Committee in accordance with Article 23.e, invite any State not a member of the Council of Europe or an international organisation to accede to this Convention by a decision taken by the majority provided for in Article 20.d of the Statute of the Council of Europe and by the unanimous vote of the representatives of the Contracting States entitled to sit on the Committee of Ministers."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art27-2 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 27(2)"@en ;
+    skos:altLabel "Accession by non-member States or international organisations"@en ;
+    skos:definition "In respect of any State or international organisation acceding to this Convention according to paragraph 1 above, the Convention shall enter into force on the first day of the month following the expiration of a period of three months after the date of deposit of the instrument of accession with the Secretary General of the Council of Europe."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art28 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Article 28"@en ;
+    skos:altLabel "Territorial clause"@en ;
+    skos:definition ""@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art28-1 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 28(1)"@en ;
+    skos:altLabel "Territorial clause"@en ;
+    skos:definition "Any State, the European Union or other international organisation may, at the time of signature or when depositing its instrument of ratification, acceptance, approval or accession, specify the territory or territories to which this Convention shall apply."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art28-2 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 28(2)"@en ;
+    skos:altLabel "Territorial clause"@en ;
+    skos:definition "Any State, the European Union or other international organisation may, at any later date, by a declaration addressed to the Secretary General of the Council of Europe, extend the application of this Convention to any other territory specified in the declaration. In respect of such territory the Convention shall enter into force on the first day of the month following the expiration of a period of three months after the date of receipt of such declaration by the Secretary General."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art28-3 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 28(3)"@en ;
+    skos:altLabel "Territorial clause"@en ;
+    skos:definition "Any declaration made under the two preceding paragraphs may, in respect of any territory specified in such declaration, be withdrawn by a notification addressed to the Secretary General. The withdrawal shall become effective on the first day of the month following the expiration of a period of six months after the date of receipt of such notification by the Secretary General."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art29 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Article 29"@en ;
+    skos:altLabel "Reservations"@en ;
+    skos:definition "No reservation may be made in respect of the provisions of this Convention."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art30 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Article 30"@en ;
+    skos:altLabel "Denunciation"@en ;
+    skos:definition ""@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art30-1 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 30(1)"@en ;
+    skos:altLabel "Denunciation"@en ;
+    skos:definition "Any Party may at any time denounce this Convention by means of a notification addressed to the Secretary General of the Council of Europe."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art30-2 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 30(2)"@en ;
+    skos:altLabel "Denunciation"@en ;
+    skos:definition "Such denunciation shall become effective on the first day of the month following the expiration of a period of six months after the date of receipt of the notification by the Secretary General."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art31 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Article 31"@en ;
+    skos:altLabel "Notifications"@en ;
+    skos:definition "The Secretary General of the Council of Europe shall notify the member States of the Council and any Party to this Convention of:"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art31-a a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 31(a)"@en ;
+    skos:altLabel "Notifications"@en ;
+    skos:definition "any signature;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art31-b a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 31(b)"@en ;
+    skos:altLabel "Notifications"@en ;
+    skos:definition "the deposit of any instrument of ratification, acceptance, approval or accession;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art31-c a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 31(c)"@en ;
+    skos:altLabel "Notifications"@en ;
+    skos:definition "any date of entry into force of this Convention in accordance with Articles 26, 27 and 28;"@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:Art31-d a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Art. 31(d)"@en ;
+    skos:altLabel "Notifications"@en ;
+    skos:definition "any other act, notification or communication relating to this Convention."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:App-1 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Appendix, element 1"@en ;
+    skos:definition "1. Each Party has a right to vote and shall have one vote."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:App-2 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Appendix, element 2"@en ;
+    skos:definition "2. A two-thirds majority of representatives of the Parties shall constitute a quorum for the meetings of the Convention Committee. In case the amending Protocol to the Convention enters into force in accordance with its Article 37 (2) before its entry into force in respect of all Contracting States to the Convention, the quorum for the meetings of the Convention Committee shall be no less than 34 Parties to the Protocol."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:App-3 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Appendix, element 3"@en ;
+    skos:definition "3. The decisions under Article 23 shall be taken by a four-fifths majority. The decisions pursuant to Article 23 littera h shall be taken by a four-fifths majority, including a majority of the votes of States Parties not members of a regional integration organisation that is a Party to the Convention."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:App-4 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Appendix, element 4"@en ;
+    skos:definition "4. Where the Convention Committee takes decisions pursuant to Article 23 littera h , the Party concerned by the review shall not vote. Whenever such a decision concerns a matter falling within the competence of a regional integration organisation, neither the organisation nor its member States shall vote."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:App-5 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Appendix, element 5"@en ;
+    skos:definition "5. Decisions concerning procedural issues shall be taken by a simple majority."@en ;
+    dct:source "Convention 108+ consolidated text, Council of Europe publication, June 2018" .
+
+conv108:ER-17 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Explanatory Report, para. 17"@en ;
+    skos:altLabel "Explanatory Report (CETS 223)"@en ;
+    skos:definition "“Identifiable individual” means a person who can be directly or indirectly identified. An individual is not considered “identifiable” if his or her identification would require unreasonable time, effort or resources. Such is the case, for example, when identifying a data subject would require excessively complex, long and costly operations. The issue of what constitutes “unreasonable time, efforts or resources” should be assessed on a case-by-case basis. For example, consideration could be given to the purpose of the processing and taking into account objective criteria such as the cost, the benefits of such an identification, the type of controller, the technology used, etc. Furthermore, technological and other developments may change what constitutes “unreasonable time, effort or other resources”."@en ;
+    dct:source "CETS 223 Explanatory Report, Council of Europe, 10.X.2018" .
+
+conv108:ER-18 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Explanatory Report, para. 18"@en ;
+    skos:altLabel "Explanatory Report (CETS 223)"@en ;
+    skos:definition "The notion of “identifiable” refers not only to the individual’s civil or legal identity as such, but also to what may allow to “individualise” or single out (and thus allow to treat differently) one person from others. This “individualisation” could be done, for instance, by referring to him or her specifically, or to a device or a combination of devices (computer, mobile phone, camera, gaming devices, etc.) on the basis of an identification number, a pseudonym, biometric or genetic data, location data, an IP address, or other identifier. The use of a pseudonym or of any digital identifier/digital identity does not lead to anonymisation of the data as the data subject can still be identifiable or individualised. Pseudonymous data is thus to be considered as personal data and is covered by the provisions of the Convention. The quality of the pseudonymisation techniques applied should be duly taken into account when assessing the appropriateness of safeguards implemented to mitigate the risks to data subjects."@en ;
+    dct:source "CETS 223 Explanatory Report, Council of Europe, 10.X.2018" .
+
+conv108:ER-22 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Explanatory Report, para. 22"@en ;
+    skos:altLabel "Explanatory Report (CETS 223)"@en ;
+    skos:definition "“Controller” refers to the person or body having decision-making power concerning the purposes and means of the processing, whether this power derives from a legal designation or factual circumstances that are to be assessed on a case-by-case basis. In some cases, there may be multiple controllers or co-controllers (jointly responsible for a processing and possibly responsible for different aspects of that processing). When assessing whether the person or body is a controller, special account should be taken of whether that person or body determines the reasons justifying the processing, in other terms its purposes and the means used for it. Further relevant factors for this assessment include whether the person or body has control over the processing methods, the choice of data to be processed and who is allowed to access it. Those who are not directly subject to the controller and carry out the processing on the controller's behalf, and solely according to the controller’s instructions, are to be considered processors. The controller remains responsible for the processing also where a processor is processing the data on his or her behalf."@en ;
+    dct:source "CETS 223 Explanatory Report, Council of Europe, 10.X.2018" .
+
+conv108:ER-33 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Explanatory Report, para. 33"@en ;
+    skos:altLabel "Explanatory Report (CETS 223)"@en ;
+    skos:definition "Such a “law of the Parties” may be usefully reinforced by voluntary regulation measures in the field of data protection, such as codes of good practice or codes for professional conduct. However, such voluntary measures are not by themselves sufficient to ensure full compliance with the Convention."@en ;
+    dct:source "CETS 223 Explanatory Report, Council of Europe, 10.X.2018" .
+
+conv108:ER-68 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Explanatory Report, para. 68"@en ;
+    skos:altLabel "Explanatory Report (CETS 223)"@en ;
+    skos:definition "Certain essential information has to be compulsorily provided in a proactive manner by the controller to the data subjects when directly or indirectly (not through the data subject but through a third-party) collecting their data, subject to the possibility to provide for exceptions in line with Article 11 paragraph 1. Information on the name and address of the controller (or co-controllers), the legal basis and the purposes of the data processing, the categories of data processed and recipients, as well as the means of exercising the rights can be provided in any appropriate format (either through a website, technological tools on personal devices, etc.) as long as the information is fairly and effectively presented to the data subject. The information presented should be easily accessible, legible, understandable and adapted to the relevant data subjects (for example, in a child friendly language where necessary). Any additional information that is necessary to ensure fair data processing or that is useful for such purposes, such as the preservation period, the knowledge of the reasoning underlying the data processing, or information on data transfers to a recipient in another Party or nonParty (including whether that particular non-Party provides an appropriate level of data protection, or the measures taken by the controller to guarantee such an appropriate level of data protection) is also to be provided."@en ;
+    dct:source "CETS 223 Explanatory Report, Council of Europe, 10.X.2018" .
+
+conv108:ER-85 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Explanatory Report, para. 85"@en ;
+    skos:altLabel "Explanatory Report (CETS 223)"@en ;
+    skos:definition "According to paragraph 1, the obligation on the controller to ensure adequate data protection is linked to the responsibility to verify and be in a position to demonstrate that data processing is in compliance with the applicable law. The data protection principles set out in the Convention, which are to be applied at all stages of processing, including the design phase, aim at protecting data subjects and are also a mechanism for enhancing their trust. Appropriate measures that the controller and processor may have to take to ensure compliance include: training employees; setting up appropriate notification procedures (for instance to indicate when data have to be deleted from the system); establishing specific contractual provisions where the processing is delegated in order to give effect to the Convention; as well as setting up internal procedures to enable the verification and demonstration of compliance."@en ;
+    dct:source "CETS 223 Explanatory Report, Council of Europe, 10.X.2018" .
+
+conv108:ER-89 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Explanatory Report, para. 89"@en ;
+    skos:altLabel "Explanatory Report (CETS 223)"@en ;
+    skos:definition "Paragraph 3 specifies that in order to better guarantee an effective level of protection, controllers, and, where applicable, processors, should ensure that data protection requirements are integrated as early as possible, that is, ideally at the stage of architecture and system design, in data processing operations through technical and organisational measures (data protection by design). This implementation of data protection requirements should be achieved not only as regards the technology used for processing the data, but also the related work and management processes. Easy-to-use functionalities that facilitate compliance with applicable law should be put in place. For example, secure online access to one’s own data should be offered to data subjects where possible and relevant. There should also be easy-to-use tools to enable data subjects to take their data to another provider of their choice or keep the data themselves (data portability tools). When setting up the technical requirements for default settings, controllers and processors should choose privacy-friendly standard configurations so that the usage of applications and software does not infringe the rights of the data subjects (data protection by default), notably to avoid processing more data than necessary to achieve the legitimate purpose. For example, social networks should be configured by default so as to share posts or pictures only with restricted and chosen circles and not with the whole internet."@en ;
+    dct:source "CETS 223 Explanatory Report, Council of Europe, 10.X.2018" .
+
+conv108:ER-102 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Explanatory Report, para. 102"@en ;
+    skos:altLabel "Explanatory Report (CETS 223)"@en ;
+    skos:definition "The aim of this article is to facilitate the free flow of information regardless of frontiers (recalled in the preamble), while ensuring an appropriate protection of individuals with regard to the processing of personal data. A transborder data transfer occurs when personal data is disclosed or made available to a recipient subject to the jurisdiction of another State or international organisation."@en ;
+    dct:source "CETS 223 Explanatory Report, Council of Europe, 10.X.2018" .
+
+conv108:ER-104 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Explanatory Report, para. 104"@en ;
+    skos:altLabel "Explanatory Report (CETS 223)"@en ;
+    skos:definition "Article 14 applies only to the outflow of data, not to its inflow, since the latter are covered by the data protection regime of the recipient Party."@en ;
+    dct:source "CETS 223 Explanatory Report, Council of Europe, 10.X.2018" .
+
+conv108:ER-109 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Explanatory Report, para. 109"@en ;
+    skos:altLabel "Explanatory Report (CETS 223)"@en ;
+    skos:definition "Paragraph 2 refers to transborder flows of personal data to a recipient that is not subject to the jurisdiction of a Party. As for any personal data flowing outside national frontiers, an appropriate level of protection is to be guaranteed. In cases where the recipient is not a Party to the Convention, the Convention establishes two mechanisms to ensure that the level of data protection is indeed appropriate; either by law, or by ad hoc or approved standardised safeguards that are legally binding and enforceable, as well as duly implemented."@en ;
+    dct:source "CETS 223 Explanatory Report, Council of Europe, 10.X.2018" .
+
+conv108:ER-110 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Explanatory Report, para. 110"@en ;
+    skos:altLabel "Explanatory Report (CETS 223)"@en ;
+    skos:definition "Paragraphs 2 and 3 apply to all forms of appropriate protection, whether provided by law or by standardised safeguards. The law must include the relevant elements of data protection as set out in this Convention. The level of protection should be assessed for each transfer or category of transfers. Various elements of the transfer should be examined such as: the type of data; the purposes and duration of processing for which the data are transferred; the respect of the rule of law by the country of final destination; the general and sectoral legal rules applicable in the State or organisation in question; and the professional and security rules which apply there."@en ;
+    dct:source "CETS 223 Explanatory Report, Council of Europe, 10.X.2018" .
+
+conv108:ER-111 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Explanatory Report, para. 111"@en ;
+    skos:altLabel "Explanatory Report (CETS 223)"@en ;
+    skos:definition "The content of the ad hoc or standardised safeguards must include the relevant elements of data protection. Moreover, the contractual terms could be such, for example, that the data subject is provided with a contact person on the staff of the person responsible for the data transfers, whose responsibility it is to ensure compliance with the substantive standards of protection. The data subject would be free to contact this person at any time and at no cost in relation to the data processing or transfers and, where applicable, obtain assistance in exercising his or her rights."@en ;
+    dct:source "CETS 223 Explanatory Report, Council of Europe, 10.X.2018" .
+
+conv108:ER-112 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Explanatory Report, para. 112"@en ;
+    skos:altLabel "Explanatory Report (CETS 223)"@en ;
+    skos:definition "The assessment as to whether the level of protection is appropriate must take into account the principles of the Convention, the extent to which they are met in the recipient State or organisation – in so far as they are relevant for the specific case of transfer – and how the data subject is able to defend his or her interests where there is non-compliance. The enforceability of data subjects’ rights and the provision of effective administrative and judicial redress for the data subjects whose personal data are being transferred should be taken into consideration in the assessment. Similarly, the assessment can be made for a whole State or organisation thereby permitting all data transfers to such a destination."@en ;
+    dct:source "CETS 223 Explanatory Report, Council of Europe, 10.X.2018" .
+
+conv108:ER-115 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Explanatory Report, para. 115"@en ;
+    skos:altLabel "Explanatory Report (CETS 223)"@en ;
+    skos:definition "According to paragraph 6, the supervisory authority should be entitled to request that the effectiveness of the measures taken or the existence of prevailing legitimate interests be demonstrated, and to prohibit, suspend or impose conditions on the transfer if this proves necessary to protect the rights and fundamental freedoms of the data subjects. Under the conditions laid down in Article 11, paragraph 3 exceptions to Article 14, paragraph 6 are permissible."@en ;
+    dct:source "CETS 223 Explanatory Report, Council of Europe, 10.X.2018" .
+
+conv108:ER-127 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Explanatory Report, para. 127"@en ;
+    skos:altLabel "Explanatory Report (CETS 223)"@en ;
+    skos:definition "In addition to this consultation foreseen under paragraph 3, the authority could also be asked to give its opinion when other measures concerning personal data processing are in preparation, such as for instance codes of conduct or technical norms."@en ;
+    dct:source "CETS 223 Explanatory Report, Council of Europe, 10.X.2018" .
+
+conv108:ER-164 a skos:Concept ;
+    skos:inScheme conv108:LegalElements ;
+    skos:prefLabel "Explanatory Report, para. 164"@en ;
+    skos:altLabel "Explanatory Report (CETS 223)"@en ;
+    skos:definition "Furthermore, the Convention Committee may approve models of standardised safeguards for data transfers (Article 23 littera g.)."@en ;
+    dct:source "CETS 223 Explanatory Report, Council of Europe, 10.X.2018" .
+
+# Legal model terms
+conv108:ConsentBasis a rdfs:Class, skos:Concept ;
+    rdfs:subClassOf dpv:Consent ;
+    dct:source conv108:Art5-2 ;
+    skos:scopeNote "Operational Transparency Stack: 6 Treaty"@en ;
+    skos:definition "Consent used as the legal basis for a specified purpose"@en ;
+    sw:term_status "proposed" .
+
+conv108:OtherLegitimateBasisUnderLaw a rdfs:Class, skos:Concept ;
+    rdfs:subClassOf dpv:LegalBasis ;
+    dct:source conv108:Art5-2 ;
+    skos:scopeNote "Operational Transparency Stack: 6 Treaty"@en ;
+    skos:definition "Another legitimate basis established by applicable law"@en ;
+    sw:term_status "proposed" .
+
+conv108:CompatibleFurtherProcessing a rdfs:Class, skos:Concept ;
+    dct:source conv108:Art5-4-b ;
+    skos:scopeNote "Operational Transparency Stack: 6 Treaty"@en ;
+    skos:definition "A recorded determination that further processing is compatible with the original purpose. A processing condition, not a legal basis"@en ;
+    sw:term_status "proposed" .
+
+conv108:LawfulnessPrinciple a rdfs:Class, skos:Concept ;
+    dct:source conv108:Art5-1, conv108:Art5-2, conv108:Art5-3 ;
+    skos:scopeNote "Operational Transparency Stack: 6 Treaty"@en ;
+    skos:definition "Lawful and proportionate processing that reflects a fair balance of interests, rights, and freedoms"@en ;
+    sw:term_status "proposed" .
+
+conv108:PurposeSpecificationPrinciple a rdfs:Class, skos:Concept ;
+    dct:source conv108:Art5-4-b ;
+    skos:scopeNote "Operational Transparency Stack: 6 Treaty"@en ;
+    skos:definition "Explicit, specified, and legitimate purposes; no incompatible further processing"@en ;
+    sw:term_status "proposed" .
+
+conv108:DataMinimisationPrinciple a rdfs:Class, skos:Concept ;
+    dct:source conv108:Art5-4-c ;
+    skos:scopeNote "Operational Transparency Stack: 6 Treaty"@en ;
+    skos:definition "Adequate, relevant, and not excessive"@en ;
+    sw:term_status "proposed" .
+
+conv108:TransparencyRequirement a rdfs:Class, skos:Concept ;
+    dct:source conv108:Art8 ;
+    skos:scopeNote "Operational Transparency Stack: 6 Treaty"@en ;
+    skos:definition "Required information about the controller and intended processing"@en ;
+    sw:term_status "proposed" .
+
+conv108:TransborderProtectionRequirement a rdfs:Class, skos:Concept ;
+    dct:source conv108:Art14 ;
+    skos:scopeNote "Operational Transparency Stack: 6 Treaty"@en ;
+    skos:definition "Appropriate protection for transborder data flows"@en ;
+    sw:term_status "proposed" .
+
+conv108:RightOfAccess a rdfs:Class, skos:Concept ;
+    rdfs:subClassOf dpv:DataSubjectRight ;
+    dct:source conv108:Art9-1-b ;
+    skos:scopeNote "Operational Transparency Stack: 6 Treaty"@en ;
+    skos:definition "Confirmation of processing, communication of personal data in an intelligible form, and available information concerning origin, preservation period, and other required details"@en ;
+    sw:term_status "proposed" .
+
+conv108:RightAgainstSolelyAutomatedDecision a rdfs:Class, skos:Concept ;
+    rdfs:subClassOf dpv:DataSubjectRight ;
+    dct:source conv108:Art9-1-a ;
+    skos:scopeNote "Operational Transparency Stack: 6 Treaty"@en ;
+    skos:definition "Not to be subject to a decision significantly affecting the individual when based solely on automated processing, without the individual's views being taken into consideration"@en ;
+    sw:term_status "proposed" .
+
+conv108:RightToKnowAutomatedReasoning a rdfs:Class, skos:Concept ;
+    rdfs:subClassOf dpv:DataSubjectRight ;
+    dct:source conv108:Art9-1-c ;
+    skos:scopeNote "Operational Transparency Stack: 6 Treaty"@en ;
+    skos:definition "To obtain knowledge of the reasoning underlying relevant automated processing results"@en ;
+    sw:term_status "proposed" .
+
+conv108:RightToObject a rdfs:Class, skos:Concept ;
+    rdfs:subClassOf dpv:DataSubjectRight ;
+    dct:source conv108:Art9-1-d ;
+    skos:scopeNote "Operational Transparency Stack: 6 Treaty"@en ;
+    skos:definition "To object on grounds relating to the individual's situation, subject to the conditions in the Convention"@en ;
+    sw:term_status "proposed" .
+
+conv108:RightToRectificationOrErasure a rdfs:Class, skos:Concept ;
+    rdfs:subClassOf dpv:DataSubjectRight ;
+    dct:source conv108:Art9-1-e ;
+    skos:scopeNote "Operational Transparency Stack: 6 Treaty"@en ;
+    skos:definition "To obtain rectification or erasure where processing does not comply with the Convention"@en ;
+    sw:term_status "proposed" .
+
+conv108:TransparencyInformation a rdfs:Class, skos:Concept ;
+    dct:source conv108:Art8 ;
+    skos:scopeNote "Operational Transparency Stack: 6 Treaty"@en ;
+    skos:definition "Controller identity and establishment, legal basis, purposes, personal data categories, recipients, rights mechanisms, and any additional information needed for fair and transparent processing"@en ;
+    sw:term_status "proposed" .
+
+conv108:TransparencyBeforeCollection a rdfs:Class, skos:Concept ;
+    dct:source conv108:Art8 ;
+    dct:bibliographicCitation "Implementation requirement, transparency by default" ;
+    skos:scopeNote "Operational Transparency Stack: 3 Presentation"@en ;
+    skos:definition "Required transparency information is resolvable before the first collection event"@en ;
+    sw:term_status "proposed" .
+
+conv108:TransborderTransparency a rdfs:Class, skos:Concept ;
+    dct:source conv108:Art14 ;
+    dct:bibliographicCitation "Implementation requirement" ;
+    skos:scopeNote "Operational Transparency Stack: 6 Treaty"@en ;
+    skos:definition "Destination and applicable safeguard information are resolvable before transfer"@en ;
+    sw:term_status "proposed" .
+
+conv108:AutomatedProcessingTransparency a rdfs:Class, skos:Concept ;
+    dct:source conv108:Art9-1-a, conv108:Art9-1-c ;
+    dct:bibliographicCitation "Implementation requirement" ;
+    skos:scopeNote "Operational Transparency Stack: 6 Treaty"@en ;
+    skos:definition "Relevant automated decision scope and reasoning information are available in time for the individual to exercise applicable rights"@en ;
+    sw:term_status "proposed" .
+
+conv108:DualHeldRecordRequirement a rdfs:Class, skos:Concept ;
+    dct:bibliographicCitation "ISO/IEC TS 27560:2023 and ANCR Extension alignment" ;
+    skos:scopeNote "Operational Transparency Stack: 5 Evidence"@en ;
+    skos:definition "A record of what was presented is available to the individual as well as the controller, in the online construction"@en ;
+    sw:term_status "proposed" .
+
+conv108:hasTransborderSafeguard a rdf:Property ;
+    dct:source conv108:Art14 ;
+    skos:related ancr:transfer_mechanism ;
+    skos:scopeNote "Operational Transparency Stack: 6 Treaty"@en ;
+    skos:definition "The safeguard relied on for a transborder flow to a stated destination"@en ;
+    sw:term_status "proposed" .
+
+conv108:ChainOfNotice a rdfs:Class, skos:Concept ;
+    dct:bibliographicCitation "Chain of notice, item I16; ISO/IEC 22989 roles" ;
+    skos:scopeNote "Operational Transparency Stack: Outside the Stack"@en ;
+    skos:definition "Notice per participant through the AI lifecycle, each notice bound to the participant that issued it and to the notice version it issued, and tested by the next participant before that participant relies on it"@en ;
+    sw:term_status "proposed" .
+
+conv108:hasNoticeParticipant a rdf:Property ;
+    dct:bibliographicCitation "Item I16" ;
+    skos:scopeNote "Operational Transparency Stack: Outside the Stack"@en ;
+    skos:definition "A participant in a chain of notice"@en ;
+    sw:term_status "proposed" .
+
+conv108:hasLifecycleRole a rdf:Property ;
+    dct:bibliographicCitation "Item I16; ISO/IEC 22989" ;
+    skos:scopeNote "Operational Transparency Stack: Outside the Stack"@en ;
+    skos:definition "The ISO/IEC 22989 AI lifecycle role a notice participant acts in. The 22989 labels are alignment references, not adopted terms"@en ;
+    sw:term_status "proposed" .
+
+conv108:hasParticipantScope a rdf:Property ;
+    dct:bibliographicCitation "Item I16" ;
+    skos:scopeNote "Operational Transparency Stack: Outside the Stack"@en ;
+    skos:definition "Scope of disclosure of a chain participant's notice: the PII principal's physical context, specified online context, being the purposes, data and processing within the participant's lifecycle role, to which the notice applies and on which the next participant may rely"@en ;
+    sw:term_status "proposed" .
+
+conv108:hasTrainingDataProvenance a rdf:Property ;
+    dct:bibliographicCitation "Item I5; EU AI Act Article 53(1)(d)" ;
+    skos:scopeNote "Operational Transparency Stack: Outside the Stack"@en ;
+    skos:definition "Training data provenance and sources"@en ;
+    sw:term_status "proposed" .
+
+conv108:hasRightsReservationStatus a rdf:Property ;
+    dct:bibliographicCitation "Item I6; EU AI Act Article 53(1)(c); Directive 2019/790 Article 4(3)" ;
+    skos:scopeNote "Operational Transparency Stack: Outside the Stack"@en ;
+    skos:definition "Copyright and machine actionable rights reservation status"@en ;
+    sw:term_status "proposed" .

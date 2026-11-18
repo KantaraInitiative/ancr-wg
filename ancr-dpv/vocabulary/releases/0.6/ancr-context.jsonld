@@ -1,0 +1,214 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@protected": true,
+    "ancr": "https://kantarainitiative.github.io/ancr-wg/ns/ancr#",
+    "conv108": "https://kantarainitiative.github.io/ancr-wg/ns/conv108plus#",
+    "dpv": "https://w3id.org/dpv#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "controller_identification_record_id": "ancr:controller_identification_record_id",
+    "controller_public_id_uri": {
+      "@id": "ancr:controller_public_id_uri",
+      "@type": "@id"
+    },
+    "controller_name": "ancr:controller_name",
+    "jurisdiction": "ancr:jurisdiction",
+    "privacy_access_point": "ancr:privacy_access_point",
+    "type": "ancr:type",
+    "value": "ancr:value",
+    "label": "ancr:label",
+    "notice_event_log_url": {
+      "@id": "ancr:notice_event_log_url",
+      "@type": "@id"
+    },
+    "controller_address": "ancr:controller_address",
+    "code_of_conduct": {
+      "@id": "ancr:code_of_conduct",
+      "@type": "@id"
+    },
+    "derogation_reference": "ancr:derogation_reference",
+    "reference_uri": {
+      "@id": "ancr:reference_uri",
+      "@type": "@id"
+    },
+    "authority": "ancr:authority",
+    "valid_until": {
+      "@id": "ancr:valid_until",
+      "@type": "xsd:dateTime"
+    },
+    "notice_id": "ancr:notice_id",
+    "notice_version_reference": "ancr:notice_version_reference",
+    "public_rule_reference": "ancr:public_rule_reference",
+    "lawful_basis": {
+      "@id": "ancr:lawful_basis",
+      "@type": "@vocab"
+    },
+    "purpose": "ancr:purpose",
+    "technology_in_use": "ancr:technology_in_use",
+    "controls_available_primary": "ancr:controls_available_primary",
+    "associated_or_derivative_controls": "ancr:associated_or_derivative_controls",
+    "secondary_purposes_of_use": "ancr:secondary_purposes_of_use",
+    "limitations_or_derogations_on_controls": "ancr:limitations_or_derogations_on_controls",
+    "transparency_disclosure_reference": {
+      "@id": "ancr:transparency_disclosure_reference",
+      "@type": "@id"
+    },
+    "recipient_jurisdictions": "ancr:recipient_jurisdictions",
+    "transfer_mechanism": "ancr:transfer_mechanism",
+    "profiling_rule_reference": {
+      "@id": "ancr:profiling_rule_reference",
+      "@type": "@id"
+    },
+    "retention_period": "ancr:retention_period",
+    "language": "ancr:language",
+    "surveillance_risks": "ancr:surveillance_risks",
+    "rights_derogations": "ancr:rights_derogations",
+    "notice_url": {
+      "@id": "ancr:notice_url",
+      "@type": "@id"
+    },
+    "notice_version_id": "ancr:notice_version_id",
+    "notice_hash": "ancr:notice_hash",
+    "published_at": {
+      "@id": "ancr:published_at",
+      "@type": "xsd:dateTime"
+    },
+    "hash_algorithm": "ancr:hash_algorithm",
+    "supersedes": "ancr:supersedes",
+    "authorization_state_id": "ancr:authorization_state_id",
+    "purpose_state": "ancr:purpose_state",
+    "state": {
+      "@id": "ancr:state",
+      "@type": "@vocab"
+    },
+    "state_time": {
+      "@id": "ancr:state_time",
+      "@type": "xsd:dateTime"
+    },
+    "record_validity": {
+      "@id": "ancr:record_validity",
+      "@type": "@vocab"
+    },
+    "anchored_notice_receipt_id": "ancr:anchored_notice_receipt_id",
+    "state_source": {
+      "@id": "ancr:state_source",
+      "@type": "@vocab"
+    },
+    "evaluated_at": {
+      "@id": "ancr:evaluated_at",
+      "@type": "xsd:dateTime"
+    },
+    "expires_at": {
+      "@id": "ancr:expires_at",
+      "@type": "xsd:dateTime"
+    },
+    "schema_version": "ancr:schema_version",
+    "anchored_notice_receipt": "ancr:anchored_notice_receipt",
+    "receipt_id": "ancr:receipt_id",
+    "account_id": "ancr:account_id",
+    "notice_version_hash": "ancr:notice_version_hash",
+    "presented_at": {
+      "@id": "ancr:presented_at",
+      "@type": "xsd:dateTime"
+    },
+    "two_factor_notice": "ancr:two_factor_notice",
+    "notice_type": {
+      "@id": "ancr:notice_type",
+      "@type": "@vocab"
+    },
+    "event_id": "ancr:event_id",
+    "event_time": {
+      "@id": "ancr:event_time",
+      "@type": "xsd:dateTime"
+    },
+    "event_type": {
+      "@id": "ancr:event_type",
+      "@type": "@vocab"
+    },
+    "prior_notice_version_reference": "ancr:prior_notice_version_reference",
+    "processing_event_id": "ancr:processing_event_id",
+    "processing_event_type": "ancr:processing_event_type",
+    "resolution_path": {
+      "@id": "ancr:resolution_path",
+      "@type": "@vocab"
+    },
+    "operator_identification_record_id": {
+      "@id": "ancr:operator_identification_record_id",
+      "@type": "@id"
+    },
+    "assurance_level": "ancr:assurance_level",
+    "assurance_model_reference": {
+      "@id": "ancr:assurance_model_reference",
+      "@type": "@id"
+    },
+    "issuing_authority": {
+      "@id": "ancr:issuing_authority",
+      "@type": "@id"
+    },
+    "accountable_operator": {
+      "@id": "ancr:accountable_operator",
+      "@type": "@id"
+    },
+    "service_operator": {
+      "@id": "ancr:service_operator",
+      "@type": "@id"
+    },
+    "registry_identifier": "ancr:registry_identifier",
+    "notary_identification_record_id": {
+      "@id": "ancr:notary_identification_record_id",
+      "@type": "@id"
+    },
+    "witnessed_hash": "ancr:witnessed_hash",
+    "witnessed_at": {
+      "@id": "ancr:witnessed_at",
+      "@type": "xsd:dateTime"
+    },
+    "proof": "ancr:proof",
+    "controller_identity_record_id": "ancr:controller_identification_record_id",
+    "operator_identity_record_id": {
+      "@id": "ancr:operator_identification_record_id",
+      "@type": "@id"
+    },
+    "notary_identity_record_id": {
+      "@id": "ancr:notary_identification_record_id",
+      "@type": "@id"
+    },
+    "consent": "dpv:Consent",
+    "contract": "dpv:Contract",
+    "legal_obligation": "dpv:LegalObligation",
+    "legitimate_interest": "dpv:LegitimateInterest",
+    "vital_interest": "dpv:VitalInterest",
+    "public_interest": "dpv:PublicInterest",
+    "unresolved": "ancr:UnresolvedLegalBasis",
+    "statement": "ancr:NoticeTypeStatement",
+    "notification": "ancr:NoticeTypeNotification",
+    "risk_disclosure": "ancr:NoticeTypeRiskDisclosure",
+    "policy": "ancr:NoticeTypePolicy",
+    "signal": "ancr:NoticeTypeSignal",
+    "not_given": "ancr:PurposeStateNotGiven",
+    "given": "ancr:PurposeStateGiven",
+    "altered": "ancr:PurposeStateAltered",
+    "restricted": "ancr:PurposeStateRestricted",
+    "objected": "ancr:PurposeStateObjected",
+    "withdrawn": "ancr:PurposeStateWithdrawn",
+    "expired": "ancr:PurposeStateExpired",
+    "valid": "ancr:RecordValid",
+    "invalid": "ancr:RecordInvalid",
+    "suspended": "ancr:RecordSuspended",
+    "individual": "ancr:StateSourceIndividual",
+    "controller": "ancr:StateSourceController",
+    "expiry": "ancr:StateSourceExpiry",
+    "notice_issued": "ancr:NoticeIssued",
+    "notice_material_change": "ancr:NoticeMaterialChange",
+    "authorization_state_changed": "ancr:AuthorizationStateChanged",
+    "record_validity_changed": "ancr:RecordValidityChanged",
+    "cir_updated": "ancr:CIRUpdated",
+    "disclosure_set_updated": "ancr:DisclosureSetUpdated",
+    "operator_correction": "ancr:OperatorCorrection",
+    "operator_suspension": "ancr:OperatorSuspension",
+    "operator_withdrawal": "ancr:OperatorWithdrawal",
+    "record_re_registration": "ancr:RecordReRegistration",
+    "direct": "ancr:ResolutionDirect",
+    "operated": "ancr:ResolutionOperated"
+  }
+}
