@@ -1,7 +1,7 @@
 // Builds the namespace documents for the ANCR vocabulary IRIs into the site folder, so each IRI resolves once merged.
 // Each IRI base https://kantarainitiative.github.io/ancr-wg/ns/<module># gets ns/<module>/index.html, with an anchor per
-// term so that <base>#<term> lands on its definition, and the module's Turtle beside it. The pages are provisional:
-// they move to the Kantara ANCR site only once the Working Group accepts the vocabulary.
+// term so that <base>#<term> lands on its definition, and the module's Turtle beside it. The pages carry
+// the vocabulary's status, and are set to noindex during the pilot.
 import { copyFileSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { Parser } from "n3";
@@ -11,8 +11,8 @@ const OUT = "../../ancr-ts-27560-extension/docs/ns"; // served by the site at ht
 const BASE = "https://kantarainitiative.github.io/ancr-wg/ns/";
 const RDF = "http://www.w3.org/1999/02/22-rdf-syntax-ns#", RDFS = "http://www.w3.org/2000/01/rdf-schema#", SKOS = "http://www.w3.org/2004/02/skos/core#";
 const DCT = "http://purl.org/dc/terms/", OWL = "http://www.w3.org/2002/07/owl#", SW = "http://www.w3.org/2003/06/sw-vocab-status/ns#";
-const STAGED = "17 November 2026";
-const PROVISIONAL = `Provisional. These identifiers are proposed in the ANCR DPV vocabulary draft 0.7. The ANCR Working Group and Kantara Initiative have not yet accepted them. They are staged by TCIEG for review and will be published at this address only after acceptance. They are not DPV, W3C, ISO/IEC or Council of Europe identifiers. Definitions may change before acceptance; the identifiers are intended to stay the same.`;
+const STAGED = "18 November 2026";
+const PROVISIONAL = `Status. The ANCR DPV vocabulary 0.7 is approved by the ANCR Working Group as a Working Group Recommendation and is pending Kantara Leadership Council review. During the pilot these pages are set not to be indexed by search engines. These are not DPV, W3C, ISO/IEC or Council of Europe identifiers. The identifiers are intended to stay the same; definitions may change after Leadership Council review.`;
 
 type Term = { iri: string; local: string; types: string[]; props: Record<string, string[]> };
 const modules = new Map<string, { file: string; ontology?: Term; terms: Term[] }>();
@@ -63,13 +63,13 @@ for (const [mod, m] of [...modules].sort()) {
     const rows = Object.entries(t.props).filter(([p]) => p !== RDFS + "label").map(([p, v]) => `<dt>${esc(short(p))}</dt><dd>${v.join("<br>")}</dd>`).join("");
     return `<div class="term" id="${esc(t.local)}"><h3><code>${esc(mod)}:${esc(t.local)}</code></h3><div class="meta">${esc(t.iri)} · ${esc(t.types.join(", "))}</div><dl>${rows}</dl></div>`;
   }).join("\n");
-  writeFileSync(join(dir, "index.html"), page(`${title} (provisional)`,
+  writeFileSync(join(dir, "index.html"), page(`${title}`,
     `<p><a href="../">ANCR vocabulary namespaces</a></p><h1>${title}</h1><div class="warn" role="note"><strong>${PROVISIONAL.split(".")[0]}.</strong>${PROVISIONAL.slice(PROVISIONAL.indexOf(".") + 1)}</div>
-<p>Namespace: <code>${esc(BASE + mod)}#</code><br>Version: ${esc((o[OWL + "versionInfo"] || ["0.7"])[0])} · Staged: ${STAGED}<br>Machine-readable: <a href="${m.file}">${m.file}</a>${m.file === "ancr.ttl" ? ` · <a href="ancr-context.jsonld">ancr-context.jsonld</a>` : ""}</p>
+<p>Namespace: <code>${esc(BASE + mod)}#</code><br>Version: ${esc((o[OWL + "versionInfo"] || ["0.7"])[0])} · Published: ${STAGED}<br>Machine-readable: <a href="${m.file}">${m.file}</a>${m.file === "ancr.ttl" ? ` · <a href="ancr-context.jsonld">ancr-context.jsonld</a>` : ""}</p>
 <p>${(o[DCT + "description"] || [""])[0]}</p><h2>${m.terms.length} terms</h2>\n${terms}`));
   index.push(`<li><a href="${mod}/">${esc(title)}</a>: <code>${esc(BASE + mod)}#</code>, ${m.terms.length} terms</li>`);
 }
-writeFileSync(join(OUT, "index.html"), page("ANCR vocabulary namespaces (provisional)",
+writeFileSync(join(OUT, "index.html"), page("ANCR vocabulary namespaces",
   `<h1>ANCR vocabulary namespaces</h1><div class="warn" role="note"><strong>${PROVISIONAL.split(".")[0]}.</strong>${PROVISIONAL.slice(PROVISIONAL.indexOf(".") + 1)}</div>
-<p>The identifiers are permanent once accepted. DPV and other vocabularies link to them; they are not moved into another namespace.</p><ul>${index.join("")}</ul>`));
+<p>The identifiers are intended to be permanent. DPV and other vocabularies link to them; they are not moved into another namespace.</p><ul>${index.join("")}</ul>`));
 console.log([...modules].map(([m, x]) => `${m}: ${x.terms.length}`).join(", "));

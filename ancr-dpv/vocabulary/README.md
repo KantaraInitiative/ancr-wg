@@ -55,4 +55,4 @@ bun build.ts
 bun test.ts
 ```
 
-`bun build-ns.ts` then writes the namespace documents into `ancr-ts-27560-extension/docs/ns/`, which the site serves at `https://kantarainitiative.github.io/ancr-wg/ns/`. Each page carries a provisional status note until the Working Group accepts the vocabulary, and has an anchor for each term, so `.../ns/ancr#notice_hash` opens on its definition.
+`bun build-ns.ts` then writes the namespace documents into `ancr-ts-27560-extension/docs/ns/`, which the site serves at `https://kantarainitiative.github.io/ancr-wg/ns/`. Each page carries the status of the vocabulary, and has an anchor for each term, so `.../ns/ancr#notice_hash` opens on its definition.
