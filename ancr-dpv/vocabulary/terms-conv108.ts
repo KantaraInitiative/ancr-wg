@@ -67,7 +67,7 @@ export const TERMS: Conv108Term[] = [
   { term: "hasLifecycleRole", kind: "property", anchors: [], source: "Item I16; ISO/IEC 22989", layer: "Outside the Stack",
     definition: "The ISO/IEC 22989 AI lifecycle role a notice participant acts in. The 22989 labels are alignment references, not adopted terms" },
   { term: "hasParticipantScope", kind: "property", anchors: [], source: "Item I16", layer: "Outside the Stack",
-    definition: "Definition to be supplied. Example 1 names the term in item I16 but does not define it" },
+    definition: "Scope of disclosure of a chain participant's notice: the specified context, being the purposes, data and processing within the participant's lifecycle role, to which the notice applies and on which the next participant may rely" },
   { term: "hasTrainingDataProvenance", kind: "property", anchors: [], source: "Item I5; EU AI Act Article 53(1)(d)", layer: "Outside the Stack",
     definition: "Training data provenance and sources" },
   { term: "hasRightsReservationStatus", kind: "property", anchors: [], source: "Item I6; EU AI Act Article 53(1)(c); Directive 2019/790 Article 4(3)", layer: "Outside the Stack",
