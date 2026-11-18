@@ -1557,7 +1557,7 @@ conv108:hasLifecycleRole a rdf:Property ;
 conv108:hasParticipantScope a rdf:Property ;
     dct:bibliographicCitation "Item I16" ;
     skos:scopeNote "Operational Transparency Stack: Outside the Stack"@en ;
-    skos:definition "Scope of disclosure of a chain participant's notice: the specified context, being the purposes, data and processing within the participant's lifecycle role, to which the notice applies and on which the next participant may rely"@en ;
+    skos:definition "Scope of disclosure of a chain participant's notice: the principal's physical context, specified online context, being the purposes, data and processing within the participant's lifecycle role, to which the notice applies and on which the next participant may rely"@en ;
     sw:term_status "proposed" .
 
 conv108:hasTrainingDataProvenance a rdf:Property ;
