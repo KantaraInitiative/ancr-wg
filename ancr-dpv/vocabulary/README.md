@@ -15,8 +15,10 @@ Each field and controlled value of the ANCR Extension has one identifier, in `an
 | Module | Namespace | Scope | Source term list | Built file |
 | --- | --- | --- | --- | --- |
 | 1 Record | `ancr:` `https://kantarainitiative.github.io/ancr-wg/ns/ancr#` | 74 fields, 37 controlled values, exposure classes, and the `ancr:evidences` relation | `terms-ancr.ts` | `dist/ancr.ttl`, `dist/ancr-context.jsonld` |
-| 2 Legal model | `conv108:` `https://kantarainitiative.github.io/ancr-wg/ns/conv108plus#` | 200 legal element identifiers for Convention 108+ and 25 legal model terms, each placed at one layer of the Operational Transparency Stack | `terms-conv108.ts`, `conv108-legal-elements.csv` | `dist/conv108.ttl` |
+| 2 Convention 108+ legal vocabulary | `conv108:` `https://kantarainitiative.github.io/ancr-wg/ns/conv108plus#` | 200 legal element identifiers for Convention 108+ and 25 legal model terms, each placed at one layer of the Operational Transparency Stack | `terms-conv108.ts`, `conv108-legal-elements.csv` | `dist/conv108.ttl` |
 | 4 Mappings | none of its own | Retired names, and which legal elements each field carries evidence for | `mappings.ts` | `dist/mappings.ttl` |
+
+Module 2 is a legal vocabulary in the form of the DPV legal extensions, such as the DPV extension for the GDPR. It names what Convention 108+ requires and adds no obligation, and it carries its own version so that it can be released apart from the record module. The three vocabularies each answer one question: Convention 108+ legal vocabulary, what the law requires; NTC, the controls a code of practice sets to meet it; `ancr:`, the record that evidences them.
 
 `dist/register.csv` lists every term with its module, status, Stack layer and source.
 
