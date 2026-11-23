@@ -8,6 +8,7 @@ import * as M from "./mappings.ts"
 
 const out = process.argv[2] ?? `${import.meta.dir}/dist`
 const VERSION = "0.7"
+const CONV108_VERSION = "0.7" // the legal vocabulary is versioned on its own from 0.7
 const esc = (s: string) => s.replace(/\\/g, "\\\\").replace(/"/g, '\\"')
 const csvq = (s: string) => `"${s.replace(/"/g, '""')}"`
 
@@ -39,9 +40,9 @@ const PREFIXES = [
   "@prefix skos: <http://www.w3.org/2004/02/skos/core#> .", "@prefix dct: <http://purl.org/dc/terms/> .",
   "@prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .", "@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .", "",
 ]
-const ontology = (iri: string, title: string, desc: string) => [
+const ontology = (iri: string, title: string, desc: string, version = VERSION) => [
   `<${iri}> a owl:Ontology ;`, `    dct:title "${title}"@en ;`, `    dct:description "${esc(desc)}"@en ;`,
-  '    dct:creator "Mark Lizar" ;', `    owl:versionInfo "${VERSION}" ;`, '    dct:license <https://creativecommons.org/licenses/by/4.0/> .', "",
+  '    dct:creator "Mark Lizar" ;', `    owl:versionInfo "${version}" ;`, '    dct:license <https://creativecommons.org/licenses/by/4.0/> .', "",
 ]
 const register: string[][] = [["iri", "module", "kind", "status", "stack_layer", "source", "definition"]]
 
@@ -89,8 +90,8 @@ a.push("# Relation from a field to the legal element it carries evidence for",
 register.push(["ancr:evidences", "ancr", "property", "proposed", "5 Evidence", "this vocabulary", "The field carries evidence for the legal element"])
 
 // ---------- module 2: conv108 ----------
-const c: string[] = [...PREFIXES, ...ontology(C.NS.replace(/#$/, ""), "Convention 108+ legal model",
-  "Module 2 of the ANCR DPV vocabulary. The requirements of the modernised Convention 108 that a notice and consent record evidences, with an identifier for each legal element and an AI transparency profile anchored outside Convention 108+. Convention 108+ (CETS 223) is not yet in force.")]
+const c: string[] = [...PREFIXES, ...ontology(C.NS.replace(/#$/, ""), "Convention 108+ legal vocabulary",
+  "A legal vocabulary for the modernised Convention 108 (CETS 223), in the form of the DPV legal extensions: an identifier for each legal element, and the legal model terms a notice and consent record evidences, with an AI transparency profile anchored outside Convention 108+. It names what the Convention requires and adds no obligation. Controls are in Notice Transparency Controls (NTC); record fields are in ancr:. These are not Council of Europe identifiers. Convention 108+ is not yet in force.", CONV108_VERSION)]
 c.push("conv108:LegalElements a skos:ConceptScheme ;", '    skos:prefLabel "Convention 108+ legal elements"@en ;',
   '    skos:definition "Identifiers for the articles, paragraphs and points of Convention 108+, its preamble and appendix, and the Explanatory Report paragraphs relied on. They name the treaty structure and add no obligation."@en .', "")
 for (const e of ELEMENTS) {

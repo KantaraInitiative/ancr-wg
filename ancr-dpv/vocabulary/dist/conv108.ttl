@@ -12,8 +12,8 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://kantarainitiative.github.io/ancr-wg/ns/conv108plus> a owl:Ontology ;
-    dct:title "Convention 108+ legal model"@en ;
-    dct:description "Module 2 of the ANCR DPV vocabulary. The requirements of the modernised Convention 108 that a notice and consent record evidences, with an identifier for each legal element and an AI transparency profile anchored outside Convention 108+. Convention 108+ (CETS 223) is not yet in force."@en ;
+    dct:title "Convention 108+ legal vocabulary"@en ;
+    dct:description "A legal vocabulary for the modernised Convention 108 (CETS 223), in the form of the DPV legal extensions: an identifier for each legal element, and the legal model terms a notice and consent record evidences, with an AI transparency profile anchored outside Convention 108+. It names what the Convention requires and adds no obligation. Controls are in Notice Transparency Controls (NTC); record fields are in ancr:. These are not Council of Europe identifiers. Convention 108+ is not yet in force."@en ;
     dct:creator "Mark Lizar" ;
     owl:versionInfo "0.7" ;
     dct:license <https://creativecommons.org/licenses/by/4.0/> .
