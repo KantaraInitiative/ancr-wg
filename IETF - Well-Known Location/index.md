@@ -12,6 +12,11 @@ This folder contains ANCR Working Group materials related to IETF / IANA registr
 - Draft registration text and supporting notes intended to align ANCR artefacts with IETF/IANA conventions
 - Supporting working group artefacts needed for review, iteration, and eventual submission pathways (where applicable)
 
+## Drafts
+
+- Current: [Well-Known URI for Controller Transparency Records, v1.1, 25 November 2026](IETF%20Well%20Known%20Transparency%20Location%20v1.1.md). Not submitted to the IETF.
+- Earlier: [v1, December 2025](IETF%20Well%20Known%20Transparency%20Location%20v1)
+
 ## Key links
 
 - ANCR WG repository hub: https://github.com/KantaraInitiative/ancr-wg
